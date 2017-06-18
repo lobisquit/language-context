@@ -1,0 +1,2954 @@
+".text.tex.context":
+  "\\Caps":
+    prefix: "\\Caps"
+    body: '''
+      \\Caps {${1:... ...}}
+      $2
+    '''
+  "\\Word":
+    prefix: "\\Word"
+    body: '''
+      \\Word {${1:... ...}}
+      $2
+    '''
+  "\\Words":
+    prefix: "\\Words"
+    body: '''
+      \\Words {${1:... ...}}
+      $2
+    '''
+  "\\about":
+    prefix: "\\about"
+    body: '''
+      \\about {${1:...}}[${2:ref}]
+      $3
+    '''
+  "\\adaptlayout":
+    prefix: "\\adaptlayout"
+    body: '''
+      \\adaptlayout ${1:[${2:...,...,...}]}[${3:...,...=...,...}]
+      $4
+    '''
+  "\\adding":
+    prefix: "\\adding"
+    body: '''
+      \\adding [${1:...}]
+      $2
+    '''
+  "\\appendix":
+    prefix: "\\appendix"
+    body: '''
+      \\appendix ${1:[${2:ref,ref,..}]}{${3:...}}
+      $4
+    '''
+  "\\arg":
+    prefix: "\\arg"
+    body: '''
+      \\arg {${1:...}}
+      $2
+    '''
+  "\\at":
+    prefix: "\\at"
+    body: '''
+      \\at {${1:...}}{${2:...}}[${3:ref}]
+      $4
+    '''
+  "\\atpage":
+    prefix: "\\atpage"
+    body: '''
+      \\atpage [${1:ref}]
+      $2
+    '''
+  "\\b ... \\e":
+    prefix: "b"
+    body: '''
+      \\b${1:text}
+      $0
+      \\e${1/(\\w*)(.*\\n*)*/$1/}
+    '''
+  "\\background":
+    prefix: "\\background"
+    body: '''
+      \\background
+      $1
+    '''
+  "\\blackrule":
+    prefix: "\\blackrule"
+    body: '''
+      \\blackrule ${1:[${2:...,...=...,...}]}
+      $3
+    '''
+  "\\blackrules":
+    prefix: "\\blackrules"
+    body: '''
+      \\blackrules [${1:...,...=...,...}]
+      $2
+    '''
+  "\\blank":
+    prefix: "\\blank"
+    body: '''
+      \\blank ${1:[${2:...,...,...}]}
+      $3
+    '''
+  "\\bookmark":
+    prefix: "\\bookmark"
+    body: '''
+      \\bookmark ${1:[${2:...}]}{${3:...}}
+      $4
+    '''
+  "\\but":
+    prefix: "\\but"
+    body: '''
+      \\but [${1:ref}]
+      $2
+    '''
+  "\\button":
+    prefix: "\\button"
+    body: '''
+      \\button ${1:[${2:...,...=...,...}]}{${3:...}}[${4:ref,ref,..}]
+      $5
+    '''
+  "\\bypassblocks":
+    prefix: "\\bypassblocks"
+    body: '''
+      \\bypassblocks [${1:...,...,...}]${2:[${3:...,...,...}]}
+      $4
+    '''
+  "\\cap":
+    prefix: "\\cap"
+    body: '''
+      \\cap {${1:...}}
+      $2
+    '''
+  "\\chapter":
+    prefix: "\\chapter"
+    body: '''
+      \\chapter ${1:[${2:ref,ref,..}]}{${3:...}}
+      $4
+    '''
+  "\\character":
+    prefix: "\\character"
+    body: '''
+      \\character {${1:...}}
+      $2
+    '''
+  "\\characters":
+    prefix: "\\characters"
+    body: '''
+      \\characters {${1:...}}
+      $2
+    '''
+  "\\chem":
+    prefix: "\\chem"
+    body: '''
+      \\chem {${1:...}}{${2:...}}{${3:...}}
+      $4
+    '''
+  "\\clip":
+    prefix: "\\clip"
+    body: '''
+      \\clip ${1:[${2:...,...=...,...}]}{${3:...}}
+      $4
+    '''
+  "\\clonefield":
+    prefix: "\\clonefield"
+    body: '''
+      \\clonefield [${1:...}][${2:...,...,...}][${3:...}]${4:[${5:...,...,...}]}
+      $6
+    '''
+  "\\color":
+    prefix: "\\color"
+    body: '''
+      \\color [${1:...}]{${2:...}}
+      $3
+    '''
+  "\\column":
+    prefix: "\\column"
+    body: '''
+      \\column
+      $1
+    '''
+  "\\comment":
+    prefix: "\\comment"
+    body: '''
+      \\comment ${1:[${2:...}]}${3:[${4:...,...=...,...}]}{${5:...}}
+      $6
+    '''
+  "\\comparecolorgroup":
+    prefix: "\\comparecolorgroup"
+    body: '''
+      \\comparecolorgroup [${1:...}]
+      $2
+    '''
+  "\\comparepalet":
+    prefix: "\\comparepalet"
+    body: '''
+      \\comparepalet [${1:...}]
+      $2
+    '''
+  "\\convertnumber":
+    prefix: "\\convertnumber"
+    body: '''
+      \\convertnumber {${1:...}}{${2:...}}
+      $3
+    '''
+  "\\copyfield":
+    prefix: "\\copyfield"
+    body: '''
+      \\copyfield [${1:...}][${2:...,...,...}]
+      $3
+    '''
+  "\\correctwhitespace":
+    prefix: "\\correctwhitespace"
+    body: '''
+      \\correctwhitespace {${1:...}}
+      $2
+    '''
+  "\\coupledocument":
+    prefix: "\\coupledocument"
+    body: '''
+      \\coupledocument [${1:...}][${2:...}][${3:...}]
+      $4
+    '''
+  "\\couplemarking":
+    prefix: "\\couplemarking"
+    body: '''
+      \\couplemarking [${1:...}][${2:...}]
+      $3
+    '''
+  "\\couplepage":
+    prefix: "\\couplepage"
+    body: '''
+      \\couplepage [${1:...,...,...}][${2:...,...=...,...}]
+      $3
+    '''
+  "\\couplepaper":
+    prefix: "\\couplepaper"
+    body: '''
+      \\couplepaper [${1:...}]
+      
+    '''
+  "\\coupleregister":
+    prefix: "\\coupleregister"
+    body: '''
+      \\coupleregister [${1:...}]
+      $2
+    '''
+  "\\crlf":
+    prefix: "\\crlf"
+    body: '''
+      \\crlf
+      $1
+    '''
+  "\\currentdate":
+    prefix: "\\currentdate"
+    body: '''
+      \\currentdate [${1:...,...,...}]
+      $2
+    '''
+  "\\currentheadnumber":
+    prefix: "\\currentheadnumber"
+    body: '''
+      \\currentheadnumber
+      $1
+    '''
+  "\\date":
+    prefix: "\\date"
+    body: '''
+      \\date ${1:[${2:...,...=...,...}]}[${3:...,...,...}]
+      $4
+    '''
+  "\\decouplemarking":
+    prefix: "\\decouplemarking"
+    body: '''
+      \\decouplemarking [${1:...}]
+      $2
+    '''
+  "\\define":
+    prefix: "\\define"
+    body: '''
+      \\define ${1:[${2:...}]}\\${3:command}{${4:...}}
+      $5
+    '''
+  "\\defineblank":
+    prefix: "\\defineblank"
+    body: '''
+      \\defineblank [${1:...}][${2:...}]
+      $3
+    '''
+  "\\defineblock":
+    prefix: "\\defineblock"
+    body: '''
+      \\defineblock [${1:...}]
+      $2
+    '''
+  "\\definebodyfont":
+    prefix: "\\definebodyfont"
+    body: '''
+      \\definebodyfont [${1:...,...,...}][${2:...}][${3:...,...=...,...}]
+      $4
+    '''
+  "\\definebodyfontenvironment":
+    prefix: "\\definebodyfontenvironment"
+    body: '''
+      \\definebodyfontenvironment [${1:...}][${2:...,...=...,...}]
+      $3
+    '''
+  "\\definebuffer":
+    prefix: "\\definebuffer"
+    body: '''
+      \\definebuffer [${1:...}]
+      $2
+    '''
+  "\\definecolor":
+    prefix: "\\definecolor"
+    body: '''
+      \\definecolor [${1:...}][${2:...,...=...,...}]
+      $3
+    '''
+  "\\definecolorgroup":
+    prefix: "\\definecolorgroup"
+    body: '''
+      \\definecolorgroup [${1:...}]${2:[${3:...}]}[${4:x:y:z=...}]
+      $5
+    '''
+  "\\definecombinedlist":
+    prefix: "\\definecombinedlist"
+    body: '''
+      \\definecombinedlist [${1:...}][${2:...,...,...}]${3:[${4:...,...=...,...}]}
+      $5
+    '''
+  "\\defineconversion":
+    prefix: "\\defineconversion"
+    body: '''
+      \\defineconversion [${1:...}][${2:...}]
+      $3
+    '''
+  "\\definedescription":
+    prefix: "\\definedescription"
+    body: '''
+      \\definedescription [${1:...}]${2:[${3:...,...=...,...}]}
+      $4
+    '''
+  "\\defineenumeration":
+    prefix: "\\defineenumeration"
+    body: '''
+      \\defineenumeration [${1:...,...,...}]${2:[${3:...}]}${4:[${5:...,...=...,...}]}
+      $6
+    '''
+  "\\definefield":
+    prefix: "\\definefield"
+    body: '''
+      \\definefield [${1:...}][${2:...}][${3:...}][${4:...,...,...}]${5:[${6:...}]}
+      $7
+    '''
+  "\\definefieldstack":
+    prefix: "\\definefieldstack"
+    body: '''
+      \\definefieldstack [${1:...}][${2:...,...,...}][${3:...,...=...,...}]
+      $4
+    '''
+  "\\definefiguresymbol":
+    prefix: "\\definefiguresymbol"
+    body: '''
+      \\definefiguresymbol [${1:...}][${2:...}]${3:[${4:...,...=...,...}]}
+      $5
+    '''
+  "\\definefloat":
+    prefix: "\\definefloat"
+    body: '''
+      \\definefloat [${1:...}][${2:...}]
+      $3
+    '''
+  "\\definefont":
+    prefix: "\\definefont"
+    body: '''
+      \\definefont [${1:...}][${2:...}]
+      $3
+    '''
+  "\\defineframed":
+    prefix: "\\defineframed"
+    body: '''
+      \\defineframed [${1:...}]${2:[${3:...,...=...,...}]}
+      $4
+    '''
+  "\\defineframedtext":
+    prefix: "\\defineframedtext"
+    body: '''
+      \\defineframedtext [${1:...}]${2:[${3:...,...=...,...}]}
+      $4
+    '''
+  "\\definehead":
+    prefix: "\\definehead"
+    body: '''
+      \\definehead [${1:...}][${2:...}]
+      $3
+    '''
+  "\\defineindenting":
+    prefix: "\\defineindenting"
+    body: '''
+      \\defineindenting [${1:...}][${2:...,...=...,...}]
+      $3
+    '''
+  "\\defineinteractionmenu":
+    prefix: "\\defineinteractionmenu"
+    body: '''
+      \\defineinteractionmenu [${1:...,...,...}]${2:[${3:...,...=...,...}]}
+      $4
+    '''
+  "\\definelabel":
+    prefix: "\\definelabel"
+    body: '''
+      \\definelabel [${1:...}][${2:...,...=...,...}]
+      $3
+    '''
+  "\\definelist":
+    prefix: "\\definelist"
+    body: '''
+      \\definelist [${1:...}]${2:[${3:...}]}${4:[${5:...,...=...,...}]}
+      $6
+    '''
+  "\\definelogo":
+    prefix: "\\definelogo"
+    body: '''
+      \\definelogo [${1:...}][${2:...}][${3:...}][${4:...,...=...,...}]
+      $5
+    '''
+  "\\definemakeup":
+    prefix: "\\definemakeup"
+    body: '''
+      \\definemakeup [${1:...}][${2:...,...=...,...}]
+      $3
+    '''
+  "\\definemarking":
+    prefix: "\\definemarking"
+    body: '''
+      \\definemarking [${1:...}]${2:[${3:...}]}
+      $4
+    '''
+  "\\defineoutput":
+    prefix: "\\defineoutput"
+    body: '''
+      \\defineoutput [${1:...}][${2:...,...,...}]
+      $3
+    '''
+  "\\defineoverlay":
+    prefix: "\\defineoverlay"
+    body: '''
+      \\defineoverlay [${1:...,...,...}][${2:...}]
+      $3
+    '''
+  "\\definepalet":
+    prefix: "\\definepalet"
+    body: '''
+      \\definepalet [${1:...}][${2:...,...=...,...}]
+      $3
+    '''
+  "\\definepapersize":
+    prefix: "\\definepapersize"
+    body: '''
+      \\definepapersize [${1:...}][${2:...,...=...,...}]
+      $3
+    '''
+  "\\defineparagraphs":
+    prefix: "\\defineparagraphs"
+    body: '''
+      \\defineparagraphs [${1:...}][${2:...,...=...,...}]
+      $3
+    '''
+  "\\defineprofile":
+    prefix: "\\defineprofile"
+    body: '''
+      \\defineprofile [${1:...,...,...}][${2:...,...,...}]
+      $3
+    '''
+  "\\defineprogram":
+    prefix: "\\defineprogram"
+    body: '''
+      \\defineprogram [${1:...}][${2:...}][${3:...}]
+      $4
+    '''
+  "\\definerawfont":
+    prefix: "\\definerawfont"
+    body: '''
+      \\definerawfont [${1:...}]${2:[${3:...}]}${4:[${5:...,...=...,...}]}
+      $6
+    '''
+  "\\definereference":
+    prefix: "\\definereference"
+    body: '''
+      \\definereference [${1:...}][${2:ref,ref,..}]
+      $3
+    '''
+  "\\definereferenceformat":
+    prefix: "\\definereferenceformat"
+    body: '''
+      \\definereferenceformat [${1:...}][${2:...,...=...,...}]
+      $3
+    '''
+  "\\definereferencelist":
+    prefix: "\\definereferencelist"
+    body: '''
+      \\definereferencelist [${1:...}]${2:[${3:...,...=...,...}]}
+      $4
+    '''
+  "\\defineregister":
+    prefix: "\\defineregister"
+    body: '''
+      \\defineregister [${1:...}][${2:...}]
+      $3
+    '''
+  "\\definerule":
+    prefix: "\\definerule"
+    body: '''
+      \\definerule [${1:...}][${2:...,...=...,...}]
+      $3
+    '''
+  "\\definesection":
+    prefix: "\\definesection"
+    body: '''
+      \\definesection [${1:...}]
+      $2
+    '''
+  "\\definesectionblock":
+    prefix: "\\definesectionblock"
+    body: '''
+      \\definesectionblock [${1:...}]${2:[${3:...,...=...,...}]}
+      $4
+    '''
+  "\\definesorting":
+    prefix: "\\definesorting"
+    body: '''
+      \\definesorting [${1:...}][${2:...}]${3:[${4:...}]}
+      $5
+    '''
+  "\\definestartstop":
+    prefix: "\\definestartstop"
+    body: '''
+      \\definestartstop [${1:...}][${2:...,...=...,...}]
+      $3
+    '''
+  "\\definesubfield":
+    prefix: "\\definesubfield"
+    body: '''
+      \\definesubfield [${1:...}][${2:...}][${3:...,...,...}]
+      $4
+    '''
+  "\\definesymbol":
+    prefix: "\\definesymbol"
+    body: '''
+      \\definesymbol [${1:...}][${2:...}]
+      $3
+    '''
+  "\\definesynonyms":
+    prefix: "\\definesynonyms"
+    body: '''
+      \\definesynonyms [${1:...}][${2:...}][${3:...}]${4:[${5:...}]}
+      $6
+    '''
+  "\\definetabletemplate":
+    prefix: "\\definetabletemplate"
+    body: '''
+      \\definetabletemplate [${1:...}][${2:...}]${3:[${4:...}]}${5:[${6:...}]}
+      $7
+    '''
+  "\\definetabulate":
+    prefix: "\\definetabulate"
+    body: '''
+      \\definetabulate [${1:...}]${2:[${3:...}]}[${4:...}]
+      $5
+    '''
+  "\\definetext":
+    prefix: "\\definetext"
+    body: '''
+      \\definetext [${1:...}][${2:...}][${3:...}]${4:[${5:...}]}${6:[${7:...}]}
+      $8
+    '''
+  "\\definetextposition":
+    prefix: "\\definetextposition"
+    body: '''
+      \\definetextposition [${1:...}]${2:[${3:...,...=...,...}]}
+      $4
+    '''
+  "\\definetextvariable":
+    prefix: "\\definetextvariable"
+    body: '''
+      \\definetextvariable [${1:...}]${2:[${3:...}]}${4:[${5:...,...=...,...}]}
+      $6
+    '''
+  "\\definetype":
+    prefix: "\\definetype"
+    body: '''
+      \\definetype [${1:...}][${2:...,...=...,...}]
+      $3
+    '''
+  "\\definetyping":
+    prefix: "\\definetyping"
+    body: '''
+      \\definetyping [${1:...}][${2:...,...=...,...}]
+      $3
+    '''
+  "\\defineversion":
+    prefix: "\\defineversion"
+    body: '''
+      \\defineversion [${1:...}][${2:...,...,...}]
+      $3
+    '''
+  "\\determineheadnumber":
+    prefix: "\\determineheadnumber"
+    body: '''
+      \\determineheadnumber [${1:...}]
+      $2
+    '''
+  "\\determinelistcharacteristics":
+    prefix: "\\determinelistcharacteristics"
+    body: '''
+      \\determinelistcharacteristics [${1:...,...,...}]${2:[${3:...,...=...,...}]}
+      $4
+    '''
+  "\\disableinteractionmenu":
+    prefix: "\\disableinteractionmenu"
+    body: '''
+      \\disableinteractionmenu [${1:...}][${2:ref,ref,..}]
+      $3
+    '''
+  "\\donttest":
+    prefix: "\\donttest"
+    body: '''
+      \\donttest
+      $1
+    '''
+  "\\emptylines":
+    prefix: "\\emptylines"
+    body: '''
+      \\emptylines [${1:...}]
+      $2
+    '''
+  "\\externalfigure":
+    prefix: "\\externalfigure"
+    body: '''
+      \\externalfigure [${1:...}][${2:...,...=...,...}]
+      $3
+    '''
+  "\\field":
+    prefix: "\\field"
+    body: '''
+      \\field [${1:...}]
+      $2
+    '''
+  "\\fieldstack":
+    prefix: "\\fieldstack"
+    body: '''
+      \\fieldstack [${1:...}]${2:[${3:...,...,...}]}${4:[${5:...,...=...,...}]}
+      $6
+    '''
+  "\\fillinfield":
+    prefix: "\\fillinfield"
+    body: '''
+      \\fillinfield ${1:[${2:...}]}{${3:...}}
+      $4
+    '''
+  "\\fillinline":
+    prefix: "\\fillinline"
+    body: '''
+      \\fillinline ${1:[${2:...,...=...,...}]}  ${3:...}
+      $4
+    '''
+  "\\fillinrules":
+    prefix: "\\fillinrules"
+    body: '''
+      \\fillinrules ${1:[${2:...,...=...,...}]}{${3:...}}{${4:...}}
+      $5
+    '''
+  "\\fillintext":
+    prefix: "\\fillintext"
+    body: '''
+      \\fillintext ${1:[${2:...,...=...,...}]}{${3:...}}{${4:...}}
+      $5
+    '''
+  "\\fitfield":
+    prefix: "\\fitfield"
+    body: '''
+      \\fitfield [${1:...}]
+      $2
+    '''
+  "\\fixedspaces":
+    prefix: "\\fixedspaces"
+    body: '''
+      \\fixedspaces
+      $1
+    '''
+  "\\followprofile":
+    prefix: "\\followprofile"
+    body: '''
+      \\followprofile {${1:...}}[${2:...}]
+      $3
+    '''
+  "\\followprofileversion":
+    prefix: "\\followprofileversion"
+    body: '''
+      \\followprofileversion {${1:...}}[${2:...}][${3:...}]
+      $4
+    '''
+  "\\followversion":
+    prefix: "\\followversion"
+    body: '''
+      \\followversion {${1:...}}[${2:...}]
+      $3
+    '''
+  "\\footnote":
+    prefix: "\\footnote"
+    body: '''
+      \\footnote ${1:[${2:ref}]}{${3:...}}
+      $4
+    '''
+  "\\footnotetext":
+    prefix: "\\footnotetext"
+    body: '''
+      \\footnotetext ${1:[${2:ref}]}{${3:...}}
+      $4
+    '''
+  "\\forceblocks":
+    prefix: "\\forceblocks"
+    body: '''
+      \\forceblocks [${1:...,...,...}]${2:[${3:...,...,...}]}
+      $4
+    '''
+  "\\fraction":
+    prefix: "\\fraction"
+    body: '''
+      \\fraction {${1:...}}{${2:...}}
+      $3
+    '''
+  "\\framed":
+    prefix: "\\framed"
+    body: '''
+      \\framed ${1:[${2:...,...=...,...}]}{${3:...}}
+      $4
+    '''
+  "\\from":
+    prefix: "\\from"
+    body: '''
+      \\from [${1:ref}]
+      $2
+    '''
+  "\\getbuffer":
+    prefix: "\\getbuffer"
+    body: '''
+      \\getbuffer ${1:[${2:...}]}
+      $3
+    '''
+  "\\getmarking":
+    prefix: "\\getmarking"
+    body: '''
+      \\getmarking [${1:...}][${2:...}]
+      $3
+    '''
+  "\\godown":
+    prefix: "\\godown"
+    body: '''
+      \\godown [${1:...}]
+      $2
+    '''
+  "\\goto":
+    prefix: "\\goto"
+    body: '''
+      \\goto {${1:...}}{${2:...}}[${3:ref,ref,..}]
+      $4
+    '''
+  "\\gotobox":
+    prefix: "\\gotobox"
+    body: '''
+      \\gotobox {${1:...}}[${2:ref,ref,..}]
+      $3
+    '''
+  "\\graycolor":
+    prefix: "\\graycolor"
+    body: '''
+      \\graycolor [${1:...}]
+      $2
+    '''
+  "\\grid":
+    prefix: "\\grid"
+    body: '''
+      \\grid [${1:...,...=...,...}]
+      $2
+    '''
+  "\\hairline":
+    prefix: "\\hairline"
+    body: '''
+      \\hairline
+      $1
+    '''
+  "\\head":
+    prefix: "\\head"
+    body: '''
+      \\head ${1:[${2:ref,ref,..}]}
+      $3
+    '''
+  "\\headnumber":
+    prefix: "\\headnumber"
+    body: '''
+      \\headnumber ${1:[${2:...}]}
+      $3
+    '''
+  "\\headtext":
+    prefix: "\\headtext"
+    body: '''
+      \\headtext {${1:...}}
+      $2
+    '''
+  "\\hideblocks":
+    prefix: "\\hideblocks"
+    body: '''
+      \\hideblocks [${1:...,...,...}]${2:[${3:...,...,...}]}
+      $4
+    '''
+  "\\high":
+    prefix: "\\high"
+    body: '''
+      \\high {${1:...}}
+      $2
+    '''
+  "\\hl":
+    prefix: "\\hl"
+    body: '''
+      \\hl [${1:...}]
+      $2
+    '''
+  "\\in":
+    prefix: "\\in"
+    body: '''
+      \\in {${1:...}}{${2:...}}[${3:ref}]
+      $4
+    '''
+  "\\indenting":
+    prefix: "\\indenting"
+    body: '''
+      \\indenting [${1:...,...,...}]
+      $2
+    '''
+  "\\inframed":
+    prefix: "\\inframed"
+    body: '''
+      \\inframed ${1:[${2:...,...=...,...}]}{${3:...}}
+      $4
+    '''
+  "\\ininner":
+    prefix: "\\ininner"
+    body: '''
+      \\ininner ${1:[${2:...}]}${3:[${4:ref}]}{${5:...}}
+      $6
+    '''
+  "\\inleft":
+    prefix: "\\inleft"
+    body: '''
+      \\inleft ${1:[${2:...}]}${3:[${4:ref}]}{${5:...}}
+      $6
+    '''
+  "\\inline":
+    prefix: "\\inline"
+    body: '''
+      \\inline [${1:ref}]
+      $2
+    '''
+  "\\inmargin":
+    prefix: "\\inmargin"
+    body: '''
+      \\inmargin ${1:[${2:...}]}${3:[${4:ref}]}{${5:...}}
+      $6
+    '''
+  "\\inothermargin":
+    prefix: "\\inothermargin"
+    body: '''
+      \\inothermargin ${1:[${2:...}]}${3:[${4:ref}]}{${5:...}}
+      $6
+    '''
+  "\\inouter":
+    prefix: "\\inouter"
+    body: '''
+      \\inouter ${1:[${2:...}]}${3:[${4:ref}]}{${5:...}}
+      $6
+    '''
+  "\\inright":
+    prefix: "\\inright"
+    body: '''
+      \\inright ${1:[${2:...}]}${3:[${4:ref}]}{${5:...}}
+      $6
+    '''
+  "\\installlanguage":
+    prefix: "\\installlanguage"
+    body: '''
+      \\installlanguage [${1:...}][${2:...,...=...,...}]
+      $3
+    '''
+  "\\interactionbar":
+    prefix: "\\interactionbar"
+    body: '''
+      \\interactionbar [${1:...,...=...,...}]
+      $2
+    '''
+  "\\interactionbuttons":
+    prefix: "\\interactionbuttons"
+    body: '''
+      \\interactionbuttons ${1:[${2:...,...=...,...}]}[${3:...,...,...}]
+      $4
+    '''
+  "\\item":
+    prefix: "\\item"
+    body: '''
+      \\item ${1:[${2:ref,ref,..}]}
+      $3
+    '''
+  "\\items":
+    prefix: "\\items"
+    body: '''
+      \\items ${1:[${2:...,...=...,...}]}{${3:...,...,...}}
+      $4
+    '''
+  "\\its":
+    prefix: "\\its"
+    body: '''
+      \\its ${1:[${2:ref,ref,..}]}
+      $3
+    '''
+  "\\keepblocks":
+    prefix: "\\keepblocks"
+    body: '''
+      \\keepblocks [${1:...,...,...}]${2:[${3:...,...,...}]}
+      $4
+    '''
+  "\\labels":
+    prefix: "\\labels"
+    body: '''
+      \\labels [${1:...}]
+      $2
+    '''
+  "\\labeltext":
+    prefix: "\\labeltext"
+    body: '''
+      \\labeltext {${1:...}}
+      $2
+    '''
+  "\\language":
+    prefix: "\\language"
+    body: '''
+      \\language [${1:...}]
+      $2
+    '''
+  "\\leftaligned":
+    prefix: "\\leftaligned"
+    body: '''
+      \\leftaligned {${1:...}}
+      $2
+    '''
+  "\\listsymbol":
+    prefix: "\\listsymbol"
+    body: '''
+      \\listsymbol [${1:...}]{${2:...}}
+      $3
+    '''
+  "\\logfields":
+    prefix: "\\logfields"
+    body: '''
+      \\logfields
+      $1
+    '''
+  "\\lohi":
+    prefix: "\\lohi"
+    body: '''
+      \\lohi ${1:[${2:...}]}{${3:...}}{${4:...}}
+      $5
+    '''
+  "\\low":
+    prefix: "\\low"
+    body: '''
+      \\low {${1:...}}
+      $2
+    '''
+  "\\mainlanguage":
+    prefix: "\\mainlanguage"
+    body: '''
+      \\mainlanguage [${1:...}]
+      $2
+    '''
+  "\\mar":
+    prefix: "\\mar"
+    body: '''
+      \\mar ${1:[${2:ref,ref,..}]}{${3:...}}
+      $4
+    '''
+  "\\marginrule":
+    prefix: "\\marginrule"
+    body: '''
+      \\marginrule [${1:...}]{${2:...}}
+      $3
+    '''
+  "\\margintext":
+    prefix: "\\margintext"
+    body: '''
+      \\margintext ${1:[${2:...}]}${3:[${4:ref}]}{${5:...}}
+      $6
+    '''
+  "\\marking":
+    prefix: "\\marking"
+    body: '''
+      \\marking [${1:...}]{${2:...}}
+      $3
+    '''
+  "\\markversion":
+    prefix: "\\markversion"
+    body: '''
+      \\markversion
+      $1
+    '''
+  "\\mathematics":
+    prefix: "\\mathematics"
+    body: '''
+      \\mathematics {${1:...}}
+      $2
+    '''
+  "\\mediaeval":
+    prefix: "\\mediaeval"
+    body: '''
+      \\mediaeval {${1:...}}
+      $2
+    '''
+  "\\midaligned":
+    prefix: "\\midaligned"
+    body: '''
+      \\midaligned {${1:...}}
+      $2
+    '''
+  "\\mirror":
+    prefix: "\\mirror"
+    body: '''
+      \\mirror {${1:...}}
+      $2
+    '''
+  "\\month":
+    prefix: "\\month"
+    body: '''
+      \\month {${1:...}}
+      $2
+    '''
+  "\\moveongrid":
+    prefix: "\\moveongrid"
+    body: '''
+      \\moveongrid ${1:[${2:...,...,...}]}
+      $3
+    '''
+  "\\name":
+    prefix: "\\name"
+    body: '''
+      \\name {${1:...}}
+      $2
+    '''
+  "\\nocap":
+    prefix: "\\nocap"
+    body: '''
+      \\nocap {${1:...}}
+      $2
+    '''
+  "\\noheaderandfooterlines":
+    prefix: "\\noheaderandfooterlines"
+    body: '''
+      \\noheaderandfooterlines
+      $1
+    '''
+  "\\noindenting":
+    prefix: "\\noindenting"
+    body: '''
+      \\noindenting
+      $1
+    '''
+  "\\nolist":
+    prefix: "\\nolist"
+    body: '''
+      \\nolist {${1:...}}
+      $2
+    '''
+  "\\nomarking":
+    prefix: "\\nomarking"
+    body: '''
+      \\nomarking {${1:...}}
+      $2
+    '''
+  "\\nomoreblocks":
+    prefix: "\\nomoreblocks"
+    body: '''
+      \\nomoreblocks
+      $1
+    '''
+  "\\nomorefiles":
+    prefix: "\\nomorefiles"
+    body: '''
+      \\nomorefiles
+      $1
+    '''
+  "\\nop":
+    prefix: "\\nop"
+    body: '''
+      \\nop
+      $1
+    '''
+  "\\nospace":
+    prefix: "\\nospace"
+    body: '''
+      \\nospace
+      $1
+    '''
+  "\\note":
+    prefix: "\\note"
+    body: '''
+      \\note [${1:ref}]
+      $2
+    '''
+  "\\notopandbottomlines":
+    prefix: "\\notopandbottomlines"
+    body: '''
+      \\notopandbottomlines
+      $1
+    '''
+  "\\nowhitespace":
+    prefix: "\\nowhitespace"
+    body: '''
+      \\nowhitespace
+      $1
+    '''
+  "\\numbers":
+    prefix: "\\numbers"
+    body: '''
+      \\numbers {${1:...}}
+      $2
+    '''
+  "\\overbar":
+    prefix: "\\overbar"
+    body: '''
+      \\overbar {${1:...}}
+      $2
+    '''
+  "\\overbars":
+    prefix: "\\overbars"
+    body: '''
+      \\overbars {${1:... ...}}
+      $2
+    '''
+  "\\overstrike":
+    prefix: "\\overstrike"
+    body: '''
+      \\overstrike {${1:...}}
+      $2
+    '''
+  "\\overstrikes":
+    prefix: "\\overstrikes"
+    body: '''
+      \\overstrikes {${1:... ...}}
+      $2
+    '''
+  "\\packed":
+    prefix: "\\packed"
+    body: '''
+      \\packed
+      $1
+    '''
+  "\\page":
+    prefix: "\\page"
+    body: '''
+      \\page [${1:...,...,...}]
+      $2
+    '''
+  "\\pagereference":
+    prefix: "\\pagereference"
+    body: '''
+      \\pagereference [${1:ref}]
+      $2
+    '''
+  "\\pagetype":
+    prefix: "\\pagetype"
+    body: '''
+      \\pagetype [${1:...}]
+      $2
+    '''
+  "\\part":
+    prefix: "\\part"
+    body: '''
+      \\part ${1:[${2:ref,ref,..}]}{${3:...}}
+      $4
+    '''
+  "\\periods":
+    prefix: "\\periods"
+    body: '''
+      \\periods [${1:...}]
+      $2
+    '''
+  "\\placebookmarks":
+    prefix: "\\placebookmarks"
+    body: '''
+      \\placebookmarks ${1:[${2:...,...,...}]}${3:[${4:...,...,...}]}
+      $5
+    '''
+  "\\placecombinedlist":
+    prefix: "\\placecombinedlist"
+    body: '''
+      \\placecombinedlist [${1:...}]${2:[${3:...,...=...,...}]}
+      $4
+    '''
+  "\\placefootnotes":
+    prefix: "\\placefootnotes"
+    body: '''
+      \\placefootnotes ${1:[${2:...,...=...,...}]}
+      $3
+    '''
+  "\\placeformula":
+    prefix: "\\placeformula"
+    body: '''
+      \\placeformula ${1:[${2:ref,ref,..}]}{${3:...}}$$${4:...}$$
+      $5
+    '''
+  "\\placelegend":
+    prefix: "\\placelegend"
+    body: '''
+      \\placelegend {${1:...}}{${2:...}}
+      $3
+    '''
+  "\\placelist":
+    prefix: "\\placelist"
+    body: '''
+      \\placelist [${1:...,...,...}]${2:[${3:...,...=...,...}]}
+      $4
+    '''
+  "\\placelocalfootnotes":
+    prefix: "\\placelocalfootnotes"
+    body: '''
+      \\placelocalfootnotes ${1:[${2:...,...=...,...}]}
+      $3
+    '''
+  "\\placelogos":
+    prefix: "\\placelogos"
+    body: '''
+      \\placelogos ${1:[${2:...,...,...}]}
+      $3
+    '''
+  "\\placeongrid":
+    prefix: "\\placeongrid"
+    body: '''
+      \\placeongrid ${1:[${2:...}]}{${3:...}}
+      $4
+    '''
+  "\\placeontopofeachother":
+    prefix: "\\placeontopofeachother"
+    body: '''
+      \\placeontopofeachother {${1:...}}{${2:...}}
+      $3
+    '''
+  "\\placereferencelist":
+    prefix: "\\placereferencelist"
+    body: '''
+      \\placereferencelist [${1:...,...,...}]
+      $2
+    '''
+  "\\placeregister":
+    prefix: "\\placeregister"
+    body: '''
+      \\placeregister [${1:...}]${2:[${3:...,...=...,...}]}
+      $4
+    '''
+  "\\placerule":
+    prefix: "\\placerule"
+    body: '''
+      \\placerule [${1:...}]
+      $2
+    '''
+  "\\placesidebyside":
+    prefix: "\\placesidebyside"
+    body: '''
+      \\placesidebyside {${1:...}}{${2:...}}
+      $3
+    '''
+  "\\placesubformula":
+    prefix: "\\placesubformula"
+    body: '''
+      \\placesubformula ${1:[${2:ref,ref,..}]}{${3:...}}$$${4:...}$$
+      $5
+    '''
+  "\\placetextvariable":
+    prefix: "\\placetextvariable"
+    body: '''
+      \\placetextvariable [${1:...}]
+      $2
+    '''
+  "\\position":
+    prefix: "\\position"
+    body: '''
+      \\position (${1:...,...}){${2:...}}
+      $3
+    '''
+  "\\positiontext":
+    prefix: "\\positiontext"
+    body: '''
+      \\positiontext [${1:...}]{${2:...}}
+      $3
+    '''
+  "\\processblocks":
+    prefix: "\\processblocks"
+    body: '''
+      \\processblocks [${1:...,...,...}]${2:[${3:...,...,...}]}
+      $4
+    '''
+  "\\processpage":
+    prefix: "\\processpage"
+    body: '''
+      \\processpage [${1:...,...,...}][${2:...}]
+      $3
+    '''
+  "\\program":
+    prefix: "\\program"
+    body: '''
+      \\program [${1:...}]
+      $2
+    '''
+  "\\publication":
+    prefix: "\\publication"
+    body: '''
+      \\publication [${1:ref}]
+      $2
+    '''
+  "\\quotation":
+    prefix: "\\quotation"
+    body: '''
+      \\quotation {${1:...}}
+      $2
+    '''
+  "\\quote":
+    prefix: "\\quote"
+    body: '''
+      \\quote {${1:...}}
+      $2
+    '''
+  "\\ran":
+    prefix: "\\ran"
+    body: '''
+      \\ran {${1:...}}
+      $2
+    '''
+  "\\ref":
+    prefix: "\\ref"
+    body: '''
+      \\ref [${1:...}][${2:ref}]
+      $3
+    '''
+  "\\reference":
+    prefix: "\\reference"
+    body: '''
+      \\reference [${1:ref}]{${2:...}}
+      $3
+    '''
+  "\\referral":
+    prefix: "\\referral"
+    body: '''
+      \\referral [${1:...,...=...,...}]
+      $2
+    '''
+  "\\referraldate":
+    prefix: "\\referraldate"
+    body: '''
+      \\referraldate
+      $1
+    '''
+  "\\reset":
+    prefix: "\\reset"
+    body: '''
+      \\reset [${1:...,...,...}]
+      $2
+    '''
+  "\\resetmarking":
+    prefix: "\\resetmarking"
+    body: '''
+      \\resetmarking [${1:...}]
+      $2
+    '''
+  "\\resettextcontent":
+    prefix: "\\resettextcontent"
+    body: '''
+      \\resettextcontent [${1:...}][${2:...}]${3:[${4:...}]}
+      $5
+    '''
+  "\\rightaligned":
+    prefix: "\\rightaligned"
+    body: '''
+      \\rightaligned {${1:...}}
+      $2
+    '''
+  "\\romannumerals":
+    prefix: "\\romannumerals"
+    body: '''
+      \\romannumerals {${1:...}}
+      $2
+    '''
+  "\\rotate":
+    prefix: "\\rotate"
+    body: '''
+      \\rotate ${1:[${2:...,...=...,...}]}{${3:...}}
+      $4
+    '''
+  "\\scale":
+    prefix: "\\scale"
+    body: '''
+      \\scale ${1:[${2:...,...=...,...}]}{${3:...}}
+      $4
+    '''
+  "\\screen":
+    prefix: "\\screen"
+    body: '''
+      \\screen
+      $1
+    '''
+  "\\section":
+    prefix: "\\section"
+    body: '''
+      \\section ${1:[${2:ref,ref,..}]}{${3:...}}
+      $4
+    '''
+  "\\selectblocks":
+    prefix: "\\selectblocks"
+    body: '''
+      \\selectblocks [${1:...,...,...}]${2:[${3:...,...,...}]}${4:[${5:...=...}}
+      $6
+    '''
+  "\\selectpaper":
+    prefix: "\\selectpaper"
+    body: '''
+      \\selectpaper [${1:...,...=...,...}]
+      $2
+    '''
+  "\\selectversion":
+    prefix: "\\selectversion"
+    body: '''
+      \\selectversion
+      $1
+    '''
+  "\\settextcontent":
+    prefix: "\\settextcontent"
+    body: '''
+      \\settextcontent [${1:...}][${2:...}]${3:[${4:...}]}${5:[${6:...}]}${7:[${8:...}]}
+      $9
+    '''
+  "\\settextvariable":
+    prefix: "\\settextvariable"
+    body: '''
+      \\settextvariable [${1:...}][${2:...}]
+      $3
+    '''
+  "\\setupalign":
+    prefix: "\\setupalign"
+    body: '''
+      \\setupalign [${1:...}]
+      $2
+    '''
+  "\\setuparranging":
+    prefix: "\\setuparranging"
+    body: '''
+      \\setuparranging [${1:...,...,...}]
+      $2
+    '''
+  "\\setupbackground":
+    prefix: "\\setupbackground"
+    body: '''
+      \\setupbackground [${1:...,...=...,...}]
+      $2
+    '''
+  "\\setupbackgrounds":
+    prefix: "\\setupbackgrounds"
+    body: '''
+      \\setupbackgrounds ${1:[${2:...}]}${3:[${4:...,...,...}]}[${5:...,...=...,...}]
+      $6
+    '''
+  "\\setupblackrules":
+    prefix: "\\setupblackrules"
+    body: '''
+      \\setupblackrules [${1:...,...=...,...}]
+      $2
+    '''
+  "\\setupblank":
+    prefix: "\\setupblank"
+    body: '''
+      \\setupblank ${1:[${2:...}]}
+      $3
+    '''
+  "\\setupblock":
+    prefix: "\\setupblock"
+    body: '''
+      \\setupblock [${1:...,...,...}][${2:...,...=...,...}]
+      $3
+    '''
+  "\\setupbodyfont":
+    prefix: "\\setupbodyfont"
+    body: '''
+      \\setupbodyfont [${1:...,...,...}]
+      $2
+    '''
+  "\\setupbodyfontenvironment":
+    prefix: "\\setupbodyfontenvironment"
+    body: '''
+      \\setupbodyfontenvironment [${1:...}][${2:...,...=...,...}]
+      $3
+    '''
+  "\\setupbottom":
+    prefix: "\\setupbottom"
+    body: '''
+      \\setupbottom ${1:[${2:...}]}[${3:...,...=...,...}]
+      $4
+    '''
+  "\\setupbottomtexts":
+    prefix: "\\setupbottomtexts"
+    body: '''
+      \\setupbottomtexts ${1:[${2:...}]}[${3:...}][${4:...}]
+      $5
+    '''
+  "\\setupbuffer":
+    prefix: "\\setupbuffer"
+    body: '''
+      \\setupbuffer ${1:[${2:...}]}[${3:...,...=...,...}]
+      $4
+    '''
+  "\\setupbuttons":
+    prefix: "\\setupbuttons"
+    body: '''
+      \\setupbuttons [${1:...,...=...,...}]
+      $2
+    '''
+  "\\setupcapitals":
+    prefix: "\\setupcapitals"
+    body: '''
+      \\setupcapitals [${1:...,...=...,...}]
+      $2
+    '''
+  "\\setupcaption":
+    prefix: "\\setupcaption"
+    body: '''
+      \\setupcaption [${1:...}][${2:...,...=...,...}]
+      $3
+    '''
+  "\\setupcaptions":
+    prefix: "\\setupcaptions"
+    body: '''
+      \\setupcaptions [${1:...,...=...,...}]
+      $2
+    '''
+  "\\setupclipping":
+    prefix: "\\setupclipping"
+    body: '''
+      \\setupclipping [${1:...,...=...,...}]
+      $2
+    '''
+  "\\setupcolor":
+    prefix: "\\setupcolor"
+    body: '''
+      \\setupcolor [${1:...}]
+      $2
+    '''
+  "\\setupcolors":
+    prefix: "\\setupcolors"
+    body: '''
+      \\setupcolors [${1:...,...=...,...}]
+      $2
+    '''
+  "\\setupcolumns":
+    prefix: "\\setupcolumns"
+    body: '''
+      \\setupcolumns [${1:...,...=...,...}]
+      $2
+    '''
+  "\\setupcombinations":
+    prefix: "\\setupcombinations"
+    body: '''
+      \\setupcombinations [${1:...,...=...,...}]
+      $2
+    '''
+  "\\setupcombinedlist":
+    prefix: "\\setupcombinedlist"
+    body: '''
+      \\setupcombinedlist [${1:...}][${2:...,...=...,...}]
+      $3
+    '''
+  "\\setupcomment":
+    prefix: "\\setupcomment"
+    body: '''
+      \\setupcomment [${1:...,...=...,...}]
+      $2
+    '''
+  "\\setupdescriptions":
+    prefix: "\\setupdescriptions"
+    body: '''
+      \\setupdescriptions ${1:[${2:...,...,...}]}[${3:...,...=...,...}]
+      $4
+    '''
+  "\\setupenumerations":
+    prefix: "\\setupenumerations"
+    body: '''
+      \\setupenumerations ${1:[${2:...,...,...}]}[${3:...,...=...,...}]
+      $4
+    '''
+  "\\setupexternalfigures":
+    prefix: "\\setupexternalfigures"
+    body: '''
+      \\setupexternalfigures [${1:...=...}
+      $2
+    '''
+  "\\setupfield":
+    prefix: "\\setupfield"
+    body: '''
+      \\setupfield [${1:...}][${2:...,...,...}][${3:...,...=...,...}][${4:...,...=...,...}][${5:...,...=...,...}]
+      $6
+    '''
+  "\\setupfields":
+    prefix: "\\setupfields"
+    body: '''
+      \\setupfields [${1:...,...,...}][${2:...}][${3:...,...=...,...}][${4:...,...=...,...}][${5:...,...=...,...}]
+      $6
+    '''
+  "\\setupfillinlines":
+    prefix: "\\setupfillinlines"
+    body: '''
+      \\setupfillinlines [${1:...,...=...,...}]
+      $2
+    '''
+  "\\setupfillinrules":
+    prefix: "\\setupfillinrules"
+    body: '''
+      \\setupfillinrules [${1:...,...=...,...}]
+      $2
+    '''
+  "\\setupfloat":
+    prefix: "\\setupfloat"
+    body: '''
+      \\setupfloat [${1:...}][${2:...,...=...,...}]
+      $3
+    '''
+  "\\setupfloats":
+    prefix: "\\setupfloats"
+    body: '''
+      \\setupfloats [${1:...,...=...,...}]
+      $2
+    '''
+  "\\setupfloatsplitting":
+    prefix: "\\setupfloatsplitting"
+    body: '''
+      \\setupfloatsplitting [${1:...,...=...,...}]
+      $2
+    '''
+  "\\setupfooter":
+    prefix: "\\setupfooter"
+    body: '''
+      \\setupfooter ${1:[${2:...}]}[${3:...,...=...,...}]
+      $4
+    '''
+  "\\setupfootertexts":
+    prefix: "\\setupfootertexts"
+    body: '''
+      \\setupfootertexts ${1:[${2:...}]}[${3:...}][${4:...}]
+      $5
+    '''
+  "\\setupfootnotedefinition":
+    prefix: "\\setupfootnotedefinition"
+    body: '''
+      \\setupfootnotedefinition [${1:...,...=...,...}]
+      $2
+    '''
+  "\\setupfootnotes":
+    prefix: "\\setupfootnotes"
+    body: '''
+      \\setupfootnotes [${1:...,...=...,...}]
+      $2
+    '''
+  "\\setupforms":
+    prefix: "\\setupforms"
+    body: '''
+      \\setupforms [${1:...,...=...,...}]
+      $2
+    '''
+  "\\setupformulae":
+    prefix: "\\setupformulae"
+    body: '''
+      \\setupformulae [${1:...,...=...,...}]
+      $2
+    '''
+  "\\setupframed":
+    prefix: "\\setupframed"
+    body: '''
+      \\setupframed [${1:...,...=...,...}]
+      $2
+    '''
+  "\\setupframedtexts":
+    prefix: "\\setupframedtexts"
+    body: '''
+      \\setupframedtexts [${1:...,...=...,...}]
+      $2
+    '''
+  "\\setuphead":
+    prefix: "\\setuphead"
+    body: '''
+      \\setuphead [${1:...,...,...}][${2:...,...=...,...}]
+      $3
+    '''
+  "\\setupheader":
+    prefix: "\\setupheader"
+    body: '''
+      \\setupheader ${1:[${2:...}]}[${3:...,...=...,...}]
+      $4
+    '''
+  "\\setupheadertexts":
+    prefix: "\\setupheadertexts"
+    body: '''
+      \\setupheadertexts ${1:[${2:...}]}[${3:...}][${4:...}]
+      $5
+    '''
+  "\\setupheadnumber":
+    prefix: "\\setupheadnumber"
+    body: '''
+      \\setupheadnumber [${1:...}][${2:...}]
+      $3
+    '''
+  "\\setupheads":
+    prefix: "\\setupheads"
+    body: '''
+      \\setupheads [${1:...,...=...,...}]
+      $2
+    '''
+  "\\setupheadtext":
+    prefix: "\\setupheadtext"
+    body: '''
+      \\setupheadtext ${1:[${2:...}]}[${3:...=...}
+      $4
+    '''
+  "\\setuphyphenmark":
+    prefix: "\\setuphyphenmark"
+    body: '''
+      \\setuphyphenmark [${1:...=...}
+      $2
+    '''
+  "\\setupindentations":
+    prefix: "\\setupindentations"
+    body: '''
+      \\setupindentations ${1:[${2:...,...,...}]}[${3:...,...=...,...}]
+      $4
+    '''
+  "\\setupindenting":
+    prefix: "\\setupindenting"
+    body: '''
+      \\setupindenting [${1:...,...,...}]
+      $2
+    '''
+  "\\setupinmargin":
+    prefix: "\\setupinmargin"
+    body: '''
+      \\setupinmargin ${1:[${2:...}]}[${3:...,...=...,...}]
+      $4
+    '''
+  "\\setupinteraction":
+    prefix: "\\setupinteraction"
+    body: '''
+      \\setupinteraction [${1:...,...=...,...}]
+      $2
+    '''
+  "\\setupinteractionbar":
+    prefix: "\\setupinteractionbar"
+    body: '''
+      \\setupinteractionbar [${1:...,...=...,...}]
+      $2
+    '''
+  "\\setupinteractionscreen":
+    prefix: "\\setupinteractionscreen"
+    body: '''
+      \\setupinteractionscreen [${1:...,...=...,...}]
+      $2
+    '''
+  "\\setupinterlinespace":
+    prefix: "\\setupinterlinespace"
+    body: '''
+      \\setupinterlinespace ${1:[${2:...}]}
+      $3
+    '''
+  "\\setupitemgroup":
+    prefix: "\\setupitemgroup"
+    body: '''
+      \\setupitemgroup [${1:...}]${2:[${3:...}]}${4:[${5:...,...,...}]}${6:[${7:...,...=...,...}]}
+      $8
+    '''
+  "\\setupitems":
+    prefix: "\\setupitems"
+    body: '''
+      \\setupitems [${1:...,...=...,...}]
+      $2
+    '''
+  "\\setuplabeltext":
+    prefix: "\\setuplabeltext"
+    body: '''
+      \\setuplabeltext ${1:[${2:...}]}[${3:...=...}
+      $4
+    '''
+  "\\setuplanguage":
+    prefix: "\\setuplanguage"
+    body: '''
+      \\setuplanguage [${1:...}][${2:...,...=...,...}]
+      $3
+    '''
+  "\\setuplayout":
+    prefix: "\\setuplayout"
+    body: '''
+      \\setuplayout [${1:...,...=...,...}]
+      $2
+    '''
+  "\\setuplegend":
+    prefix: "\\setuplegend"
+    body: '''
+      \\setuplegend [${1:...,...=...,...}]
+      $2
+    '''
+  "\\setuplinenumbering":
+    prefix: "\\setuplinenumbering"
+    body: '''
+      \\setuplinenumbering [${1:...,...=...,...}]
+      $2
+    '''
+  "\\setuplines":
+    prefix: "\\setuplines"
+    body: '''
+      \\setuplines [${1:...,...=...,...}]
+      $2
+    '''
+  "\\setuplinewidth":
+    prefix: "\\setuplinewidth"
+    body: '''
+      \\setuplinewidth [${1:...}]
+      $2
+    '''
+  "\\setuplist":
+    prefix: "\\setuplist"
+    body: '''
+      \\setuplist [${1:...,...,...}][${2:...,...=...,...}]
+      $3
+    '''
+  "\\setuplistalternative":
+    prefix: "\\setuplistalternative"
+    body: '''
+      \\setuplistalternative [${1:...}][${2:...,...=...,...}]
+      $3
+    '''
+  "\\setupmakeup":
+    prefix: "\\setupmakeup"
+    body: '''
+      \\setupmakeup [${1:...}][${2:...,...=...,...}]
+      $3
+    '''
+  "\\setupmarginblocks":
+    prefix: "\\setupmarginblocks"
+    body: '''
+      \\setupmarginblocks [${1:...,...=...,...}]
+      $2
+    '''
+  "\\setupmarginrules":
+    prefix: "\\setupmarginrules"
+    body: '''
+      \\setupmarginrules [${1:...=...}
+      $2
+    '''
+  "\\setupmarking":
+    prefix: "\\setupmarking"
+    body: '''
+      \\setupmarking [${1:...}][${2:...=...}
+      $3
+    '''
+  "\\setupnarrower":
+    prefix: "\\setupnarrower"
+    body: '''
+      \\setupnarrower [${1:...,...=...,...}]
+      $2
+    '''
+  "\\setupnumbering":
+    prefix: "\\setupnumbering"
+    body: '''
+      \\setupnumbering [${1:...,...=...,...}]
+      $2
+    '''
+  "\\setupoppositeplacing":
+    prefix: "\\setupoppositeplacing"
+    body: '''
+      \\setupoppositeplacing [${1:...=...}
+      $2
+    '''
+  "\\setupoutput":
+    prefix: "\\setupoutput"
+    body: '''
+      \\setupoutput [${1:...,...,...}]
+      $2
+    '''
+  "\\setuppagenumber":
+    prefix: "\\setuppagenumber"
+    body: '''
+      \\setuppagenumber [${1:...,...=...,...}]
+      $2
+    '''
+  "\\setuppagenumbering":
+    prefix: "\\setuppagenumbering"
+    body: '''
+      \\setuppagenumbering [${1:...,...=...,...}]
+      $2
+    '''
+  "\\setuppagetransitions":
+    prefix: "\\setuppagetransitions"
+    body: '''
+      \\setuppagetransitions ${1:[${2:...,...,...}]}
+      $3
+    '''
+  "\\setuppalet":
+    prefix: "\\setuppalet"
+    body: '''
+      \\setuppalet [${1:...}]
+      $2
+    '''
+  "\\setuppaper":
+    prefix: "\\setuppaper"
+    body: '''
+      \\setuppaper [${1:...,...=...,...}]
+      $2
+    '''
+  "\\setuppapersize":
+    prefix: "\\setuppapersize"
+    body: '''
+      \\setuppapersize [${1:...,...,...}]${2:[${3:...,...,...}]}
+      $4
+    '''
+  "\\setupparagraphnumbering":
+    prefix: "\\setupparagraphnumbering"
+    body: '''
+      \\setupparagraphnumbering [${1:...,...=...,...}]
+      $2
+    '''
+  "\\setupparagraphs":
+    prefix: "\\setupparagraphs"
+    body: '''
+      \\setupparagraphs [${1:...}]${2:[${3:...}]}[${4:...,...=...,...}]
+      $5
+    '''
+  "\\setuppositioning":
+    prefix: "\\setuppositioning"
+    body: '''
+      \\setuppositioning [${1:...,...=...,...}]
+      $2
+    '''
+  "\\setupprofiles":
+    prefix: "\\setupprofiles"
+    body: '''
+      \\setupprofiles [${1:...,...=...,...}]
+      $2
+    '''
+  "\\setupprograms":
+    prefix: "\\setupprograms"
+    body: '''
+      \\setupprograms [${1:...,...=...,...}]
+      $2
+    '''
+  "\\setuppublications":
+    prefix: "\\setuppublications"
+    body: '''
+      \\setuppublications [${1:...,...=...,...}]
+      $2
+    '''
+  "\\setupquote":
+    prefix: "\\setupquote"
+    body: '''
+      \\setupquote [${1:...,...=...,...}]
+      $2
+    '''
+  "\\setupreferencelist":
+    prefix: "\\setupreferencelist"
+    body: '''
+      \\setupreferencelist [${1:...,...,...}][${2:...,...=...,...}]
+      $3
+    '''
+  "\\setupreferencing":
+    prefix: "\\setupreferencing"
+    body: '''
+      \\setupreferencing [${1:...,...=...,...}]
+      $2
+    '''
+  "\\setupregister":
+    prefix: "\\setupregister"
+    body: '''
+      \\setupregister [${1:...}]${2:[${3:...}]}[${4:...,...=...,...}]
+      $5
+    '''
+  "\\setuprotate":
+    prefix: "\\setuprotate"
+    body: '''
+      \\setuprotate [${1:...,...=...,...}]
+      $2
+    '''
+  "\\setuprule":
+    prefix: "\\setuprule"
+    body: '''
+      \\setuprule [${1:...}][${2:...,...=...,...}]
+      $3
+    '''
+  "\\setupscreens":
+    prefix: "\\setupscreens"
+    body: '''
+      \\setupscreens [${1:...,...=...,...}]
+      $2
+    '''
+  "\\setupsection":
+    prefix: "\\setupsection"
+    body: '''
+      \\setupsection [${1:...}]${2:[${3:...}]}[${4:...,...=...,...}]
+      $5
+    '''
+  "\\setupsectionblock":
+    prefix: "\\setupsectionblock"
+    body: '''
+      \\setupsectionblock [${1:...}][${2:...,...=...,...}]
+      $3
+    '''
+  "\\setupsorting":
+    prefix: "\\setupsorting"
+    body: '''
+      \\setupsorting [${1:...}][${2:...,...=...,...}]
+      $3
+    '''
+  "\\setupspacing":
+    prefix: "\\setupspacing"
+    body: '''
+      \\setupspacing [${1:...}]
+      $2
+    '''
+  "\\setupstrut":
+    prefix: "\\setupstrut"
+    body: '''
+      \\setupstrut [${1:...}]
+      $2
+    '''
+  "\\setupsubpagenumber":
+    prefix: "\\setupsubpagenumber"
+    body: '''
+      \\setupsubpagenumber [${1:...,...=...,...}]
+      $2
+    '''
+  "\\setupsymbolset":
+    prefix: "\\setupsymbolset"
+    body: '''
+      \\setupsymbolset [${1:...}]
+      $2
+    '''
+  "\\setupsynchronization":
+    prefix: "\\setupsynchronization"
+    body: '''
+      \\setupsynchronization [${1:...,...=...,...}]
+      $2
+    '''
+  "\\setupsynchronizationbar":
+    prefix: "\\setupsynchronizationbar"
+    body: '''
+      \\setupsynchronizationbar [${1:...,...=...,...}]
+      $2
+    '''
+  "\\setupsynonyms":
+    prefix: "\\setupsynonyms"
+    body: '''
+      \\setupsynonyms [${1:...}][${2:...,...=...,...}]
+      $3
+    '''
+  "\\setupsystem":
+    prefix: "\\setupsystem"
+    body: '''
+      \\setupsystem [${1:...,...=...,...}]
+      $2
+    '''
+  "\\setuptab":
+    prefix: "\\setuptab"
+    body: '''
+      \\setuptab [${1:...,...=...,...}]
+      $2
+    '''
+  "\\setuptables":
+    prefix: "\\setuptables"
+    body: '''
+      \\setuptables [${1:...,...=...,...}]
+      $2
+    '''
+  "\\setuptabulate":
+    prefix: "\\setuptabulate"
+    body: '''
+      \\setuptabulate ${1:[${2:...}]}[${3:...,...=...,...}]
+      $4
+    '''
+  "\\setuptext":
+    prefix: "\\setuptext"
+    body: '''
+      \\setuptext ${1:[${2:...}]}[${3:...,...=...,...}]
+      $4
+    '''
+  "\\setuptextposition":
+    prefix: "\\setuptextposition"
+    body: '''
+      \\setuptextposition [${1:...}][${2:...,...=...,...}]
+      $3
+    '''
+  "\\setuptextrules":
+    prefix: "\\setuptextrules"
+    body: '''
+      \\setuptextrules [${1:...,...=...,...}]
+      $2
+    '''
+  "\\setuptexttexts":
+    prefix: "\\setuptexttexts"
+    body: '''
+      \\setuptexttexts ${1:[${2:...}]}[${3:...}][${4:...}]
+      $5
+    '''
+  "\\setuptextvariable":
+    prefix: "\\setuptextvariable"
+    body: '''
+      \\setuptextvariable [${1:...}][${2:...,...=...,...}]
+      $3
+    '''
+  "\\setupthinrules":
+    prefix: "\\setupthinrules"
+    body: '''
+      \\setupthinrules [${1:...=...}
+      $2
+    '''
+  "\\setuptolerance":
+    prefix: "\\setuptolerance"
+    body: '''
+      \\setuptolerance [${1:...,...,...}]
+      $2
+    '''
+  "\\setuptop":
+    prefix: "\\setuptop"
+    body: '''
+      \\setuptop ${1:[${2:...}]}[${3:...,...=...,...}]
+      $4
+    '''
+  "\\setuptoptexts":
+    prefix: "\\setuptoptexts"
+    body: '''
+      \\setuptoptexts ${1:[${2:...}]}[${3:...}][${4:...}]
+      $5
+    '''
+  "\\setuptype":
+    prefix: "\\setuptype"
+    body: '''
+      \\setuptype [${1:...,...=...,...}]
+      $2
+    '''
+  "\\setuptyping":
+    prefix: "\\setuptyping"
+    body: '''
+      \\setuptyping ${1:[${2:...}]}[${3:...,...=...,...}]
+      $4
+    '''
+  "\\setupunderbar":
+    prefix: "\\setupunderbar"
+    body: '''
+      \\setupunderbar [${1:...,...=...,...}]
+      $2
+    '''
+  "\\setupurl":
+    prefix: "\\setupurl"
+    body: '''
+      \\setupurl [${1:...,...=...,...}]
+      $2
+    '''
+  "\\setupversions":
+    prefix: "\\setupversions"
+    body: '''
+      \\setupversions [${1:...,...=...,...}]
+      $2
+    '''
+  "\\setupwhitespace":
+    prefix: "\\setupwhitespace"
+    body: '''
+      \\setupwhitespace ${1:[${2:...}]}
+      $3
+    '''
+  "\\showbodyfont":
+    prefix: "\\showbodyfont"
+    body: '''
+      \\showbodyfont [${1:...,...,...}]
+      $2
+    '''
+  "\\showbodyfontenvironment":
+    prefix: "\\showbodyfontenvironment"
+    body: '''
+      \\showbodyfontenvironment [${1:...,...,...}]
+      $2
+    '''
+  "\\showcolor":
+    prefix: "\\showcolor"
+    body: '''
+      \\showcolor [${1:...}]
+      $2
+    '''
+  "\\showcolorgroup":
+    prefix: "\\showcolorgroup"
+    body: '''
+      \\showcolorgroup [${1:...}][${2:...,...,...}]
+      $3
+    '''
+  "\\showexternalfigures":
+    prefix: "\\showexternalfigures"
+    body: '''
+      \\showexternalfigures ${1:[${2:...,...=...,...}]}
+      $3
+    '''
+  "\\showfields":
+    prefix: "\\showfields"
+    body: '''
+      \\showfields ${1:[${2:...,...,...}]}
+      $3
+    '''
+  "\\showframe":
+    prefix: "\\showframe"
+    body: '''
+      \\showframe ${1:[${2:...}]}
+      $3
+    '''
+  "\\showgrid":
+    prefix: "\\showgrid"
+    body: '''
+      \\showgrid ${1:[${2:...,...,...}]}{${3:...}}
+      $4
+    '''
+  "\\showlayout":
+    prefix: "\\showlayout"
+    body: '''
+      \\showlayout
+      $1
+    '''
+  "\\showmakeup":
+    prefix: "\\showmakeup"
+    body: '''
+      \\showmakeup
+      $1
+    '''
+  "\\showpalet":
+    prefix: "\\showpalet"
+    body: '''
+      \\showpalet [${1:...}][${2:...,...,...}]
+      $3
+    '''
+  "\\showprint":
+    prefix: "\\showprint"
+    body: '''
+      \\showprint [${1:...,...,...}][${2:...,...,...}][${3:...,...=...,...}]
+      $4
+    '''
+  "\\showsetups":
+    prefix: "\\showsetups"
+    body: '''
+      \\showsetups
+      $1
+    '''
+  "\\showstruts":
+    prefix: "\\showstruts"
+    body: '''
+      \\showstruts
+      $1
+    '''
+  "\\showsymbolset":
+    prefix: "\\showsymbolset"
+    body: '''
+      \\showsymbolset [${1:...}]
+      $2
+    '''
+  "\\someline":
+    prefix: "\\someline"
+    body: '''
+      \\someline [${1:ref}]
+      $2
+    '''
+  "\\somewhere":
+    prefix: "\\somewhere"
+    body: '''
+      \\somewhere {${1:...}}{${2:...}}[${3:ref}]
+      $4
+    '''
+  "\\space":
+    prefix: "\\space"
+    body: '''
+      \\space
+      $1
+    '''
+  "\\splitfloat":
+    prefix: "\\splitfloat"
+    body: '''
+      \\splitfloat ${1:[${2:...,...=...,...}]}{${3:...}}{${4:...}}
+      $5
+    '''
+  "\\startalignment":
+    prefix: "\\startalignment"
+    body: '''
+      \\startalignment ${1:[${2:...}]}
+      $3
+      \\stopalignment
+    '''
+  "\\startbackground":
+    prefix: "\\startbackground"
+    body: '''
+      \\startbackground
+      $1
+      \\stopbackground
+    '''
+  "\\startcolor":
+    prefix: "\\startcolor"
+    body: '''
+      \\startcolor [${1:...}]
+      $2
+      \\stopcolor
+    '''
+  "\\startcolumns":
+    prefix: "\\startcolumns"
+    body: '''
+      \\startcolumns ${1:[${2:...,...=...,...}]}
+      $3
+      \\stopcolumns
+    '''
+  "\\startcombination":
+    prefix: "\\startcombination"
+    body: '''
+      \\startcombination [${1:...}]
+      $2
+      \\stopcombination
+    '''
+  "\\startcomment":
+    prefix: "\\startcomment"
+    body: '''
+      \\startcomment ${1:[${2:...}]}${3:[${4:...,...=...,...}]}
+      $5
+      \\stopcomment
+    '''
+  "\\startcomponent":
+    prefix: "\\startcomponent"
+    body: '''
+      \\startcomponent ${1:<filename>}
+      $2
+      \\stopcomponent
+    '''
+  "\\startdocument":
+    prefix: "\\startdocument"
+    body: '''
+      \\startdocument [${1:...}]
+      $2
+      \\stopdocument
+    '''
+  "\\startenvironment":
+    prefix: "\\startenvironment"
+    body: '''
+      \\startenvironment ${1:<filename>}
+      $2
+      \\stopenvironment
+    '''
+  "\\startfact":
+    prefix: "\\startfact"
+    body: '''
+      \\startfact \\fact  ${2:...} \\\\ ${3:...} \\\\ ${4:...}\\\\\\fact
+      $6
+      \\stopfact
+    '''
+  "\\startfigure":
+    prefix: "\\startfigure"
+    body: '''
+      \\startfigure [${1:...}][${2:...}][${3:...,...=...,...}]
+      $4
+      \\stopfigure
+    '''
+  "\\starthiding":
+    prefix: "\\starthiding"
+    body: '''
+      \\starthiding
+      $1
+      \\stophiding
+    '''
+  "\\startinteractionmenu":
+    prefix: "\\startinteractionmenu"
+    body: '''
+      \\startinteractionmenu [${1:...}]
+      $2
+      \\stopinteractionmenu
+    '''
+  "\\startitemize ... \\stopitemize":
+    prefix: "itm"
+    body: '''
+      \\\\startitemize
+      \\\\item $0
+      \\\\stopitemize
+      
+    '''
+  "\\startlegend":
+    prefix: "\\startlegend"
+    body: '''
+      \\startlegend ${1:[${2:...}]}\\leg  ${4:...} \\\\ ${5:...} \\\\ ${6:...}\\\\\\leg
+      $8
+      \\stoplegend
+    '''
+  "\\startline":
+    prefix: "\\startline"
+    body: '''
+      \\startline [${1:ref}]
+      $2
+      \\stopline
+    '''
+  "\\startlinecorrection":
+    prefix: "\\startlinecorrection"
+    body: '''
+      \\startlinecorrection
+      $1
+      \\stoplinecorrection
+    '''
+  "\\startlinenumbering":
+    prefix: "\\startlinenumbering"
+    body: '''
+      \\startlinenumbering [${1:...}]
+      $2
+      \\stoplinenumbering
+    '''
+  "\\startlines":
+    prefix: "\\startlines"
+    body: '''
+      \\startlines
+      $1
+      \\stoplines
+    '''
+  "\\startlocal":
+    prefix: "\\startlocal"
+    body: '''
+      \\startlocal
+      $1
+      \\stoplocal
+    '''
+  "\\startlocalenvironment":
+    prefix: "\\startlocalenvironment"
+    body: '''
+      \\startlocalenvironment
+      $1
+      \\stoplocalenvironment
+    '''
+  "\\startlocalfootnotes":
+    prefix: "\\startlocalfootnotes"
+    body: '''
+      \\startlocalfootnotes
+      $1
+      \\stoplocalfootnotes
+    '''
+  "\\startmakeup":
+    prefix: "\\startmakeup"
+    body: '''
+      \\startmakeup [${1:...}]${2:[${3:...,...=...,...}]}
+      $4
+      \\stopmakeup
+    '''
+  "\\startmarginblock":
+    prefix: "\\startmarginblock"
+    body: '''
+      \\startmarginblock
+      $1
+      \\stopmarginblock
+    '''
+  "\\startmarginrule":
+    prefix: "\\startmarginrule"
+    body: '''
+      \\startmarginrule [${1:...}]
+      $2
+      \\stopmarginrule
+    '''
+  "\\startnarrower":
+    prefix: "\\startnarrower"
+    body: '''
+      \\startnarrower ${1:[${2:...,...,...}]}
+      $3
+      \\stopnarrower
+    '''
+  "\\startopposite":
+    prefix: "\\startopposite"
+    body: '''
+      \\startopposite
+      $1
+      \\stopopposite
+    '''
+  "\\startoverlay":
+    prefix: "\\startoverlay"
+    body: '''
+      \\startoverlay {${1:...}}{${2:...}}
+      $3
+      \\stopoverlay
+    '''
+  "\\startoverview":
+    prefix: "\\startoverview"
+    body: '''
+      \\startoverview [${1:...,...,...}]
+      $2
+      \\stopoverview
+    '''
+  "\\startpacked":
+    prefix: "\\startpacked"
+    body: '''
+      \\startpacked ${1:[${2:...}]}
+      $3
+      \\stoppacked
+    '''
+  "\\startpositioning":
+    prefix: "\\startpositioning"
+    body: '''
+      \\startpositioning
+      $1
+      \\stoppositioning
+    '''
+  "\\startpostponing":
+    prefix: "\\startpostponing"
+    body: '''
+      \\startpostponing
+      $1
+      \\stoppostponing
+    '''
+  "\\startproduct":
+    prefix: "\\startproduct"
+    body: '''
+      \\startproduct ${1:<filename>}
+      $2
+      \\stopproduct
+    '''
+  "\\startprofile":
+    prefix: "\\startprofile"
+    body: '''
+      \\startprofile [${1:...,...,...}]
+      $2
+      \\stopprofile
+    '''
+  "\\startproject":
+    prefix: "\\startproject"
+    body: '''
+      \\startproject ${1:<filename>}
+      $2
+      \\stopproject
+    '''
+  "\\startquotation":
+    prefix: "\\startquotation"
+    body: '''
+      \\startquotation [${1:...,...,...}]
+      $2
+      \\stopquotation
+    '''
+  "\\startsymbolset":
+    prefix: "\\startsymbolset"
+    body: '''
+      \\startsymbolset [${1:...}]
+      $2
+      \\stopsymbolset
+    '''
+  "\\startsynchronization":
+    prefix: "\\startsynchronization"
+    body: '''
+      \\startsynchronization
+      $1
+      \\stopsynchronization
+    '''
+  "\\starttable":
+    prefix: "\\starttable"
+    body: '''
+      \\starttable [${1:...}]
+      $2
+      \\stoptable
+    '''
+  "\\starttables":
+    prefix: "\\starttables"
+    body: '''
+      \\starttables [${1:...}]
+      $2
+      \\stoptables
+    '''
+  "\\starttextrule":
+    prefix: "\\starttextrule"
+    body: '''
+      \\starttextrule ${1:[${2:...}]}{${3:...}}
+      $4
+      \\stoptextrule
+    '''
+  "\\startunpacked":
+    prefix: "\\startunpacked"
+    body: '''
+      \\startunpacked
+      $1
+      \\stopunpacked
+    '''
+  "\\startversion":
+    prefix: "\\startversion"
+    body: '''
+      \\startversion [${1:...,...,...}]
+      $2
+      \\stopversion
+    '''
+  "\\stretched":
+    prefix: "\\stretched"
+    body: '''
+      \\stretched {${1:... ...}}
+      $2
+    '''
+  "\\sub":
+    prefix: "\\sub"
+    body: '''
+      \\sub ${1:[${2:ref,ref,..}]}
+      $3
+    '''
+  "\\subject":
+    prefix: "\\subject"
+    body: '''
+      \\subject ${1:[${2:ref,ref,..}]}{${3:...}}
+      $4
+    '''
+  "\\subsection":
+    prefix: "\\subsection"
+    body: '''
+      \\subsection ${1:[${2:ref,ref,..}]}{${3:...}}
+      $4
+    '''
+  "\\subsubject":
+    prefix: "\\subsubject"
+    body: '''
+      \\subsubject ${1:[${2:ref,ref,..}]}{${3:...}}
+      $4
+    '''
+  "\\subsubsection":
+    prefix: "\\subsubsection"
+    body: '''
+      \\subsubsection ${1:[${2:ref,ref,..}]}{${3:...}}
+      $4
+    '''
+  "\\subsubsubject":
+    prefix: "\\subsubsubject"
+    body: '''
+      \\subsubsubject ${1:[${2:ref,ref,..}]}{${3:...}}
+      $4
+    '''
+  "\\switchtobodyfont":
+    prefix: "\\switchtobodyfont"
+    body: '''
+      \\switchtobodyfont [${1:...,...,...}]
+      $2
+    '''
+  "\\switchtorawfont":
+    prefix: "\\switchtorawfont"
+    body: '''
+      \\switchtorawfont [${1:...}]
+      $2
+    '''
+  "\\sym":
+    prefix: "\\sym"
+    body: '''
+      \\sym {${1:...}}
+      $2
+    '''
+  "\\symbol":
+    prefix: "\\symbol"
+    body: '''
+      \\symbol ${1:[${2:...}]}[${3:...}]
+      $4
+    '''
+  "\\synchronizationbar":
+    prefix: "\\synchronizationbar"
+    body: '''
+      \\synchronizationbar [${1:...}][${2:...,...=...,...}]
+      $3
+    '''
+  "\\synchronize":
+    prefix: "\\synchronize"
+    body: '''
+      \\synchronize
+      $1
+    '''
+  "\\tab":
+    prefix: "\\tab"
+    body: '''
+      \\tab {${1:...}}  ${2:...}
+      $3
+    '''
+  "\\tex":
+    prefix: "\\tex"
+    body: '''
+      \\tex {${1:...}}
+      $2
+    '''
+  "\\textreference":
+    prefix: "\\textreference"
+    body: '''
+      \\textreference [${1:ref}]{${2:...}}
+      $3
+    '''
+  "\\textrule":
+    prefix: "\\textrule"
+    body: '''
+      \\textrule ${1:[${2:...}]}{${3:...}}
+      $4
+    '''
+  "\\textvariable":
+    prefix: "\\textvariable"
+    body: '''
+      \\textvariable [${1:...}]
+      $2
+    '''
+  "\\thinrule":
+    prefix: "\\thinrule"
+    body: '''
+      \\thinrule
+      $1
+    '''
+  "\\thinrules":
+    prefix: "\\thinrules"
+    body: '''
+      \\thinrules ${1:[${2:...=...}}
+      $3
+    '''
+  "\\title":
+    prefix: "\\title"
+    body: '''
+      \\title ${1:[${2:ref,ref,..}]}{${3:...}}
+      $4
+    '''
+  "\\tooltip":
+    prefix: "\\tooltip"
+    body: '''
+      \\tooltip ${1:[${2:...}]}{${3:...}}{${4:...}}
+      $5
+    '''
+  "\\translate":
+    prefix: "\\translate"
+    body: '''
+      \\translate [${1:...,...=...,...}]
+      $2
+    '''
+  "\\typ":
+    prefix: "\\typ"
+    body: '''
+      \\typ {${1:...}}
+      $2
+    '''
+  "\\type":
+    prefix: "\\type"
+    body: '''
+      \\type {${1:...}}
+      $2
+    '''
+  "\\typebuffer":
+    prefix: "\\typebuffer"
+    body: '''
+      \\typebuffer [${1:...}]
+      $2
+    '''
+  "\\typefile":
+    prefix: "\\typefile"
+    body: '''
+      \\typefile ${1:[${2:...}]}{${3:...}}
+      $4
+    '''
+  "\\underbar":
+    prefix: "\\underbar"
+    body: '''
+      \\underbar {${1:...}}
+      $2
+    '''
+  "\\underbars":
+    prefix: "\\underbars"
+    body: '''
+      \\underbars {${1:... ...}}
+      $2
+    '''
+  "\\useURL":
+    prefix: "\\useURL"
+    body: '''
+      \\useURL [${1:...}][${2:...}][${3:...}][${4:...}]
+      $5
+    '''
+  "\\useblocks":
+    prefix: "\\useblocks"
+    body: '''
+      \\useblocks [${1:...,...,...}]${2:[${3:...,...,...}]}
+      $4
+    '''
+  "\\usecommands":
+    prefix: "\\usecommands"
+    body: '''
+      \\usecommands {${1:...}}
+      $2
+    '''
+  "\\usedirectory":
+    prefix: "\\usedirectory"
+    body: '''
+      \\usedirectory [${1:...,...,...}]
+      $2
+    '''
+  "\\useencoding":
+    prefix: "\\useencoding"
+    body: '''
+      \\useencoding [${1:...,...,...}]
+      $2
+    '''
+  "\\useexternaldocument":
+    prefix: "\\useexternaldocument"
+    body: '''
+      \\useexternaldocument [${1:...}][${2:...}][${3:...}]
+      $4
+    '''
+  "\\useexternalfigure":
+    prefix: "\\useexternalfigure"
+    body: '''
+      \\useexternalfigure ${1:[${2:...}]}[${3:...}]${4:[${5:...,...=...,...}]}
+      $6
+    '''
+  "\\useexternalfile":
+    prefix: "\\useexternalfile"
+    body: '''
+      \\useexternalfile [${1:...}][${2:...}][${3:...}][${4:...,...=...,...}]
+      $5
+    '''
+  "\\useexternalfiles":
+    prefix: "\\useexternalfiles"
+    body: '''
+      \\useexternalfiles [${1:...}][${2:...,...=...,...}]
+      $3
+    '''
+  "\\useexternalsoundtrack":
+    prefix: "\\useexternalsoundtrack"
+    body: '''
+      \\useexternalsoundtrack [${1:...}][${2:...}]
+      $3
+    '''
+  "\\usemodule":
+    prefix: "\\usemodule"
+    body: '''
+      \\usemodule [${1:...,...,...}]
+      $2
+    '''
+  "\\usereferences":
+    prefix: "\\usereferences"
+    body: '''
+      \\usereferences [${1:...,...,...}]
+      $2
+    '''
+  "\\usespecials":
+    prefix: "\\usespecials"
+    body: '''
+      \\usespecials [${1:...,...,...}]
+      $2
+    '''
+  "\\usesymbols":
+    prefix: "\\usesymbols"
+    body: '''
+      \\usesymbols [${1:...}]
+      $2
+    '''
+  "\\version":
+    prefix: "\\version"
+    body: '''
+      \\version [${1:...}]
+      $2
+    '''
+  "\\vl":
+    prefix: "\\vl"
+    body: '''
+      \\vl [${1:...}]
+      $2
+    '''
+  "\\weekday":
+    prefix: "\\weekday"
+    body: '''
+      \\weekday {${1:...}}
+      $2
+    '''
+  "\\whitespace":
+    prefix: "\\whitespace"
+    body: '''
+      \\whitespace
+      $1
+    '''
+  "\\wordright":
+    prefix: "\\wordright"
+    body: '''
+      \\wordright {${1:...}}
+      $2
+    '''
+  "\\writebetweenlist":
+    prefix: "\\writebetweenlist"
+    body: '''
+      \\writebetweenlist [${1:...}]{${2:...}}
+      $3
+    '''
+  "\\writetolist":
+    prefix: "\\writetolist"
+    body: '''
+      \\writetolist [${1:...}]{${2:...}}{${3:...}}
+      $4
+    '''
+  "\\writetoreferencelist":
+    prefix: "\\writetoreferencelist"
+    body: '''
+      \\writetoreferencelist [${1:...}]{${2:...}}{${3:...}}
+      $4
+    '''
+  "\\writetoregister":
+    prefix: "\\writetoregister"
+    body: '''
+      \\writetoregister [${1:...}]${2:[${3:...}]}{${4:...+...+...}}
+      $5
+    '''
+  Chapter:
+    prefix: "sec"
+    body: "\\chapter"
+  "\\start ... \\stop":
+    prefix: "env"
+    body: '''
+      \\start${1:text}
+      $0
+      \\stop${1/(\\w*)(.*\\n*)*/$1/}
+    '''
+  "Equation Align":
+    prefix: "eqal"
+    body: '''
+      \\\\placeformula
+      \\\\startformula\\\\startalign
+      	$0
+      \\\\stopalign\\\\stopformula
+      
+    '''
+  Equation:
+    prefix: "eq"
+    body: '''
+      \\\\placeformula
+      \\\\startformula
+      	$0
+      \\\\stopformula
+      
+    '''
+  Part:
+    prefix: "sec"
+    body: "\\part"
+  Section:
+    prefix: "sec"
+    body: "\\section"
+  Subject:
+    prefix: "sub"
+    body: "\\subject"
+  Subsection:
+    prefix: "sec"
+    body: "\\subsection"
+  Subsubject:
+    prefix: "sub"
+    body: "\\subsubject"
+  Subsubsection:
+    prefix: "sec"
+    body: "\\subsubsection"
+  Subsubsubject:
+    prefix: "sub"
+    body: "\\subsubsubject"
+  Title:
+    prefix: "sub"
+    body: "\\title"

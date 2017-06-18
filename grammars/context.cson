@@ -1,0 +1,199 @@
+fileTypes: [
+  "tex"
+]
+firstLineMatch: "^\\\\starttext"
+foldingStartMarker: "\\\\(start.*|b(TABLE|TD|TR))"
+foldingStopMarker: "\\\\(stop.*|e(TABLE|TD|TR))"
+name: "ConTeXt"
+patterns: [
+  {
+    match: "[\\(\\)]"
+    name: "keyword.operator.parentheses.context"
+  }
+  {
+    match: "[\\[\\]\\{\\}]"
+    name: "keyword.operator.braces.context"
+  }
+  {
+    begin: "\\$"
+    beginCaptures:
+      "0":
+        name: "punctuation.definition.string.begin.tex"
+    end: "\\$"
+    endCaptures:
+      "0":
+        name: "punctuation.definition.string.end.tex"
+    name: "string.other.math.tex"
+    patterns: [
+      {
+        match: "\\\\\\$"
+        name: "constant.character.escape.tex"
+      }
+      {
+        include: "text.tex.math"
+      }
+      {
+        include: "$self"
+      }
+    ]
+  }
+  {
+    captures:
+      "1":
+        name: "punctuation.definition.keyword.tex"
+    match: "(\\\\)[^a-zA-Z@]"
+    name: "constant.character.escape.tex"
+  }
+  {
+    captures:
+      "2":
+        name: "punctuation.definition.comment.tex"
+    match: "(%).*$\\n?"
+    name: "comment.line.percentage.tex"
+  }
+  {
+    begin: "(\\{\\\\it\\s+)"
+    captures:
+      "1":
+        name: "support.function.it.context"
+    comment: "stolen from LaTeX"
+    contentName: "markup.italic.context"
+    end: "(\\})"
+    name: "meta.it.context"
+    patterns: [
+      {
+        include: "text.tex.context"
+      }
+    ]
+  }
+  {
+    begin: "(\\{\\\\bf\\s+)"
+    captures:
+      "1":
+        name: "support.function.bf.context"
+    comment: '''
+      We put the keyword in a capture and name this capture, so that disabling spell checking for “keyword” won't be inherited by the argument to {\\bf...}.
+
+      Put specific matches for particular ConTeXt keyword.functions before the last two more general functions
+    '''
+    contentName: "markup.bold.context"
+    end: "(\\})"
+    name: "meta.bf.context"
+    patterns: [
+      {
+        include: "text.tex.context"
+      }
+    ]
+  }
+  {
+    begin: "(\\{\\\\bi\\s+)"
+    captures:
+      "1":
+        name: "support.function.bi.context"
+    comment: '''
+      We put the keyword in a capture and name this capture, so that disabling spell checking for “keyword” won't be inherited by the argument to {\\bi...}.
+
+      Put specific matches for particular ConTeXt keyword.functions before the last two more general functions
+    '''
+    contentName: "markup.bolditalic.context"
+    end: "(\\})"
+    name: "meta.bi.context"
+    patterns: [
+      {
+        include: "text.tex.context"
+      }
+    ]
+  }
+  {
+    captures:
+      "1":
+        name: "support.function.section.context"
+      "2":
+        name: "entity.name.section.context"
+    match: "(\\\\(?:part|title|chapter|(?:sub)*(?:section|subject)))\\s*(\\{.*?\\})"
+    name: "meta.function.section.context"
+  }
+  {
+    begin: "(\\\\start(unique|use|reusable)?MP)(code|inclusions|graphic)"
+    captures:
+      "0":
+        name: "support.function.document.context"
+    end: "(\\\\stop\\2MP)(\\3)"
+    name: "meta.scope.tex.metafun"
+    patterns: [
+      {
+        include: "source.metafun"
+      }
+    ]
+  }
+  {
+    begin: "(\\\\startlua)"
+    captures:
+      "0":
+        name: "support.function.document.context"
+    end: "(\\\\stoplua)"
+    name: "meta.scope.lua"
+    patterns: [
+      {
+        include: "source.lua"
+      }
+    ]
+  }
+  {
+    begin: "(\\\\ctxlua\\s*){"
+    captures:
+      "0":
+        name: "support.function.document.context"
+    end: "}"
+    name: "meta.scope.lua"
+    patterns: [
+      {
+        include: "source.lua"
+      }
+    ]
+  }
+  {
+    captures:
+      "0":
+        name: "support.function.document.context"
+    match: "\\\\starttext\\W"
+    name: "meta.context.starttext"
+  }
+  {
+    captures:
+      "0":
+        name: "support.function.document.context"
+    match: "\\\\stoptext\\W"
+    name: "meta.context.stoptext"
+  }
+  {
+    begin: "\\["
+    end: "\\]"
+    name: "meta.context.group.arguments"
+    patterns: [
+      {
+        include: "text.tex.context"
+      }
+    ]
+  }
+  {
+    begin: "(\\\\start)([a-zA-Z]+)"
+    captures:
+      "1":
+        name: "support.function.enviromnent.context"
+      "2":
+        name: "support.function.enviromnent.variable"
+    end: "(\\\\stop)(\\2)"
+    name: "meta.context.environment"
+    patterns: [
+      {
+        include: "text.tex.context"
+      }
+    ]
+  }
+  {
+    match: "(\\\\[A-Za-z]+)(?![a-zA-Z])"
+    name: "support.function.general.tex"
+  }
+]
+scopeName: "text.tex.context"

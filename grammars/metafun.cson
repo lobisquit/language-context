@@ -1,0 +1,140 @@
+name: "MetaFun"
+patterns: [
+  {
+    match: "%.*$"
+    name: "comment.line.percentage.metapost"
+  }
+  {
+    match: "\\b(for|upto|endfor)\\b"
+    name: "keyword.control.metapost"
+  }
+  {
+    match: "[\\(\\)]"
+    name: "keyword.operator.parentheses.metapost"
+  }
+  {
+    match: "[\\[\\]\\{\\}]"
+    name: "keyword.operator.braces.metapost"
+  }
+  {
+    match: "(\\b(and|or|not)\\b)"
+    name: "keyword.operator.logical.metapost"
+  }
+  {
+    match: "(\\b(sqrt|abs|round|floor|ceiling|sind|cosd|&|\\*\\*|\\*|/|\\+-\\+|\\+\\+|\\+|-)\\b)|(&|\\*\\*|\\*|/|\\+-\\+|\\+\\+|\\+|-)"
+    name: "keyword.operator.numeric.metapost"
+  }
+  {
+    match: "(\\b(known|unknown|dotprod|redpart|greenpart|bluepart|substring|null|of|show|to|defaultfont|intersectionpoint)\\b)"
+    name: "keyword.operator.other.metapost"
+  }
+  {
+    match: "(\\b(redpart|greenpart|bluepart)\\b)"
+    name: "keyword.operator.color.metapost"
+  }
+  {
+    match: "(\\b(unitvector|angle|xpart|ypart|subpath)\\b)"
+    name: "keyword.operator.pair.metapost"
+  }
+  {
+    match: "(\\b(scaled|transformed|shifted|(l|u)(l|r)corner|bbox)\\b)"
+    name: "keyword.operator.picture.metapost"
+  }
+  {
+    match: "(\\b(numeric|decimal|boolean|color|transform|path|pair|string|pen|picture|newinternal)\\b)"
+    name: "keyword.operator.declaration.metapost"
+  }
+  {
+    match: "\\b(true|false)\\b"
+    name: "constant.language.boolean.metapost"
+  }
+  {
+    match: "(?<![a-zA-Z_])(white|black|red|green|blue)\\b"
+    name: "constant.language.color.metapost"
+  }
+  {
+    match: "\\b(cycle|pencircle|scaled|dir|tension|curl|label|dotlabel|thelabel|lft|rt|top|bot|ulft|urt|llft|lrt|withcolor)\\b"
+    name: "keyword.other.drawing.metapost"
+  }
+  {
+    match: "\\b(draw|pickup|show|(un)?fill|buildcycle)\\b"
+    name: "entity.name.function.metapost"
+  }
+  {
+    match: "\\b(truecorners|bboxmargin|prologues|defaultscale|defaultfont|labeloffset|tracingonline|warningcheck|currentpicture|(full|half)circle|background|whatever)\\b"
+    name: "variable.language.metapost"
+  }
+  {
+    begin: "(btex|verbatimtex)"
+    captures:
+      "1":
+        name: "support.function.tex.metapost"
+    end: "(etex)"
+    name: "meta.scope.tex.metapost"
+    patterns: [
+      {
+        include: "source.tex"
+      }
+    ]
+  }
+  {
+    begin: "(def)\\s+(\\w+\\()([^)]*)(\\))"
+    captures:
+      "1":
+        name: "storage.definition.metapost"
+      "2":
+        name: "entity.name.function.metapost"
+      "3":
+        name: "declaration.parameter.metapost"
+      "4":
+        name: "entity.name.function.metapost"
+    end: "(enddef);"
+    name: "declaration.function.metapost"
+    patterns: [
+      {
+        include: "$self"
+      }
+    ]
+  }
+  {
+    begin: "(beginfig\\()(\\d*)(\\))"
+    captures:
+      "1":
+        name: "support.function.be.metapost"
+      "2":
+        name: "variable.parameter.metapost"
+      "3":
+        name: "support.function.be.metapost"
+    end: "(endfig)"
+    name: "meta.environment.fig.metapost"
+    patterns: [
+      {
+        include: "$self"
+      }
+    ]
+  }
+  {
+    match: "(?<![a-zA-Z_])(-|\\+)?\\s*[0-9]+(\\.[0-9]+)?"
+    name: "constant.numeric.metapost"
+  }
+  {
+    match: "(?<![a-zA-Z_])(cm|mm|in|pt|bp)\\b"
+    name: "keyword.other.unit.metapost"
+  }
+  {
+    match: "(--|\\.\\.)"
+    name: "meta.connector.metapost"
+  }
+  {
+    begin: "\""
+    end: "\""
+    name: "string.quoted.double.metapost"
+    patterns: [
+      {
+        match: "\\\\."
+        name: "constant.character.escaped.metapost"
+      }
+    ]
+  }
+]
+scopeName: "source.metafun"
