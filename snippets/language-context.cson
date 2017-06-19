@@ -1,305 +1,78 @@
 ".text.tex.context":
-  "\\Caps":
-    prefix: "\\Caps"
-    body: '''
-      \\Caps {${1:... ...}}
-      $2
-    '''
-  "\\Word":
-    prefix: "\\Word"
-    body: '''
-      \\Word {${1:... ...}}
-      $2
-    '''
-  "\\Words":
-    prefix: "\\Words"
-    body: '''
-      \\Words {${1:... ...}}
-      $2
-    '''
   "\\about":
-    prefix: "\\about"
-    body: '''
-      \\about {${1:...}}[${2:ref}]
-      $3
-    '''
+    comment: "Provides the complete title of a referenced block of text"
+    prefix: "about"
+    body: '''\\\\about{${1:...}}[${2:ref}]$3'''
   "\\adaptlayout":
-    prefix: "\\adaptlayout"
-    body: '''
-      \\adaptlayout ${1:[${2:...,...,...}]}[${3:...,...=...,...}]
-      $4
-    '''
-  "\\adding":
-    prefix: "\\adding"
-    body: '''
-      \\adding [${1:...}]
-      $2
-    '''
-  "\\appendix":
-    prefix: "\\appendix"
-    body: '''
-      \\appendix ${1:[${2:ref,ref,..}]}{${3:...}}
-      $4
-    '''
+    comment: "Adapt the layout of one page to fit more or less lines in it"
+    prefix: "adaptlayout"
+    body: '''\\\\adaptlayout[${2:page number(s)}][${3:height=...,lines number=+1, -1}]$4'''
   "\\arg":
-    prefix: "\\arg"
-    body: '''
-      \\arg {${1:...}}
-      $2
-    '''
+    omment: "Surround given text with braces"
+    prefix: "arg"
+    body: '''\\\\arg{${1:...}}$2'''
   "\\at":
-    prefix: "\\at"
-    body: '''
-      \\at {${1:...}}{${2:...}}[${3:ref}]
-      $4
-    '''
+    prefix: "at"
+    body: '''\\\\at${1:\\{${2:prefix}\\}}${3:\\{${4:suffix}\\}}[${6:ref}]$7'''
   "\\atpage":
-    prefix: "\\atpage"
-    body: '''
-      \\atpage [${1:ref}]
-      $2
-    '''
-  "\\b ... \\e":
-    prefix: "b"
-    body: '''
-      \\b${1:text}
-      $0
-      \\e${1/(\\w*)(.*\\n*)*/$1/}
-    '''
-  "\\background":
-    prefix: "\\background"
-    body: '''
-      \\background
-      $1
-    '''
-  "\\blackrule":
-    prefix: "\\blackrule"
-    body: '''
-      \\blackrule ${1:[${2:...,...=...,...}]}
-      $3
-    '''
-  "\\blackrules":
-    prefix: "\\blackrules"
-    body: '''
-      \\blackrules [${1:...,...=...,...}]
-      $2
-    '''
+    comment: "Reference label page"
+    prefix: "atpage"
+    body: '''\\\\atpage[${1:ref}]$2'''
   "\\blank":
-    prefix: "\\blank"
-    body: '''
-      \\blank ${1:[${2:...,...,...}]}
-      $3
-    '''
-  "\\bookmark":
-    prefix: "\\bookmark"
-    body: '''
-      \\bookmark ${1:[${2:...}]}{${3:...}}
-      $4
-    '''
-  "\\but":
-    prefix: "\\but"
-    body: '''
-      \\but [${1:ref}]
-      $2
-    '''
-  "\\button":
-    prefix: "\\button"
-    body: '''
-      \\button ${1:[${2:...,...=...,...}]}{${3:...}}[${4:ref,ref,..}]
-      $5
-    '''
-  "\\bypassblocks":
-    prefix: "\\bypassblocks"
-    body: '''
-      \\bypassblocks [${1:...,...,...}]${2:[${3:...,...,...}]}
-      $4
-    '''
+    comment: "Insert vertical blank space"
+    prefix: "blank"
+    body: '''\\\\blank[${1:big}]$2'''
   "\\cap":
-    prefix: "\\cap"
-    body: '''
-      \\cap {${1:...}}
-      $2
-    '''
+    comment: "Small caps text inside"
+    prefix: "cap"
+    body: '''\\\\cap{${1:...}}$2'''
   "\\chapter":
-    prefix: "\\chapter"
-    body: '''
-      \\chapter ${1:[${2:ref,ref,..}]}{${3:...}}
-      $4
-    '''
-  "\\character":
-    prefix: "\\character"
-    body: '''
-      \\character {${1:...}}
-      $2
-    '''
-  "\\characters":
-    prefix: "\\characters"
-    body: '''
-      \\characters {${1:...}}
-      $2
-    '''
-  "\\chem":
-    prefix: "\\chem"
-    body: '''
-      \\chem {${1:...}}{${2:...}}{${3:...}}
-      $4
-    '''
+    prefix: "chapter"
+    body: '''\\\\chapter${1:[${2:references}]}{${3:title}}$4'''
   "\\clip":
-    prefix: "\\clip"
-    body: '''
-      \\clip ${1:[${2:...,...=...,...}]}{${3:...}}
-      $4
+    comments: '''
+      Crop image piece at position (x, y).
+      Number of pieces is specified by \\setupclipping.
     '''
-  "\\clonefield":
-    prefix: "\\clonefield"
-    body: '''
-      \\clonefield [${1:...}][${2:...,...,...}][${3:...}]${4:[${5:...,...,...}]}
-      $6
-    '''
+    prefix: "clip"
+    body: '''\\\\clip[x=${1:...}, y=${2:...}]{${3:figure or text}}$4'''
   "\\color":
-    prefix: "\\color"
-    body: '''
-      \\color [${1:...}]{${2:...}}
-      $3
-    '''
+    prefix: "color"
+    body: '''\\\\color[${1:color}]{${2:text to color}}$3'''
   "\\column":
-    prefix: "\\column"
-    body: '''
-      \\column
-      $1
-    '''
-  "\\comment":
-    prefix: "\\comment"
-    body: '''
-      \\comment ${1:[${2:...}]}${3:[${4:...,...=...,...}]}{${5:...}}
-      $6
-    '''
-  "\\comparecolorgroup":
-    prefix: "\\comparecolorgroup"
-    body: '''
-      \\comparecolorgroup [${1:...}]
-      $2
-    '''
-  "\\comparepalet":
-    prefix: "\\comparepalet"
-    body: '''
-      \\comparepalet [${1:...}]
-      $2
-    '''
+    comment: "Split column inside \\start/stopcolumns"
+    prefix: "column"
+    body: '''\\\\column\n$1'''
   "\\convertnumber":
-    prefix: "\\convertnumber"
-    body: '''
-      \\convertnumber {${1:...}}{${2:...}}
-      $3
-    '''
-  "\\copyfield":
-    prefix: "\\copyfield"
-    body: '''
-      \\copyfield [${1:...}][${2:...,...,...}]
-      $3
-    '''
-  "\\correctwhitespace":
-    prefix: "\\correctwhitespace"
-    body: '''
-      \\correctwhitespace {${1:...}}
-      $2
-    '''
-  "\\coupledocument":
-    prefix: "\\coupledocument"
-    body: '''
-      \\coupledocument [${1:...}][${2:...}][${3:...}]
-      $4
-    '''
-  "\\couplemarking":
-    prefix: "\\couplemarking"
-    body: '''
-      \\couplemarking [${1:...}][${2:...}]
-      $3
-    '''
-  "\\couplepage":
-    prefix: "\\couplepage"
-    body: '''
-      \\couplepage [${1:...,...,...}][${2:...,...=...,...}]
-      $3
-    '''
-  "\\couplepaper":
-    prefix: "\\couplepaper"
-    body: '''
-      \\couplepaper [${1:...}]
-      
-    '''
-  "\\coupleregister":
-    prefix: "\\coupleregister"
-    body: '''
-      \\coupleregister [${1:...}]
-      $2
-    '''
+    prefix: "convertnumber"
+    body: '''\\\\convertnumber{${1:mode}}{${2:number}}$3'''
   "\\crlf":
-    prefix: "\\crlf"
-    body: '''
-      \\crlf
-      $1
-    '''
+    comments: "Carriage return command"
+    prefix: "crlf"
+    body: '''\\crlf$1'''
   "\\currentdate":
-    prefix: "\\currentdate"
-    body: '''
-      \\currentdate [${1:...,...,...}]
-      $2
-    '''
-  "\\currentheadnumber":
-    prefix: "\\currentheadnumber"
-    body: '''
-      \\currentheadnumber
-      $1
-    '''
+    prefix: "currentdate"
+    body: '''\\\\currentdate[${1:weekday,month,day,\\{, \\},year}]$2'''
   "\\date":
-    prefix: "\\date"
-    body: '''
-      \\date ${1:[${2:...,...=...,...}]}[${3:...,...,...}]
-      $4
-    '''
-  "\\decouplemarking":
-    prefix: "\\decouplemarking"
-    body: '''
-      \\decouplemarking [${1:...}]
-      $2
-    '''
+    prefix: "date"
+    body: '''\\\\date[d=${1:...},m=${2:...},y=${3:...}}][${4:weekday,month,day,\\{,\\},year}]$5'''
   "\\define":
-    prefix: "\\define"
-    body: '''
-      \\define ${1:[${2:...}]}\\${3:command}{${4:...}}
-      $5
-    '''
+    prefix: "define"
+    body: '''\\\\define${1:[${2:numbers arguments}]}\\\\${3:command}{${4:Example #1}}$5'''
   "\\defineblank":
-    prefix: "\\defineblank"
-    body: '''
-      \\defineblank [${1:...}][${2:...}]
-      $3
-    '''
+    prefix: "defineblank"
+    body: '''\\\\defineblank[${1:measure name}][${2:dimension}]$3'''
   "\\defineblock":
-    prefix: "\\defineblock"
-    body: '''
-      \\defineblock [${1:...}]
-      $2
-    '''
+    comment: "Define a reusable text format (ex. questions)"
+    prefix: "defineblock"
+    body: '''\\\\defineblock[${1:...}]$2'''
   "\\definebodyfont":
-    prefix: "\\definebodyfont"
-    body: '''
-      \\definebodyfont [${1:...,...,...}][${2:...}][${3:...,...=...,...}]
-      $4
-    '''
+    prefix: "definebodyfont"
+    body: '''\\\\definebodyfont[${1:...,...,...}][${2:...}][${3:...,...=...,...}]$4'''
   "\\definebodyfontenvironment":
-    prefix: "\\definebodyfontenvironment"
-    body: '''
-      \\definebodyfontenvironment [${1:...}][${2:...,...=...,...}]
-      $3
-    '''
-  "\\definebuffer":
-    prefix: "\\definebuffer"
-    body: '''
-      \\definebuffer [${1:...}]
-      $2
-    '''
+    comment: "Set up font scaling for [tf]a-[tf]d"
+    prefix: "definebodyfontenvironment"
+    body: '''\\\\definebodyfontenvironment[${1:font size}][${d=4pt}]$3'''
   "\\definecolor":
     prefix: "\\definecolor"
     body: '''
@@ -2383,7 +2156,7 @@
       \\\\startitemize
       \\\\item $0
       \\\\stopitemize
-      
+
     '''
   "\\startlegend":
     prefix: "\\startlegend"
@@ -2917,7 +2690,7 @@
       \\\\startformula\\\\startalign
       	$0
       \\\\stopalign\\\\stopformula
-      
+
     '''
   Equation:
     prefix: "eq"
@@ -2926,7 +2699,7 @@
       \\\\startformula
       	$0
       \\\\stopformula
-      
+
     '''
   Part:
     prefix: "sec"
