@@ -292,60 +292,52 @@
       "[${1:name}]" +
       "${2:[${3:see \\setupsectionblock parameters}]}" +
       "$4"
-  "\\definesorting":
+  "\\definesorting": # ??
     prefix: "definesorting"
     body: "\\\\definesorting" +
-      "[${1:...}]" +
-      "[${2:...}]" +
-      "${3:[${4:...}]}" +
+      "[${1:singlular}]" +
+      "[${2:plural}]" +
+      "${3:[${4:command}]}" +
       "$5"
   "\\definestartstop":
     prefix: "definestartstop"
     body: "\\\\definestartstop" +
-      "[${1:...}]" +
-      "[${2:...,...=...,...}]" +
-      "$3"
-  "\\definesubfield":
-    prefix: "definesubfield"
-    body: "\\\\definesubfield" +
-      "[${1:...}]" +
-      "[${2:...}]" +
-      "[${3:...,...,...}]" +
-      "$4"
+      "[${1:name}]" +
+      "[${2:before=${3:...}, after=${4:...}, style=${5:...}$6}]" +
+      "$7"
   "\\definesymbol":
     prefix: "definesymbol"
     body: "\\\\definesymbol" +
-      "[${1:...}]" +
-      "[${2:...}]" +
+      "[${1:name}]" +
+      "[${2:text}]" +
       "$3"
   "\\definesynonyms":
+    comment: "Sort of alias for commands, listed with \\placelistof..."
     prefix: "definesynonyms"
     body: "\\\\definesynonyms" +
-      "[${1:...}]" +
-      "[${2:...}]" +
-      "[${3:...}]" +
-      "${4:[${5:...}]}" +
+      "[${1:singular}]" +
+      "[${2:plural}]" +
+      "[${3:command}]" +
+      "${4:[${5:description text}]}" +
       "$6"
   "\\definetabletemplate":
     prefix: "definetabletemplate"
     body: "\\\\definetabletemplate" +
-      "[${1:...}]" +
-      "[${2:...}]" +
-      "${3:[${4:...}]}" +
-      "${5:[${6:...}]}" +
-      "$7"
-  "\\definetabulate":
+      "[${1:name}]" +
+      "[${2:style of table}]" +
+      "$3"
+  "\\definetabulate": # ??
     prefix: "definetabulate"
     body: "\\\\definetabulate" +
-      "[${1:...}]" +
-      "${2:[${3:...}]}" +
-      "[${4:...}]" +
+      "[${1:name}]" +
+      "${2:[${3:name of variant or sub-part}]}" +
+      "[${4:text}]" +
       "$5"
-  "\\definetext":
+  "\\definetext": # ??
     prefix: "definetext"
     body: "\\\\definetext" +
-      "[${1:...}]" +
-      "[${2:...}]" +
+      "[${1:name}]" +
+      "[${2:header footer}]" +
       "[${3:...}]" +
       "${4:[${5:...}]}" +
       "${6:[${7:...}]}" +
@@ -353,110 +345,102 @@
   "\\definetextposition":
     prefix: "definetextposition"
     body: "\\\\definetextposition" +
-      "[${1:...}]" +
-      "${2:[${3:...,...=...,...}]}" +
+      "[${1:name}]" +
+      "${2:[${3:see \\setuppositioning parameters}]}" +
       "$4"
-  "\\definetextvariable":
+  "\\definetextvariable": # ??
     prefix: "definetextvariable"
     body: "\\\\definetextvariable" +
-      "[${1:...}]" +
+      "[${1:see \\setuptextvariable}]" +
       "${2:[${3:...}]}" +
       "${4:[${5:...,...=...,...}]}" +
       "$6"
   "\\definetype":
     prefix: "definetype"
     body: "\\\\definetype" +
-      "[${1:...}]" +
-      "[${2:...,...=...,...}]" +
+      "[${1:name}]" +
+      "[${2:see \\setuptype}]" +
       "$3"
   "\\definetyping":
     prefix: "definetyping"
     body: "\\\\definetyping" +
-      "[${1:...}]" +
-      "[${2:...,...=...,...}]" +
+      "[${1:name}]" +
+      "[${2:see \\setuptyping}]" +
       "$3"
-  "\\defineversion":
+  "\\defineversion": # ??
     prefix: "defineversion"
     body: "\\\\defineversion" +
-      "[${1:...}]" +
-      "[${2:...,...,...}]" +
+      "[${1:name}]" +
+      "[${2:number}]" +
       "$3"
   "\\determineheadnumber":
     prefix: "determineheadnumber"
     body: "\\\\determineheadnumber" +
-      "[${1:...}]" +
+      "[${1:section}]" +
       "$2"
   "\\determinelistcharacteristics":
     prefix: "determinelistcharacteristics"
     body: "\\\\determinelistcharacteristics" +
-      "[${1:...,...,...}]" +
-      "${2:[${3:...,...=...,...}]}" +
+      "[${1:name}]" +
+      "${2:[${3:see \\setuplist}]}" +
       "$4"
   "\\disableinteractionmenu":
     prefix: "disableinteractionmenu"
     body: "\\\\disableinteractionmenu" +
-      "[${1:...}]" +
-      "[${2:ref,ref,..}]" +
+      "[${1:left right top bottom name}]" +
+      "[${2:ref, ...}]" +
       "$3"
-  "\\donttest":
-    prefix: "donttest"
-    body: "\\\\donttest" +
-      "$1"
   "\\emptylines":
     prefix: "emptylines"
     body: "\\\\emptylines" +
-      "[${1:...}]" +
+      "[${1:number of empty lines}]" +
       "$2"
   "\\externalfigure":
     prefix: "externalfigure"
     body: "\\\\externalfigure" +
-      "[${1:...}]" +
-      "[${2:...,...=...,...}]" +
+      "[${1:file}]" +
+      "[${2:see \\useexternalfigure}]" +
       "$3"
   "\\field":
     prefix: "field"
     body: "\\\\field" +
-      "[${1:...}]" +
+      "[${1:name}]" +
       "$2"
   "\\fieldstack":
     prefix: "fieldstack"
     body: "\\\\fieldstack" +
-      "[${1:...}]" +
-      "${2:[${3:...,...,...}]}" +
-      "${4:[${5:...,...=...,...}]}" +
+      "[${1:name}]" +
+      "${2:[${3:names}]}" +
+      "${4:[${5:see \\setupfields}]}" +
       "$6"
-  "\\fillinfield":
-    prefix: "fillinfield"
-    body: "\\\\fillinfield" +
-      "${1:[${2:...}]}" +
-      "{${3:...}}" +
-      "$4"
   "\\fillinline":
+    comment: "A line on which the reader may fill in an answer"
     prefix: "fillinline"
     body: "\\\\fillinline" +
-      "${1:[${2:...,...=...,...}]}" +
-      "${3:...}" +
+      "${1:[${2:see \\setupfillinlines}]}" +
+      "${3:text}" +
       "$4"
   "\\fillinrules":
     prefix: "fillinrules"
     body: "\\\\fillinrules" +
-      "${1:[${2:...,...=...,...}]}" +
-      "{${3:...}}" +
-      "{${4:...}}" +
+      "${1:[${2:see \\setupfillinrules}]}" +
+      "${{3:text before fill in}}" +
+      "${{4:text}}" +
       "$5"
   "\\fillintext":
     prefix: "fillintext"
     body: "\\\\fillintext" +
-      "${1:[${2:...,...=...,...}]}" +
-      "{${3:...}}" +
-      "{${4:...}}" +
+      "${1:[${2:see \\setupfillinrules}]}" +
+      "{${3:text}}" +
+      "{${4:text}}" +
       "$5"
   "\\fitfield":
     prefix: "fitfield"
     body: "\\\\fitfield" +
-      "[${1:...}]" +
+      "[${1:name}]" +
       "$2"
   "\\fixedspaces":
+    comment: "Force ~ spacing to be equal to 0 glyph"
     prefix: "fixedspaces"
     body: "\\\\fixedspaces" +
       "$1"
@@ -482,32 +466,20 @@
   "\\footnote":
     prefix: "footnote"
     body: "\\\\footnote" +
-      "${1:[${2:ref}]}" +
-      "{${3:...}}" +
-      "$4"
-  "\\footnotetext":
-    prefix: "footnotetext"
-    body: "\\\\footnotetext" +
-      "${1:[${2:ref}]}" +
-      "{${3:...}}" +
-      "$4"
-  "\\forceblocks":
-    prefix: "forceblocks"
-    body: "\\\\forceblocks" +
-      "[${1:...,...,...}]" +
-      "${2:[${3:...,...,...}]}" +
+      "${1:[${2:label}]}" +
+      "{${3:text}}" +
       "$4"
   "\\fraction":
     prefix: "fraction"
     body: "\\\\fraction" +
-      "{${1:...}}" +
-      "{${2:...}}" +
+      "{${1:numerator}}" +
+      "{${2:denominator}}" +
       "$3"
   "\\framed":
     prefix: "framed"
     body: "\\\\framed" +
-      "${1:[${2:...,...=...,...}]}" +
-      "{${3:...}}" +
+      "${1:[${2:	see \\setupframed}]}" +
+      "{${3:text}}" +
       "$4"
   "\\from":
     prefix: "from"
@@ -517,141 +489,132 @@
   "\\getbuffer":
     prefix: "getbuffer"
     body: "\\\\getbuffer" +
-      "${1:[${2:...}]}" +
+      "${1:text buffer name}" +
       "$3"
   "\\getmarking":
     prefix: "getmarking"
     body: "\\\\getmarking" +
-      "[${1:...}]" +
+      "[${1:name}]" +
       "[${2:...}]" +
       "$3"
   "\\godown":
     prefix: "godown"
     body: "\\\\godown" +
-      "[${1:...}]" +
+      "[${1:vertical spaces}]" +
       "$2"
   "\\goto":
     prefix: "goto"
     body: "\\\\goto" +
-      "{${1:...}}" +
-      "{${2:...}}" +
-      "[${3:ref,ref,..}]" +
-      "$4"
+      "{${1:text}}" +
+      "{${2:label}}" +
+      "$3"
   "\\gotobox":
     prefix: "gotobox"
     body: "\\\\gotobox" +
-      "{${1:...}}" +
-      "[${2:ref,ref,..}]" +
+      "{${1:text}}" +
+      "{${2:label}}" +
       "$3"
   "\\graycolor":
     prefix: "graycolor"
     body: "\\\\graycolor" +
-      "[${1:...}]" +
+      "[${1:text}]" +
       "$2"
   "\\grid":
     prefix: "grid"
     body: "\\\\grid" +
-      "[${1:...,...=...,...}]" +
+      "[${1:grid parameters}]" +
       "$2"
   "\\hairline":
     prefix: "hairline"
     body: "\\\\hairline" +
       "$1"
   "\\head":
+    comment: "Head of itemize"
     prefix: "head"
     body: "\\\\head" +
-      "${1:[${2:ref,ref,..}]}" +
+      "${1:[${2:ref, ...}]}" +
       "$3"
   "\\headnumber":
     prefix: "headnumber"
     body: "\\\\headnumber" +
-      "${1:[${2:...}]}" +
+      "${1:[${2:section}]}" +
       "$3"
   "\\headtext":
     prefix: "headtext"
     body: "\\\\headtext" +
-      "{${1:...}}" +
+      "{${1:text}}" +
       "$2"
   "\\hideblocks":
+    comment: "From here on, do not print blocks where they are defined"
     prefix: "hideblocks"
     body: "\\\\hideblocks" +
-      "[${1:...,...,...}]" +
-      "${2:[${3:...,...,...}]}" +
+      "[${1:block types to hide}]" +
+      "${2:[${3:tags to further specify what to hide}]}" +
       "$4"
   "\\high":
     prefix: "high"
     body: "\\\\high" +
-      "{${1:...}}" +
+      "{${1:text}}" +
       "$2"
   "\\hl":
     prefix: "hl"
     body: "\\\\hl" +
-      "[${1:...}]" +
+      "[${1:width}]" +
       "$2"
   "\\in":
     prefix: "in"
     body: "\\\\in" +
-      "{${1:...}}" +
-      "{${2:...}}" +
+      "{${1:text before}}" +
+      "{${2:text after}}" +
       "[${3:ref}]" +
       "$4"
-  "\\indenting":
-    prefix: "indenting"
-    body: "\\\\indenting" +
-      "[${1:...,...,...}]" +
-      "$2"
   "\\inframed":
+    comment: "It ensures that the baseline of the framed text aligns with the baseline of the surrounding text. In all other respects, it is identical to \\framed."
     prefix: "inframed"
     body: "\\\\inframed" +
-      "${1:[${2:...,...=...,...}]}" +
-      "{${3:...}}" +
+      "${1:[${2:see \\setupframed}]}" +
+      "{${3:text}}" +
       "$4"
   "\\ininner":
     prefix: "ininner"
     body: "\\\\ininner" +
-      "${1:[${2:...}]}" +
+      "${1:[${2:+ - low}]}" +
       "${3:[${4:ref}]}" +
-      "{${5:...}}" +
+      "{${5:text}}" +
       "$6"
   "\\inleft":
     prefix: "inleft"
     body: "\\\\inleft" +
-      "${1:[${2:...}]}" +
+      "${1:[${2:+ - low}]}" +
       "${3:[${4:ref}]}" +
-      "{${5:...}}" +
+      "{${5:text}}" +
       "$6"
   "\\inline":
     prefix: "inline"
     body: "\\\\inline" +
-      "[${1:ref}]" +
-      "$2"
+      "${1:[${2:text prefix}]}" +
+      "[${3:ref}]" +
+      "$4"
   "\\inmargin":
     prefix: "inmargin"
     body: "\\\\inmargin" +
-      "${1:[${2:...}]}" +
+      "${1:[${2:+ - low}]}" +
       "${3:[${4:ref}]}" +
-      "{${5:...}}" +
-      "$6"
-  "\\inothermargin":
-    prefix: "inothermargin"
-    body: "\\\\inothermargin" +
-      "${1:[${2:...}]}" +
-      "${3:[${4:ref}]}" +
-      "{${5:...}}" +
+      "{${5:text}}" +
       "$6"
   "\\inouter":
     prefix: "inouter"
     body: "\\\\inouter" +
-      "${1:[${2:...}]}" +
+      "${1:[${2:+ - low}]}" +
       "${3:[${4:ref}]}" +
-      "{${5:...}}" +
+      "{${5:text}}" +
       "$6"
   "\\inright":
     prefix: "inright"
     body: "\\\\inright" +
-      "${1:[${2:...}]}" +
+      "${1:[${2:+ - low}]}" +
       "${3:[${4:ref}]}" +
-      "{${5:...}}" +
+      "{${5:text}}" +
       "$6"
   "\\installlanguage":
     prefix: "installlanguage"
@@ -673,7 +636,7 @@
   "\\item":
     prefix: "item"
     body: "\\\\item" +
-      "${1:[${2:ref,ref,..}]}" +
+      "${1:[${2:ref, ...}]}" +
       "$3"
   "\\items":
     prefix: "items"
@@ -684,7 +647,7 @@
   "\\its":
     prefix: "its"
     body: "\\\\its" +
-      "${1:[${2:ref,ref,..}]}" +
+      "${1:[${2:ref, ...}]}" +
       "$3"
   "\\keepblocks":
     prefix: "keepblocks"
@@ -742,7 +705,7 @@
   "\\mar":
     prefix: "mar"
     body: "\\\\mar" +
-      "${1:[${2:ref,ref,..}]}" +
+      "${1:[${2:ref, ...}]}" +
       "{${3:...}}" +
       "$4"
   "\\marginrule":
@@ -902,7 +865,7 @@
   "\\part":
     prefix: "part"
     body: "\\\\part" +
-      "${1:[${2:ref,ref,..}]}" +
+      "${1:[${2:ref, ...}]}" +
       "{${3:...}}" +
       "$4"
   "\\periods":
@@ -930,7 +893,7 @@
   "\\placeformula":
     prefix: "placeformula"
     body: "\\\\placeformula" +
-      "${1:[${2:ref,ref,..}]}" +
+      "${1:[${2:ref, ...}]}" +
       "{${3:...}}$$" +
       "${4:...}$$" +
       "$5"
@@ -993,7 +956,7 @@
   "\\placesubformula":
     prefix: "placesubformula"
     body: "\\\\placesubformula" +
-      "${1:[${2:ref,ref,..}]}" +
+      "${1:[${2:ref, ...}]}" +
       "{${3:...}}$$" +
       "${4:...}$$" +
       "$5"
@@ -1118,7 +1081,7 @@
   "\\section":
     prefix: "section"
     body: "\\\\section" +
-      "${1:[${2:ref,ref,..}]}" +
+      "${1:[${2:ref, ...}]}" +
       "{${3:...}}" +
       "$4"
   "\\selectblocks":
@@ -2189,36 +2152,36 @@
   "\\sub":
     prefix: "sub"
     body: "\\\\sub" +
-      "${1:[${2:ref,ref,..}]}" +
+      "${1:[${2:ref, ...}]}" +
       "$3"
   "\\subject":
     prefix: "subject"
     body: "\\\\subject" +
-      "${1:[${2:ref,ref,..}]}" +
+      "${1:[${2:ref, ...}]}" +
       "{${3:...}}" +
       "$4"
   "\\subsection":
     prefix: "subsection"
     body: "\\\\subsection" +
-      "${1:[${2:ref,ref,..}]}" +
+      "${1:[${2:ref, ...}]}" +
       "{${3:...}}" +
       "$4"
   "\\subsubject":
     prefix: "subsubject"
     body: "\\\\subsubject" +
-      "${1:[${2:ref,ref,..}]}" +
+      "${1:[${2:ref, ...}]}" +
       "{${3:...}}" +
       "$4"
   "\\subsubsection":
     prefix: "subsubsection"
     body: "\\\\subsubsection" +
-      "${1:[${2:ref,ref,..}]}" +
+      "${1:[${2:ref, ...}]}" +
       "{${3:...}}" +
       "$4"
   "\\subsubsubject":
     prefix: "subsubsubject"
     body: "\\\\subsubsubject" +
-      "${1:[${2:ref,ref,..}]}" +
+      "${1:[${2:ref, ...}]}" +
       "{${3:...}}" +
       "$4"
   "\\switchtobodyfont":
@@ -2292,7 +2255,7 @@
   "\\title":
     prefix: "title"
     body: "\\\\title" +
-      "${1:[${2:ref,ref,..}]}" +
+      "${1:[${2:ref, ...}]}" +
       "{${3:...}}" +
       "$4"
   "\\tooltip":
