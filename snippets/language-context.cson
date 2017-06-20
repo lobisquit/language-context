@@ -3,7 +3,7 @@
     comment: "Provides the complete title of a referenced block of text"
     prefix: "about"
     body: "\\\\about" +
-      "{${1:...}}" +
+      "{${1:name}}" +
       "[${2:ref}]" +
       "$3"
   "\\adaptlayout":
@@ -11,13 +11,13 @@
     prefix: "adaptlayout"
     body: "\\\\adaptlayout" +
       "[${2:page number(s)}]" +
-      "[${3:height=...,lines number=+1, -1}]" +
+      "[${3:height=name,lines number=+1, -1}]" +
       "$4"
   "\\arg":
     omment: "Surround given text with braces"
     prefix: "arg"
     body: "\\\\arg" +
-      "{${1:...}}" +
+      "{${1:name}}" +
       "$2"
   "\\at":
     prefix: "at"
@@ -42,7 +42,7 @@
     comment: "Small caps text inside"
     prefix: "cap"
     body: "\\\\cap" +
-      "{${1:...}}" +
+      "{${1:name}}" +
       "$2"
   "\\chapter":
     prefix: "chapter"
@@ -57,7 +57,7 @@
     '''
     prefix: "clip"
     body: "\\\\clip" +
-      "[x=${1:...}, y=${2:...}]" +
+      "[x=${1:name}, y=${2:name}]" +
       "{${3:figure or text}}" +
       "$4"
   "\\color":
@@ -90,7 +90,7 @@
   "\\date":
     prefix: "date"
     body: "\\\\date" +
-      "[d=${1:...},m=${2:...},y=${3:...}}]" +
+      "[d=${1:name},m=${2:name},y=${3:name}}]" +
       "[${4:weekday,month,day,\\{,\\},year}]" +
       "$5"
   "\\define":
@@ -115,7 +115,7 @@
   "\\definebodyfont":
     prefix: "definebodyfont"
     body: "\\\\definebodyfont" +
-      "[${1:5pt ... 12pt default}]" +
+      "[${1:5pt name 12pt default}]" +
       "[${2:rm ss tt mm hw cg}]" +
       "[${3:options}]" +
       "$4"
@@ -137,7 +137,7 @@
     body: "\\\\definecolorgroup" +
       "[${1:color set name}]" +
       "${2:[${3:rgb cmyk gray s}]}" +
-      "[${1.00:0.85:0.80, ...}]" +
+      "[${1.00:0.85:0.80, name}]" +
       "$5"
   "\\definecombinedlist":
     comment: "Merge lists created by \\definelist"
@@ -218,7 +218,7 @@
     prefix: "definelabel"
     body: "\\\\definelabel" +
       "[${1:name}]" +
-      "[${2:text=${3:...}, location=${4:...}$5}]" +
+      "[${2:text=${3:name}, location=${4:name}$5}]" +
       "$6"
   "\\definelist":
     prefix: "definelist"
@@ -235,8 +235,8 @@
   "\\definemarking":
     prefix: "definemarking"
     body: "\\\\definemarking" +
-      "[${1:...}]" +
-      "${2:[${3:...}]}" +
+      "[${1:name}]" +
+      "${2:[${3:name}]}" +
       "$4"
   "\\defineoverlay":
     prefix: "defineoverlay"
@@ -248,19 +248,19 @@
     prefix: "definepalet"
     body: "\\\\definepalet" +
       "[${1:name}]" +
-      "[${2:alert=green, calm=grey, ...}]" +
+      "[${2:alert=green, calm=grey, name}]" +
       "$3"
   "\\definepapersize":
     prefix: "definepapersize"
     body: "\\\\definepapersize" +
       "[${1:name}]" +
-      "[${2:.width=${3:...}, height=${4:...}}]" +
+      "[${2:.width=${3:name}, height=${4:name}}]" +
       "$5"
   "\\defineparagraphs":
     prefix: "defineparagraphs"
     body: "\\\\defineparagraphs" +
       "[${1:name}]" +
-      "[${2:before=${3:...}, after=${4:...}}]" +
+      "[${2:before=${3:name}, after=${4:name}}]" +
       "$5"
   "\\definerawfont":
     prefix: "definerawfont"
@@ -273,13 +273,13 @@
     prefix: "definereferenceformat"
     body: "\\\\definereferenceformat" +
       "[${1:name}]" +
-      "[${2:left=${3:...}, right=${4:...}, text=${5:...}}]" +
+      "[${2:left=${3:name}, right=${4:name}, text=${5:name}}]" +
       "$6"
   "\\defineregister": # ??
     prefix: "defineregister"
     body: "\\\\defineregister" +
-      "[${1:...}]" +
-      "[${2:...}]" +
+      "[${1:name}]" +
+      "[${2:name}]" +
       "$3"
   "\\definesection":
     prefix: "definesection"
@@ -303,7 +303,7 @@
     prefix: "definestartstop"
     body: "\\\\definestartstop" +
       "[${1:name}]" +
-      "[${2:before=${3:...}, after=${4:...}, style=${5:...}$6}]" +
+      "[${2:before=${3:name}, after=${4:name}, style=${5:name}$6}]" +
       "$7"
   "\\definesymbol":
     prefix: "definesymbol"
@@ -312,7 +312,7 @@
       "[${2:text}]" +
       "$3"
   "\\definesynonyms":
-    comment: "Sort of alias for commands, listed with \\placelistof..."
+    comment: "Sort of alias for commands, listed with \\placelistofname"
     prefix: "definesynonyms"
     body: "\\\\definesynonyms" +
       "[${1:singular}]" +
@@ -338,9 +338,9 @@
     body: "\\\\definetext" +
       "[${1:name}]" +
       "[${2:header footer}]" +
-      "[${3:...}]" +
-      "${4:[${5:...}]}" +
-      "${6:[${7:...}]}" +
+      "[${3:name}]" +
+      "${4:[${5:name}]}" +
+      "${6:[${7:name}]}" +
       "$8"
   "\\definetextposition":
     prefix: "definetextposition"
@@ -352,7 +352,7 @@
     prefix: "definetextvariable"
     body: "\\\\definetextvariable" +
       "[${1:see \\setuptextvariable}]" +
-      "${2:[${3:...}]}" +
+      "${2:[${3:name}]}" +
       "${4:[${5:options}]}" +
       "$6"
   "\\definetype":
@@ -388,7 +388,7 @@
     prefix: "disableinteractionmenu"
     body: "\\\\disableinteractionmenu" +
       "[${1:left right top bottom name}]" +
-      "[${2:ref, ...}]" +
+      "[${2:ref, name}]" +
       "$3"
   "\\emptylines":
     prefix: "emptylines"
@@ -447,21 +447,21 @@
   "\\followprofile":
     prefix: "followprofile"
     body: "\\\\followprofile" +
-      "{${1:...}}" +
-      "[${2:...}]" +
+      "{${1:name}}" +
+      "[${2:name}]" +
       "$3"
   "\\followprofileversion":
     prefix: "followprofileversion"
     body: "\\\\followprofileversion" +
-      "{${1:...}}" +
-      "[${2:...}]" +
-      "[${3:...}]" +
+      "{${1:name}}" +
+      "[${2:name}]" +
+      "[${3:name}]" +
       "$4"
   "\\followversion":
     prefix: "followversion"
     body: "\\\\followversion" +
-      "{${1:...}}" +
-      "[${2:...}]" +
+      "{${1:name}}" +
+      "[${2:name}]" +
       "$3"
   "\\footnote":
     prefix: "footnote"
@@ -495,7 +495,7 @@
     prefix: "getmarking"
     body: "\\\\getmarking" +
       "[${1:name}]" +
-      "[${2:...}]" +
+      "[${2:name}]" +
       "$3"
   "\\godown":
     prefix: "godown"
@@ -532,7 +532,7 @@
     comment: "Head of itemize"
     prefix: "head"
     body: "\\\\head" +
-      "${1:[${2:ref, ...}]}" +
+      "${1:[${2:ref, name}]}" +
       "$3"
   "\\headnumber":
     prefix: "headnumber"
@@ -625,7 +625,7 @@
   "\\item":
     prefix: "item"
     body: "\\\\item" +
-      "${1:[${2:ref, ...}]}" +
+      "${1:[${2:ref, name}]}" +
       "$3"
   "\\items":
     prefix: "items"
@@ -688,8 +688,8 @@
   "\\marking":
     prefix: "marking"
     body: "\\\\marking" +
-      "[${1:...}]" +
-      "{${2:...}}" +
+      "[${1:name}]" +
+      "{${2:name}}" +
       "$3"
   "\\mathematics":
     prefix: "mathematics"
@@ -752,7 +752,7 @@
   "\\numbers":
     prefix: "numbers"
     body: "\\\\numbers" +
-      "{${1:...}}" +
+      "{${1:name}}" +
       "$2"
   "\\overbar":
     prefix: "overbar"
@@ -792,7 +792,7 @@
   "\\part":
     prefix: "part"
     body: "\\\\part" +
-      "${1:[${2:ref, ...}]}" +
+      "${1:[${2:ref, name}]}" +
       "{${3:title}}" +
       "$4"
   "\\periods":
@@ -820,7 +820,7 @@
   "\\placeformula":
     prefix: "placeformula"
     body: "\\\\placeformula" +
-      "${1:[${2:ref, ...}]}" +
+      "${1:[${2:ref, name}]}" +
       "${4:formula}$$" +
       "$5"
   "\\placelist":
@@ -837,8 +837,8 @@
   "\\placeongrid":
     prefix: "placeongrid"
     body: "\\\\placeongrid" +
-      "${1:[${2:...}]}" +
-      "{${3:...}}" +
+      "${1:[${2:name}]}" +
+      "{${3:name}}" +
       "$4"
   "\\placeontopofeachother":
     prefix: "placeontopofeachother"
@@ -871,7 +871,7 @@
   "\\placesubformula":
     prefix: "placesubformula"
     body: "\\\\placesubformula" +
-      "${1:[${2:ref, ...}]}" +
+      "${1:[${2:ref, name}]}" +
       "${4:formula}$$" +
       "$5"
   "\\placetextvariable":
@@ -965,7 +965,7 @@
     prefix: "rotate"
     body: "\\\\rotate" +
       "${1:[${2:options}]}" +
-      "{${3:...}}" +
+      "{${3:name}}" +
       "$4"
   "\\scale":
     prefix: "scale"
@@ -976,12 +976,12 @@
   "\\screen":
     prefix: "screen"
     body: "\\\\screen" +
-      "[${1:see \\page}]"
+      "[${1:see \\page}]" +
       "$2"
   "\\section":
     prefix: "section"
     body: "\\\\section" +
-      "${1:[${2:ref, ...}]}" +
+      "${1:[${2:ref, name}]}" +
       "{${3:text}}" +
       "$4"
   "\\selectblocks":
@@ -1011,7 +1011,7 @@
   "\\setupbackground":
     prefix: "setupbackground"
     body: "\\\\setupbackground" +
-      "[${1:offset=...}]" +
+      "[${1:offset=name}]" +
       "$2"
   "\\setupbackgrounds":
     prefix: "setupbackgrounds"
@@ -1023,12 +1023,12 @@
   "\\setupblackrules":
     prefix: "setupblackrules"
     body: "\\\\setupblackrules" +
-      "[${1:dimension=...}]" +
+      "[${1:dimension=name}]" +
       "$2"
   "\\setupblank":
     prefix: "setupblank"
     body: "\\\\setupblank" +
-      "${1:[${2:normal, standard, ...}]}" +
+      "${1:[${2:normal, standard, name}]}" +
       "$3"
   "\\setupblock":
     prefix: "setupblock"
@@ -1039,7 +1039,7 @@
   "\\setupbodyfont":
     prefix: "setupbodyfont"
     body: "\\\\setupbodyfont" +
-      "[${1:serif, sans, ...}]" +
+      "[${1:serif, sans, name}]" +
       "$2"
   "\\setupbodyfontenvironment":
     prefix: "setupbodyfontenvironment"
@@ -1067,7 +1067,7 @@
   "\\setupcapitals":
     prefix: "setupcapitals"
     body: "\\\\setupcapitals" +
-      "[${1:title=..., sc=...}]" +
+      "[${1:title=name, sc=name}]" +
       "$2"
   "\\setupcaption":
     prefix: "setupcaption"
@@ -1109,8 +1109,8 @@
   "\\setupcombinedlist":
     prefix: "setupcombinedlist"
     body: "\\\\setupcombinedlist" +
-      "[${1:...}]" +
-      "[${2:options}]" +
+      "[${1:name}]" +
+      "[${2:level=name, see \\setuplist}]" +
       "$3"
   "\\setupcomment":
     prefix: "setupcomment"
@@ -1120,38 +1120,34 @@
   "\\setupdescriptions":
     prefix: "setupdescriptions"
     body: "\\\\setupdescriptions" +
-      "${1:[${2:...,...,...}]}" +
+      "[${2:name}]" +
       "[${3:options}]" +
       "$4"
   "\\setupenumerations":
     prefix: "setupenumerations"
     body: "\\\\setupenumerations" +
-      "${1:[${2:...,...,...}]}" +
-      "[${3:options}]" +
+      "[${2:name}]" +
+      "[${3:see \\setupdescriptions}]" +
       "$4"
   "\\setupexternalfigures":
     prefix: "setupexternalfigures"
     body: "\\\\setupexternalfigures" +
-      "[${1:...=...}" +
+      "[${1:options}" +
       "$2"
   "\\setupfield":
     prefix: "setupfield"
     body: "\\\\setupfield" +
-      "[${1:...}]" +
-      "[${2:...,...,...}]" +
-      "[${3:options}]" +
-      "[${4:options}]" +
-      "[${5:options}]" +
-      "$6"
+      "[${1:name}]" +
+      "[${2:options}]" +
+      "[${3:see \\setupfields}]" +
+      "$4"
   "\\setupfields":
     prefix: "setupfields"
     body: "\\\\setupfields" +
-      "[${1:...,...,...}]" +
-      "[${2:...}]" +
-      "[${3:options}]" +
-      "[${4:options}]" +
-      "[${5:options}]" +
-      "$6"
+      "[${1:names]" +
+      "[${2:options}]" +
+      "[${3:other options}]" +
+      "$4"
   "\\setupfillinlines":
     prefix: "setupfillinlines"
     body: "\\\\setupfillinlines" +
@@ -1165,7 +1161,7 @@
   "\\setupfloat":
     prefix: "setupfloat"
     body: "\\\\setupfloat" +
-      "[${1:...}]" +
+      "[${1:name}]" +
       "[${2:options}]" +
       "$3"
   "\\setupfloats":
@@ -1176,25 +1172,23 @@
   "\\setupfloatsplitting":
     prefix: "setupfloatsplitting"
     body: "\\\\setupfloatsplitting" +
-      "[${1:options}]" +
-      "$2"
+      "[${1:conversion=${2:name}, level=${3:name}}]" +
+      "$4"
   "\\setupfooter":
     prefix: "setupfooter"
     body: "\\\\setupfooter" +
-      "${1:[${2:...}]}" +
-      "[${3:options}]" +
+      "[${3:see \\setupheader}]" +
       "$4"
   "\\setupfootertexts":
     prefix: "setupfootertexts"
     body: "\\\\setupfootertexts" +
-      "${1:[${2:...}]}" +
-      "[${3:...}]" +
-      "[${4:...}]" +
-      "$5"
+      "[${2:margin / edge}]" +
+      "[${3:options}]" +
+      "$4"
   "\\setupfootnotedefinition":
     prefix: "setupfootnotedefinition"
     body: "\\\\setupfootnotedefinition" +
-      "[${1:options}]" +
+      "[${1:see \\setupdescription}]" +
       "$2"
   "\\setupfootnotes":
     prefix: "setupfootnotes"
@@ -1204,8 +1198,8 @@
   "\\setupforms":
     prefix: "setupforms"
     body: "\\\\setupforms" +
-      "[${1:options}]" +
-      "$2"
+      "[${1:method=${2:HTML/FDF}}]" +
+      "$3"
   "\\setupformulae":
     prefix: "setupformulae"
     body: "\\\\setupformulae" +
@@ -1224,27 +1218,28 @@
   "\\setuphead":
     prefix: "setuphead"
     body: "\\\\setuphead" +
-      "[${1:...,...,...}]" +
+      "[${1:name}]" +
       "[${2:options}]" +
       "$3"
   "\\setupheader":
     prefix: "setupheader"
     body: "\\\\setupheader" +
-      "${1:[${2:...}]}" +
-      "[${3:options}]" +
-      "$4"
+      "[${1:margin / edge}]" +
+      "[${2:options}]" +
+      "$3"
   "\\setupheadertexts":
     prefix: "setupheadertexts"
     body: "\\\\setupheadertexts" +
-      "${1:[${2:...}]}" +
-      "[${3:...}]" +
-      "[${4:...}]" +
+      "[${1:left handed side of odd pages}]" +
+      "[${2:right handed side of odd pages}]" +
+      "[${3:right handed side of even pages}]" +
+      "[${4:left handed side of even pages}]" +
       "$5"
   "\\setupheadnumber":
     prefix: "setupheadnumber"
     body: "\\\\setupheadnumber" +
-      "[${1:...}]" +
-      "[${2:...}]" +
+      "[${1:section}]" +
+      "[${2:number / increment}]" +
       "$3"
   "\\setupheads":
     prefix: "setupheads"
@@ -1254,58 +1249,36 @@
   "\\setupheadtext":
     prefix: "setupheadtext"
     body: "\\\\setupheadtext" +
-      "${1:[${2:...}]}" +
-      "[${3:...=...}" +
+      "[${2:language}]" +
+      "[${3:section=Section, name}" +
       "$4"
   "\\setuphyphenmark":
     prefix: "setuphyphenmark"
     body: "\\\\setuphyphenmark" +
-      "[${1:...=...}" +
-      "$2"
+      "[sign=${1:normal / wide}]" +
+      "$3"
   "\\setupindentations":
     prefix: "setupindentations"
     body: "\\\\setupindentations" +
-      "${1:[${2:...,...,...}]}" +
+      "[${1:name}]" +
       "[${3:options}]" +
       "$4"
   "\\setupindenting":
     prefix: "setupindenting"
     body: "\\\\setupindenting" +
-      "[${1:...,...,...}]" +
-      "$2"
-  "\\setupinmargin":
-    prefix: "setupinmargin"
-    body: "\\\\setupinmargin" +
-      "${1:[${2:...}]}" +
-      "[${3:options}]" +
-      "$4"
-  "\\setupinteraction":
-    prefix: "setupinteraction"
-    body: "\\\\setupinteraction" +
-      "[${1:options}]" +
-      "$2"
-  "\\setupinteractionbar":
-    prefix: "setupinteractionbar"
-    body: "\\\\setupinteractionbar" +
-      "[${1:options}]" +
-      "$2"
-  "\\setupinteractionscreen":
-    prefix: "setupinteractionscreen"
-    body: "\\\\setupinteractionscreen" +
       "[${1:options}]" +
       "$2"
   "\\setupinterlinespace":
     prefix: "setupinterlinespace"
     body: "\\\\setupinterlinespace" +
-      "${1:[${2:...}]}" +
+      "${1:[${2:dimension}]}" +
       "$3"
   "\\setupitemgroup":
     prefix: "setupitemgroup"
     body: "\\\\setupitemgroup" +
-      "[${1:...}]" +
-      "${2:[${3:...}]}" +
-      "${4:[${5:...,...,...}]}" +
-      "${6:[${7:options}]}" +
+      "[${1:level of itemize}]" +
+      "[${2:position}]" +
+      "[${3:options}]" +
       "$8"
   "\\setupitems":
     prefix: "setupitems"
@@ -1315,14 +1288,14 @@
   "\\setuplabeltext":
     prefix: "setuplabeltext"
     body: "\\\\setuplabeltext" +
-      "${1:[${2:...}]}" +
-      "[${3:...=...}" +
-      "$4"
+      "[${1:lang}]" +
+      "[${2:text}" +
+      "$3"
   "\\setuplanguage":
     prefix: "setuplanguage"
     body: "\\\\setuplanguage" +
-      "[${1:...}]" +
-      "[${2:options}]" +
+      "[${1:language}]" +
+      "[${2:see \\installlanguage}]" +
       "$3"
   "\\setuplayout":
     prefix: "setuplayout"
@@ -1347,24 +1320,18 @@
   "\\setuplinewidth":
     prefix: "setuplinewidth"
     body: "\\\\setuplinewidth" +
-      "[${1:...}]" +
+      "[${1:dimension}]" +
       "$2"
   "\\setuplist":
     prefix: "setuplist"
     body: "\\\\setuplist" +
-      "[${1:...,...,...}]" +
-      "[${2:options}]" +
-      "$3"
-  "\\setuplistalternative":
-    prefix: "setuplistalternative"
-    body: "\\\\setuplistalternative" +
-      "[${1:...}]" +
+      "[${1:name}]" +
       "[${2:options}]" +
       "$3"
   "\\setupmakeup":
     prefix: "setupmakeup"
     body: "\\\\setupmakeup" +
-      "[${1:...}]" +
+      "[${1:name}]" +
       "[${2:options}]" +
       "$3"
   "\\setupmarginblocks":
@@ -1372,16 +1339,17 @@
     body: "\\\\setupmarginblocks" +
       "[${1:options}]" +
       "$2"
+
   "\\setupmarginrules":
     prefix: "setupmarginrules"
     body: "\\\\setupmarginrules" +
-      "[${1:...=...}" +
+      "[level=${1:number}, rulethickness=${2:dimension}}" +
       "$2"
   "\\setupmarking":
     prefix: "setupmarking"
     body: "\\\\setupmarking" +
-      "[${1:...}]" +
-      "[${2:...=...}" +
+      "[${1:name}]" +
+      "[${2:options}" +
       "$3"
   "\\setupnarrower":
     prefix: "setupnarrower"
@@ -1396,12 +1364,12 @@
   "\\setupoppositeplacing":
     prefix: "setupoppositeplacing"
     body: "\\\\setupoppositeplacing" +
-      "[${1:...=...}" +
+      "[${1:options}" +
       "$2"
   "\\setupoutput":
     prefix: "setupoutput"
     body: "\\\\setupoutput" +
-      "[${1:...,...,...}]" +
+      "[${1:name}]" +
       "$2"
   "\\setuppagenumber":
     prefix: "setuppagenumber"
@@ -1416,12 +1384,12 @@
   "\\setuppagetransitions":
     prefix: "setuppagetransitions"
     body: "\\\\setuppagetransitions" +
-      "${1:[${2:...,...,...}]}" +
+      "${1:[${2:name}]}" +
       "$3"
   "\\setuppalet":
     prefix: "setuppalet"
     body: "\\\\setuppalet" +
-      "[${1:...}]" +
+      "[${1:name}]" +
       "$2"
   "\\setuppaper":
     prefix: "setuppaper"
@@ -1431,9 +1399,9 @@
   "\\setuppapersize":
     prefix: "setuppapersize"
     body: "\\\\setuppapersize" +
-      "[${1:...,...,...}]" +
-      "${2:[${3:...,...,...}]}" +
-      "$4"
+      "[${1:page dimension}]" +
+      "[${2:printed page dimension}]" +
+      "$3"
   "\\setupparagraphnumbering":
     prefix: "setupparagraphnumbering"
     body: "\\\\setupparagraphnumbering" +
@@ -1442,10 +1410,10 @@
   "\\setupparagraphs":
     prefix: "setupparagraphs"
     body: "\\\\setupparagraphs" +
-      "[${1:...}]" +
-      "${2:[${3:...}]}" +
-      "[${4:options}]" +
-      "$5"
+      "[${1:name}]" +
+      "[${2:paragraph num}]" +
+      "[${3:options}]" +
+      "$4"
   "\\setuppositioning":
     prefix: "setuppositioning"
     body: "\\\\setuppositioning" +
@@ -1474,7 +1442,7 @@
   "\\setupreferencelist":
     prefix: "setupreferencelist"
     body: "\\\\setupreferencelist" +
-      "[${1:...,...,...}]" +
+      "[${1:name}]" +
       "[${2:options}]" +
       "$3"
   "\\setupreferencing":
@@ -1485,10 +1453,9 @@
   "\\setupregister":
     prefix: "setupregister"
     body: "\\\\setupregister" +
-      "[${1:...}]" +
-      "${2:[${3:...}]}" +
-      "[${4:options}]" +
-      "$5"
+      "[${1:name}]" +
+      "[${2:options}]" +
+      "$3"
   "\\setuprotate":
     prefix: "setuprotate"
     body: "\\\\setuprotate" +
@@ -1497,7 +1464,7 @@
   "\\setuprule":
     prefix: "setuprule"
     body: "\\\\setuprule" +
-      "[${1:...}]" +
+      "[${1:name}]" +
       "[${2:options}]" +
       "$3"
   "\\setupscreens":
@@ -1508,41 +1475,40 @@
   "\\setupsection":
     prefix: "setupsection"
     body: "\\\\setupsection" +
-      "[${1:...}]" +
-      "${2:[${3:...}]}" +
-      "[${4:options}]" +
-      "$5"
+      "[${1:name}]" +
+      "[${2:options}]" +
+      "$3"
   "\\setupsectionblock":
     prefix: "setupsectionblock"
     body: "\\\\setupsectionblock" +
-      "[${1:...}]" +
+      "[${1:name}]" +
       "[${2:options}]" +
       "$3"
   "\\setupsorting":
     prefix: "setupsorting"
     body: "\\\\setupsorting" +
-      "[${1:...}]" +
+      "[${1:name}]" +
       "[${2:options}]" +
       "$3"
   "\\setupspacing":
     prefix: "setupspacing"
     body: "\\\\setupspacing" +
-      "[${1:...}]" +
+      "[${1:fixed / packed / broad}]" +
       "$2"
   "\\setupstrut":
     prefix: "setupstrut"
     body: "\\\\setupstrut" +
-      "[${1:...}]" +
+      "[${1:yes no cap}]" +
       "$2"
   "\\setupsubpagenumber":
     prefix: "setupsubpagenumber"
     body: "\\\\setupsubpagenumber" +
-      "[${1:options}]" +
-      "$2"
+      "[way = ${1:bytext bysection}, state = ${2:start stop none}]" +
+      "$3"
   "\\setupsymbolset":
     prefix: "setupsymbolset"
     body: "\\\\setupsymbolset" +
-      "[${1:...}]" +
+      "[${1:name}]" +
       "$2"
   "\\setupsynchronization":
     prefix: "setupsynchronization"
@@ -1552,12 +1518,12 @@
   "\\setupsynchronizationbar":
     prefix: "setupsynchronizationbar"
     body: "\\\\setupsynchronizationbar" +
-      "[${1:options}]" +
+      "[state=${1:start / stop}]" +
       "$2"
   "\\setupsynonyms":
     prefix: "setupsynonyms"
     body: "\\\\setupsynonyms" +
-      "[${1:...}]" +
+      "[${1:name}]" +
       "[${2:options}]" +
       "$3"
   "\\setupsystem":
@@ -1578,21 +1544,14 @@
   "\\setuptabulate":
     prefix: "setuptabulate"
     body: "\\\\setuptabulate" +
-      "${1:[${2:...}]}" +
-      "[${3:options}]" +
-      "$4"
+      "[${1:name}]" +
+      "[${2:options}]" +
+      "$3"
   "\\setuptext":
     prefix: "setuptext"
     body: "\\\\setuptext" +
-      "${1:[${2:...}]}" +
-      "[${3:options}]" +
-      "$4"
-  "\\setuptextposition":
-    prefix: "setuptextposition"
-    body: "\\\\setuptextposition" +
-      "[${1:...}]" +
-      "[${2:options}]" +
-      "$3"
+      "[${1:see \\setupheader}]" +
+      "$2"
   "\\setuptextrules":
     prefix: "setuptextrules"
     body: "\\\\setuptextrules" +
@@ -1601,39 +1560,39 @@
   "\\setuptexttexts":
     prefix: "setuptexttexts"
     body: "\\\\setuptexttexts" +
-      "${1:[${2:...}]}" +
+      "[${1:...}]" +
+      "[${2:...}]" +
       "[${3:...}]" +
-      "[${4:...}]" +
-      "$5"
+      "$4"
   "\\setuptextvariable":
     prefix: "setuptextvariable"
     body: "\\\\setuptextvariable" +
-      "[${1:...}]" +
+      "[${1:name}]" +
       "[${2:options}]" +
       "$3"
   "\\setupthinrules":
     prefix: "setupthinrules"
     body: "\\\\setupthinrules" +
-      "[${1:...=...}" +
+      "[${1:options}" +
       "$2"
   "\\setuptolerance":
+    comment: "Set up how tolerant TeX should be of ‘ugly’ stretching of spaces"
     prefix: "setuptolerance"
     body: "\\\\setuptolerance" +
-      "[${1:...,...,...}]" +
+      "[${1:stretching}]" +
       "$2"
   "\\setuptop":
     prefix: "setuptop"
     body: "\\\\setuptop" +
-      "${1:[${2:...}]}" +
-      "[${3:options}]" +
-      "$4"
+      "[${1:see \\setupheader}]" +
+      "$2"
   "\\setuptoptexts":
     prefix: "setuptoptexts"
     body: "\\\\setuptoptexts" +
-      "${1:[${2:...}]}" +
+      "[${1:...}]" +
+      "[${2:...}]" +
       "[${3:...}]" +
-      "[${4:...}]" +
-      "$5"
+      "$4"
   "\\setuptype":
     prefix: "setuptype"
     body: "\\\\setuptype" +
@@ -1642,9 +1601,9 @@
   "\\setuptyping":
     prefix: "setuptyping"
     body: "\\\\setuptyping" +
-      "${1:[${2:...}]}" +
-      "[${3:options}]" +
-      "$4"
+      "[${1:name}]" +
+      "[${2:options}]" +
+      "$3"
   "\\setupunderbar":
     prefix: "setupunderbar"
     body: "\\\\setupunderbar" +
@@ -1658,55 +1617,54 @@
   "\\setupversions":
     prefix: "setupversions"
     body: "\\\\setupversions" +
-      "[${1:options}]" +
-      "$2"
+      "[number=${1:...}, style=${2:...}]" +
+      "$3"
   "\\setupwhitespace":
     prefix: "setupwhitespace"
     body: "\\\\setupwhitespace" +
-      "${1:[${2:...}]}" +
-      "$3"
+      "$[${1:dimension}]" +
+      "$2"
   "\\showbodyfont":
     prefix: "showbodyfont"
     body: "\\\\showbodyfont" +
-      "[${1:...,...,...}]" +
+      "[${1:see \\setupbodyfont}]" +
       "$2"
   "\\showbodyfontenvironment":
     prefix: "showbodyfontenvironment"
     body: "\\\\showbodyfontenvironment" +
-      "[${1:...,...,...}]" +
+      "[${1:see \\setupbodyfont}]" +
       "$2"
   "\\showcolor":
+    comment: "Displays all user-defined colors."
     prefix: "showcolor"
     body: "\\\\showcolor" +
-      "[${1:...}]" +
-      "$2"
+      "$1"
   "\\showcolorgroup":
     prefix: "showcolorgroup"
     body: "\\\\showcolorgroup" +
-      "[${1:...}]" +
-      "[${2:...,...,...}]" +
+      "[${1:name}]" +
+      "[${2:options}]" +
       "$3"
   "\\showexternalfigures":
     prefix: "showexternalfigures"
     body: "\\\\showexternalfigures" +
-      "${1:[${2:options}]}" +
-      "$3"
+      "[alternative=${1:...}]" +
+      "$2"
   "\\showfields":
     prefix: "showfields"
     body: "\\\\showfields" +
-      "${1:[${2:...,...,...}]}" +
-      "$3"
+      "[${1:name}]" +
+      "$2"
   "\\showframe":
     prefix: "showframe"
     body: "\\\\showframe" +
-      "${1:[${2:...}]}" +
-      "$3"
+      "${1:[${2:header text footer}]}" +
+      "[${3:leftmargin text rightmargin}]" +
+      "$4"
   "\\showgrid":
     prefix: "showgrid"
     body: "\\\\showgrid" +
-      "${1:[${2:...,...,...}]}" +
-      "{${3:...}}" +
-      "$4"
+      "$1"
   "\\showlayout":
     prefix: "showlayout"
     body: "\\\\showlayout" +
@@ -1718,15 +1676,14 @@
   "\\showpalet":
     prefix: "showpalet"
     body: "\\\\showpalet" +
-      "[${1:...}]" +
-      "[${2:...,...,...}]" +
+      "[${1:name}]" +
+      "[${2:option}]" +
       "$3"
   "\\showprint":
     prefix: "showprint"
     body: "\\\\showprint" +
-      "[${1:...,...,...}]" +
-      "[${2:...,...,...}]" +
-      "[${3:options}]" +
+      "[${1:see \\setuppapersize}]" +
+      "[${3:see \\setuplayout}]" +
       "$4"
   "\\showsetups":
     prefix: "showsetups"
@@ -1739,7 +1696,7 @@
   "\\showsymbolset":
     prefix: "showsymbolset"
     body: "\\\\showsymbolset" +
-      "[${1:...}]" +
+      "[${1:name}]" +
       "$2"
   "\\someline":
     prefix: "someline"
@@ -1749,8 +1706,8 @@
   "\\somewhere":
     prefix: "somewhere"
     body: "\\\\somewhere" +
-      "{${1:...}}" +
-      "{${2:...}}" +
+      "{${1:text}}" +
+      "{${2:text}}" +
       "[${3:ref}]" +
       "$4"
   "\\space":
@@ -1760,78 +1717,83 @@
   "\\splitfloat":
     prefix: "splitfloat"
     body: "\\\\splitfloat" +
-      "${1:[${2:options}]}" +
-      "{${3:...}}" +
-      "{${4:...}}" +
-      "$5"
+      "[${1:see \\setupfloatsplitting}]" +
+      "{${2:text}}" +
+      "{${3:text}}" +
+      "$4"
   "\\startalignment":
     prefix: "startalignment"
     body: "\\\\startalignment" +
-      "${1:[${2:...}]}" +
-      "$3" +
-      "\\stopalignment"
+      "[${1:option}]" +
+      "$2\n" +
+      "\\stopalignment" +
+      "$3"
   "\\startbackground":
     prefix: "startbackground"
     body: "\\\\startbackground" +
-      "$1" +
-      "\\stopbackground"
+      "$1\n" +
+      "\\stopbackground" +
+      "$2"
   "\\startcolor":
     prefix: "startcolor"
     body: "\\\\startcolor" +
-      "[${1:...}]" +
-      "$2" +
-      "\\stopcolor"
+      "[${1:name}]" +
+      "$2\n" +
+      "\\stopcolor" +
+      "$3"
   "\\startcolumns":
     prefix: "startcolumns"
     body: "\\\\startcolumns" +
-      "${1:[${2:options}]}" +
-      "$3" +
-      "\\stopcolumns"
+      "[${1:see \\setupcolumns}]" +
+      "$2\n" +
+      "\\stopcolumns" +
+      "$3"
   "\\startcombination":
     prefix: "startcombination"
     body: "\\\\startcombination" +
-      "[${1:...}]" +
-      "$2" +
-      "\\stopcombination"
+      "[${1:columns} * ${2:rows}]" +
+      "$2\n" +
+      "\\stopcombination" +
+      "$3"
   "\\startcomment":
     prefix: "startcomment"
     body: "\\\\startcomment" +
-      "${1:[${2:...}]}" +
-      "${3:[${4:options}]}" +
-      "$5" +
-      "\\stopcomment"
+      "[${1:name}]" +
+      "[${2:see \\setupcomment}]" +
+      "$3\n" +
+      "\\stopcomment" +
+      "$4"
   "\\startcomponent":
     prefix: "startcomponent"
     body: "\\\\startcomponent" +
-      "${1:<filename>}" +
-      "$2" +
-      "\\stopcomponent"
+      "${1:file}" +
+      "$2\n" +
+      "\\stopcomponent" +
+      "$3"
   "\\startdocument":
     prefix: "startdocument"
     body: "\\\\startdocument" +
-      "[${1:...}]" +
-      "$2" +
-      "\\stopdocument"
+      "[${1:name}]" +
+      "$2\n" +
+      "\\stopdocument" +
+      "$3"
   "\\startenvironment":
     prefix: "startenvironment"
     body: "\\\\startenvironment" +
       "${1:<filename>}" +
-      "$2" +
-      "\\stopenvironment"
+      "$2\n" +
+      "\\stopenvironment" +
+      "$3"
   "\\startfact":
     prefix: "startfact"
-    body: "\\\\startfact \\\\fact" +
-      "${2:...}" +
-      "\\\\${3:...}" +
-      "\\\\${4:...}" +
-      "\\\\fact" +
-      "$6" +
+    body: "\\\\startfact\n"
+      "\\\\fact $1 \\\n" +
       "\\stopfact"
-  "\\startfigure":
+  "\\":
     prefix: "startfigure"
     body: "\\\\startfigure" +
-      "[${1:...}]" +
-      "[${2:...}]" +
+      "[${1:name}]" +
+      "[${2:name}]" +
       "[${3:options}]" +
       "$4" +
       "\\stopfigure"
@@ -1843,10 +1805,10 @@
   "\\startinteractionmenu":
     prefix: "startinteractionmenu"
     body: "\\\\startinteractionmenu" +
-      "[${1:...}]" +
+      "[${1:name}]" +
       "$2" +
       "\\stopinteractionmenu"
-  "\\startitemize ... \\stopitemize":
+  "\\startitemize name \\stopitemize":
     prefix: "itm"
     body: "\\\\startitemize\n" +
       "\\\\item $0\n" +
@@ -1854,10 +1816,10 @@
   "\\startlegend":
     prefix: "startlegend"
     body: "\\\\startlegend" +
-      "${1:[${2:...}]}" +
-      "\\\\leg${4:...}" +
-      "\\\\${5:...}" +
-      "\\\\${6:...}" +
+      "${1:[${2:name}]}" +
+      "\\\\leg${4:name}" +
+      "\\\\${5:name}" +
+      "\\\\${6:name}" +
       "\\\\leg" +
       "$8" +
       "\\stoplegend"
@@ -1875,7 +1837,7 @@
   "\\startlinenumbering":
     prefix: "startlinenumbering"
     body: "\\\\startlinenumbering" +
-      "[${1:...}]" +
+      "[${1:name}]" +
       "$2" +
       "\\stoplinenumbering"
   "\\startlines":
@@ -1901,7 +1863,7 @@
   "\\startmakeup":
     prefix: "startmakeup"
     body: "\\\\startmakeup" +
-      "[${1:...}]" +
+      "[${1:name}]" +
       "${2:[${3:options}]}" +
       "$4" +
       "\\stopmakeup"
@@ -1913,13 +1875,13 @@
   "\\startmarginrule":
     prefix: "startmarginrule"
     body: "\\\\startmarginrule" +
-      "[${1:...}]" +
+      "[${1:name}]" +
       "$2" +
       "\\stopmarginrule"
   "\\startnarrower":
     prefix: "startnarrower"
     body: "\\\\startnarrower" +
-      "${1:[${2:...,...,...}]}" +
+      "${1:[${2:name}]}" +
       "$3" +
       "\\stopnarrower"
   "\\startopposite":
@@ -1930,20 +1892,20 @@
   "\\startoverlay":
     prefix: "startoverlay"
     body: "\\\\startoverlay" +
-      "{${1:...}}" +
-      "{${2:...}}" +
+      "{${1:name}}" +
+      "{${2:name}}" +
       "$3" +
       "\\stopoverlay"
   "\\startoverview":
     prefix: "startoverview"
     body: "\\\\startoverview" +
-      "[${1:...,...,...}]" +
+      "[${1:name}]" +
       "$2" +
       "\\stopoverview"
   "\\startpacked":
     prefix: "startpacked"
     body: "\\\\startpacked" +
-      "${1:[${2:...}]}" +
+      "${1:[${2:name}]}" +
       "$3" +
       "\\stoppacked"
   "\\startpositioning":
@@ -1965,7 +1927,7 @@
   "\\startprofile":
     prefix: "startprofile"
     body: "\\\\startprofile" +
-      "[${1:...,...,...}]" +
+      "[${1:name}]" +
       "$2" +
       "\\stopprofile"
   "\\startproject":
@@ -1977,13 +1939,13 @@
   "\\startquotation":
     prefix: "startquotation"
     body: "\\\\startquotation" +
-      "[${1:...,...,...}]" +
+      "[${1:name}]" +
       "$2" +
       "\\stopquotation"
   "\\startsymbolset":
     prefix: "startsymbolset"
     body: "\\\\startsymbolset" +
-      "[${1:...}]" +
+      "[${1:name}]" +
       "$2" +
       "\\stopsymbolset"
   "\\startsynchronization":
@@ -1994,20 +1956,20 @@
   "\\starttable":
     prefix: "starttable"
     body: "\\\\starttable" +
-      "[${1:...}]" +
+      "[${1:name}]" +
       "$2" +
       "\\stoptable"
   "\\starttables":
     prefix: "starttables"
     body: "\\\\starttables" +
-      "[${1:...}]" +
+      "[${1:name}]" +
       "$2" +
       "\\stoptables"
   "\\starttextrule":
     prefix: "starttextrule"
     body: "\\\\starttextrule" +
-      "${1:[${2:...}]}" +
-      "{${3:...}}" +
+      "${1:[${2:name}]}" +
+      "{${3:name}}" +
       "$4" +
       "\\stoptextrule"
   "\\startunpacked":
@@ -2018,74 +1980,74 @@
   "\\startversion":
     prefix: "startversion"
     body: "\\\\startversion" +
-      "[${1:...,...,...}]" +
+      "[${1:name}]" +
       "$2" +
       "\\stopversion"
   "\\stretched":
     prefix: "stretched"
     body: "\\\\stretched" +
-      "{${1:... ...}}" +
+      "{${1:name name}}" +
       "$2"
   "\\sub":
     prefix: "sub"
     body: "\\\\sub" +
-      "${1:[${2:ref, ...}]}" +
+      "${1:[${2:ref, name}]}" +
       "$3"
   "\\subject":
     prefix: "subject"
     body: "\\\\subject" +
-      "${1:[${2:ref, ...}]}" +
-      "{${3:...}}" +
+      "${1:[${2:ref, name}]}" +
+      "{${3:name}}" +
       "$4"
   "\\subsection":
     prefix: "subsection"
     body: "\\\\subsection" +
-      "${1:[${2:ref, ...}]}" +
-      "{${3:...}}" +
+      "${1:[${2:ref, name}]}" +
+      "{${3:name}}" +
       "$4"
   "\\subsubject":
     prefix: "subsubject"
     body: "\\\\subsubject" +
-      "${1:[${2:ref, ...}]}" +
-      "{${3:...}}" +
+      "${1:[${2:ref, name}]}" +
+      "{${3:name}}" +
       "$4"
   "\\subsubsection":
     prefix: "subsubsection"
     body: "\\\\subsubsection" +
-      "${1:[${2:ref, ...}]}" +
-      "{${3:...}}" +
+      "${1:[${2:ref, name}]}" +
+      "{${3:name}}" +
       "$4"
   "\\subsubsubject":
     prefix: "subsubsubject"
     body: "\\\\subsubsubject" +
-      "${1:[${2:ref, ...}]}" +
-      "{${3:...}}" +
+      "${1:[${2:ref, name}]}" +
+      "{${3:name}}" +
       "$4"
   "\\switchtobodyfont":
     prefix: "switchtobodyfont"
     body: "\\\\switchtobodyfont" +
-      "[${1:...,...,...}]" +
+      "[${1:name}]" +
       "$2"
   "\\switchtorawfont":
     prefix: "switchtorawfont"
     body: "\\\\switchtorawfont" +
-      "[${1:...}]" +
+      "[${1:name}]" +
       "$2"
   "\\sym":
     prefix: "sym"
     body: "\\\\sym" +
-      "{${1:...}}" +
+      "{${1:name}}" +
       "$2"
   "\\symbol":
     prefix: "symbol"
     body: "\\\\symbol" +
-      "${1:[${2:...}]}" +
-      "[${3:...}]" +
+      "${1:[${2:name}]}" +
+      "[${3:name}]" +
       "$4"
   "\\synchronizationbar":
     prefix: "synchronizationbar"
     body: "\\\\synchronizationbar" +
-      "[${1:...}]" +
+      "[${1:name}]" +
       "[${2:options}]" +
       "$3"
   "\\synchronize":
@@ -2095,30 +2057,30 @@
   "\\tab":
     prefix: "tab"
     body: "\\\\tab" +
-      "{${1:...}}" +
-      "${2:...}" +
+      "{${1:name}}" +
+      "${2:name}" +
       "$3"
   "\\tex":
     prefix: "tex"
     body: "\\\\tex" +
-      "{${1:...}}" +
+      "{${1:name}}" +
       "$2"
   "\\textreference":
     prefix: "textreference"
     body: "\\\\textreference" +
       "[${1:ref}]" +
-      "{${2:...}}" +
+      "{${2:name}}" +
       "$3"
   "\\textrule":
     prefix: "textrule"
     body: "\\\\textrule" +
-      "${1:[${2:...}]}" +
-      "{${3:...}}" +
+      "${1:[${2:name}]}" +
+      "{${3:name}}" +
       "$4"
   "\\textvariable":
     prefix: "textvariable"
     body: "\\\\textvariable" +
-      "[${1:...}]" +
+      "[${1:name}]" +
       "$2"
   "\\thinrule":
     prefix: "thinrule"
@@ -2127,20 +2089,20 @@
   "\\thinrules":
     prefix: "thinrules"
     body: "\\\\thinrules" +
-      "${1:[${2:...=...}}" +
+      "${1:[${2:options}}" +
       "$3"
   "\\title":
     prefix: "title"
     body: "\\\\title" +
-      "${1:[${2:ref, ...}]}" +
-      "{${3:...}}" +
+      "${1:[${2:ref, name}]}" +
+      "{${3:name}}" +
       "$4"
   "\\tooltip":
     prefix: "tooltip"
     body: "\\\\tooltip" +
-      "${1:[${2:...}]}" +
-      "{${3:...}}" +
-      "{${4:...}}" +
+      "${1:[${2:name}]}" +
+      "{${3:name}}" +
+      "{${4:name}}" +
       "$5"
   "\\translate":
     prefix: "translate"
@@ -2150,131 +2112,131 @@
   "\\typ":
     prefix: "typ"
     body: "\\\\typ" +
-      "{${1:...}}" +
+      "{${1:name}}" +
       "$2"
   "\\type":
     prefix: "type"
     body: "\\\\type" +
-      "{${1:...}}" +
+      "{${1:name}}" +
       "$2"
   "\\typebuffer":
     prefix: "typebuffer"
     body: "\\\\typebuffer" +
-      "[${1:...}]" +
+      "[${1:name}]" +
       "$2"
   "\\typefile":
     prefix: "typefile"
     body: "\\\\typefile" +
-      "${1:[${2:...}]}" +
-      "{${3:...}}" +
+      "${1:[${2:name}]}" +
+      "{${3:name}}" +
       "$4"
   "\\underbar":
     prefix: "underbar"
     body: "\\\\underbar" +
-      "{${1:...}}" +
+      "{${1:name}}" +
       "$2"
   "\\underbars":
     prefix: "underbars"
     body: "\\\\underbars" +
-      "{${1:... ...}}" +
+      "{${1:name name}}" +
       "$2"
   "\\useURL":
     prefix: "useURL"
     body: "\\\\useURL" +
-      "[${1:...}]" +
-      "[${2:...}]" +
-      "[${3:...}]" +
-      "[${4:...}]" +
+      "[${1:name}]" +
+      "[${2:name}]" +
+      "[${3:name}]" +
+      "[${4:name}]" +
       "$5"
   "\\useblocks":
     prefix: "useblocks"
     body: "\\\\useblocks" +
-      "[${1:...,...,...}]" +
-      "${2:[${3:...,...,...}]}" +
+      "[${1:name}]" +
+      "${2:[${3:name}]}" +
       "$4"
   "\\usecommands":
     prefix: "usecommands"
     body: "\\\\usecommands" +
-      "{${1:...}}" +
+      "{${1:name}}" +
       "$2"
   "\\usedirectory":
     prefix: "usedirectory"
     body: "\\\\usedirectory" +
-      "[${1:...,...,...}]" +
+      "[${1:name}]" +
       "$2"
   "\\useencoding":
     prefix: "useencoding"
     body: "\\\\useencoding" +
-      "[${1:...,...,...}]" +
+      "[${1:name}]" +
       "$2"
   "\\useexternaldocument":
     prefix: "useexternaldocument"
     body: "\\\\useexternaldocument" +
-      "[${1:...}]" +
-      "[${2:...}]" +
-      "[${3:...}]" +
+      "[${1:name}]" +
+      "[${2:name}]" +
+      "[${3:name}]" +
       "$4"
   "\\useexternalfigure":
     prefix: "useexternalfigure"
     body: "\\\\useexternalfigure" +
-      "${1:[${2:...}]}" +
-      "[${3:...}]" +
+      "${1:[${2:name}]}" +
+      "[${3:name}]" +
       "${4:[${5:options}]}" +
       "$6"
   "\\useexternalfile":
     prefix: "useexternalfile"
     body: "\\\\useexternalfile" +
-      "[${1:...}]" +
-      "[${2:...}]" +
-      "[${3:...}]" +
+      "[${1:name}]" +
+      "[${2:name}]" +
+      "[${3:name}]" +
       "[${4:options}]" +
       "$5"
   "\\useexternalfiles":
     prefix: "useexternalfiles"
     body: "\\\\useexternalfiles" +
-      "[${1:...}]" +
+      "[${1:name}]" +
       "[${2:options}]" +
       "$3"
   "\\useexternalsoundtrack":
     prefix: "useexternalsoundtrack"
     body: "\\\\useexternalsoundtrack" +
-      "[${1:...}]" +
-      "[${2:...}]" +
+      "[${1:name}]" +
+      "[${2:name}]" +
       "$3"
   "\\usemodule":
     prefix: "usemodule"
     body: "\\\\usemodule" +
-      "[${1:...,...,...}]" +
+      "[${1:name}]" +
       "$2"
   "\\usereferences":
     prefix: "usereferences"
     body: "\\\\usereferences" +
-      "[${1:...,...,...}]" +
+      "[${1:name}]" +
       "$2"
   "\\usespecials":
     prefix: "usespecials"
     body: "\\\\usespecials" +
-      "[${1:...,...,...}]" +
+      "[${1:name}]" +
       "$2"
   "\\usesymbols":
     prefix: "usesymbols"
     body: "\\\\usesymbols" +
-      "[${1:...}]" +
+      "[${1:name}]" +
       "$2"
   "\\version":
     prefix: "version"
     body: "\\\\version" +
-      "[${1:...}]" +
+      "[${1:name}]" +
       "$2"
   "\\vl":
     prefix: "vl"
     body: "\\\\vl" +
-      "[${1:...}]" +
+      "[${1:name}]" +
       "$2"
   "\\weekday":
     prefix: "weekday"
     body: "\\\\weekday" +
-      "{${1:...}}" +
+      "{${1:name}}" +
       "$2"
   "\\whitespace":
     prefix: "whitespace"
@@ -2283,39 +2245,39 @@
   "\\wordright":
     prefix: "wordright"
     body: "\\\\wordright" +
-      "{${1:...}}" +
+      "{${1:name}}" +
       "$2"
   "\\writebetweenlist":
     prefix: "writebetweenlist"
     body: "\\\\writebetweenlist" +
-      "[${1:...}]" +
-      "{${2:...}}" +
+      "[${1:name}]" +
+      "{${2:name}}" +
       "$3"
   "\\writetolist":
     prefix: "writetolist"
     body: "\\\\writetolist" +
-      "[${1:...}]" +
-      "{${2:...}}" +
-      "{${3:...}}" +
+      "[${1:name}]" +
+      "{${2:name}}" +
+      "{${3:name}}" +
       "$4"
   "\\writetoreferencelist":
     prefix: "writetoreferencelist"
     body: "\\\\writetoreferencelist" +
-      "[${1:...}]" +
-      "{${2:...}}" +
-      "{${3:...}}" +
+      "[${1:name}]" +
+      "{${2:name}}" +
+      "{${3:name}}" +
       "$4"
   "\\writetoregister":
     prefix: "writetoregister"
     body: "\\\\writetoregister" +
-      "[${1:...}]" +
-      "${2:[${3:...}]}" +
-      "{${4:...+...+...}}" +
+      "[${1:name}]" +
+      "${2:[${3:name}]}" +
+      "{${4:name+name+name}}" +
       "$5"
   # Chapter:
   #   prefix: "sec"
   #   body: "\\\\chapter" +
-  #     "\\\\start ... \\\\stop"
+  #     "\\\\start name \\\\stop"
   #   prefix: "env"
   #   body: "\\\\start" +
   #     "${1:text}" +
