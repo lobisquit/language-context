@@ -388,7 +388,7 @@
     prefix: "disableinteractionmenu"
     body: "\\\\disableinteractionmenu" +
       "[${1:left right top bottom name}]" +
-      "[${2:ref, name}]" +
+      "[${2:ref, ...}]" +
       "$3"
   "\\emptylines":
     prefix: "emptylines"
@@ -532,7 +532,7 @@
     comment: "Head of itemize"
     prefix: "head"
     body: "\\\\head" +
-      "${1:[${2:ref, name}]}" +
+      "${1:[${2:ref, ...}]}" +
       "$3"
   "\\headnumber":
     prefix: "headnumber"
@@ -625,7 +625,7 @@
   "\\item":
     prefix: "item"
     body: "\\\\item" +
-      "${1:[${2:ref, name}]}" +
+      "${1:[${2:ref, ...}]}" +
       "$3"
   "\\items":
     prefix: "items"
@@ -792,7 +792,7 @@
   "\\part":
     prefix: "part"
     body: "\\\\part" +
-      "${1:[${2:ref, name}]}" +
+      "${1:[${2:ref, ...}]}" +
       "{${3:title}}" +
       "$4"
   "\\periods":
@@ -820,7 +820,7 @@
   "\\placeformula":
     prefix: "placeformula"
     body: "\\\\placeformula" +
-      "${1:[${2:ref, name}]}" +
+      "${1:[${2:ref, ...}]}" +
       "${4:formula}$$" +
       "$5"
   "\\placelist":
@@ -871,7 +871,7 @@
   "\\placesubformula":
     prefix: "placesubformula"
     body: "\\\\placesubformula" +
-      "${1:[${2:ref, name}]}" +
+      "${1:[${2:ref, ...}]}" +
       "${4:formula}$$" +
       "$5"
   "\\placetextvariable":
@@ -981,7 +981,7 @@
   "\\section":
     prefix: "section"
     body: "\\\\section" +
-      "${1:[${2:ref, name}]}" +
+      "${1:[${2:ref, ...}]}" +
       "{${3:text}}" +
       "$4"
   "\\selectblocks":
@@ -1724,34 +1724,34 @@
   "\\startalignment":
     prefix: "startalignment"
     body: "\\\\startalignment" +
-      "[${1:option}]" +
+      "[${1:option}]\n" +
       "$2\n" +
       "\\stopalignment" +
       "$3"
   "\\startbackground":
     prefix: "startbackground"
-    body: "\\\\startbackground" +
+    body: "\\\\startbackground\n" +
       "$1\n" +
       "\\stopbackground" +
       "$2"
   "\\startcolor":
     prefix: "startcolor"
     body: "\\\\startcolor" +
-      "[${1:name}]" +
+      "[${1:name}]\n" +
       "$2\n" +
       "\\stopcolor" +
       "$3"
   "\\startcolumns":
     prefix: "startcolumns"
     body: "\\\\startcolumns" +
-      "[${1:see \\setupcolumns}]" +
+      "[${1:see \\setupcolumns}]\n" +
       "$2\n" +
       "\\stopcolumns" +
       "$3"
   "\\startcombination":
     prefix: "startcombination"
     body: "\\\\startcombination" +
-      "[${1:columns} * ${2:rows}]" +
+      "[${1:columns} * ${2:rows}]\n" +
       "$2\n" +
       "\\stopcombination" +
       "$3"
@@ -1759,7 +1759,7 @@
     prefix: "startcomment"
     body: "\\\\startcomment" +
       "[${1:name}]" +
-      "[${2:see \\setupcomment}]" +
+      "[${2:see \\setupcomment}]\n" +
       "$3\n" +
       "\\stopcomment" +
       "$4"
@@ -1773,174 +1773,159 @@
   "\\startdocument":
     prefix: "startdocument"
     body: "\\\\startdocument" +
-      "[${1:name}]" +
+      "[${1:name}]\n" +
       "$2\n" +
       "\\stopdocument" +
       "$3"
   "\\startenvironment":
     prefix: "startenvironment"
     body: "\\\\startenvironment" +
-      "${1:<filename>}" +
+      "${1:file}\n" +
       "$2\n" +
       "\\stopenvironment" +
       "$3"
   "\\startfact":
     prefix: "startfact"
-    body: "\\\\startfact\n"
+    body: "\\\\startfact\n" +
       "\\\\fact $1 \\\n" +
       "\\stopfact"
-  "\\":
+  "\\startfigure":
     prefix: "startfigure"
     body: "\\\\startfigure" +
       "[${1:name}]" +
-      "[${2:name}]" +
-      "[${3:options}]" +
+      "[${2:file}]" +
+      "[${3:options}]\n" +
       "$4" +
       "\\stopfigure"
   "\\starthiding":
     prefix: "starthiding"
-    body: "\\\\starthiding" +
+    body: "\\\\starthiding\n" +
       "$1" +
       "\\stophiding"
-  "\\startinteractionmenu":
-    prefix: "startinteractionmenu"
-    body: "\\\\startinteractionmenu" +
-      "[${1:name}]" +
-      "$2" +
-      "\\stopinteractionmenu"
-  "\\startitemize name \\stopitemize":
+  "\\startitemize ... \\stopitemize":
     prefix: "itm"
     body: "\\\\startitemize\n" +
       "\\\\item $0\n" +
       "\\\\stopitemize"
-  "\\startlegend":
-    prefix: "startlegend"
-    body: "\\\\startlegend" +
-      "${1:[${2:name}]}" +
-      "\\\\leg${4:name}" +
-      "\\\\${5:name}" +
-      "\\\\${6:name}" +
-      "\\\\leg" +
-      "$8" +
-      "\\stoplegend"
   "\\startline":
     prefix: "startline"
     body: "\\\\startline" +
-      "[${1:ref}]" +
-      "$2" +
+      "[${1:ref}]\n" +
+      "$2\n" +
       "\\stopline"
   "\\startlinecorrection":
     prefix: "startlinecorrection"
-    body: "\\\\startlinecorrection" +
-      "$1" +
+    body: "\\\\startlinecorrection\n" +
+      "$1\n" +
       "\\stoplinecorrection"
   "\\startlinenumbering":
     prefix: "startlinenumbering"
     body: "\\\\startlinenumbering" +
-      "[${1:name}]" +
-      "$2" +
+      "${1:\\[continue\\]}\n" +
+      "$2\n" +
       "\\stoplinenumbering"
   "\\startlines":
     prefix: "startlines"
-    body: "\\\\startlines" +
-      "$1" +
+    body: "\\\\startlines\n" +
+      "$1\n" +
       "\\stoplines"
   "\\startlocal":
     prefix: "startlocal"
-    body: "\\\\startlocal" +
-      "$1" +
+    body: "\\\\startlocal\n" +
+      "$1\n" +
       "\\stoplocal"
   "\\startlocalenvironment":
     prefix: "startlocalenvironment"
-    body: "\\\\startlocalenvironment" +
-      "$1" +
+    body: "\\\\startlocalenvironment\n" +
+      "$1\n" +
       "\\stoplocalenvironment"
   "\\startlocalfootnotes":
     prefix: "startlocalfootnotes"
-    body: "\\\\startlocalfootnotes" +
-      "$1" +
+    body: "\\\\startlocalfootnotes\n" +
+      "$1\n" +
       "\\stoplocalfootnotes"
   "\\startmakeup":
     prefix: "startmakeup"
     body: "\\\\startmakeup" +
       "[${1:name}]" +
-      "${2:[${3:options}]}" +
+      "${2:[${3:see \\setupmakeup}]}" +
       "$4" +
       "\\stopmakeup"
   "\\startmarginblock":
     prefix: "startmarginblock"
-    body: "\\\\startmarginblock" +
-      "$1" +
+    body: "\\\\startmarginblock\n" +
+      "$1\n" +
       "\\stopmarginblock"
   "\\startmarginrule":
     prefix: "startmarginrule"
     body: "\\\\startmarginrule" +
-      "[${1:name}]" +
+      "[${1:number}]" +
       "$2" +
       "\\stopmarginrule"
   "\\startnarrower":
     prefix: "startnarrower"
     body: "\\\\startnarrower" +
-      "${1:[${2:name}]}" +
-      "$3" +
+      "${1:[${2:margins to narrow}]}\n" +
+      "$3\n" +
       "\\stopnarrower"
   "\\startopposite":
     prefix: "startopposite"
-    body: "\\\\startopposite" +
-      "$1" +
+    body: "\\\\startopposite\n" +
+      "$1\n" +
       "\\stopopposite"
   "\\startoverlay":
     prefix: "startoverlay"
     body: "\\\\startoverlay" +
-      "{${1:name}}" +
-      "{${2:name}}" +
-      "$3" +
+      "{${1:text}}" +
+      "{${2:text}}\n" +
+      "$3\n" +
       "\\stopoverlay"
   "\\startoverview":
     prefix: "startoverview"
     body: "\\\\startoverview" +
-      "[${1:name}]" +
-      "$2" +
+      "[${1:name}]\n" +
+      "$2\n" +
       "\\stopoverview"
   "\\startpacked":
     prefix: "startpacked"
     body: "\\\\startpacked" +
-      "${1:[${2:name}]}" +
-      "$3" +
+      "${1:[${2:blank}]}\n" +
+      "$3\n" +
       "\\stoppacked"
   "\\startpositioning":
     prefix: "startpositioning"
     body: "\\\\startpositioning" +
-      "$1" +
+      "$1\n" +
       "\\stoppositioning"
   "\\startpostponing":
     prefix: "startpostponing"
-    body: "\\\\startpostponing" +
-      "$1" +
+    body: "\\\\startpostponing\n" +
+      "${1:[${2:page number or increment}]}\n" +
+      "$3\n" +
       "\\stoppostponing"
   "\\startproduct":
     prefix: "startproduct"
     body: "\\\\startproduct" +
-      "${1:<filename>}" +
-      "$2" +
+      "${1: \\component file}\n" +
+      "$2\n" +
       "\\stopproduct"
   "\\startprofile":
     prefix: "startprofile"
     body: "\\\\startprofile" +
-      "[${1:name}]" +
-      "$2" +
+      "[${1:name}]\n" +
+      "$2\n" +
       "\\stopprofile"
   "\\startproject":
     prefix: "startproject"
     body: "\\\\startproject" +
-      "${1:<filename>}" +
-      "$2" +
+      "${1:command}\n" +
+      "$2\n" +
       "\\stopproject"
   "\\startquotation":
     prefix: "startquotation"
     body: "\\\\startquotation" +
-      "[${1:name}]" +
-      "$2" +
+      "[${1:left middle right}]\n" +
+      "$2\n" +
       "\\stopquotation"
   "\\startsymbolset":
     prefix: "startsymbolset"
@@ -1950,83 +1935,76 @@
       "\\stopsymbolset"
   "\\startsynchronization":
     prefix: "startsynchronization"
-    body: "\\\\startsynchronization" +
-      "$1" +
+    body: "\\\\startsynchronization\n" +
+      "$1\n" +
       "\\stopsynchronization"
   "\\starttable":
     prefix: "starttable"
     body: "\\\\starttable" +
-      "[${1:name}]" +
-      "$2" +
+      "[${1:columns struct}]\n" +
+      "$2\n" +
       "\\stoptable"
-  "\\starttables":
-    prefix: "starttables"
-    body: "\\\\starttables" +
-      "[${1:name}]" +
-      "$2" +
-      "\\stoptables"
   "\\starttextrule":
     prefix: "starttextrule"
     body: "\\\\starttextrule" +
-      "${1:[${2:name}]}" +
-      "{${3:name}}" +
-      "$4" +
+      "{${1:title}}\n" +
+      "$2\n" +
       "\\stoptextrule"
   "\\startunpacked":
     prefix: "startunpacked"
-    body: "\\\\startunpacked" +
-      "$1" +
+    body: "\\\\startunpacked\n" +
+      "$1\n" +
       "\\stopunpacked"
   "\\startversion":
     prefix: "startversion"
     body: "\\\\startversion" +
-      "[${1:name}]" +
-      "$2" +
+      "[${1:numbers}]\n" +
+      "$2\n" +
       "\\stopversion"
   "\\stretched":
     prefix: "stretched"
     body: "\\\\stretched" +
-      "{${1:name name}}" +
+      "{${1:text to stretch}}" +
       "$2"
   "\\sub":
     prefix: "sub"
     body: "\\\\sub" +
-      "${1:[${2:ref, name}]}" +
+      "${1:[${2:ref, ...}]}" +
       "$3"
   "\\subject":
     prefix: "subject"
     body: "\\\\subject" +
-      "${1:[${2:ref, name}]}" +
-      "{${3:name}}" +
+      "${1:[${2:ref, ...}]}" +
+      "{${3:text}}" +
       "$4"
   "\\subsection":
     prefix: "subsection"
     body: "\\\\subsection" +
-      "${1:[${2:ref, name}]}" +
-      "{${3:name}}" +
+      "${1:[${2:ref, ...}]}" +
+      "{${3:text}}" +
       "$4"
   "\\subsubject":
     prefix: "subsubject"
     body: "\\\\subsubject" +
-      "${1:[${2:ref, name}]}" +
-      "{${3:name}}" +
+      "${1:[${2:ref, ...}]}" +
+      "{${3:text}}" +
       "$4"
   "\\subsubsection":
     prefix: "subsubsection"
     body: "\\\\subsubsection" +
-      "${1:[${2:ref, name}]}" +
-      "{${3:name}}" +
+      "${1:[${2:ref, ...}]}" +
+      "{${3:text}}" +
       "$4"
   "\\subsubsubject":
     prefix: "subsubsubject"
     body: "\\\\subsubsubject" +
-      "${1:[${2:ref, name}]}" +
-      "{${3:name}}" +
+      "${1:[${2:ref, ...}]}" +
+      "{${3:text}}" +
       "$4"
   "\\switchtobodyfont":
     prefix: "switchtobodyfont"
     body: "\\\\switchtobodyfont" +
-      "[${1:name}]" +
+      "[${1:style}]" +
       "$2"
   "\\switchtorawfont":
     prefix: "switchtorawfont"
@@ -2036,7 +2014,7 @@
   "\\sym":
     prefix: "sym"
     body: "\\\\sym" +
-      "{${1:name}}" +
+      "{${1:custom item mark}}" +
       "$2"
   "\\symbol":
     prefix: "symbol"
@@ -2044,12 +2022,6 @@
       "${1:[${2:name}]}" +
       "[${3:name}]" +
       "$4"
-  "\\synchronizationbar":
-    prefix: "synchronizationbar"
-    body: "\\\\synchronizationbar" +
-      "[${1:name}]" +
-      "[${2:options}]" +
-      "$3"
   "\\synchronize":
     prefix: "synchronize"
     body: "\\\\synchronize" +
@@ -2057,25 +2029,24 @@
   "\\tab":
     prefix: "tab"
     body: "\\\\tab" +
-      "{${1:name}}" +
-      "${2:name}" +
+      "${2:paragraph suffix}" +
       "$3"
   "\\tex":
     prefix: "tex"
     body: "\\\\tex" +
-      "{${1:name}}" +
+      "{${1:command name}}" +
       "$2"
   "\\textreference":
     prefix: "textreference"
     body: "\\\\textreference" +
       "[${1:ref}]" +
-      "{${2:name}}" +
+      "{${2:text}}" +
       "$3"
   "\\textrule":
     prefix: "textrule"
     body: "\\\\textrule" +
-      "${1:[${2:name}]}" +
-      "{${3:name}}" +
+      "[${1:top middle bottom}]}" +
+      "{${2:text}}" +
       "$4"
   "\\textvariable":
     prefix: "textvariable"
@@ -2089,98 +2060,91 @@
   "\\thinrules":
     prefix: "thinrules"
     body: "\\\\thinrules" +
-      "${1:[${2:options}}" +
+      "${1:[${2:see \\setupthinrules}}" +
       "$3"
   "\\title":
     prefix: "title"
     body: "\\\\title" +
-      "${1:[${2:ref, name}]}" +
-      "{${3:name}}" +
+      "${1:[${2:ref, ...}]}" +
+      "{${3:text}}" +
       "$4"
   "\\tooltip":
     prefix: "tooltip"
     body: "\\\\tooltip" +
-      "${1:[${2:name}]}" +
-      "{${3:name}}" +
-      "{${4:name}}" +
+      "${1:[${2:left right middle}]}" +
+      "{${3:text}}" +
+      "{${4:text}}" +
       "$5"
   "\\translate":
     prefix: "translate"
     body: "\\\\translate" +
-      "[${1:options}]" +
+      "[${1:lang=..., other=...}]" +
       "$2"
   "\\typ":
     prefix: "typ"
     body: "\\\\typ" +
-      "{${1:name}}" +
+      "{${1:text}}" +
       "$2"
   "\\type":
     prefix: "type"
     body: "\\\\type" +
-      "{${1:name}}" +
+      "{${1:text}}" +
       "$2"
   "\\typebuffer":
     prefix: "typebuffer"
     body: "\\\\typebuffer" +
-      "[${1:name}]" +
+      "[${1:buffer name}]" +
       "$2"
   "\\typefile":
     prefix: "typefile"
     body: "\\\\typefile" +
-      "${1:[${2:name}]}" +
-      "{${3:name}}" +
+      "${1:[${2:see \\definetyping}]}" +
+      "{${3:file name}}" +
       "$4"
   "\\underbar":
     prefix: "underbar"
     body: "\\\\underbar" +
-      "{${1:name}}" +
+      "{${1:text}}" +
       "$2"
   "\\underbars":
     prefix: "underbars"
     body: "\\\\underbars" +
-      "{${1:name name}}" +
+      "{${1:words}}" +
       "$2"
   "\\useURL":
     prefix: "useURL"
     body: "\\\\useURL" +
-      "[${1:name}]" +
-      "[${2:name}]" +
-      "[${3:name}]" +
-      "[${4:name}]" +
+      "[${1:label}]" +
+      "[${2:URL}]" +
+      "[${3:attached file URL}]" +
+      "[${4:text}]" +
       "$5"
   "\\useblocks":
     prefix: "useblocks"
     body: "\\\\useblocks" +
-      "[${1:name}]" +
-      "${2:[${3:name}]}" +
+      "[${1:block classes}]" +
+      "${2:[${3:options}]}" +
       "$4"
   "\\usecommands":
     prefix: "usecommands"
     body: "\\\\usecommands" +
-      "{${1:name}}" +
+      "{${1:text}}" +
       "$2"
   "\\usedirectory":
     prefix: "usedirectory"
     body: "\\\\usedirectory" +
       "[${1:name}]" +
       "$2"
-  "\\useencoding":
-    prefix: "useencoding"
-    body: "\\\\useencoding" +
-      "[${1:name}]" +
-      "$2"
   "\\useexternaldocument":
     prefix: "useexternaldocument"
     body: "\\\\useexternaldocument" +
-      "[${1:name}]" +
-      "[${2:name}]" +
-      "[${3:name}]" +
-      "$4"
+      "[${1:file}]" +
+      "$2"
   "\\useexternalfigure":
     prefix: "useexternalfigure"
     body: "\\\\useexternalfigure" +
       "${1:[${2:name}]}" +
-      "[${3:name}]" +
+      "[${3:file}]" +
       "${4:[${5:options}]}" +
       "$6"
   "\\useexternalfile":
@@ -2188,20 +2152,14 @@
     body: "\\\\useexternalfile" +
       "[${1:name}]" +
       "[${2:name}]" +
-      "[${3:name}]" +
-      "[${4:options}]" +
+      "[${3:file}]" +
+      "[${4:bodyfont}]" +
       "$5"
   "\\useexternalfiles":
     prefix: "useexternalfiles"
     body: "\\\\useexternalfiles" +
       "[${1:name}]" +
       "[${2:options}]" +
-      "$3"
-  "\\useexternalsoundtrack":
-    prefix: "useexternalsoundtrack"
-    body: "\\\\useexternalsoundtrack" +
-      "[${1:name}]" +
-      "[${2:name}]" +
       "$3"
   "\\usemodule":
     prefix: "usemodule"
@@ -2211,7 +2169,7 @@
   "\\usereferences":
     prefix: "usereferences"
     body: "\\\\usereferences" +
-      "[${1:name}]" +
+      "[${1:file}]" +
       "$2"
   "\\usespecials":
     prefix: "usespecials"
@@ -2226,17 +2184,12 @@
   "\\version":
     prefix: "version"
     body: "\\\\version" +
-      "[${1:name}]" +
+      "[${1:final concept temporary}]" +
       "$2"
   "\\vl":
     prefix: "vl"
     body: "\\\\vl" +
-      "[${1:name}]" +
-      "$2"
-  "\\weekday":
-    prefix: "weekday"
-    body: "\\\\weekday" +
-      "{${1:name}}" +
+      "[${1:number}]" +
       "$2"
   "\\whitespace":
     prefix: "whitespace"
@@ -2245,78 +2198,52 @@
   "\\wordright":
     prefix: "wordright"
     body: "\\\\wordright" +
-      "{${1:name}}" +
+      "{${1:text}}" +
       "$2"
   "\\writebetweenlist":
     prefix: "writebetweenlist"
     body: "\\\\writebetweenlist" +
       "[${1:name}]" +
-      "{${2:name}}" +
+      "{${2:text}}" +
       "$3"
   "\\writetolist":
     prefix: "writetolist"
     body: "\\\\writetolist" +
       "[${1:name}]" +
-      "{${2:name}}" +
-      "{${3:name}}" +
+      "{${2:text}}" +
+      "{${3:text}}" +
       "$4"
   "\\writetoreferencelist":
     prefix: "writetoreferencelist"
     body: "\\\\writetoreferencelist" +
       "[${1:name}]" +
-      "{${2:name}}" +
-      "{${3:name}}" +
+      "{${2:text}}" +
+      "{${3:text}}" +
       "$4"
   "\\writetoregister":
     prefix: "writetoregister"
     body: "\\\\writetoregister" +
-      "[${1:name}]" +
-      "${2:[${3:name}]}" +
-      "{${4:name+name+name}}" +
+      "[${1:silgular}]" +
+      "${2:[${3:text}]}" +
+      "{${4:... + ... + ...}}" +
       "$5"
-  # Chapter:
-  #   prefix: "sec"
-  #   body: "\\\\chapter" +
-  #     "\\\\start name \\\\stop"
-  #   prefix: "env"
-  #   body: "\\\\start" +
-  #     "${1:text}" +
-  #     "$0" +
-  #     "\\\\stop" +
-  #     "${1/(\\w*)(.*\\n*)*/$1/}"
-  # "Equation Align":
-  #   prefix: "eqal"
-  #   body: "\\\\\\placeformula" +
-  #     "\\\\startformula\\\\startalign" +
-  #     "$0" +
-  #     "\\\\stopalign\\\\stopformula"
-  # Equation:
-  #   prefix: "eq"
-  #   body: "\\\\\\placeformula" +
-  #     "\\\\startformula" +
-  #     "$0" +
-  #     "\\\\stopformula"
-  # Part:
-  #   prefix: "sec"
-  #   body: "\\\\part" +
-  # Section:
-  #   prefix: "sec"
-  #   body: "\\\\section" +
-  # Subject:
-  #   prefix: "sub"
-  #   body: "\\\\subject" +
-  # Subsection:
-  #   prefix: "sec"
-  #   body: "\\\\subsection" +
-  # Subsubject:
-  #   prefix: "sub"
-  #   body: "\\\\subsubject" +
-  # Subsubsection:
-  #   prefix: "sec"
-  #   body: "\\\\subsubsection" +
-  # Subsubsubject:
-  #   prefix: "sub"
-  #   body: "\\\\subsubsubject" +
-  # Title:
-  #   prefix: "sub"
-  #   body: "\\\\title" +
+  "Environment":
+    prefix: "env"
+    body: "\\\\start" +
+      "${1:env}\n" +
+      "$2\n" +
+      "\\\\stop${1:env}"
+  "Equation Align":
+    prefix: "eqal"
+    body: "\\\\\\placeformula[${0:ref}]\n" +
+      "\\\\startformula\\\\startalign\n" +
+      "$1\n" +
+      "\\\\stopalign\\\\stopformula\n" +
+      "$2"
+  "Equation":
+    prefix: "eq"
+    body: "\\\\\\placeformula[${0:ref}]\n" +
+      "\\\\startformula\n" +
+      "$0\n" +
+      "\\\\stopformula\n" +
+      "$1"
