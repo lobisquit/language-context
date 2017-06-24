@@ -70,7 +70,7 @@
     comment: "Split column inside \\start/stopcolumns"
     prefix: "column"
     body: "\\\\column\n" +
-      "$0"
+      "\t$0"
   "\\convertnumber":
     prefix: "convertnumber"
     body: "\\\\convertnumber" +
@@ -1725,34 +1725,34 @@
     prefix: "startalignment"
     body: "\\\\startalignment" +
       "[${1:option}]\n" +
-      "$2\n" +
+      "\t$2\n" +
       "\\stopalignment" +
       "$3"
   "\\startbackground":
     prefix: "startbackground"
     body: "\\\\startbackground\n" +
-      "$1\n" +
+      "\t$1\n" +
       "\\stopbackground" +
       "$2"
   "\\startcolor":
     prefix: "startcolor"
     body: "\\\\startcolor" +
       "[${1:name}]\n" +
-      "$2\n" +
+      "\t$2\n" +
       "\\stopcolor" +
       "$3"
   "\\startcolumns":
     prefix: "startcolumns"
     body: "\\\\startcolumns" +
       "[${1:see \\setupcolumns}]\n" +
-      "$2\n" +
+      "\t$2\n" +
       "\\stopcolumns" +
       "$3"
   "\\startcombination":
     prefix: "startcombination"
     body: "\\\\startcombination" +
       "[${1:columns} * ${2:rows}]\n" +
-      "$2\n" +
+      "\t$2\n" +
       "\\stopcombination" +
       "$3"
   "\\startcomment":
@@ -1760,28 +1760,28 @@
     body: "\\\\startcomment" +
       "[${1:name}]" +
       "[${2:see \\setupcomment}]\n" +
-      "$3\n" +
+      "\t$3\n" +
       "\\stopcomment" +
       "$4"
   "\\startcomponent":
     prefix: "startcomponent"
     body: "\\\\startcomponent" +
       "${1:file}" +
-      "$2\n" +
+      "\t$2\n" +
       "\\stopcomponent" +
       "$3"
   "\\startdocument":
     prefix: "startdocument"
     body: "\\\\startdocument" +
       "[${1:name}]\n" +
-      "$2\n" +
+      "\t$2\n" +
       "\\stopdocument" +
       "$3"
   "\\startenvironment":
     prefix: "startenvironment"
     body: "\\\\startenvironment" +
       "${1:file}\n" +
-      "$2\n" +
+      "\t$2\n" +
       "\\stopenvironment" +
       "$3"
   "\\startfact":
@@ -1795,12 +1795,12 @@
       "[${1:name}]" +
       "[${2:file}]" +
       "[${3:options}]\n" +
-      "$4" +
+      "\t$4" +
       "\\stopfigure"
   "\\starthiding":
     prefix: "starthiding"
     body: "\\\\starthiding\n" +
-      "$1" +
+      "\t$1" +
       "\\stophiding"
   "\\startitemize ... \\stopitemize":
     prefix: "itm"
@@ -1811,38 +1811,38 @@
     prefix: "startline"
     body: "\\\\startline" +
       "[${1:ref}]\n" +
-      "$2\n" +
+      "\t$2\n" +
       "\\stopline"
   "\\startlinecorrection":
     prefix: "startlinecorrection"
     body: "\\\\startlinecorrection\n" +
-      "$1\n" +
+      "\t$1\n" +
       "\\stoplinecorrection"
   "\\startlinenumbering":
     prefix: "startlinenumbering"
     body: "\\\\startlinenumbering" +
       "${1:\\[continue\\]}\n" +
-      "$2\n" +
+      "\t$2\n" +
       "\\stoplinenumbering"
   "\\startlines":
     prefix: "startlines"
     body: "\\\\startlines\n" +
-      "$1\n" +
+      "\t$1\n" +
       "\\stoplines"
   "\\startlocal":
     prefix: "startlocal"
     body: "\\\\startlocal\n" +
-      "$1\n" +
+      "\t$1\n" +
       "\\stoplocal"
   "\\startlocalenvironment":
     prefix: "startlocalenvironment"
     body: "\\\\startlocalenvironment\n" +
-      "$1\n" +
+      "\t$1\n" +
       "\\stoplocalenvironment"
   "\\startlocalfootnotes":
     prefix: "startlocalfootnotes"
     body: "\\\\startlocalfootnotes\n" +
-      "$1\n" +
+      "\t$1\n" +
       "\\stoplocalfootnotes"
   "\\startmakeup":
     prefix: "startmakeup"
@@ -1854,7 +1854,7 @@
   "\\startmarginblock":
     prefix: "startmarginblock"
     body: "\\\\startmarginblock\n" +
-      "$1\n" +
+      "\t$1\n" +
       "\\stopmarginblock"
   "\\startmarginrule":
     prefix: "startmarginrule"
@@ -1866,66 +1866,66 @@
     prefix: "startnarrower"
     body: "\\\\startnarrower" +
       "${1:[${2:margins to narrow}]}\n" +
-      "$3\n" +
+      "\t$3\n" +
       "\\stopnarrower"
   "\\startopposite":
     prefix: "startopposite"
     body: "\\\\startopposite\n" +
-      "$1\n" +
+      "\t$1\n" +
       "\\stopopposite"
   "\\startoverlay":
     prefix: "startoverlay"
     body: "\\\\startoverlay" +
       "{${1:text}}" +
       "{${2:text}}\n" +
-      "$3\n" +
+      "\t$3\n" +
       "\\stopoverlay"
   "\\startoverview":
     prefix: "startoverview"
     body: "\\\\startoverview" +
       "[${1:name}]\n" +
-      "$2\n" +
+      "\t$2\n" +
       "\\stopoverview"
   "\\startpacked":
     prefix: "startpacked"
     body: "\\\\startpacked" +
       "${1:[${2:blank}]}\n" +
-      "$3\n" +
+      "\t$3\n" +
       "\\stoppacked"
   "\\startpositioning":
     prefix: "startpositioning"
     body: "\\\\startpositioning" +
-      "$1\n" +
+      "\t$1\n" +
       "\\stoppositioning"
   "\\startpostponing":
     prefix: "startpostponing"
     body: "\\\\startpostponing\n" +
       "${1:[${2:page number or increment}]}\n" +
-      "$3\n" +
+      "\t$3\n" +
       "\\stoppostponing"
   "\\startproduct":
     prefix: "startproduct"
     body: "\\\\startproduct" +
       "${1: \\component file}\n" +
-      "$2\n" +
+      "\t$2\n" +
       "\\stopproduct"
   "\\startprofile":
     prefix: "startprofile"
     body: "\\\\startprofile" +
       "[${1:name}]\n" +
-      "$2\n" +
+      "\t$2\n" +
       "\\stopprofile"
   "\\startproject":
     prefix: "startproject"
     body: "\\\\startproject" +
       "${1:command}\n" +
-      "$2\n" +
+      "\t$2\n" +
       "\\stopproject"
   "\\startquotation":
     prefix: "startquotation"
     body: "\\\\startquotation" +
       "[${1:left middle right}]\n" +
-      "$2\n" +
+      "\t$2\n" +
       "\\stopquotation"
   "\\startsymbolset":
     prefix: "startsymbolset"
@@ -1936,30 +1936,30 @@
   "\\startsynchronization":
     prefix: "startsynchronization"
     body: "\\\\startsynchronization\n" +
-      "$1\n" +
+      "\t$1\n" +
       "\\stopsynchronization"
   "\\starttable":
     prefix: "starttable"
     body: "\\\\starttable" +
       "[${1:columns struct}]\n" +
-      "$2\n" +
+      "\t$2\n" +
       "\\stoptable"
   "\\starttextrule":
     prefix: "starttextrule"
     body: "\\\\starttextrule" +
       "{${1:title}}\n" +
-      "$2\n" +
+      "\t$2\n" +
       "\\stoptextrule"
   "\\startunpacked":
     prefix: "startunpacked"
     body: "\\\\startunpacked\n" +
-      "$1\n" +
+      "\t$1\n" +
       "\\stopunpacked"
   "\\startversion":
     prefix: "startversion"
     body: "\\\\startversion" +
       "[${1:numbers}]\n" +
-      "$2\n" +
+      "\t$2\n" +
       "\\stopversion"
   "\\stretched":
     prefix: "stretched"
@@ -2231,19 +2231,19 @@
     prefix: "env"
     body: "\\\\start" +
       "${1:env}\n" +
-      "$2\n" +
+      "\t$2\n" +
       "\\\\stop${1:env}"
   "Equation Align":
     prefix: "eqal"
     body: "\\\\\\placeformula[${0:ref}]\n" +
       "\\\\startformula\\\\startalign\n" +
-      "$1\n" +
+      "\t$1\n" +
       "\\\\stopalign\\\\stopformula\n" +
       "$2"
   "Equation":
     prefix: "eq"
     body: "\\\\\\placeformula[${0:ref}]\n" +
       "\\\\startformula\n" +
-      "$0\n" +
+      "\t$0\n" +
       "\\\\stopformula\n" +
       "$1"
