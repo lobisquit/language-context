@@ -1,19 +1,21 @@
 fileTypes: [
-  "tex"
+  "tex", "ctex"
 ]
-firstLineMatch: "^\\\\starttext"
-foldingStartMarker: "\\\\(start.*|b(TABLE|TD|TR))"
-foldingStopMarker: "\\\\(stop.*|e(TABLE|TD|TR))"
 name: "ConTeXt"
 patterns: [
-  {
-    match: "[\\(\\)]"
-    name: "keyword.operator.parentheses.context"
-  }
-  {
-    match: "[\\[\\]\\{\\}]"
-    name: "keyword.operator.braces.context"
-  }
+#   {
+#     match: "[\\(\\)]"
+#     name: "keyword.operator.parentheses.context"
+#   }
+#   {
+#     match: "[\\[\\]\\{\\}]"
+#     name: "keyword.operator.braces.context"
+#     patterns:
+#       {
+#         include: "$self"
+#       }
+#   }
+  # math mode support
   {
     begin: "\\$"
     beginCaptures:
@@ -51,6 +53,44 @@ patterns: [
     match: "(%).*$\\n?"
     name: "comment.line.percentage.tex"
   }
+  {
+    begin: "\\\\startformula"
+    beginCaptures:
+      "0":
+        name: "support.function.general.tex"
+    end: "\\\\stopformula"
+    endCaptures:
+      "0":
+        name: "support.function.general.tex"
+    name: "string.other.math.tex"
+    patterns: [
+      {
+        match: "\\\\\\$"
+        name: "constant.character.escape.tex"
+      }
+      {
+        include: "text.tex.math"
+      }
+      {
+        include: "$self"
+      }
+    ]
+  }
+  {
+    captures:
+      "1":
+        name: "punctuation.definition.keyword.tex"
+    match: "(\\\\)[^a-zA-Z@]"
+    name: "constant.character.escape.tex"
+  }
+  {
+    captures:
+      "2":
+        name: "punctuation.definition.comment.tex"
+    match: "(%).*$\\n?"
+    name: "comment.line.percentage.tex"
+  }
+  # italic / bold support
   {
     begin: "(\\{\\\\it\\s+)"
     captures:
@@ -95,7 +135,7 @@ patterns: [
 
       Put specific matches for particular ConTeXt keyword.functions before the last two more general functions
     '''
-    contentName: "markup.bolditalic.context"
+    contentName: "markup.bold.italic.context"
     end: "(\\})"
     name: "meta.bi.context"
     patterns: [
@@ -113,6 +153,7 @@ patterns: [
     match: "(\\\\(?:part|title|chapter|(?:sub)*(?:section|subject)))\\s*(\\{.*?\\})"
     name: "meta.function.section.context"
   }
+  # metafun support
   {
     begin: "(\\\\start(unique|use|reusable)?MP)(code|inclusions|graphic)"
     captures:
@@ -126,6 +167,7 @@ patterns: [
       }
     ]
   }
+  # lua support
   {
     begin: "(\\\\startlua)"
     captures:
@@ -172,27 +214,24 @@ patterns: [
     name: "meta.context.group.arguments"
     patterns: [
       {
-        include: "text.tex.context"
+        begin: "([a-z,A-Z]+)\\s*="
+        captures:
+          "1":
+            name: "support.variable.enviromnent.context"
+        end: ","
+        patterns: [
+          {
+            include: "text.tex.context"
+          }
+        ]
       }
-    ]
-  }
-  {
-    begin: "(\\\\start)([a-zA-Z]+)"
-    captures:
-      "1":
-        name: "support.function.enviromnent.context"
-      "2":
-        name: "support.function.enviromnent.variable"
-    end: "(\\\\stop)(\\2)"
-    name: "meta.context.environment"
-    patterns: [
       {
         include: "text.tex.context"
       }
     ]
   }
   {
-    match: "(\\\\[A-Za-z]+)(?![a-zA-Z])"
+    match: "\\\\[a-z,A-Z]*"
     name: "support.function.general.tex"
   }
 ]

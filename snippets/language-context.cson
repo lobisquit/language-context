@@ -2111,6 +2111,12 @@
     body: "\\\\underbars" +
       "{${1:words}}" +
       "$2"
+  "\\underbrace":
+    prefix: "underbrace"
+    body: "\\\\underbrace" +
+      "{${1:formula}}_" +
+      "{${2:under text}}" +
+      "$3"
   "\\useURL":
     prefix: "useURL"
     body: "\\\\useURL" +
@@ -2235,11 +2241,10 @@
       "\\\\stop${1:env}"
   "Equation Align":
     prefix: "eqal"
-    body: "\\\\\\placeformula[${0:ref}]\n" +
+    body: "\\\\\\placeformula[${1:ref}]\n" +
       "\\\\startformula\\\\startalign\n" +
-      "\t$1\n" +
-      "\\\\stopalign\\\\stopformula\n" +
-      "$2"
+      "\t$2\n" +
+      "\\\\stopalign\\\\stopformula"
   "Equation":
     prefix: "eq"
     body: "\\\\\\placeformula[${0:ref}]\n" +
