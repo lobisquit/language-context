@@ -20,6 +20,14 @@ patterns: [
         name: "constant.character.escape.tex"
       }
       {
+        match: "(\\\\label)\\{([a-zA-Z]*)\\}"
+        captures:
+          "1":
+            name: "keyword.control.label.context"
+          "2":
+            name: "support.variable.enviromnent.context"
+      }
+      {
         include: "text.tex.math"
       }
       {
@@ -28,17 +36,17 @@ patterns: [
     ]
   }
   {
+    match: "(\\\\)[^a-zA-Z@]"
     captures:
       "1":
         name: "punctuation.definition.keyword.tex"
-    match: "(\\\\)[^a-zA-Z@]"
     name: "constant.character.escape.tex"
   }
   {
+    match: "(%).*$\\n?"
     captures:
       "2":
         name: "punctuation.definition.comment.tex"
-    match: "(%).*$\\n?"
     name: "comment.line.percentage.tex"
   }
   {
@@ -57,6 +65,14 @@ patterns: [
         name: "constant.character.escape.tex"
       }
       {
+        match: "(\\\\label)\\{([a-zA-Z]*)\\}"
+        captures:
+          "1":
+            name: "keyword.control.label.context"
+          "2":
+            name: "support.variable.enviromnent.context"
+      }
+      {
         include: "text.tex.math"
       }
       {
@@ -77,6 +93,23 @@ patterns: [
         name: "punctuation.definition.comment.tex"
     match: "(%).*$\\n?"
     name: "comment.line.percentage.tex"
+  }
+  # ref special coloring support
+  {
+    match: "(\\\\ref|\\\\eqref)\\{([a-zA-Z]*)\\}"
+    captures:
+      "1":
+        name: "keyword.control.label.context"
+      "2":
+        name: "support.variable.enviromnent.context"
+  }
+  {
+    match: "(\\\\placeformula)\\[([a-z]*)\\]"
+    captures:
+      "1":
+        name: "support.function.it.context"
+      "2":
+        name: "support.variable.enviromnent.context"
   }
   # italic / bold support
   {
@@ -132,15 +165,6 @@ patterns: [
       }
     ]
   }
-  {
-    captures:
-      "1":
-        name: "support.function.section.context"
-      "2":
-        name: "entity.name.section.context"
-    match: "(\\\\(?:part|title|chapter|(?:sub)*(?:section|subject)))\\s*(\\{.*?\\})"
-    name: "meta.function.section.context"
-  }
   # metafun support
   {
     begin: "(\\\\start(unique|use|reusable)?MP)(code|inclusions|graphic)"
@@ -183,17 +207,17 @@ patterns: [
     ]
   }
   {
+    match: "\\\\starttext\\W"
     captures:
       "0":
         name: "support.function.document.context"
-    match: "\\\\starttext\\W"
     name: "meta.context.starttext"
   }
   {
+    match: "\\\\stoptext\\W"
     captures:
       "0":
         name: "support.function.document.context"
-    match: "\\\\stoptext\\W"
     name: "meta.context.stoptext"
   }
   {
