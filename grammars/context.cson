@@ -3,18 +3,6 @@ fileTypes: [
 ]
 name: "ConTeXt"
 patterns: [
-#   {
-#     match: "[\\(\\)]"
-#     name: "keyword.operator.parentheses.context"
-#   }
-#   {
-#     match: "[\\[\\]\\{\\}]"
-#     name: "keyword.operator.braces.context"
-#     patterns:
-#       {
-#         include: "$self"
-#       }
-#   }
   # math mode support
   {
     begin: "\\$"
