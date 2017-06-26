@@ -12,7 +12,7 @@ See [here](http://wiki.contextgarden.net/Main_Page) for details about ConTeXt ty
 Run the following command, or search ''language-context'' in *Atom settings -> Install*.
 
 ```bash
-apm install language-latex
+apm install language-context
 ```
 
 ## Contributing
