@@ -9,11 +9,15 @@ See [here](http://wiki.contextgarden.net/Main_Page) for details about ConTeXt ty
 ---
 
 ## Install
-Run the following command, or search ''language-context'' in *Atom settings -> Install*.
+Run the following command, or search `language-context` in *Atom settings -> Install*.
 
 ```bash
 apm install language-context
 ```
+
+## Optional dependencies
+
+It is recommended to install *tex* language, via package `language-tex` or better `language-latex`, with the procedure explained before for better coloring on *tex* primitives, and `language-lua` for embedded *lua* code highlighting.
 
 ## Contributing
 For modifications and discussion about the packet, please refer to this [repo](https://github.com/lobisquit/language-context).
