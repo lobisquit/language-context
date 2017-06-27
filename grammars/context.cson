@@ -243,7 +243,7 @@ patterns: [
     ]
   }
   {
-    match: "\\\\[a-z,A-Z]*"
+    match: "\\\\[a-zA-Z]*"
     name: "support.function.general.tex"
   }
 ]
