@@ -181,11 +181,11 @@ patterns: [
   }
   # lua support
   {
-    begin: "(\\\\startlua)"
+    begin: "(\\\\startlua(code)?)"
     captures:
       "0":
         name: "support.function.document.context"
-    end: "(\\\\stoplua)"
+    end: "(\\\\stoplua(code)?)"
     name: "meta.scope.lua"
     patterns: [
       {
