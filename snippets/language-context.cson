@@ -14,7 +14,7 @@
       "[${3:height=name,lines number=+1, -1}]" +
       "$4"
   "\\arg":
-    omment: "Surround given text with braces"
+    comment: "Surround given text with braces"
     prefix: "arg"
     body: "\\\\arg" +
       "{${1:name}}" +
