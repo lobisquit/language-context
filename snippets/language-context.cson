@@ -1,25 +1,30 @@
 ".text.tex.context":
   "\\about":
-    comment: "Provides the complete title of a referenced block of text"
+    descriptionMoreURL: "https://wiki.contextgarden.net/Command/about"
+    description: "Provides the complete title of a reference"
     prefix: "about"
     body: "\\\\about" +
       "{${1:name}}" +
       "[${2:ref}]" +
       "$3"
   "\\adaptlayout":
-    comment: "Adapt the layout of one page to fit more or less lines in it"
+    descriptionMoreURL: "https://wiki.contextgarden.net/Command/adaptlayout"
+    description: "Adapt the layout of one page to fit more or less lines in it"
     prefix: "adaptlayout"
     body: "\\\\adaptlayout" +
       "[${2:page number(s)}]" +
-      "[${3:height=name,lines number=+1, -1}]" +
+      "[${3:height=1em,lines=-1}]" +
       "$4"
   "\\arg":
-    comment: "Surround given text with braces"
+    descriptionMoreURL: "https://wiki.contextgarden.net/Command/arg"
+    description: "Surround given text with braces"
     prefix: "arg"
     body: "\\\\arg" +
       "{${1:name}}" +
       "$2"
   "\\at":
+    descriptionMoreURL: "https://wiki.contextgarden.net/Command/at"
+    description: "Provides the page number of a reference"
     prefix: "at"
     body: "\\\\at" +
       "${1:{${2:prefix}\\}}" +
@@ -27,73 +32,92 @@
       "[${6:ref}]" +
       "$7"
   "\\atpage":
-    comment: "Reference label page"
+    descriptionMoreURL: "https://wiki.contextgarden.net/Command/atpage"
+    description: "Reference with page number or 'see above' if on same page"
     prefix: "atpage"
     body: "\\\\atpage" +
       "[${1:ref}]" +
       "$2"
   "\\blank":
-    comment: "Insert vertical blank space"
+    descriptionMoreURL: "https://wiki.contextgarden.net/Command/blank"
+    description: "Insert vertical blank space"
     prefix: "blank"
     body: "\\\\blank" +
       "[${1:big}]" +
       "$2"
   "\\cap":
-    comment: "Small caps text inside"
+    descriptionMoreURL: "https://wiki.contextgarden.net/Command/cap"
+    description: "Small caps text inside"
     prefix: "cap"
     body: "\\\\cap" +
       "{${1:name}}" +
       "$2"
   "\\chapter":
+    description: "Start a chapter"
+    descriptionMoreURL: "https://wiki.contextgarden.net/Command/chapter"
     prefix: "chapter"
     body: "\\\\chapter" +
       "${1:[${2:refs for this chapter}]}" +
       "{${3:title}}" +
       "$4"
   "\\clip":
-    comments: '''
-      Crop image piece at position (x, y).
-      Number of pieces is specified by \\setupclipping.
+    descriptionMoreURL: "https://wiki.contextgarden.net/Command/clip"
+    description: '''
+      Crop image to width x height, starting at hoffset x voffset
+      OR use piece at position (x, y) if number of pieces is
+      specified by \\setupclipping.
     '''
     prefix: "clip"
     body: "\\\\clip" +
-      "[x=${1:name}, y=${2:name}]" +
-      "{${3:figure or text}}" +
-      "$4"
+      "[x=${1:number}, y=${2:number}, hoffset=${3:dim}, voffset=${4:dim}, width=${5:dim}, height=${6:dim}]" +
+      "{${7:figure or text}}" +
+      "$8"
   "\\color":
+    descriptionMoreURL: "https://wiki.contextgarden.net/Command/color"
+    description: "Change text color"
     prefix: "color"
     body: "\\\\color" +
       "[${1:color}]" +
-      "{${2:text to color}}" +
+      "{${2:text to colorize}}" +
       "$3"
   "\\column":
-    comment: "Split column inside \\start/stopcolumns"
+    descriptionMoreURL: "https://wiki.contextgarden.net/Command/column"
+    description: "Insert column break"
     prefix: "column"
     body: "\\\\column\n" +
       "\t$0"
   "\\convertnumber":
+    description: "Convert a number into a different form, e.g. to Roman numerals, bullets, etc."
+    descriptionMoreURL: "https://wiki.contextgarden.net/Command/convertnumber"
     prefix: "convertnumber"
     body: "\\\\convertnumber" +
       "{${1:mode}}" +
       "{${2:number}}" +
       "$3"
   "\\crlf":
-    comments: "Carriage return command"
+    descriptionMoreURL: "https://wiki.contextgarden.net/Command/crlf"
+    description: "Carriage return (new line) command"
     prefix: "crlf"
     body: "\\\\crlf" +
       "$1"
   "\\currentdate":
+    description: "Insert the current date"
+    descriptionMoreURL: "https://wiki.contextgarden.net/Command/currentdate"
     prefix: "currentdate"
     body: "\\\\currentdate" +
       "[${1:weekday,month,day,\\{, \\},year}]" +
       "$2"
   "\\date":
+    description: "Insert a date"
+    descriptionMoreURL: "https://wiki.contextgarden.net/Command/date"
     prefix: "date"
     body: "\\\\date" +
       "[d=${1:name},m=${2:name},y=${3:name}}]" +
       "[${4:weekday,month,day,\\{,\\},year}]" +
       "$5"
   "\\define":
+    description: "Define a new macro (like \\def)"
+    descriptionMoreURL: "https://wiki.contextgarden.net/Command/define"
     prefix: "define"
     body: "\\\\define" +
       "${1:[${2:number of arguments}]}" +
@@ -101,18 +125,23 @@
       "{${4:Example #1}}" +
       "$5"
   "\\defineblank":
+    description: "Define a new vertical space"
+    descriptionMoreURL: "https://wiki.contextgarden.net/Command/defineblank"
     prefix: "defineblank"
     body: "\\\\defineblank" +
       "[${1:measure name}]" +
       "[${2:dimension}]" +
       "$3"
   "\\defineblock":
-    comment: "Define a reusable text format (ex. questions)"
+    descriptionMoreURL: "https://wiki.contextgarden.net/Command/defineblock"
+    description: "Define a reusable text format (e.g. questions)"
     prefix: "defineblock"
     body: "\\\\defineblock" +
       "[${1:name of the block}]" +
       "$2"
   "\\definebodyfont":
+    description: "Define a new body font combination"
+    descriptionMoreURL: "https://wiki.contextgarden.net/Command/definebodyfont"
     prefix: "definebodyfont"
     body: "\\\\definebodyfont" +
       "[${1:5pt name 12pt default}]" +
@@ -120,19 +149,24 @@
       "[${3:options}]" +
       "$4"
   "\\definebodyfontenvironment":
-    comment: '''Set up font scaling for "[tf]a-[tf]"d'''
+    descriptionMoreURL: "https://wiki.contextgarden.net/Command/definebodyfontenvironment"
+    description: '''Set up font scaling for "[tf]a-[tf]"d'''
     prefix: "definebodyfontenvironment"
     body: "\\\\definebodyfontenvironment" +
       "[${1:font size}]" +
       "[${a=2pt, d=4pt}]" +
       "$3"
   "\\definecolor":
+    description: "Define a new named color"
+    descriptionMoreURL: "https://wiki.contextgarden.net/Command/definecolor"
     prefix: "definecolor"
     body: "\\\\definecolor" +
       "[${1:color name}]" +
       "[${2:h=FF0000}]" +
       "$3"
   "\\definecolorgroup":
+    description: "Define a new set of colors"
+    descriptionMoreURL: "https://wiki.contextgarden.net/Command/definecolorgroup"
     prefix: "definecolorgroup"
     body: "\\\\definecolorgroup" +
       "[${1:color set name}]" +
@@ -140,7 +174,8 @@
       "[${1.00:0.85:0.80, name}]" +
       "$5"
   "\\definecombinedlist":
-    comment: "Merge lists created by \\definelist"
+    descriptionMoreURL: "https://wiki.contextgarden.net/Command/definecombinedlist"
+    description: "Merge lists created by \\definelist"
     prefix: "definecombinedlist"
     body: "\\\\definecombinedlist" +
       "[${1:name}]" +
@@ -148,27 +183,32 @@
       "${3:[${4:level=subsection}]}" +
       "$5"
   "\\defineconversion":
+    description: "Define a new number-to-symbol conversion"
+    descriptionMoreURL: "https://wiki.contextgarden.net/Command/defineconversion"
     prefix: "defineconversion"
     body: "\\\\defineconversion" +
       "[${1:conversion name}]" +
       "[${2:list of strings to convert numbers into}]" +
       "$3"
   "\\definedescription":
-    comment: "Define a new description with an associated style"
+    descriptionMoreURL: "https://wiki.contextgarden.net/Command/definedescription"
+    description: "Define a new description with an associated style"
     prefix: "definedescription"
     body: "\\\\definedescription" +
       "[${1:name}]" +
       "${2:[${3: \\\\setupdescriptions parameters}]}" +
       "$4"
   "\\defineenumeration":
-    comment: "Define the commands for a numbered text element"
+    descriptionMoreURL: "https://wiki.contextgarden.net/Command/defineenumeration"
+    description: "Define the commands for a numbered text element"
     prefix: "defineenumeration"
     body: "\\\\defineenumeration" +
       "[${1:name}]" +
       "${4:[${5:\\\\setupenumerations parameters}]}" +
       "$6"
   "\\definefiguresymbol":
-    comment: "Define a symbol using a figure"
+    descriptionMoreURL: "https://wiki.contextgarden.net/Command/definefiguresymbol"
+    description: "Define a symbol using a figure"
     prefix: "definefiguresymbol"
     body: "\\\\definefiguresymbol" +
       "[${1:name}]" +
@@ -176,6 +216,8 @@
       "${3:[${4:\\\\externalfigure parameters}]}" +
       "$5"
   "\\definefloat":
+    description: "Define a new kind of float"
+    descriptionMoreURL: "https://wiki.contextgarden.net/Command/definefloat"
     prefix: "definefloat"
     body: "\\\\definefloat" +
       "[${1:singular name}]" +
@@ -183,24 +225,39 @@
       "${3:[${4:parent}]}" +
       "$5"
   "\\definefont":
+    description: "Define a new named font setting"
+    descriptionMoreURL: "https://wiki.contextgarden.net/Command/definefont"
     prefix: "definefont"
     body: "\\\\definefont" +
       "[${1:name}]" +
       "[${2:file}]" +
       "$3"
+  "\\definedfont":
+    description: "Immediately switch to a font setting"
+    descriptionMoreURL: "https://wiki.contextgarden.net/Command/definedfont"
+    prefix: "definedfont"
+    body: "\\\\definedfont" +
+      "[${1:name}]" +
+      "$2"
   "\\defineframed":
+    description: "Define a custom frame"
+    descriptionMoreURL: "https://wiki.contextgarden.net/Command/defineframed"
     prefix: "defineframed"
     body: "\\\\defineframed" +
       "[${1:name}]" +
       "${2:[${3:see \\\\setupframedtexts parameters}]}" +
       "$4"
   "\\defineframedtext":
+    description: ""
+    descriptionMoreURL: "https://wiki.contextgarden.net/Command/defineframedtext"
     prefix: "defineframedtext"
     body: "\\\\defineframedtext" +
       "[${1:name}]" +
       "${2:[${3:see \\\\setupframedtexts parameters}]}" +
       "$4"
   "\\definehead":
+    description: ""
+    descriptionMoreURL: "https://wiki.contextgarden.net/Command/definehead"
     prefix: "definehead"
     body: "\\\\definehead" +
       "[${1:name}]" +
@@ -208,91 +265,111 @@
       "${3:[${4:see \\\\setuphead parameters}]}" +
       "$5"
   "\\defineindenting":
+    description: ""
+    descriptionMoreURL: "https://wiki.contextgarden.net/Command/defineindenting"
     prefix: "defineindenting"
     body: "\\\\defineindenting" +
       "[${1:name}]" +
-      "[${2:see \\setupindentations parameters}]" +
+      "[${2:see \\\\setupindentations parameters}]" +
       "$3"
   "\\definelabel":
-    comment: "Define an autonumbered label type, including a command to place one"
+    descriptionMoreURL: "https://wiki.contextgarden.net/Command/definelabel"
+    description: "Define an autonumbered label type, including a command to place one"
     prefix: "definelabel"
     body: "\\\\definelabel" +
       "[${1:name}]" +
       "[${2:text=${3:name}, location=${4:name}$5}]" +
       "$6"
   "\\definelist":
+    description: ""
+    descriptionMoreURL: "https://wiki.contextgarden.net/Command/definelist"
     prefix: "definelist"
     body: "\\\\definelist" +
       "[${1:name}]" +
-      "${4:[see \\setuplist parameters]}" +
+      "${4:[see \\\\setuplist parameters]}" +
       "$6"
   "\\definemakeup":
+    description: "Define a new makeup (special page layout)"
+    descriptionMoreURL: "https://wiki.contextgarden.net/Command/definemakeup"
     prefix: "definemakeup"
     body: "\\\\definemakeup" +
       "[${1:name}]" +
-      "[${2:see \\setupmakeup parameters}]" +
+      "[${2:see \\\\setupmakeup parameters}]" +
       "$3"
   "\\definemarking":
+    description: ""
+    descriptionMoreURL: "https://wiki.contextgarden.net/Command/definemarking"
     prefix: "definemarking"
     body: "\\\\definemarking" +
       "[${1:name}]" +
       "${2:[${3:name}]}" +
       "$4"
   "\\defineoverlay":
+    description: ""
+    descriptionMoreURL: "https://wiki.contextgarden.net/Command/defineoverlay"
     prefix: "defineoverlay"
     body: "\\\\defineoverlay" +
       "[${1:name}]" +
       "[${2:text}]" +
       "$3"
   "\\definepalet":
+    description: "Define a color palet"
+    descriptionMoreURL: "https://wiki.contextgarden.net/Command/definepalet"
     prefix: "definepalet"
     body: "\\\\definepalet" +
       "[${1:name}]" +
       "[${2:alert=green, calm=grey, name}]" +
       "$3"
   "\\definepapersize":
+    description: "Define a new paper size"
+    descriptionMoreURL: "https://wiki.contextgarden.net/Command/definepapersize"
     prefix: "definepapersize"
     body: "\\\\definepapersize" +
       "[${1:name}]" +
       "[${2:.width=${3:name}, height=${4:name}}]" +
       "$5"
   "\\defineparagraphs":
+    description: ""
+    descriptionMoreURL: "https://wiki.contextgarden.net/Command/defineparagraphs"
     prefix: "defineparagraphs"
     body: "\\\\defineparagraphs" +
       "[${1:name}]" +
       "[${2:before=${3:name}, after=${4:name}}]" +
       "$5"
-  "\\definerawfont":
-    prefix: "definerawfont"
-    body: "\\\\definerawfont" +
-      "[${1:name}]" +
-      "${2:[${3:file}]}" +
-      "${4:[${5:see \\setupinterlinespace parameters}]}" +
-      "$6"
   "\\definereferenceformat":
+    description: ""
+    descriptionMoreURL: "https://wiki.contextgarden.net/Command/definereferenceformat"
     prefix: "definereferenceformat"
     body: "\\\\definereferenceformat" +
       "[${1:name}]" +
       "[${2:left=${3:name}, right=${4:name}, text=${5:name}}]" +
       "$6"
-  "\\defineregister": # ??
+  "\\defineregister":
+    description: "Define a new index"
+    descriptionMoreURL: "https://wiki.contextgarden.net/Command/defineregister"
     prefix: "defineregister"
     body: "\\\\defineregister" +
       "[${1:name}]" +
       "[${2:name}]" +
       "$3"
   "\\definesection":
+    description: ""
+    descriptionMoreURL: "https://wiki.contextgarden.net/Command/definesection"
     prefix: "definesection"
     body: "\\\\definesection" +
       "[${1:name}]" +
       "$2"
   "\\definesectionblock":
+    description: ""
+    descriptionMoreURL: "https://wiki.contextgarden.net/Command/definesectionblock"
     prefix: "definesectionblock"
     body: "\\\\definesectionblock" +
       "[${1:name}]" +
-      "${2:[${3:see \\setupsectionblock parameters}]}" +
+      "${2:[${3:see \\\\setupsectionblock parameters}]}" +
       "$4"
-  "\\definesorting": # ??
+  "\\definesorting":
+    description: ""
+    descriptionMoreURL: "https://wiki.contextgarden.net/Command/definesorting"
     prefix: "definesorting"
     body: "\\\\definesorting" +
       "[${1:singlular}]" +
@@ -300,19 +377,24 @@
       "${3:[${4:command}]}" +
       "$5"
   "\\definestartstop":
+    description: "Define a new environment"
+    descriptionMoreURL: "https://wiki.contextgarden.net/Command/definestartstop"
     prefix: "definestartstop"
     body: "\\\\definestartstop" +
       "[${1:name}]" +
       "[${2:before=${3:name}, after=${4:name}, style=${5:name}$6}]" +
       "$7"
   "\\definesymbol":
+    description: ""
+    descriptionMoreURL: "https://wiki.contextgarden.net/Command/definesymbol"
     prefix: "definesymbol"
     body: "\\\\definesymbol" +
       "[${1:name}]" +
       "[${2:text}]" +
       "$3"
   "\\definesynonyms":
-    comment: "Sort of alias for commands, listed with \\placelistofname"
+    descriptionMoreURL: "https://wiki.contextgarden.net/Command/definesynonyms"
+    description: "Sort of alias for commands, listed with \\placelistofname"
     prefix: "definesynonyms"
     body: "\\\\definesynonyms" +
       "[${1:singular}]" +
@@ -321,19 +403,25 @@
       "${4:[${5:description text}]}" +
       "$6"
   "\\definetabletemplate":
+    description: ""
+    descriptionMoreURL: "https://wiki.contextgarden.net/Command/definetabletemplate"
     prefix: "definetabletemplate"
     body: "\\\\definetabletemplate" +
       "[${1:name}]" +
       "[${2:style of table}]" +
       "$3"
-  "\\definetabulate": # ??
+  "\\definetabulate":
+    description: "Define a custom tabulate setup"
+    descriptionMoreURL: "https://wiki.contextgarden.net/Command/definetabulate"
     prefix: "definetabulate"
     body: "\\\\definetabulate" +
       "[${1:name}]" +
       "${2:[${3:name of variant or sub-part}]}" +
       "[${4:text}]" +
       "$5"
-  "\\definetext": # ??
+  "\\definetext":
+    description: ""
+    descriptionMoreURL: "https://wiki.contextgarden.net/Command/definetext"
     prefix: "definetext"
     body: "\\\\definetext" +
       "[${1:name}]" +
@@ -343,114 +431,150 @@
       "${6:[${7:name}]}" +
       "$8"
   "\\definetextposition":
+    description: ""
+    descriptionMoreURL: "https://wiki.contextgarden.net/Command/definetextposition"
     prefix: "definetextposition"
     body: "\\\\definetextposition" +
       "[${1:name}]" +
-      "${2:[${3:see \\setuppositioning parameters}]}" +
+      "${2:[${3:see \\\\setuppositioning parameters}]}" +
       "$4"
-  "\\definetextvariable": # ??
+  "\\definetextvariable":
+    description: ""
+    descriptionMoreURL: "https://wiki.contextgarden.net/Command/definetextvariable"
     prefix: "definetextvariable"
     body: "\\\\definetextvariable" +
-      "[${1:see \\setuptextvariable}]" +
+      "[${1:see \\\\setuptextvariable}]" +
       "${2:[${3:name}]}" +
       "${4:[${5:options}]}" +
       "$6"
   "\\definetype":
+    description: ""
+    descriptionMoreURL: "https://wiki.contextgarden.net/Command/definetype"
     prefix: "definetype"
     body: "\\\\definetype" +
       "[${1:name}]" +
-      "[${2:see \\setuptype}]" +
+      "[${2:see \\\\setuptype}]" +
       "$3"
   "\\definetyping":
+    description: "Define a custom typing (source code, verbose) setup"
+    descriptionMoreURL: "https://wiki.contextgarden.net/Command/definetyping"
     prefix: "definetyping"
     body: "\\\\definetyping" +
       "[${1:name}]" +
-      "[${2:see \\setuptyping}]" +
+      "[${2:see \\\\setuptyping}]" +
       "$3"
-  "\\defineversion": # ??
+  "\\defineversion":
+    description: ""
+    descriptionMoreURL: "https://wiki.contextgarden.net/Command/defineversion"
     prefix: "defineversion"
     body: "\\\\defineversion" +
       "[${1:name}]" +
       "[${2:number}]" +
       "$3"
   "\\determineheadnumber":
+    description: ""
+    descriptionMoreURL: "https://wiki.contextgarden.net/Command/determineheadnumber"
     prefix: "determineheadnumber"
     body: "\\\\determineheadnumber" +
       "[${1:section}]" +
       "$2"
   "\\determinelistcharacteristics":
+    description: ""
+    descriptionMoreURL: "https://wiki.contextgarden.net/Command/determinelistcharacteristics"
     prefix: "determinelistcharacteristics"
     body: "\\\\determinelistcharacteristics" +
       "[${1:name}]" +
-      "${2:[${3:see \\setuplist}]}" +
+      "${2:[${3:see \\\\setuplist}]}" +
       "$4"
   "\\disableinteractionmenu":
+    description: ""
+    descriptionMoreURL: "https://wiki.contextgarden.net/Command/disableinteractionmenu"
     prefix: "disableinteractionmenu"
     body: "\\\\disableinteractionmenu" +
       "[${1:left right top bottom name}]" +
       "[${2:ref, ...}]" +
       "$3"
   "\\emptylines":
+    description: ""
+    descriptionMoreURL: "https://wiki.contextgarden.net/Command/emptylines"
     prefix: "emptylines"
     body: "\\\\emptylines" +
       "[${1:number of empty lines}]" +
       "$2"
   "\\externalfigure":
+    description: "Include a picture"
+    descriptionMoreURL: "https://wiki.contextgarden.net/Command/externalfigure"
     prefix: "externalfigure"
     body: "\\\\externalfigure" +
       "[${1:file}]" +
-      "[${2:see \\useexternalfigure}]" +
+      "[${2:see \\\\useexternalfigure}]" +
       "$3"
   "\\field":
+    description: "Form field"
+    descriptionMoreURL: "https://wiki.contextgarden.net/Command/field"
     prefix: "field"
     body: "\\\\field" +
       "[${1:name}]" +
       "$2"
   "\\fieldstack":
+    description: ""
+    descriptionMoreURL: "https://wiki.contextgarden.net/Command/fieldstack"
     prefix: "fieldstack"
     body: "\\\\fieldstack" +
       "[${1:name}]" +
       "${2:[${3:names}]}" +
-      "${4:[${5:see \\setupfields}]}" +
+      "${4:[${5:see \\\\setupfields}]}" +
       "$6"
   "\\fillinline":
-    comment: "A line on which the reader may fill in an answer"
+    descriptionMoreURL: "https://wiki.contextgarden.net/Command/fillinline"
+    description: "A line on which the reader may fill in an answer"
     prefix: "fillinline"
     body: "\\\\fillinline" +
-      "${1:[${2:see \\setupfillinlines}]}" +
+      "${1:[${2:see \\\\setupfillinlines}]}" +
       "${3:text}" +
       "$4"
   "\\fillinrules":
+    description: ""
+    descriptionMoreURL: "https://wiki.contextgarden.net/Command/fillinrules"
     prefix: "fillinrules"
     body: "\\\\fillinrules" +
-      "${1:[${2:see \\setupfillinrules}]}" +
+      "${1:[${2:see \\\\setupfillinrules}]}" +
       "${{3:text before fill in}}" +
       "${{4:text}}" +
       "$5"
   "\\fillintext":
+    description: ""
+    descriptionMoreURL: "https://wiki.contextgarden.net/Command/fillintext"
     prefix: "fillintext"
     body: "\\\\fillintext" +
-      "${1:[${2:see \\setupfillinrules}]}" +
+      "${1:[${2:see \\\\setupfillinrules}]}" +
       "{${3:text}}" +
       "{${4:text}}" +
       "$5"
   "\\fitfield":
+    description: ""
+    descriptionMoreURL: "https://wiki.contextgarden.net/Command/fitfield"
     prefix: "fitfield"
     body: "\\\\fitfield" +
       "[${1:name}]" +
       "$2"
   "\\fixedspaces":
-    comment: "Force ~ spacing to be equal to 0 glyph"
+    descriptionMoreURL: "https://wiki.contextgarden.net/Command/fixedspaces"
+    description: "Force ~ spacing to be equal to 0 glyph"
     prefix: "fixedspaces"
     body: "\\\\fixedspaces" +
       "$1"
   "\\followprofile":
+    description: ""
+    descriptionMoreURL: "https://wiki.contextgarden.net/Command/followprofile"
     prefix: "followprofile"
     body: "\\\\followprofile" +
       "{${1:name}}" +
       "[${2:name}]" +
       "$3"
   "\\followprofileversion":
+    description: ""
+    descriptionMoreURL: "https://wiki.contextgarden.net/Command/followprofileversion"
     prefix: "followprofileversion"
     body: "\\\\followprofileversion" +
       "{${1:name}}" +
@@ -458,110 +582,148 @@
       "[${3:name}]" +
       "$4"
   "\\followversion":
+    description: ""
+    descriptionMoreURL: "https://wiki.contextgarden.net/Command/followversion"
     prefix: "followversion"
     body: "\\\\followversion" +
       "{${1:name}}" +
       "[${2:name}]" +
       "$3"
   "\\footnote":
+    description: "Set a footnote"
+    descriptionMoreURL: "https://wiki.contextgarden.net/Command/footnote"
     prefix: "footnote"
     body: "\\\\footnote" +
       "${1:[${2:label}]}" +
       "{${3:text}}" +
       "$4"
   "\\fraction":
+    description: "Typeset a fraction"
+    descriptionMoreURL: "https://wiki.contextgarden.net/Command/fraction"
     prefix: "fraction"
     body: "\\\\fraction" +
       "{${1:numerator}}" +
       "{${2:denominator}}" +
       "$3"
   "\\framed":
+    description: "Put something in a box"
+    descriptionMoreURL: "https://wiki.contextgarden.net/Command/framed"
     prefix: "framed"
     body: "\\\\framed" +
-      "${1:[${2:	see \\setupframed}]}" +
+      "${1:[${2:	see \\\\setupframed}]}" +
       "{${3:text}}" +
       "$4"
   "\\from":
+    description: "Use an URL"
+    descriptionMoreURL: "https://wiki.contextgarden.net/Command/from"
     prefix: "from"
     body: "\\\\from" +
       "[${1:ref}]" +
       "$2"
   "\\getbuffer":
+    description: "Place the contents of a previously defined buffer"
+    descriptionMoreURL: "https://wiki.contextgarden.net/Command/getbuffer"
     prefix: "getbuffer"
     body: "\\\\getbuffer" +
       "${1:text buffer name}" +
       "$3"
   "\\getmarking":
+    description: ""
+    descriptionMoreURL: "https://wiki.contextgarden.net/Command/getmarking"
     prefix: "getmarking"
     body: "\\\\getmarking" +
       "[${1:name}]" +
       "[${2:name}]" +
       "$3"
   "\\godown":
+    description: "Skipping more than one vertical space"
+    descriptionMoreURL: "https://wiki.contextgarden.net/Command/godown"
     prefix: "godown"
     body: "\\\\godown" +
       "[${1:vertical spaces}]" +
       "$2"
   "\\goto":
+    description: "Insert a link"
+    descriptionMoreURL: "https://wiki.contextgarden.net/Command/goto"
     prefix: "goto"
     body: "\\\\goto" +
       "{${1:text}}" +
       "{${2:label}}" +
       "$3"
   "\\gotobox":
+    description: ""
+    descriptionMoreURL: "https://wiki.contextgarden.net/Command/gotobox"
     prefix: "gotobox"
     body: "\\\\gotobox" +
       "{${1:text}}" +
       "{${2:label}}" +
       "$3"
   "\\graycolor":
+    description: ""
+    descriptionMoreURL: "https://wiki.contextgarden.net/Command/graycolor"
     prefix: "graycolor"
     body: "\\\\graycolor" +
       "[${1:text}]" +
       "$2"
   "\\grid":
+    description: ""
+    descriptionMoreURL: "https://wiki.contextgarden.net/Command/grid"
     prefix: "grid"
     body: "\\\\grid" +
       "[${1:grid parameters}]" +
       "$2"
   "\\hairline":
+    description: "Place a thin line"
+    descriptionMoreURL: "https://wiki.contextgarden.net/Command/hairline"
     prefix: "hairline"
     body: "\\\\hairline" +
       "$1"
   "\\head":
-    comment: "Head of itemize"
+    descriptionMoreURL: "https://wiki.contextgarden.net/Command/head"
+    description: "Head of itemize"
     prefix: "head"
     body: "\\\\head" +
       "${1:[${2:ref, ...}]}" +
       "$3"
   "\\headnumber":
+    description: ""
+    descriptionMoreURL: "https://wiki.contextgarden.net/Command/headnumber"
     prefix: "headnumber"
     body: "\\\\headnumber" +
       "${1:[${2:section}]}" +
       "$3"
   "\\headtext":
+    description: ""
+    descriptionMoreURL: "https://wiki.contextgarden.net/Command/headtext"
     prefix: "headtext"
     body: "\\\\headtext" +
       "{${1:text}}" +
       "$2"
   "\\hideblocks":
-    comment: "From here on, do not print blocks where they are defined"
+    descriptionMoreURL: "https://wiki.contextgarden.net/Command/hideblocks"
+    description: "From here on, do not print blocks where they are defined"
     prefix: "hideblocks"
     body: "\\\\hideblocks" +
       "[${1:block types to hide}]" +
       "${2:[${3:tags to further specify what to hide}]}" +
       "$4"
   "\\high":
+    descriptionMoreURL: "https://wiki.contextgarden.net/Command/high"
+    description: "superscript"
     prefix: "high"
     body: "\\\\high" +
       "{${1:text}}" +
       "$2"
   "\\hl":
+    description: "Horizontal line in within tabulate/table"
+    descriptionMoreURL: "https://wiki.contextgarden.net/Command/hl"
     prefix: "hl"
     body: "\\\\hl" +
       "[${1:width}]" +
       "$2"
   "\\in":
+    descriptionMoreURL: "https://wiki.contextgarden.net/Command/in"
+    description: "Reference to a numbered element (e.g. table, figure, formula)"
     prefix: "in"
     body: "\\\\in" +
       "{${1:text before}}" +
@@ -569,13 +731,16 @@
       "[${3:ref}]" +
       "$4"
   "\\inframed":
-    comment: "It ensures that the baseline of the framed text aligns with the baseline of the surrounding text. In all other respects, it is identical to \\framed."
+    descriptionMoreURL: "https://wiki.contextgarden.net/Command/inframed"
+    description: "Like \\\\framed, but ensure that the baseline of the framed text aligns with the baseline of the surrounding text."
     prefix: "inframed"
     body: "\\\\inframed" +
-      "${1:[${2:see \\setupframed}]}" +
+      "${1:[${2:see \\\\setupframed}]}" +
       "{${3:text}}" +
       "$4"
   "\\ininner":
+    descriptionMoreURL: "https://wiki.contextgarden.net/Command/ininner"
+    description: "Place note in inner margin"
     prefix: "ininner"
     body: "\\\\ininner" +
       "${1:[${2:+ - low}]}" +
@@ -583,6 +748,8 @@
       "{${5:text}}" +
       "$6"
   "\\inleft":
+    descriptionMoreURL: "https://wiki.contextgarden.net/Command/inleft"
+    description: "Place note in left margin"
     prefix: "inleft"
     body: "\\\\inleft" +
       "${1:[${2:+ - low}]}" +
@@ -590,12 +757,16 @@
       "{${5:text}}" +
       "$6"
   "\\inline":
+    description: ""
+    descriptionMoreURL: "https://wiki.contextgarden.net/Command/inline"
     prefix: "inline"
     body: "\\\\inline" +
       "${1:[${2:text prefix}]}" +
       "[${3:ref}]" +
       "$4"
   "\\inmargin":
+    descriptionMoreURL: "https://wiki.contextgarden.net/Command/inmargin"
+    description: "Place note in margin"
     prefix: "inmargin"
     body: "\\\\inmargin" +
       "${1:[${2:+ - low}]}" +
@@ -603,6 +774,8 @@
       "{${5:text}}" +
       "$6"
   "\\inouter":
+    descriptionMoreURL: "https://wiki.contextgarden.net/Command/inouter"
+    description: "Place note in outer margin"
     prefix: "inouter"
     body: "\\\\inouter" +
       "${1:[${2:+ - low}]}" +
@@ -610,6 +783,8 @@
       "{${5:text}}" +
       "$6"
   "\\inright":
+    descriptionMoreURL: "https://wiki.contextgarden.net/Command/inright"
+    description: "Place note in right margin"
     prefix: "inright"
     body: "\\\\inright" +
       "${1:[${2:+ - low}]}" +
@@ -617,68 +792,88 @@
       "{${5:text}}" +
       "$6"
   "\\installlanguage":
+    description: "Define a new language"
+    descriptionMoreURL: "https://wiki.contextgarden.net/Command/installlanguage"
     prefix: "installlanguage"
     body: "\\\\installlanguage" +
       "[${1:name}]" +
       "[${2:language parameters}]" +
       "$3"
   "\\item":
+    description: "enumeration item"
+    descriptionMoreURL: "https://wiki.contextgarden.net/Command/item"
     prefix: "item"
     body: "\\\\item" +
       "${1:[${2:ref, ...}]}" +
       "$3"
   "\\items":
+    description: ""
+    descriptionMoreURL: "https://wiki.contextgarden.net/Command/items"
     prefix: "items"
     body: "\\\\items" +
-      "${1:[${2:see \\setupitems}]}" +
+      "${1:[${2:see \\\\setupitems}]}" +
       "{${3:item, item}}" +
       "$4"
   "\\keepblocks":
-    comment: "From here on typeset blocks where they are defined, as well as when they are recalled"
+    descriptionMoreURL: "https://wiki.contextgarden.net/Command/keepblocks"
+    description: "From here on typeset blocks where they are defined, as well as when they are recalled"
     prefix: "keepblocks"
     body: "\\\\keepblocks" +
       "[${1:name of blocks}]" +
       "$4"
   "\\labeltext":
-    comment: "Retrieve a label text defined earlier with \\setuplabeltext"
+    descriptionMoreURL: "https://wiki.contextgarden.net/Command/labeltext"
+    description: "Retrieve a label text defined earlier with \\\\setuplabeltext"
     prefix: "labeltext"
     body: "\\\\labeltext" +
       "{${1:label name}}" +
       "$2"
   "\\language":
+    descriptionMoreURL: "https://wiki.contextgarden.net/Command/language"
+    description: "Switch language"
     prefix: "language"
     body: "\\\\language" +
       "[${1:language label}]" +
       "$2"
   "\\leftaligned":
+    description: ""
+    descriptionMoreURL: "https://wiki.contextgarden.net/Command/leftaligned"
     prefix: "leftaligned"
     body: "\\\\leftaligned" +
       "{${1:text}}" +
       "$2"
   "\\listsymbol":
+    description: ""
+    descriptionMoreURL: "https://wiki.contextgarden.net/Command/listsymbol"
     prefix: "listsymbol"
     body: "\\\\listsymbol" +
       "[${1:name}]" +
       "{${2:text}}" +
       "$3"
   "\\low":
-    comment: "Text to put lower that normal"
+    descriptionMoreURL: "https://wiki.contextgarden.net/Command/low"
+    description: "Subscript"
     prefix: "low"
     body: "\\\\low" +
       "{${1:text}}" +
       "$2"
   "\\mainlanguage":
+    descriptionMoreURL: "https://wiki.contextgarden.net/Command/mainlanguage"
+    description: "Set main language"
     prefix: "mainlanguage"
     body: "\\\\mainlanguage" +
       "[${1:language label}]" +
       "$2"
   "\\mar":
-    comment: "Used in itemizations. Prints an item with a remark in the margin"
+    descriptionMoreURL: "https://wiki.contextgarden.net/Command/mar"
+    description: "Used in itemizations. Prints an item with a remark in the margin"
     prefix: "mar"
     body: "\\\\mar" +
       "{${3:text}}" +
       "$4"
   "\\margintext":
+    description: ""
+    descriptionMoreURL: "https://wiki.contextgarden.net/Command/margintext"
     prefix: "margintext"
     body: "\\\\margintext" +
       "${1:[${2:+ - low}]}" +
@@ -686,305 +881,424 @@
       "{${5:text}}" +
       "$6"
   "\\marking":
+    description: ""
+    descriptionMoreURL: "https://wiki.contextgarden.net/Command/marking"
     prefix: "marking"
     body: "\\\\marking" +
       "[${1:name}]" +
       "{${2:name}}" +
       "$3"
   "\\mathematics":
+    description: ""
+    descriptionMoreURL: "https://wiki.contextgarden.net/Command/mathematics"
     prefix: "mathematics"
     body: "\\\\mathematics" +
       "{${1:formula}}" +
       "$2"
   "\\mediaeval":
+    description: "Old style numbers"
+    descriptionMoreURL: "https://wiki.contextgarden.net/Command/mediaeval"
     prefix: "mediaeval"
     body: "\\\\mediaeval" +
       "{${1:text to old style}}" +
       "$2"
   "\\midaligned":
+    description: "Center something"
+    descriptionMoreURL: "https://wiki.contextgarden.net/Command/midaligned"
     prefix: "midaligned"
     body: "\\\\midaligned" +
       "{${1:text}}" +
       "$2"
   "\\mirror":
+    description: "Mirror something horizontally"
+    descriptionMoreURL: "https://wiki.contextgarden.net/Command/mirror"
     prefix: "mirror"
     body: "\\\\mirror" +
       "{${1:text to mirror}}" +
       "$2"
   "\\month":
+    description: ""
+    descriptionMoreURL: "https://wiki.contextgarden.net/Command/month"
     prefix: "month"
     body: "\\\\month" +
       "{${1:month number}}" +
       "$2"
   "\\noheaderandfooterlines":
-    comment: "The command disables the header/footer on the page where \noheaderandfooterlines was inserted"
+    descriptionMoreURL: "https://wiki.contextgarden.net/Command/noheaderandfooterlines"
+    description: "Disables header and footer on the current page"
     prefix: "noheaderandfooterlines"
     body: "\\\\noheaderandfooterlines" +
       "$1"
   "\\nolist":
+    description: ""
+    descriptionMoreURL: "https://wiki.contextgarden.net/Command/nolist"
     prefix: "nolist"
     body: "\\\\nolist" +
       "{${1:text}}" +
       "$2"
   "\\nomarking":
+    description: ""
+    descriptionMoreURL: "https://wiki.contextgarden.net/Command/nomarking"
     prefix: "nomarking"
     body: "\\\\nomarking" +
       "{${1:text}}" +
       "$2"
   "\\nomoreblocks":
+    description: ""
+    descriptionMoreURL: "https://wiki.contextgarden.net/Command/nomoreblocks"
     prefix: "nomoreblocks"
     body: "\\\\nomoreblocks" +
       "$1"
   "\\nop":
-    comment: "Used in itemizations. Prints an item without a mark, and without incrementing the item counter"
+    descriptionMoreURL: "https://wiki.contextgarden.net/Command/nop"
+    description: "Used in itemizations. Prints an item without a mark, and without incrementing the item counter"
     prefix: "nop"
     body: "\\\\nop" +
       "$1"
   "\\note":
+    descriptionMoreURL: "https://wiki.contextgarden.net/Command/note"
+    description: "Set a footnote marker that refers to an already defined note."
     prefix: "note"
     body: "\\\\note" +
       "[${1:ref}]" +
       "$2"
   "\\nowhitespace":
+    description: ""
+    descriptionMoreURL: "https://wiki.contextgarden.net/Command/nowhitespace"
     prefix: "nowhitespace"
     body: "\\\\nowhitespace" +
       "$1"
   "\\numbers":
+    description: ""
+    descriptionMoreURL: "https://wiki.contextgarden.net/Command/numbers"
     prefix: "numbers"
     body: "\\\\numbers" +
       "{${1:name}}" +
       "$2"
   "\\overbar":
+    description: "Line over text, without gaps"
+    descriptionMoreURL: "https://wiki.contextgarden.net/Command/overbar"
     prefix: "overbar"
     body: "\\\\overbar" +
-      "{${1:text}}" +
-      "$2"
-  "\\overbars":
-    prefix: "overbars"
-    body: "\\\\overbars" +
       "{${1:text to put bar over}}" +
       "$2"
+  "\\overbars":
+    description: "Line over text, with gaps at spaces"
+    descriptionMoreURL: "https://wiki.contextgarden.net/Command/overbars"
+    prefix: "overbars"
+    body: "\\\\overbars" +
+      "{${1:text to put bars over}}" +
+      "$2"
   "\\overstrike":
+    description: "Strike through text (continuously)"
+    descriptionMoreURL: "https://wiki.contextgarden.net/Command/overstrike"
     prefix: "overstrike"
     body: "\\\\overstrike" +
-      "{${1:word}}" +
+      "{${1:text}}" +
       "$2"
   "\\overstrikes":
+    description: "Strike through text (with gaps at spaces)"
+    descriptionMoreURL: "https://wiki.contextgarden.net/Command/overstrikes"
     prefix: "overstrikes"
     body: "\\\\overstrikes" +
       "{${1:text}}" +
       "$2"
   "\\page":
+    descriptionMoreURL: "https://wiki.contextgarden.net/Command/page"
+    description: "Insert a page break"
     prefix: "page"
     body: "\\\\page" +
       "[${1:page options}]" +
       "$2"
   "\\pagereference":
+    description: ""
+    descriptionMoreURL: "https://wiki.contextgarden.net/Command/pagereference"
     prefix: "pagereference"
     body: "\\\\pagereference" +
       "[${1:ref}]" +
       "$2"
   "\\pagetype":
+    description: ""
+    descriptionMoreURL: "https://wiki.contextgarden.net/Command/pagetype"
     prefix: "pagetype"
     body: "\\\\pagetype" +
       "[${1:page name}]" +
       "$2"
   "\\part":
+    descriptionMoreURL: "https://wiki.contextgarden.net/Command/part"
+    description: "Start a new (book) part"
     prefix: "part"
     body: "\\\\part" +
       "${1:[${2:ref, ...}]}" +
       "{${3:title}}" +
       "$4"
   "\\periods":
+    description: ""
+    descriptionMoreURL: "https://wiki.contextgarden.net/Command/periods"
     prefix: "periods"
     body: "\\\\periods" +
       "[${1:number}]" +
       "$2"
   "\\placebookmarks":
+    description: "Create PDF bookmarks for listed sections"
+    descriptionMoreURL: "https://wiki.contextgarden.net/Command/placebookmarks"
     prefix: "placebookmarks"
     body: "\\\\placebookmarks" +
       "${1:[${2:headers}]}" +
       "${3:[${4:headers to enable}]}" +
       "$5"
   "\\placecombinedlist":
+    description: "Place a combined list, e.g. ToC"
+    descriptionMoreURL: "https://wiki.contextgarden.net/Command/placecombinedlist"
     prefix: "placecombinedlist"
     body: "\\\\placecombinedlist" +
       "[${1:name}]" +
-      "${2:[${3:see \\setupcombinedlist}]}" +
+      "${2:[${3:see \\\\setupcombinedlist}]}" +
       "$4"
+  "\\placefigure":
+    descriptionMoreURL: "https://wiki.contextgarden.net/Command/placefigure"
+    description: "Place a figure as a (numbered) float"
+    prefix: "placefigure"
+    body: "\\\\placefigure" +
+      "${1:[${2:ref, ...}]}" +
+      "${4:figure}" +
+      "$5"
   "\\placefootnotes":
+    description: "Place footnotes here (if automatical placing is disabled)"
+    descriptionMoreURL: "https://wiki.contextgarden.net/Command/placefootnotes"
     prefix: "placefootnotes"
     body: "\\\\placefootnotes" +
-      "${1:[${2:see \\setupfootnotes}]}" +
+      "${1:[${2:see \\\\setupfootnotes}]}" +
       "$3"
   "\\placeformula":
+    descriptionMoreURL: "https://wiki.contextgarden.net/Command/placeformula"
+    description: "Place a formula as a (numbered) float"
     prefix: "placeformula"
     body: "\\\\placeformula" +
       "${1:[${2:ref, ...}]}" +
-      "${4:formula}$$" +
+      "$$${4:formula}$$" +
       "$5"
   "\\placelist":
+    description: "Place a list here"
+    descriptionMoreURL: "https://wiki.contextgarden.net/Command/placelist"
     prefix: "placelist"
     body: "\\\\placelist" +
       "[${1:name}]" +
-      "${2:[${3:see \\setuplist}]}" +
+      "${2:[${3:see \\\\setuplist}]}" +
       "$4"
   "\\placelocalfootnotes":
+    description: "Place local footnotes (e.g. from tables) here"
+    descriptionMoreURL: "https://wiki.contextgarden.net/Command/placelocalfootnotes"
     prefix: "placelocalfootnotes"
     body: "\\\\placelocalfootnotes" +
-      "${1:[${2:see \\setupfootnotes}]}" +
+      "${1:[${2:see \\\\setupfootnotes}]}" +
       "$3"
   "\\placeongrid":
+    description: ""
+    descriptionMoreURL: "https://wiki.contextgarden.net/Command/placeongrid"
     prefix: "placeongrid"
     body: "\\\\placeongrid" +
       "${1:[${2:name}]}" +
       "{${3:name}}" +
       "$4"
   "\\placeontopofeachother":
+    description: ""
+    descriptionMoreURL: "https://wiki.contextgarden.net/Command/placeontopofeachother"
     prefix: "placeontopofeachother"
     body: "\\\\placeontopofeachother" +
-      "{${1:see \\moveongrid}}" +
+      "{${1:see \\\\moveongrid}}" +
       "{${2:text}}" +
       "$3"
   "\\placereferencelist":
+    description: ""
+    descriptionMoreURL: "https://wiki.contextgarden.net/Command/placereferencelist"
     prefix: "placereferencelist"
     body: "\\\\placereferencelist" +
       "[${1:name}]" +
       "$2"
   "\\placeregister":
+    description: "Place register (index) here"
+    descriptionMoreURL: "https://wiki.contextgarden.net/Command/placeregister"
     prefix: "placeregister"
     body: "\\\\placeregister" +
       "[${1:name}]" +
-      "${2:[${3:see \\setupregister}]}" +
+      "${2:[${3:see \\\\setupregister}]}" +
       "$4"
   "\\placerule":
+    description: ""
+    descriptionMoreURL: "https://wiki.contextgarden.net/Command/placerule"
     prefix: "placerule"
     body: "\\\\placerule" +
       "[${1:name}]" +
       "$2"
   "\\placesidebyside":
+    description: ""
+    descriptionMoreURL: "https://wiki.contextgarden.net/Command/placesidebyside"
     prefix: "placesidebyside"
     body: "\\\\placesidebyside" +
       "{${1:one side}}" +
       "{${2:other}}" +
       "$3"
   "\\placesubformula":
+    description: ""
+    descriptionMoreURL: "https://wiki.contextgarden.net/Command/placesubformula"
     prefix: "placesubformula"
     body: "\\\\placesubformula" +
       "${1:[${2:ref, ...}]}" +
       "${4:formula}$$" +
       "$5"
   "\\placetextvariable":
+    description: ""
+    descriptionMoreURL: "https://wiki.contextgarden.net/Command/placetextvariable"
     prefix: "placetextvariable"
     body: "\\\\placetextvariable" +
       "[${1:name}]" +
       "$2"
   "\\position":
+    description: ""
+    descriptionMoreURL: "https://wiki.contextgarden.net/Command/position"
     prefix: "position"
     body: "\\\\position" +
       "(${1:numbers})" +
       "{${2:text}}" +
       "$3"
   "\\positiontext":
+    description: ""
+    descriptionMoreURL: "https://wiki.contextgarden.net/Command/positiontext"
     prefix: "positiontext"
     body: "\\\\positiontext" +
       "[${1:name}]" +
       "{${2:text}}" +
       "$3"
   "\\processblocks":
+    description: ""
+    descriptionMoreURL: "https://wiki.contextgarden.net/Command/processblocks"
     prefix: "processblocks"
     body: "\\\\processblocks" +
       "[${1:block}]" +
       "${2:[${3:tag}]}" +
       "$4"
   "\\processpage":
+    description: ""
+    descriptionMoreURL: "https://wiki.contextgarden.net/Command/processpage"
     prefix: "processpage"
     body: "\\\\processpage" +
       "[${1:name}]" +
       "[${2:yes no}]" +
       "$3"
   "\\program":
+    description: ""
+    descriptionMoreURL: "https://wiki.contextgarden.net/Command/program"
     prefix: "program"
     body: "\\\\program" +
       "[${1:name}]" +
       "$2"
   "\\publication":
+    description: ""
+    descriptionMoreURL: "https://wiki.contextgarden.net/Command/publication"
     prefix: "publication"
     body: "\\\\publication" +
       "[${1:ref}]" +
       "$2"
   "\\quotation":
+    descriptionMoreURL: "https://wiki.contextgarden.net/Command/quotation"
+    description: "Surround text with language dependend double quotation marks"
     prefix: "quotation"
     body: "\\\\quotation" +
       "{${1:ref}}" +
       "$2"
   "\\quote":
+    descriptionMoreURL: "https://wiki.contextgarden.net/Command/quote"
+    description: "Surround text with language dependend single quotation marks"
     prefix: "quote"
     body: "\\\\quote" +
       "{${1:text}}" +
       "$2"
   "\\ref":
+    description: ""
+    descriptionMoreURL: "https://wiki.contextgarden.net/Command/ref"
     prefix: "ref"
     body: "\\\\ref" +
       "[${1:t p r s e}]" +
       "[${2:ref}]" +
       "$3"
   "\\reference":
+    description: ""
+    descriptionMoreURL: "https://wiki.contextgarden.net/Command/reference"
     prefix: "reference"
     body: "\\\\reference" +
       "[${1:ref}]" +
       "{${2:text}}" +
       "$3"
   "\\referral":
-    comment: "Construct a business letter's 'information block'"
+    descriptionMoreURL: "https://wiki.contextgarden.net/Command/referral"
+    description: "Construct a business letter’s 'information block'"
     prefix: "referral"
     body: "\\\\referral" +
       "[${1:items}]" +
       "$2"
   "\\reset":
+    description: ""
+    descriptionMoreURL: "https://wiki.contextgarden.net/Command/reset"
     prefix: "reset"
     body: "\\\\reset" +
       "[${1:name}]" +
       "$2"
   "\\resetmarking":
+    description: ""
+    descriptionMoreURL: "https://wiki.contextgarden.net/Command/resetmarking"
     prefix: "resetmarking"
     body: "\\\\resetmarking" +
       "[${1:name}]" +
       "$2"
   "\\rightaligned":
+    description: ""
+    descriptionMoreURL: "https://wiki.contextgarden.net/Command/rightaligned"
     prefix: "rightaligned"
     body: "\\\\rightaligned" +
       "{${1:text}}" +
       "$2"
   "\\romannumerals":
+    description: ""
+    descriptionMoreURL: "https://wiki.contextgarden.net/Command/romannumerals"
     prefix: "romannumerals"
     body: "\\\\romannumerals" +
       "{${1:number to print roman}}" +
       "$2"
   "\\rotate":
+    description: "Rotate something"
+    descriptionMoreURL: "https://wiki.contextgarden.net/Command/rotate"
     prefix: "rotate"
     body: "\\\\rotate" +
       "${1:[${2:options}]}" +
-      "{${3:name}}" +
+      "{${3:content}}" +
       "$4"
   "\\scale":
+    description: "Scale something"
+    descriptionMoreURL: "https://wiki.contextgarden.net/Command/scale"
     prefix: "scale"
     body: "\\\\scale" +
-      "${1:[${2:see \\setuprotate}]}" +
-      "{${3:text}}" +
+      "${1:[${2:see \\\\setuprotate}]}" +
+      "{${3:content}}" +
       "$4"
   "\\screen":
+    description: ""
+    descriptionMoreURL: "https://wiki.contextgarden.net/Command/screen"
     prefix: "screen"
     body: "\\\\screen" +
-      "[${1:see \\page}]" +
+      "[${1:see \\\\page}]" +
       "$2"
   "\\section":
+    description: "Start a section"
+    descriptionMoreURL: "https://wiki.contextgarden.net/Command/section"
     prefix: "section"
     body: "\\\\section" +
       "${1:[${2:ref, ...}]}" +
       "{${3:text}}" +
       "$4"
   "\\selectblocks":
+    description: ""
+    descriptionMoreURL: "https://wiki.contextgarden.net/Command/selectblocks"
     prefix: "selectblocks"
     body: "\\\\selectblocks" +
       "[${1:blocks}]" +
@@ -992,156 +1306,210 @@
       "${4:[${5:criterium}}" +
       "$6"
   "\\settextvariable":
+    description: ""
+    descriptionMoreURL: "https://wiki.contextgarden.net/Command/settextvariable"
     prefix: "settextvariable"
     body: "\\\\settextvariable" +
       "[${1:name}]" +
       "[${2:text}]" +
       "$3"
   "\\setupalign":
+    description: ""
+    descriptionMoreURL: "https://wiki.contextgarden.net/Command/setupalign"
     prefix: "setupalign"
     body: "\\\\setupalign" +
       "[${1:alignment}]" +
       "$2"
   "\\setuparranging":
-    comment: "Setup the way you wish to arrange multiple pages per sheet"
+    descriptionMoreURL: "https://wiki.contextgarden.net/Command/setuparranging"
+    description: "Setup imposition schema (the way you wish to arrange multiple pages per sheet)"
     prefix: "setuparranging"
     body: "\\\\setuparranging" +
       "[${1:options}]" +
       "$2"
   "\\setupbackground":
+    description: ""
+    descriptionMoreURL: "https://wiki.contextgarden.net/Command/setupbackground"
     prefix: "setupbackground"
     body: "\\\\setupbackground" +
       "[${1:offset=name}]" +
       "$2"
   "\\setupbackgrounds":
+    description: "Setup page (area) background, usually with layers"
+    descriptionMoreURL: "https://wiki.contextgarden.net/Command/setupbackgrounds"
     prefix: "setupbackgrounds"
     body: "\\\\setupbackgrounds" +
       "${1:[${2:area}]}" +
       "${3:[${4:subareas}]}" +
-      "[${5:see \\setupframed}]" +
+      "[${5:see \\\\setupframed}]" +
       "$6"
   "\\setupblackrules":
+    description: ""
+    descriptionMoreURL: "https://wiki.contextgarden.net/Command/setupblackrules"
     prefix: "setupblackrules"
     body: "\\\\setupblackrules" +
       "[${1:dimension=name}]" +
       "$2"
   "\\setupblank":
+    description: "Define default dimension of \\blank"
+    descriptionMoreURL: "https://wiki.contextgarden.net/Command/setupblank"
     prefix: "setupblank"
     body: "\\\\setupblank" +
       "${1:[${2:normal, standard, name}]}" +
       "$3"
   "\\setupblock":
+    description: ""
+    descriptionMoreURL: "https://wiki.contextgarden.net/Command/setupblock"
     prefix: "setupblock"
     body: "\\\\setupblock" +
       "[${1:name}]" +
       "[${2:options}]" +
       "$3"
   "\\setupbodyfont":
+    description: "Setup the body font"
+    descriptionMoreURL: "https://wiki.contextgarden.net/Command/setupbodyfont"
     prefix: "setupbodyfont"
     body: "\\\\setupbodyfont" +
       "[${1:serif, sans, name}]" +
       "$2"
   "\\setupbodyfontenvironment":
+    description: "Setup relative font sizes"
+    descriptionMoreURL: "https://wiki.contextgarden.net/Command/setupbodyfontenvironment"
     prefix: "setupbodyfontenvironment"
     body: "\\\\setupbodyfontenvironment" +
       "[${1:name}]" +
-      "[${2:see \\setupbodyfont}]" +
+      "[${2:see \\\\setupbodyfont}]" +
       "$3"
   "\\setupbottom":
+    description: ""
+    descriptionMoreURL: "https://wiki.contextgarden.net/Command/setupbottom"
     prefix: "setupbottom"
     body: "\\\\setupbottom" +
       "${1:[${2:name?}]}" +
-      "[${3:see \\setupheader}]" +
+      "[${3:see \\\\setupheader}]" +
       "$4"
   "\\setupbuffer":
+    description: ""
+    descriptionMoreURL: "https://wiki.contextgarden.net/Command/setupbuffer"
     prefix: "setupbuffer"
     body: "\\\\setupbuffer" +
       "${1:[${2:name}]}" +
       "[${3:paragraph=number, before=command, after=command}]" +
       "$4"
   "\\setupbuttons":
+    description: ""
+    descriptionMoreURL: "https://wiki.contextgarden.net/Command/setupbuttons"
     prefix: "setupbuttons"
     body: "\\\\setupbuttons" +
-      "[${1:see \\setupframed}]" +
+      "[${1:see \\\\setupframed}]" +
       "$2"
   "\\setupcapitals":
+    description: ""
+    descriptionMoreURL: "https://wiki.contextgarden.net/Command/setupcapitals"
     prefix: "setupcapitals"
     body: "\\\\setupcapitals" +
       "[${1:title=name, sc=name}]" +
       "$2"
   "\\setupcaption":
+    description: ""
+    descriptionMoreURL: "https://wiki.contextgarden.net/Command/setupcaption"
     prefix: "setupcaption"
     body: "\\\\setupcaption" +
       "[${1:name}]" +
-      "[${2:see \\setupcaptions}]" +
+      "[${2:see \\\\setupcaptions}]" +
       "$3"
   "\\setupcaptions":
+    description: ""
+    descriptionMoreURL: "https://wiki.contextgarden.net/Command/setupcaptions"
     prefix: "setupcaptions"
     body: "\\\\setupcaptions" +
       "[${1:options}]" +
       "$2"
   "\\setupclipping":
-    comment: "Specify the default clipping settings"
+    descriptionMoreURL: "https://wiki.contextgarden.net/Command/setupclipping"
+    description: "Specify the default clipping settings"
     prefix: "setupclipping"
     body: "\\\\setupclipping" +
       "[${1:options}]" +
       "$2"
   "\\setupcolor":
+    description: ""
+    descriptionMoreURL: "https://wiki.contextgarden.net/Command/setupcolor"
     prefix: "setupcolor"
     body: "\\\\setupcolor" +
       "[${1:color mode}]" +
       "$2"
   "\\setupcolors":
+    description: ""
+    descriptionMoreURL: "https://wiki.contextgarden.net/Command/setupcolors"
     prefix: "setupcolors"
     body: "\\\\setupcolors" +
       "[${1:options}]" +
       "$2"
   "\\setupcolumns":
+    description: ""
+    descriptionMoreURL: "https://wiki.contextgarden.net/Command/setupcolumns"
     prefix: "setupcolumns"
     body: "\\\\setupcolumns" +
       "[${1:options}]" +
       "$2"
   "\\setupcombinations":
+    description: ""
+    descriptionMoreURL: "https://wiki.contextgarden.net/Command/setupcombinations"
     prefix: "setupcombinations"
     body: "\\\\setupcombinations" +
       "[${1:options}]" +
       "$2"
   "\\setupcombinedlist":
+    description: ""
+    descriptionMoreURL: "https://wiki.contextgarden.net/Command/setupcombinedlist"
     prefix: "setupcombinedlist"
     body: "\\\\setupcombinedlist" +
       "[${1:name}]" +
-      "[${2:level=name, see \\setuplist}]" +
+      "[${2:level=name, see \\\\setuplist}]" +
       "$3"
   "\\setupcomment":
+    description: ""
+    descriptionMoreURL: "https://wiki.contextgarden.net/Command/setupcomment"
     prefix: "setupcomment"
     body: "\\\\setupcomment" +
       "[${1:options}]" +
       "$2"
   "\\setupdescriptions":
+    description: ""
+    descriptionMoreURL: "https://wiki.contextgarden.net/Command/setupdescriptions"
     prefix: "setupdescriptions"
     body: "\\\\setupdescriptions" +
       "[${2:name}]" +
       "[${3:options}]" +
       "$4"
   "\\setupenumerations":
+    description: ""
+    descriptionMoreURL: "https://wiki.contextgarden.net/Command/setupenumerations"
     prefix: "setupenumerations"
     body: "\\\\setupenumerations" +
       "[${2:name}]" +
-      "[${3:see \\setupdescriptions}]" +
+      "[${3:see \\\\setupdescriptions}]" +
       "$4"
   "\\setupexternalfigures":
+    description: "Set options for images"
+    descriptionMoreURL: "https://wiki.contextgarden.net/Command/setupexternalfigures"
     prefix: "setupexternalfigures"
     body: "\\\\setupexternalfigures" +
       "[${1:options}" +
       "$2"
   "\\setupfield":
+    description: ""
+    descriptionMoreURL: "https://wiki.contextgarden.net/Command/setupfield"
     prefix: "setupfield"
     body: "\\\\setupfield" +
       "[${1:name}]" +
       "[${2:options}]" +
-      "[${3:see \\setupfields}]" +
+      "[${3:see \\\\setupfields}]" +
       "$4"
   "\\setupfields":
+    description: ""
+    descriptionMoreURL: "https://wiki.contextgarden.net/Command/setupfields"
     prefix: "setupfields"
     body: "\\\\setupfields" +
       "[${1:names]" +
@@ -1149,85 +1517,117 @@
       "[${3:other options}]" +
       "$4"
   "\\setupfillinlines":
+    description: ""
+    descriptionMoreURL: "https://wiki.contextgarden.net/Command/setupfillinlines"
     prefix: "setupfillinlines"
     body: "\\\\setupfillinlines" +
       "[${1:options}]" +
       "$2"
   "\\setupfillinrules":
+    description: ""
+    descriptionMoreURL: "https://wiki.contextgarden.net/Command/setupfillinrules"
     prefix: "setupfillinrules"
     body: "\\\\setupfillinrules" +
       "[${1:options}]" +
       "$2"
   "\\setupfloat":
+    description: "Set options for some kind of float (figures, tables etc.)"
+    descriptionMoreURL: "https://wiki.contextgarden.net/Command/setupfloat"
     prefix: "setupfloat"
     body: "\\\\setupfloat" +
       "[${1:name}]" +
       "[${2:options}]" +
       "$3"
   "\\setupfloats":
+    description: "Set options for all floats"
+    descriptionMoreURL: "https://wiki.contextgarden.net/Command/setupfloats"
     prefix: "setupfloats"
     body: "\\\\setupfloats" +
       "[${1:options}]" +
       "$2"
   "\\setupfloatsplitting":
+    description: ""
+    descriptionMoreURL: "https://wiki.contextgarden.net/Command/setupfloatsplitting"
     prefix: "setupfloatsplitting"
     body: "\\\\setupfloatsplitting" +
       "[${1:conversion=${2:name}, level=${3:name}}]" +
       "$4"
   "\\setupfooter":
+    description: ""
+    descriptionMoreURL: "https://wiki.contextgarden.net/Command/setupfooter"
     prefix: "setupfooter"
     body: "\\\\setupfooter" +
-      "[${3:see \\setupheader}]" +
+      "[${3:see \\\\setupheader}]" +
       "$4"
   "\\setupfootertexts":
+    description: "Define text for footer"
+    descriptionMoreURL: "https://wiki.contextgarden.net/Command/setupfootertexts"
     prefix: "setupfootertexts"
     body: "\\\\setupfootertexts" +
       "[${2:margin / edge}]" +
       "[${3:options}]" +
       "$4"
   "\\setupfootnotedefinition":
+    description: ""
+    descriptionMoreURL: "https://wiki.contextgarden.net/Command/setupfootnotedefinition"
     prefix: "setupfootnotedefinition"
     body: "\\\\setupfootnotedefinition" +
-      "[${1:see \\setupdescription}]" +
+      "[${1:see \\\\setupdescription}]" +
       "$2"
   "\\setupfootnotes":
+    description: ""
+    descriptionMoreURL: "https://wiki.contextgarden.net/Command/setupfootnotes"
     prefix: "setupfootnotes"
     body: "\\\\setupfootnotes" +
       "[${1:options}]" +
       "$2"
   "\\setupforms":
+    description: ""
+    descriptionMoreURL: "https://wiki.contextgarden.net/Command/setupforms"
     prefix: "setupforms"
     body: "\\\\setupforms" +
       "[${1:method=${2:HTML/FDF}}]" +
       "$3"
   "\\setupformulae":
+    description: ""
+    descriptionMoreURL: "https://wiki.contextgarden.net/Command/setupformulae"
     prefix: "setupformulae"
     body: "\\\\setupformulae" +
       "[${1:options}]" +
       "$2"
   "\\setupframed":
+    description: "Set default options for \\framed"
+    descriptionMoreURL: "https://wiki.contextgarden.net/Command/setupframed"
     prefix: "setupframed"
     body: "\\\\setupframed" +
       "[${1:options}]" +
       "$2"
   "\\setupframedtexts":
+    description: ""
+    descriptionMoreURL: "https://wiki.contextgarden.net/Command/setupframedtexts"
     prefix: "setupframedtexts"
     body: "\\\\setupframedtexts" +
       "[${1:options}]" +
       "$2"
   "\\setuphead":
+    description: "Setup section heads"
+    descriptionMoreURL: "https://wiki.contextgarden.net/Command/setuphead"
     prefix: "setuphead"
     body: "\\\\setuphead" +
       "[${1:name}]" +
       "[${2:options}]" +
       "$3"
   "\\setupheader":
+    description: ""
+    descriptionMoreURL: "https://wiki.contextgarden.net/Command/setupheader"
     prefix: "setupheader"
     body: "\\\\setupheader" +
       "[${1:margin / edge}]" +
       "[${2:options}]" +
       "$3"
   "\\setupheadertexts":
+    description: "Define texts for header"
+    descriptionMoreURL: "https://wiki.contextgarden.net/Command/setupheadertexts"
     prefix: "setupheadertexts"
     body: "\\\\setupheadertexts" +
       "[${1:left handed side of odd pages}]" +
@@ -1236,44 +1636,60 @@
       "[${4:left handed side of even pages}]" +
       "$5"
   "\\setupheadnumber":
+    description: ""
+    descriptionMoreURL: "https://wiki.contextgarden.net/Command/setupheadnumber"
     prefix: "setupheadnumber"
     body: "\\\\setupheadnumber" +
       "[${1:section}]" +
       "[${2:number / increment}]" +
       "$3"
   "\\setupheads":
+    description: "Set options for all section heads"
+    descriptionMoreURL: "https://wiki.contextgarden.net/Command/setupheads"
     prefix: "setupheads"
     body: "\\\\setupheads" +
       "[${1:options}]" +
       "$2"
   "\\setupheadtext":
+    description: ""
+    descriptionMoreURL: "https://wiki.contextgarden.net/Command/setupheadtext"
     prefix: "setupheadtext"
     body: "\\\\setupheadtext" +
       "[${2:language}]" +
       "[${3:section=Section, name}" +
       "$4"
   "\\setuphyphenmark":
+    description: "Set symbol for hyphenation"
+    descriptionMoreURL: "https://wiki.contextgarden.net/Command/setuphyphenmark"
     prefix: "setuphyphenmark"
     body: "\\\\setuphyphenmark" +
       "[sign=${1:normal / wide}]" +
       "$3"
   "\\setupindentations":
+    description: ""
+    descriptionMoreURL: "https://wiki.contextgarden.net/Command/setupindentations"
     prefix: "setupindentations"
     body: "\\\\setupindentations" +
       "[${1:name}]" +
       "[${3:options}]" +
       "$4"
   "\\setupindenting":
+    description: ""
+    descriptionMoreURL: "https://wiki.contextgarden.net/Command/setupindenting"
     prefix: "setupindenting"
     body: "\\\\setupindenting" +
       "[${1:options}]" +
       "$2"
   "\\setupinterlinespace":
+    description: "Define line height"
+    descriptionMoreURL: "https://wiki.contextgarden.net/Command/setupinterlinespace"
     prefix: "setupinterlinespace"
     body: "\\\\setupinterlinespace" +
       "${1:[${2:dimension}]}" +
       "$3"
   "\\setupitemgroup":
+    description: "Set options for some kind of itemization"
+    descriptionMoreURL: "https://wiki.contextgarden.net/Command/setupitemgroup"
     prefix: "setupitemgroup"
     body: "\\\\setupitemgroup" +
       "[${1:level of itemize}]" +
@@ -1281,133 +1697,183 @@
       "[${3:options}]" +
       "$8"
   "\\setupitems":
+    description: ""
+    descriptionMoreURL: "https://wiki.contextgarden.net/Command/setupitems"
     prefix: "setupitems"
     body: "\\\\setupitems" +
       "[${1:options}]" +
       "$2"
   "\\setuplabeltext":
+    description: ""
+    descriptionMoreURL: "https://wiki.contextgarden.net/Command/setuplabeltext"
     prefix: "setuplabeltext"
     body: "\\\\setuplabeltext" +
       "[${1:lang}]" +
       "[${2:text}" +
       "$3"
   "\\setuplanguage":
+    description: ""
+    descriptionMoreURL: "https://wiki.contextgarden.net/Command/setuplanguage"
     prefix: "setuplanguage"
     body: "\\\\setuplanguage" +
       "[${1:language}]" +
-      "[${2:see \\installlanguage}]" +
+      "[${2:see \\\\installlanguage}]" +
       "$3"
   "\\setuplayout":
+    description: "Define page layout"
+    descriptionMoreURL: "https://wiki.contextgarden.net/Command/setuplayout"
     prefix: "setuplayout"
     body: "\\\\setuplayout" +
       "[${1:options}]" +
       "$2"
   "\\setuplegend":
+    description: ""
+    descriptionMoreURL: "https://wiki.contextgarden.net/Command/setuplegend"
     prefix: "setuplegend"
     body: "\\\\setuplegend" +
       "[${1:options}]" +
       "$2"
   "\\setuplinenumbering":
+    description: "Set options for line numbering"
+    descriptionMoreURL: "https://wiki.contextgarden.net/Command/setuplinenumbering"
     prefix: "setuplinenumbering"
     body: "\\\\setuplinenumbering" +
       "[${1:options}]" +
       "$2"
   "\\setuplines":
+    description: "Set options for \\startlines ... \\stoplines (code, poems etc.)"
+    descriptionMoreURL: "https://wiki.contextgarden.net/Command/setuplines"
     prefix: "setuplines"
     body: "\\\\setuplines" +
       "[${1:options}]" +
       "$2"
   "\\setuplinewidth":
+    description: ""
+    descriptionMoreURL: "https://wiki.contextgarden.net/Command/setuplinewidth"
     prefix: "setuplinewidth"
     body: "\\\\setuplinewidth" +
       "[${1:dimension}]" +
       "$2"
   "\\setuplist":
+    description: ""
+    descriptionMoreURL: "https://wiki.contextgarden.net/Command/setuplist"
     prefix: "setuplist"
     body: "\\\\setuplist" +
       "[${1:name}]" +
       "[${2:options}]" +
       "$3"
   "\\setupmakeup":
+    description: ""
+    descriptionMoreURL: "https://wiki.contextgarden.net/Command/setupmakeup"
     prefix: "setupmakeup"
     body: "\\\\setupmakeup" +
       "[${1:name}]" +
       "[${2:options}]" +
       "$3"
   "\\setupmarginblocks":
+    description: ""
+    descriptionMoreURL: "https://wiki.contextgarden.net/Command/setupmarginblocks"
     prefix: "setupmarginblocks"
     body: "\\\\setupmarginblocks" +
       "[${1:options}]" +
       "$2"
 
   "\\setupmarginrules":
+    description: ""
+    descriptionMoreURL: "https://wiki.contextgarden.net/Command/setupmarginrules"
     prefix: "setupmarginrules"
     body: "\\\\setupmarginrules" +
       "[level=${1:number}, rulethickness=${2:dimension}}" +
       "$2"
   "\\setupmarking":
+    description: ""
+    descriptionMoreURL: "https://wiki.contextgarden.net/Command/setupmarking"
     prefix: "setupmarking"
     body: "\\\\setupmarking" +
       "[${1:name}]" +
       "[${2:options}" +
       "$3"
   "\\setupnarrower":
+    description: ""
+    descriptionMoreURL: "https://wiki.contextgarden.net/Command/setupnarrower"
     prefix: "setupnarrower"
     body: "\\\\setupnarrower" +
       "[${1:options}]" +
       "$2"
   "\\setupnumbering":
+    description: ""
+    descriptionMoreURL: "https://wiki.contextgarden.net/Command/setupnumbering"
     prefix: "setupnumbering"
     body: "\\\\setupnumbering" +
       "[${1:options}]" +
       "$2"
   "\\setupoppositeplacing":
+    description: ""
+    descriptionMoreURL: "https://wiki.contextgarden.net/Command/setupoppositeplacing"
     prefix: "setupoppositeplacing"
     body: "\\\\setupoppositeplacing" +
       "[${1:options}" +
       "$2"
   "\\setupoutput":
+    description: ""
+    descriptionMoreURL: "https://wiki.contextgarden.net/Command/setupoutput"
     prefix: "setupoutput"
     body: "\\\\setupoutput" +
       "[${1:name}]" +
       "$2"
   "\\setuppagenumber":
+    description: ""
+    descriptionMoreURL: "https://wiki.contextgarden.net/Command/setuppagenumber"
     prefix: "setuppagenumber"
     body: "\\\\setuppagenumber" +
       "[${1:options}]" +
       "$2"
   "\\setuppagenumbering":
+    description: ""
+    descriptionMoreURL: "https://wiki.contextgarden.net/Command/setuppagenumbering"
     prefix: "setuppagenumbering"
     body: "\\\\setuppagenumbering" +
       "[${1:options}]" +
       "$2"
   "\\setuppagetransitions":
+    description: ""
+    descriptionMoreURL: "https://wiki.contextgarden.net/Command/setuppagetransitions"
     prefix: "setuppagetransitions"
     body: "\\\\setuppagetransitions" +
       "${1:[${2:name}]}" +
       "$3"
   "\\setuppalet":
+    description: ""
+    descriptionMoreURL: "https://wiki.contextgarden.net/Command/setuppalet"
     prefix: "setuppalet"
     body: "\\\\setuppalet" +
       "[${1:name}]" +
       "$2"
   "\\setuppaper":
+    description: ""
+    descriptionMoreURL: "https://wiki.contextgarden.net/Command/setuppaper"
     prefix: "setuppaper"
     body: "\\\\setuppaper" +
       "[${1:options}]" +
       "$2"
   "\\setuppapersize":
+    description: ""
+    descriptionMoreURL: "https://wiki.contextgarden.net/Command/setuppapersize"
     prefix: "setuppapersize"
     body: "\\\\setuppapersize" +
       "[${1:page dimension}]" +
       "[${2:printed page dimension}]" +
       "$3"
   "\\setupparagraphnumbering":
+    description: ""
+    descriptionMoreURL: "https://wiki.contextgarden.net/Command/setupparagraphnumbering"
     prefix: "setupparagraphnumbering"
     body: "\\\\setupparagraphnumbering" +
       "[${1:options}]" +
       "$2"
   "\\setupparagraphs":
+    description: ""
+    descriptionMoreURL: "https://wiki.contextgarden.net/Command/setupparagraphs"
     prefix: "setupparagraphs"
     body: "\\\\setupparagraphs" +
       "[${1:name}]" +
@@ -1415,149 +1881,205 @@
       "[${3:options}]" +
       "$4"
   "\\setuppositioning":
+    description: ""
+    descriptionMoreURL: "https://wiki.contextgarden.net/Command/setuppositioning"
     prefix: "setuppositioning"
     body: "\\\\setuppositioning" +
       "[${1:options}]" +
       "$2"
   "\\setupprofiles":
+    description: ""
+    descriptionMoreURL: "https://wiki.contextgarden.net/Command/setupprofiles"
     prefix: "setupprofiles"
     body: "\\\\setupprofiles" +
       "[${1:options}]" +
       "$2"
   "\\setupprograms":
+    description: ""
+    descriptionMoreURL: "https://wiki.contextgarden.net/Command/setupprograms"
     prefix: "setupprograms"
     body: "\\\\setupprograms" +
       "[${1:options}]" +
       "$2"
   "\\setuppublications":
+    description: ""
+    descriptionMoreURL: "https://wiki.contextgarden.net/Command/setuppublications"
     prefix: "setuppublications"
     body: "\\\\setuppublications" +
       "[${1:options}]" +
       "$2"
   "\\setupquote":
+    description: ""
+    descriptionMoreURL: "https://wiki.contextgarden.net/Command/setupquote"
     prefix: "setupquote"
     body: "\\\\setupquote" +
       "[${1:options}]" +
       "$2"
   "\\setupreferencelist":
+    description: ""
+    descriptionMoreURL: "https://wiki.contextgarden.net/Command/setupreferencelist"
     prefix: "setupreferencelist"
     body: "\\\\setupreferencelist" +
       "[${1:name}]" +
       "[${2:options}]" +
       "$3"
   "\\setupreferencing":
+    description: ""
+    descriptionMoreURL: "https://wiki.contextgarden.net/Command/setupreferencing"
     prefix: "setupreferencing"
     body: "\\\\setupreferencing" +
       "[${1:options}]" +
       "$2"
   "\\setupregister":
+    description: ""
+    descriptionMoreURL: "https://wiki.contextgarden.net/Command/setupregister"
     prefix: "setupregister"
     body: "\\\\setupregister" +
       "[${1:name}]" +
       "[${2:options}]" +
       "$3"
   "\\setuprotate":
+    description: ""
+    descriptionMoreURL: "https://wiki.contextgarden.net/Command/setuprotate"
     prefix: "setuprotate"
     body: "\\\\setuprotate" +
       "[${1:options}]" +
       "$2"
   "\\setuprule":
+    description: ""
+    descriptionMoreURL: "https://wiki.contextgarden.net/Command/setuprule"
     prefix: "setuprule"
     body: "\\\\setuprule" +
       "[${1:name}]" +
       "[${2:options}]" +
       "$3"
   "\\setupscreens":
+    description: ""
+    descriptionMoreURL: "https://wiki.contextgarden.net/Command/setupscreens"
     prefix: "setupscreens"
     body: "\\\\setupscreens" +
       "[${1:options}]" +
       "$2"
   "\\setupsection":
+    description: ""
+    descriptionMoreURL: "https://wiki.contextgarden.net/Command/setupsection"
     prefix: "setupsection"
     body: "\\\\setupsection" +
       "[${1:name}]" +
       "[${2:options}]" +
       "$3"
   "\\setupsectionblock":
+    description: ""
+    descriptionMoreURL: "https://wiki.contextgarden.net/Command/setupsectionblock"
     prefix: "setupsectionblock"
     body: "\\\\setupsectionblock" +
       "[${1:name}]" +
       "[${2:options}]" +
       "$3"
   "\\setupsorting":
+    description: ""
+    descriptionMoreURL: "https://wiki.contextgarden.net/Command/setupsorting"
     prefix: "setupsorting"
     body: "\\\\setupsorting" +
       "[${1:name}]" +
       "[${2:options}]" +
       "$3"
   "\\setupspacing":
+    description: ""
+    descriptionMoreURL: "https://wiki.contextgarden.net/Command/setupspacing"
     prefix: "setupspacing"
     body: "\\\\setupspacing" +
       "[${1:fixed / packed / broad}]" +
       "$2"
   "\\setupstrut":
+    description: ""
+    descriptionMoreURL: "https://wiki.contextgarden.net/Command/setupstrut"
     prefix: "setupstrut"
     body: "\\\\setupstrut" +
       "[${1:yes no cap}]" +
       "$2"
   "\\setupsubpagenumber":
+    description: ""
+    descriptionMoreURL: "https://wiki.contextgarden.net/Command/setupsubpagenumber"
     prefix: "setupsubpagenumber"
     body: "\\\\setupsubpagenumber" +
       "[way = ${1:bytext bysection}, state = ${2:start stop none}]" +
       "$3"
   "\\setupsymbolset":
+    description: ""
+    descriptionMoreURL: "https://wiki.contextgarden.net/Command/setupsymbolset"
     prefix: "setupsymbolset"
     body: "\\\\setupsymbolset" +
       "[${1:name}]" +
       "$2"
   "\\setupsynchronization":
+    description: ""
+    descriptionMoreURL: "https://wiki.contextgarden.net/Command/setupsynchronization"
     prefix: "setupsynchronization"
     body: "\\\\setupsynchronization" +
       "[${1:options}]" +
       "$2"
   "\\setupsynchronizationbar":
+    description: ""
+    descriptionMoreURL: "https://wiki.contextgarden.net/Command/setupsynchronizationbar"
     prefix: "setupsynchronizationbar"
     body: "\\\\setupsynchronizationbar" +
       "[state=${1:start / stop}]" +
       "$2"
   "\\setupsynonyms":
+    description: ""
+    descriptionMoreURL: "https://wiki.contextgarden.net/Command/setupsynonyms"
     prefix: "setupsynonyms"
     body: "\\\\setupsynonyms" +
       "[${1:name}]" +
       "[${2:options}]" +
       "$3"
   "\\setupsystem":
+    description: ""
+    descriptionMoreURL: "https://wiki.contextgarden.net/Command/setupsystem"
     prefix: "setupsystem"
     body: "\\\\setupsystem" +
       "[${1:options}]" +
       "$2"
   "\\setuptab":
+    description: ""
+    descriptionMoreURL: "https://wiki.contextgarden.net/Command/setuptab"
     prefix: "setuptab"
     body: "\\\\setuptab" +
       "[${1:options}]" +
       "$2"
   "\\setuptables":
+    description: ""
+    descriptionMoreURL: "https://wiki.contextgarden.net/Command/setuptables"
     prefix: "setuptables"
     body: "\\\\setuptables" +
       "[${1:options}]" +
       "$2"
   "\\setuptabulate":
+    description: ""
+    descriptionMoreURL: "https://wiki.contextgarden.net/Command/setuptabulate"
     prefix: "setuptabulate"
     body: "\\\\setuptabulate" +
       "[${1:name}]" +
       "[${2:options}]" +
       "$3"
   "\\setuptext":
+    description: ""
+    descriptionMoreURL: "https://wiki.contextgarden.net/Command/setuptext"
     prefix: "setuptext"
     body: "\\\\setuptext" +
-      "[${1:see \\setupheader}]" +
+      "[${1:see \\\\setupheader}]" +
       "$2"
   "\\setuptextrules":
+    description: ""
+    descriptionMoreURL: "https://wiki.contextgarden.net/Command/setuptextrules"
     prefix: "setuptextrules"
     body: "\\\\setuptextrules" +
       "[${1:options}]" +
       "$2"
   "\\setuptexttexts":
+    description: ""
+    descriptionMoreURL: "https://wiki.contextgarden.net/Command/setuptexttexts"
     prefix: "setuptexttexts"
     body: "\\\\setuptexttexts" +
       "[${1:...}]" +
@@ -1565,28 +2087,37 @@
       "[${3:...}]" +
       "$4"
   "\\setuptextvariable":
+    description: ""
+    descriptionMoreURL: "https://wiki.contextgarden.net/Command/setuptextvariable"
     prefix: "setuptextvariable"
     body: "\\\\setuptextvariable" +
       "[${1:name}]" +
       "[${2:options}]" +
       "$3"
   "\\setupthinrules":
+    description: ""
+    descriptionMoreURL: "https://wiki.contextgarden.net/Command/setupthinrules"
     prefix: "setupthinrules"
     body: "\\\\setupthinrules" +
       "[${1:options}" +
       "$2"
   "\\setuptolerance":
-    comment: "Set up how tolerant TeX should be of ‘ugly’ stretching of spaces"
+    descriptionMoreURL: "https://wiki.contextgarden.net/Command/setuptolerance"
+    description: "Set up how tolerant TeX should be of ‘ugly’ stretching of spaces"
     prefix: "setuptolerance"
     body: "\\\\setuptolerance" +
       "[${1:stretching}]" +
       "$2"
   "\\setuptop":
+    description: ""
+    descriptionMoreURL: "https://wiki.contextgarden.net/Command/setuptop"
     prefix: "setuptop"
     body: "\\\\setuptop" +
-      "[${1:see \\setupheader}]" +
+      "[${1:see \\\\setupheader}]" +
       "$2"
   "\\setuptoptexts":
+    description: ""
+    descriptionMoreURL: "https://wiki.contextgarden.net/Command/setuptoptexts"
     prefix: "setuptoptexts"
     body: "\\\\setuptoptexts" +
       "[${1:...}]" +
@@ -1594,116 +2125,161 @@
       "[${3:...}]" +
       "$4"
   "\\setuptype":
+    description: ""
+    descriptionMoreURL: "https://wiki.contextgarden.net/Command/setuptype"
     prefix: "setuptype"
     body: "\\\\setuptype" +
       "[${1:options}]" +
       "$2"
   "\\setuptyping":
+    description: ""
+    descriptionMoreURL: "https://wiki.contextgarden.net/Command/setuptyping"
     prefix: "setuptyping"
     body: "\\\\setuptyping" +
       "[${1:name}]" +
       "[${2:options}]" +
       "$3"
   "\\setupunderbar":
+    description: ""
+    descriptionMoreURL: "https://wiki.contextgarden.net/Command/setupunderbar"
     prefix: "setupunderbar"
     body: "\\\\setupunderbar" +
       "[${1:options}]" +
       "$2"
   "\\setupurl":
+    description: ""
+    descriptionMoreURL: "https://wiki.contextgarden.net/Command/setupurl"
     prefix: "setupurl"
     body: "\\\\setupurl" +
       "[${1:options}]" +
       "$2"
   "\\setupversions":
+    description: ""
+    descriptionMoreURL: "https://wiki.contextgarden.net/Command/setupversions"
     prefix: "setupversions"
     body: "\\\\setupversions" +
       "[number=${1:...}, style=${2:...}]" +
       "$3"
   "\\setupwhitespace":
+    description: ""
+    descriptionMoreURL: "https://wiki.contextgarden.net/Command/setupwhitespace"
     prefix: "setupwhitespace"
     body: "\\\\setupwhitespace" +
       "$[${1:dimension}]" +
       "$2"
   "\\showbodyfont":
+    description: ""
+    descriptionMoreURL: "https://wiki.contextgarden.net/Command/showbodyfont"
     prefix: "showbodyfont"
     body: "\\\\showbodyfont" +
-      "[${1:see \\setupbodyfont}]" +
+      "[${1:see \\\\setupbodyfont}]" +
       "$2"
   "\\showbodyfontenvironment":
+    description: ""
+    descriptionMoreURL: "https://wiki.contextgarden.net/Command/showbodyfontenvironment"
     prefix: "showbodyfontenvironment"
     body: "\\\\showbodyfontenvironment" +
-      "[${1:see \\setupbodyfont}]" +
+      "[${1:see \\\\setupbodyfont}]" +
       "$2"
   "\\showcolor":
-    comment: "Displays all user-defined colors."
+    descriptionMoreURL: "https://wiki.contextgarden.net/Command/showcolor"
+    description: "Displays all user-defined colors."
     prefix: "showcolor"
     body: "\\\\showcolor" +
       "$1"
   "\\showcolorgroup":
+    description: ""
+    descriptionMoreURL: "https://wiki.contextgarden.net/Command/showcolorgroup"
     prefix: "showcolorgroup"
     body: "\\\\showcolorgroup" +
       "[${1:name}]" +
       "[${2:options}]" +
       "$3"
   "\\showexternalfigures":
+    description: ""
+    descriptionMoreURL: "https://wiki.contextgarden.net/Command/showexternalfigures"
     prefix: "showexternalfigures"
     body: "\\\\showexternalfigures" +
       "[alternative=${1:...}]" +
       "$2"
   "\\showfields":
+    description: ""
+    descriptionMoreURL: "https://wiki.contextgarden.net/Command/showfields"
     prefix: "showfields"
     body: "\\\\showfields" +
       "[${1:name}]" +
       "$2"
   "\\showframe":
+    description: ""
+    descriptionMoreURL: "https://wiki.contextgarden.net/Command/showframe"
     prefix: "showframe"
     body: "\\\\showframe" +
       "${1:[${2:header text footer}]}" +
       "[${3:leftmargin text rightmargin}]" +
       "$4"
   "\\showgrid":
+    descriptionMoreURL: "https://wiki.contextgarden.net/Command/showgrid"
+    description: "Show line grid"
     prefix: "showgrid"
     body: "\\\\showgrid" +
       "$1"
   "\\showlayout":
+    descriptionMoreURL: "https://wiki.contextgarden.net/Command/showlayout"
+    description: "Insert pages with layout measures"
     prefix: "showlayout"
     body: "\\\\showlayout" +
       "$1"
   "\\showmakeup":
+    description: ""
+    descriptionMoreURL: "https://wiki.contextgarden.net/Command/showmakeup"
     prefix: "showmakeup"
     body: "\\\\showmakeup" +
       "$1"
   "\\showpalet":
+    description: ""
+    descriptionMoreURL: "https://wiki.contextgarden.net/Command/showpalet"
     prefix: "showpalet"
     body: "\\\\showpalet" +
       "[${1:name}]" +
       "[${2:option}]" +
       "$3"
   "\\showprint":
+    description: ""
+    descriptionMoreURL: "https://wiki.contextgarden.net/Command/showprint"
     prefix: "showprint"
     body: "\\\\showprint" +
-      "[${1:see \\setuppapersize}]" +
-      "[${3:see \\setuplayout}]" +
+      "[${1:see \\\\setuppapersize}]" +
+      "[${3:see \\\\setuplayout}]" +
       "$4"
   "\\showsetups":
+    description: ""
+    descriptionMoreURL: "https://wiki.contextgarden.net/Command/showsetups"
     prefix: "showsetups"
     body: "\\\\showsetups" +
       "$1"
   "\\showstruts":
+    description: ""
+    descriptionMoreURL: "https://wiki.contextgarden.net/Command/showstruts"
     prefix: "showstruts"
     body: "\\\\showstruts" +
       "$1"
   "\\showsymbolset":
+    descriptionMoreURL: "https://wiki.contextgarden.net/Command/showsymbolset"
+    description: "List all the glyphs of a symbol set"
     prefix: "showsymbolset"
     body: "\\\\showsymbolset" +
       "[${1:name}]" +
       "$2"
   "\\someline":
+    description: ""
+    descriptionMoreURL: "https://wiki.contextgarden.net/Command/someline"
     prefix: "someline"
     body: "\\\\someline" +
       "[${1:ref}]" +
       "$2"
   "\\somewhere":
+    description: ""
+    descriptionMoreURL: "https://wiki.contextgarden.net/Command/somewhere"
     prefix: "somewhere"
     body: "\\\\somewhere" +
       "{${1:text}}" +
@@ -1711,364 +2287,494 @@
       "[${3:ref}]" +
       "$4"
   "\\space":
+    description: ""
+    descriptionMoreURL: "https://wiki.contextgarden.net/Command/space"
     prefix: "space"
     body: "\\\\space" +
       "$1"
   "\\splitfloat":
+    commen: "(tables only)"
     prefix: "splitfloat"
     body: "\\\\splitfloat" +
-      "[${1:see \\setupfloatsplitting}]" +
+      "[${1:see \\\\setupfloatsplitting}]" +
       "{${2:text}}" +
       "{${3:text}}" +
       "$4"
   "\\startalignment":
+    descriptionMoreURL: "https://wiki.contextgarden.net/Command/startalignment"
+    description: "Use different alignment for a block of text"
     prefix: "startalignment"
     body: "\\\\startalignment" +
       "[${1:option}]\n" +
       "\t$2\n" +
-      "\\stopalignment" +
+      "\\\\stopalignment" +
       "$3"
   "\\startbackground":
+    description: ""
+    descriptionMoreURL: "https://wiki.contextgarden.net/Command/startbackground"
     prefix: "startbackground"
     body: "\\\\startbackground\n" +
       "\t$1\n" +
-      "\\stopbackground" +
+      "\\\\stopbackground" +
       "$2"
   "\\startcolor":
+    description: ""
+    descriptionMoreURL: "https://wiki.contextgarden.net/Command/startcolor"
     prefix: "startcolor"
     body: "\\\\startcolor" +
       "[${1:name}]\n" +
       "\t$2\n" +
-      "\\stopcolor" +
+      "\\\\stopcolor" +
       "$3"
   "\\startcolumns":
+    description: ""
+    descriptionMoreURL: "https://wiki.contextgarden.net/Command/startcolumns"
     prefix: "startcolumns"
     body: "\\\\startcolumns" +
-      "[${1:see \\setupcolumns}]\n" +
+      "[${1:see \\\\setupcolumns}]\n" +
       "\t$2\n" +
-      "\\stopcolumns" +
+      "\\\\stopcolumns" +
       "$3"
   "\\startcombination":
+    description: ""
+    descriptionMoreURL: "https://wiki.contextgarden.net/Command/startcombination"
     prefix: "startcombination"
     body: "\\\\startcombination" +
       "[${1:columns} * ${2:rows}]\n" +
       "\t$2\n" +
-      "\\stopcombination" +
+      "\\\\stopcombination" +
       "$3"
   "\\startcomment":
+    description: ""
+    descriptionMoreURL: "https://wiki.contextgarden.net/Command/startcomment"
     prefix: "startcomment"
     body: "\\\\startcomment" +
       "[${1:name}]" +
-      "[${2:see \\setupcomment}]\n" +
+      "[${2:see \\\\setupcomment}]\n" +
       "\t$3\n" +
-      "\\stopcomment" +
+      "\\\\stopcomment" +
       "$4"
   "\\startcomponent":
+    description: ""
+    descriptionMoreURL: "https://wiki.contextgarden.net/Command/startcomponent"
     prefix: "startcomponent"
     body: "\\\\startcomponent" +
       "${1:file}" +
       "\t$2\n" +
-      "\\stopcomponent" +
+      "\\\\stopcomponent" +
       "$3"
   "\\startdocument":
+    description: ""
+    descriptionMoreURL: "https://wiki.contextgarden.net/Command/startdocument"
     prefix: "startdocument"
     body: "\\\\startdocument" +
       "[${1:name}]\n" +
       "\t$2\n" +
-      "\\stopdocument" +
+      "\\\\stopdocument" +
       "$3"
   "\\startenvironment":
+    description: ""
+    descriptionMoreURL: "https://wiki.contextgarden.net/Command/startenvironment"
     prefix: "startenvironment"
     body: "\\\\startenvironment" +
       "${1:file}\n" +
       "\t$2\n" +
-      "\\stopenvironment" +
+      "\\\\stopenvironment" +
       "$3"
   "\\startfact":
+    description: ""
+    descriptionMoreURL: "https://wiki.contextgarden.net/Command/startfact"
     prefix: "startfact"
     body: "\\\\startfact\n" +
       "\\\\fact $1 \\\n" +
-      "\\stopfact"
+      "\\\\stopfact"
   "\\startfigure":
+    description: ""
+    descriptionMoreURL: "https://wiki.contextgarden.net/Command/startfigure"
     prefix: "startfigure"
     body: "\\\\startfigure" +
       "[${1:name}]" +
       "[${2:file}]" +
       "[${3:options}]\n" +
       "\t$4" +
-      "\\stopfigure"
+      "\\\\stopfigure"
   "\\starthiding":
+    description: ""
+    descriptionMoreURL: "https://wiki.contextgarden.net/Command/starthiding"
     prefix: "starthiding"
     body: "\\\\starthiding\n" +
       "\t$1" +
-      "\\stophiding"
-  "\\startitemize ... \\stopitemize":
+      "\\\\stophiding"
+  "\\startitemize":
+    description: ""
+    descriptionMoreURL: "https://wiki.contextgarden.net/Command/startitemize"
     prefix: "itm"
     body: "\\\\startitemize\n" +
-      "\\\\item $0\n" +
+      "\\\\startitem $0\\\\stopitem\n" +
+      "\\\\stopitemize"
+  "\\startitemize[packed,joinedup]":
+    prefix: "itmpj"
+    body: "\\\\startitemize[packed,joinedup]\n" +
+      "\\\\startitem $0\\\\stopitem\n" +
       "\\\\stopitemize"
   "\\startline":
+    description: ""
+    descriptionMoreURL: "https://wiki.contextgarden.net/Command/startline"
     prefix: "startline"
     body: "\\\\startline" +
       "[${1:ref}]\n" +
       "\t$2\n" +
-      "\\stopline"
+      "\\\\stopline"
   "\\startlinecorrection":
+    description: ""
+    descriptionMoreURL: "https://wiki.contextgarden.net/Command/startlinecorrection"
     prefix: "startlinecorrection"
-    body: "\\\\startlinecorrection\n" +
+    body: "\\\\\\startlinecorrection\n" +
       "\t$1\n" +
-      "\\stoplinecorrection"
+      "\\\\stoplinecorrection"
   "\\startlinenumbering":
+    description: ""
+    descriptionMoreURL: "https://wiki.contextgarden.net/Command/startlinenumbering"
     prefix: "startlinenumbering"
     body: "\\\\startlinenumbering" +
-      "${1:\\[continue\\]}\n" +
+      "${1:\\\\[continue\\\\]}\n" +
       "\t$2\n" +
-      "\\stoplinenumbering"
+      "\\\\stoplinenumbering"
   "\\startlines":
+    description: ""
+    descriptionMoreURL: "https://wiki.contextgarden.net/Command/startlines"
     prefix: "startlines"
     body: "\\\\startlines\n" +
       "\t$1\n" +
-      "\\stoplines"
+      "\\\\stoplines"
   "\\startlocal":
+    description: ""
+    descriptionMoreURL: "https://wiki.contextgarden.net/Command/startlocal"
     prefix: "startlocal"
     body: "\\\\startlocal\n" +
       "\t$1\n" +
-      "\\stoplocal"
+      "\\\\stoplocal"
   "\\startlocalenvironment":
+    description: ""
+    descriptionMoreURL: "https://wiki.contextgarden.net/Command/startlocalenvironment"
     prefix: "startlocalenvironment"
     body: "\\\\startlocalenvironment\n" +
       "\t$1\n" +
-      "\\stoplocalenvironment"
+      "\\\\stoplocalenvironment"
   "\\startlocalfootnotes":
+    description: ""
+    descriptionMoreURL: "https://wiki.contextgarden.net/Command/startlocalfootnotes"
     prefix: "startlocalfootnotes"
     body: "\\\\startlocalfootnotes\n" +
       "\t$1\n" +
-      "\\stoplocalfootnotes"
+      "\\\\stoplocalfootnotes"
   "\\startmakeup":
+    description: ""
+    descriptionMoreURL: "https://wiki.contextgarden.net/Command/startmakeup"
     prefix: "startmakeup"
     body: "\\\\startmakeup" +
       "[${1:name}]" +
-      "${2:[${3:see \\setupmakeup}]}" +
+      "${2:[${3:see \\\\setupmakeup}]}" +
       "$4" +
-      "\\stopmakeup"
+      "\\\\stopmakeup"
   "\\startmarginblock":
+    description: ""
+    descriptionMoreURL: "https://wiki.contextgarden.net/Command/startmarginblock"
     prefix: "startmarginblock"
     body: "\\\\startmarginblock\n" +
       "\t$1\n" +
-      "\\stopmarginblock"
+      "\\\\stopmarginblock"
   "\\startmarginrule":
+    description: ""
+    descriptionMoreURL: "https://wiki.contextgarden.net/Command/startmarginrule"
     prefix: "startmarginrule"
     body: "\\\\startmarginrule" +
       "[${1:number}]" +
       "$2" +
-      "\\stopmarginrule"
+      "\\\\stopmarginrule"
   "\\startnarrower":
+    description: ""
+    descriptionMoreURL: "https://wiki.contextgarden.net/Command/startnarrower"
     prefix: "startnarrower"
     body: "\\\\startnarrower" +
       "${1:[${2:margins to narrow}]}\n" +
       "\t$3\n" +
-      "\\stopnarrower"
+      "\\\\stopnarrower"
   "\\startopposite":
+    description: ""
+    descriptionMoreURL: "https://wiki.contextgarden.net/Command/startopposite"
     prefix: "startopposite"
     body: "\\\\startopposite\n" +
       "\t$1\n" +
-      "\\stopopposite"
+      "\\\\stopopposite"
   "\\startoverlay":
+    description: ""
+    descriptionMoreURL: "https://wiki.contextgarden.net/Command/startoverlay"
     prefix: "startoverlay"
     body: "\\\\startoverlay" +
       "{${1:text}}" +
       "{${2:text}}\n" +
       "\t$3\n" +
-      "\\stopoverlay"
+      "\\\\stopoverlay"
   "\\startoverview":
+    description: ""
+    descriptionMoreURL: "https://wiki.contextgarden.net/Command/startoverview"
     prefix: "startoverview"
     body: "\\\\startoverview" +
       "[${1:name}]\n" +
       "\t$2\n" +
-      "\\stopoverview"
+      "\\\\stopoverview"
   "\\startpacked":
+    description: ""
+    descriptionMoreURL: "https://wiki.contextgarden.net/Command/startpacked"
     prefix: "startpacked"
     body: "\\\\startpacked" +
       "${1:[${2:blank}]}\n" +
       "\t$3\n" +
-      "\\stoppacked"
+      "\\\\stoppacked"
   "\\startpositioning":
+    description: ""
+    descriptionMoreURL: "https://wiki.contextgarden.net/Command/startpositioning"
     prefix: "startpositioning"
     body: "\\\\startpositioning" +
       "\t$1\n" +
-      "\\stoppositioning"
+      "\\\\stoppositioning"
   "\\startpostponing":
+    description: ""
+    descriptionMoreURL: "https://wiki.contextgarden.net/Command/startpostponing"
     prefix: "startpostponing"
     body: "\\\\startpostponing\n" +
       "${1:[${2:page number or increment}]}\n" +
       "\t$3\n" +
-      "\\stoppostponing"
+      "\\\\stoppostponing"
   "\\startproduct":
+    description: ""
+    descriptionMoreURL: "https://wiki.contextgarden.net/Command/startproduct"
     prefix: "startproduct"
     body: "\\\\startproduct" +
-      "${1: \\component file}\n" +
+      "${1: \\\\component file}\n" +
       "\t$2\n" +
-      "\\stopproduct"
+      "\\\\stopproduct"
   "\\startprofile":
+    description: ""
+    descriptionMoreURL: "https://wiki.contextgarden.net/Command/startprofile"
     prefix: "startprofile"
     body: "\\\\startprofile" +
       "[${1:name}]\n" +
       "\t$2\n" +
-      "\\stopprofile"
+      "\\\\stopprofile"
   "\\startproject":
+    description: ""
+    descriptionMoreURL: "https://wiki.contextgarden.net/Command/startproject"
     prefix: "startproject"
     body: "\\\\startproject" +
       "${1:command}\n" +
       "\t$2\n" +
-      "\\stopproject"
+      "\\\\stopproject"
   "\\startquotation":
+    description: ""
+    descriptionMoreURL: "https://wiki.contextgarden.net/Command/startquotation"
     prefix: "startquotation"
     body: "\\\\startquotation" +
       "[${1:left middle right}]\n" +
       "\t$2\n" +
-      "\\stopquotation"
+      "\\\\stopquotation"
   "\\startsymbolset":
+    description: ""
+    descriptionMoreURL: "https://wiki.contextgarden.net/Command/startsymbolset"
     prefix: "startsymbolset"
     body: "\\\\startsymbolset" +
       "[${1:name}]" +
       "$2" +
-      "\\stopsymbolset"
+      "\\\\stopsymbolset"
   "\\startsynchronization":
+    description: ""
+    descriptionMoreURL: "https://wiki.contextgarden.net/Command/startsynchronization"
     prefix: "startsynchronization"
     body: "\\\\startsynchronization\n" +
       "\t$1\n" +
-      "\\stopsynchronization"
+      "\\\\stopsynchronization"
   "\\starttable":
+    description: ""
+    descriptionMoreURL: "https://wiki.contextgarden.net/Command/starttable"
     prefix: "starttable"
     body: "\\\\starttable" +
       "[${1:columns struct}]\n" +
       "\t$2\n" +
-      "\\stoptable"
+      "\\\\stoptable"
   "\\starttextrule":
+    description: ""
+    descriptionMoreURL: "https://wiki.contextgarden.net/Command/starttextrule"
     prefix: "starttextrule"
     body: "\\\\starttextrule" +
       "{${1:title}}\n" +
       "\t$2\n" +
-      "\\stoptextrule"
+      "\\\\stoptextrule"
   "\\startunpacked":
+    description: ""
+    descriptionMoreURL: "https://wiki.contextgarden.net/Command/startunpacked"
     prefix: "startunpacked"
     body: "\\\\startunpacked\n" +
       "\t$1\n" +
-      "\\stopunpacked"
+      "\\\\stopunpacked"
   "\\startversion":
+    description: ""
+    descriptionMoreURL: "https://wiki.contextgarden.net/Command/startversion"
     prefix: "startversion"
     body: "\\\\startversion" +
       "[${1:numbers}]\n" +
       "\t$2\n" +
-      "\\stopversion"
+      "\\\\stopversion"
   "\\stretched":
+    description: ""
+    descriptionMoreURL: "https://wiki.contextgarden.net/Command/stretched"
     prefix: "stretched"
     body: "\\\\stretched" +
       "{${1:text to stretch}}" +
       "$2"
   "\\sub":
+    description: ""
+    descriptionMoreURL: "https://wiki.contextgarden.net/Command/sub"
     prefix: "sub"
     body: "\\\\sub" +
       "${1:[${2:ref, ...}]}" +
       "$3"
   "\\subject":
+    description: ""
+    descriptionMoreURL: "https://wiki.contextgarden.net/Command/subject"
     prefix: "subject"
     body: "\\\\subject" +
       "${1:[${2:ref, ...}]}" +
       "{${3:text}}" +
       "$4"
   "\\subsection":
+    description: ""
+    descriptionMoreURL: "https://wiki.contextgarden.net/Command/subsection"
     prefix: "subsection"
     body: "\\\\subsection" +
       "${1:[${2:ref, ...}]}" +
       "{${3:text}}" +
       "$4"
   "\\subsubject":
+    description: ""
+    descriptionMoreURL: "https://wiki.contextgarden.net/Command/subsubject"
     prefix: "subsubject"
     body: "\\\\subsubject" +
       "${1:[${2:ref, ...}]}" +
       "{${3:text}}" +
       "$4"
   "\\subsubsection":
+    description: ""
+    descriptionMoreURL: "https://wiki.contextgarden.net/Command/subsubsection"
     prefix: "subsubsection"
     body: "\\\\subsubsection" +
       "${1:[${2:ref, ...}]}" +
       "{${3:text}}" +
       "$4"
   "\\subsubsubject":
+    description: ""
+    descriptionMoreURL: "https://wiki.contextgarden.net/Command/subsubsubject"
     prefix: "subsubsubject"
     body: "\\\\subsubsubject" +
       "${1:[${2:ref, ...}]}" +
       "{${3:text}}" +
       "$4"
   "\\switchtobodyfont":
+    description: ""
+    descriptionMoreURL: "https://wiki.contextgarden.net/Command/switchtobodyfont"
     prefix: "switchtobodyfont"
     body: "\\\\switchtobodyfont" +
       "[${1:style}]" +
       "$2"
   "\\switchtorawfont":
+    description: ""
+    descriptionMoreURL: "https://wiki.contextgarden.net/Command/switchtorawfont"
     prefix: "switchtorawfont"
     body: "\\\\switchtorawfont" +
       "[${1:name}]" +
       "$2"
   "\\sym":
+    description: ""
+    descriptionMoreURL: "https://wiki.contextgarden.net/Command/sym"
     prefix: "sym"
     body: "\\\\sym" +
       "{${1:custom item mark}}" +
       "$2"
   "\\symbol":
+    description: ""
+    descriptionMoreURL: "https://wiki.contextgarden.net/Command/symbol"
     prefix: "symbol"
     body: "\\\\symbol" +
       "${1:[${2:name}]}" +
       "[${3:name}]" +
       "$4"
   "\\synchronize":
+    description: ""
+    descriptionMoreURL: "https://wiki.contextgarden.net/Command/synchronize"
     prefix: "synchronize"
     body: "\\\\synchronize" +
       "$1"
   "\\tab":
+    description: ""
+    descriptionMoreURL: "https://wiki.contextgarden.net/Command/tab"
     prefix: "tab"
     body: "\\\\tab" +
       "${2:paragraph suffix}" +
       "$3"
   "\\tex":
+    description: ""
+    descriptionMoreURL: "https://wiki.contextgarden.net/Command/tex"
     prefix: "tex"
     body: "\\\\tex" +
       "{${1:command name}}" +
       "$2"
   "\\textreference":
+    description: ""
+    descriptionMoreURL: "https://wiki.contextgarden.net/Command/textreference"
     prefix: "textreference"
     body: "\\\\textreference" +
       "[${1:ref}]" +
       "{${2:text}}" +
       "$3"
   "\\textrule":
+    description: ""
+    descriptionMoreURL: "https://wiki.contextgarden.net/Command/textrule"
     prefix: "textrule"
     body: "\\\\textrule" +
       "[${1:top middle bottom}]}" +
       "{${2:text}}" +
       "$4"
   "\\textvariable":
+    description: ""
+    descriptionMoreURL: "https://wiki.contextgarden.net/Command/textvariable"
     prefix: "textvariable"
     body: "\\\\textvariable" +
       "[${1:name}]" +
       "$2"
   "\\thinrule":
+    description: ""
+    descriptionMoreURL: "https://wiki.contextgarden.net/Command/thinrule"
     prefix: "thinrule"
     body: "\\\\thinrule" +
       "$1"
   "\\thinrules":
+    description: ""
+    descriptionMoreURL: "https://wiki.contextgarden.net/Command/thinrules"
     prefix: "thinrules"
     body: "\\\\thinrules" +
-      "${1:[${2:see \\setupthinrules}}" +
+      "${1:[${2:see \\\\setupthinrules}}" +
       "$3"
   "\\title":
+    description: ""
+    descriptionMoreURL: "https://wiki.contextgarden.net/Command/title"
     prefix: "title"
     body: "\\\\title" +
       "${1:[${2:ref, ...}]}" +
       "{${3:text}}" +
       "$4"
   "\\tooltip":
+    description: ""
+    descriptionMoreURL: "https://wiki.contextgarden.net/Command/tooltip"
     prefix: "tooltip"
     body: "\\\\tooltip" +
       "${1:[${2:left right middle}]}" +
@@ -2076,48 +2782,66 @@
       "{${4:text}}" +
       "$5"
   "\\translate":
+    description: ""
+    descriptionMoreURL: "https://wiki.contextgarden.net/Command/translate"
     prefix: "translate"
     body: "\\\\translate" +
       "[${1:lang=..., other=...}]" +
       "$2"
   "\\typ":
+    description: ""
+    descriptionMoreURL: "https://wiki.contextgarden.net/Command/typ"
     prefix: "typ"
     body: "\\\\typ" +
       "{${1:text}}" +
       "$2"
   "\\type":
+    description: ""
+    descriptionMoreURL: "https://wiki.contextgarden.net/Command/type"
     prefix: "type"
     body: "\\\\type" +
       "{${1:text}}" +
       "$2"
   "\\typebuffer":
+    description: ""
+    descriptionMoreURL: "https://wiki.contextgarden.net/Command/typebuffer"
     prefix: "typebuffer"
     body: "\\\\typebuffer" +
       "[${1:buffer name}]" +
       "$2"
   "\\typefile":
+    description: ""
+    descriptionMoreURL: "https://wiki.contextgarden.net/Command/typefile"
     prefix: "typefile"
     body: "\\\\typefile" +
-      "${1:[${2:see \\definetyping}]}" +
+      "${1:[${2:see \\\\definetyping}]}" +
       "{${3:file name}}" +
       "$4"
   "\\underbar":
+    description: ""
+    descriptionMoreURL: "https://wiki.contextgarden.net/Command/underbar"
     prefix: "underbar"
     body: "\\\\underbar" +
       "{${1:text}}" +
       "$2"
   "\\underbars":
+    description: ""
+    descriptionMoreURL: "https://wiki.contextgarden.net/Command/underbars"
     prefix: "underbars"
     body: "\\\\underbars" +
       "{${1:words}}" +
       "$2"
   "\\underbrace":
+    description: ""
+    descriptionMoreURL: "https://wiki.contextgarden.net/Command/underbrace"
     prefix: "underbrace"
     body: "\\\\underbrace" +
       "{${1:formula}}_" +
       "{${2:under text}}" +
       "$3"
   "\\useURL":
+    description: ""
+    descriptionMoreURL: "https://wiki.contextgarden.net/Command/useURL"
     prefix: "useURL"
     body: "\\\\useURL" +
       "[${1:label}]" +
@@ -2126,27 +2850,37 @@
       "[${4:text}]" +
       "$5"
   "\\useblocks":
+    description: ""
+    descriptionMoreURL: "https://wiki.contextgarden.net/Command/useblocks"
     prefix: "useblocks"
     body: "\\\\useblocks" +
       "[${1:block classes}]" +
       "${2:[${3:options}]}" +
       "$4"
   "\\usecommands":
+    description: ""
+    descriptionMoreURL: "https://wiki.contextgarden.net/Command/usecommands"
     prefix: "usecommands"
     body: "\\\\usecommands" +
       "{${1:text}}" +
       "$2"
   "\\usedirectory":
+    description: ""
+    descriptionMoreURL: "https://wiki.contextgarden.net/Command/usedirectory"
     prefix: "usedirectory"
     body: "\\\\usedirectory" +
       "[${1:name}]" +
       "$2"
   "\\useexternaldocument":
+    description: ""
+    descriptionMoreURL: "https://wiki.contextgarden.net/Command/useexternaldocument"
     prefix: "useexternaldocument"
     body: "\\\\useexternaldocument" +
       "[${1:file}]" +
       "$2"
   "\\useexternalfigure":
+    description: ""
+    descriptionMoreURL: "https://wiki.contextgarden.net/Command/useexternalfigure"
     prefix: "useexternalfigure"
     body: "\\\\useexternalfigure" +
       "${1:[${2:name}]}" +
@@ -2154,6 +2888,8 @@
       "${4:[${5:options}]}" +
       "$6"
   "\\useexternalfile":
+    description: ""
+    descriptionMoreURL: "https://wiki.contextgarden.net/Command/useexternalfile"
     prefix: "useexternalfile"
     body: "\\\\useexternalfile" +
       "[${1:name}]" +
@@ -2162,57 +2898,79 @@
       "[${4:bodyfont}]" +
       "$5"
   "\\useexternalfiles":
+    description: ""
+    descriptionMoreURL: "https://wiki.contextgarden.net/Command/useexternalfiles"
     prefix: "useexternalfiles"
     body: "\\\\useexternalfiles" +
       "[${1:name}]" +
       "[${2:options}]" +
       "$3"
   "\\usemodule":
+    description: ""
+    descriptionMoreURL: "https://wiki.contextgarden.net/Command/usemodule"
     prefix: "usemodule"
     body: "\\\\usemodule" +
       "[${1:name}]" +
       "$2"
   "\\usereferences":
+    description: ""
+    descriptionMoreURL: "https://wiki.contextgarden.net/Command/usereferences"
     prefix: "usereferences"
     body: "\\\\usereferences" +
       "[${1:file}]" +
       "$2"
   "\\usespecials":
+    description: ""
+    descriptionMoreURL: "https://wiki.contextgarden.net/Command/usespecials"
     prefix: "usespecials"
     body: "\\\\usespecials" +
       "[${1:name}]" +
       "$2"
   "\\usesymbols":
+    description: ""
+    descriptionMoreURL: "https://wiki.contextgarden.net/Command/usesymbols"
     prefix: "usesymbols"
     body: "\\\\usesymbols" +
       "[${1:name}]" +
       "$2"
   "\\version":
+    description: ""
+    descriptionMoreURL: "https://wiki.contextgarden.net/Command/version"
     prefix: "version"
     body: "\\\\version" +
       "[${1:final concept temporary}]" +
       "$2"
   "\\vl":
+    description: ""
+    descriptionMoreURL: "https://wiki.contextgarden.net/Command/vl"
     prefix: "vl"
     body: "\\\\vl" +
       "[${1:number}]" +
       "$2"
   "\\whitespace":
+    description: ""
+    descriptionMoreURL: "https://wiki.contextgarden.net/Command/whitespace"
     prefix: "whitespace"
     body: "\\\\whitespace" +
       "$1"
   "\\wordright":
+    description: ""
+    descriptionMoreURL: "https://wiki.contextgarden.net/Command/wordright"
     prefix: "wordright"
     body: "\\\\wordright" +
       "{${1:text}}" +
       "$2"
   "\\writebetweenlist":
+    description: ""
+    descriptionMoreURL: "https://wiki.contextgarden.net/Command/writebetweenlist"
     prefix: "writebetweenlist"
     body: "\\\\writebetweenlist" +
       "[${1:name}]" +
       "{${2:text}}" +
       "$3"
   "\\writetolist":
+    description: ""
+    descriptionMoreURL: "https://wiki.contextgarden.net/Command/writetolist"
     prefix: "writetolist"
     body: "\\\\writetolist" +
       "[${1:name}]" +
@@ -2220,6 +2978,8 @@
       "{${3:text}}" +
       "$4"
   "\\writetoreferencelist":
+    description: ""
+    descriptionMoreURL: "https://wiki.contextgarden.net/Command/writetoreferencelist"
     prefix: "writetoreferencelist"
     body: "\\\\writetoreferencelist" +
       "[${1:name}]" +
@@ -2227,6 +2987,8 @@
       "{${3:text}}" +
       "$4"
   "\\writetoregister":
+    description: ""
+    descriptionMoreURL: "https://wiki.contextgarden.net/Command/writetoregister"
     prefix: "writetoregister"
     body: "\\\\writetoregister" +
       "[${1:silgular}]" +
