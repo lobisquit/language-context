@@ -1,19 +1,18 @@
 #!/usr/bin/env python3
 """
-Convert ConTeXt interface XML into snippet-json
+Convert ConTeXt interface XML into snippet-cson
 
 Call: ixml2cson.py <TEXROOT> <output filename>
 """
 import os
 import sys
-import json
 import subprocess
-from pprint import pprint
 from pathlib import Path
 import xml.etree.ElementTree as ET
+from cson import compile_cson
 
 xmlns_cd = '{http://www.pragma-ade.com/commands}'
-outputname = 'autosnippets-context.json'
+outputname = 'autosnippets-context.cson'
 
 def find_context():
     'find ConTeXt tree'
@@ -87,18 +86,7 @@ for interface in contents:
             'prefix': name,
             'body': body
         }
-with open(outputname, 'w') as cson:
-    cson.write('".text.tex.context": ',)
-    cson.write(json.dumps(commands, sort_keys=True, indent=4))
-
-"""
-  "\\writetolist":
-    description: "Insert a list (e.g. ToC) entry"
-    descriptionMoreURL: "https://wiki.contextgarden.net/Command/writetolist"
-    prefix: "writetolist"
-    body: "\\\\writetolist" +
-      "[${1:name}]" +
-      "{${2:text}}" +
-      "{${3:text}}" +
-      "$4"
-"""
+with open(outputname, 'w') as csonf:
+    csonf.write("'.text.tex.context': ",)
+    #csonf.write(json.dumps(commands, sort_keys=True, indent=4))
+    csonf.write(compile_cson(commands, indent=2))
