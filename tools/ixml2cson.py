@@ -12,7 +12,7 @@ import xml.etree.ElementTree as ET
 from cson import compile_cson
 
 xmlns_cd = '{http://www.pragma-ade.com/commands}'
-outputname = 'autosnippets-context.cson'
+outputname = 'snippets/autosnippets-context.cson'
 
 def find_context():
     'find ConTeXt tree'
@@ -46,8 +46,25 @@ if not len(contents):
     print('No ConTeXt interface files found in "%s"' % ipath)
     sys.exit(3)
 
+# common definitions
+# COMMONS = {}
+# commondefs = ipath.glob('i-common-*.xml')
+# for interface in commondefs:
+#     if interface.name == 'i-common-definitions.xml':
+#         continue
+#     try:
+#         tree = ET.parse(interface)
+#     except ET.ParseError as ex:
+#         print(ex)
+#     root = tree.getroot()
+#     for define in root.iter(xmlns_cd + 'define'):
+#         name = define.attrib['name']
+#         COMMONS[name] = define
+
 commands = {}
 for interface in contents:
+    if 'common' in interface.name:
+        continue
     print(interface.name)
     try:
         tree = ET.parse(interface)
@@ -56,18 +73,52 @@ for interface in contents:
     root = tree.getroot()
     for cmd in root.iter(xmlns_cd + 'command'):
         name = cmd.attrib['name']
+        if 'variant' in cmd.attrib \
+        and (cmd.attrib['variant'].startswith('instance') \
+        or cmd.attrib['variant']=='assignment'):
+            # instances need to get resolved
+            # e.g. note => footnote, endnote
+            continue
+        if 'type' in cmd.attrib \
+        and cmd.attrib['type']=='environment' \
+        and not name.startswith('start'):
+            name = 'start'+name
         body = r'\\'+name
         args = cmd.find(xmlns_cd + 'arguments')
         noofargs = 0
         if args:
             for child in args:
                 noofargs += 1
-                if child.tag=='assignments':
+                tag = child.tag.replace(xmlns_cd, '')
+                if tag=='assignments':
                     body += '[${%d:options}]' % noofargs
-                elif child.tag=='content':
+                elif tag=='content':
                     body += '{${%d:content}}' % noofargs
-                # TODO: sequence, instances, inheritance
-        #body += '$%d' % (noofargs + 1)
+                elif tag=='resolve':
+                    resolvename = child.attrib['name']
+                    if 'keyword-name' in resolvename:
+                        body += '[${%d:name}]' % noofargs
+                    elif 'keyword-reference' in resolvename:
+                        body += '[${%d:reference}]' % noofargs
+                    elif resolvename=='argument-true':
+                        body += '{${%d:content if true}}' % noofargs
+                    elif resolvename=='argument-false':
+                        body += '{${%d:content if false}}' % noofargs
+                    elif resolvename.startswith('argument-'):
+                        rest = resolvename.replace('argument-','')
+                        body += '{${%d:%s}}' % (noofargs, rest)
+                    elif resolvename.startswith('keyword-') or resolvename.startswith('string-'):
+                        rest = resolvename.replace('keyword-','').replace('string-','')
+                        body += ' ${%d:%s}' % (noofargs, rest)
+                    elif 'floatdata-list' in resolvename:
+                        body += '[${%s:title={},reference=,}]' % noofargs
+                    elif resolvename.startswith('assignment'):
+                        body += '[${%d:options}]' % noofargs
+                    else:
+                        print("\t\tUnhandled resolve in %s: %s" % (name, resolvename))
+                        body += '[${%d:%s}]' % (noofargs, resolvename)
+                # TODO: sequence
+        body += '$%d' % (noofargs + 1)
         if name.startswith('start'):
             body += '\n\\\\%s\n' % name.replace('start', 'stop')
         desc = ''
