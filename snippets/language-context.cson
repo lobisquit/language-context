@@ -1134,7 +1134,7 @@
     descriptionMoreURL: "https://wiki.contextgarden.net/Command/placeontopofeachother"
     prefix: "placeontopofeachother"
     body: "\\placeontopofeachother" +
-      "{${1:see \\moveongrid}}" +
+      "{${1:see \\\\moveongrid}}" +
       "{${2:text}}" +
       "$3"
   "\\placereferencelist":
@@ -1314,7 +1314,7 @@
     descriptionMoreURL: "https://wiki.contextgarden.net/Command/screen"
     prefix: "screen"
     body: "\\screen" +
-      "[${1:see \\page}]" +
+      "[${1:see \\\\page}]" +
       "$2"
   "\\section":
     description: "Start a section"
@@ -1745,7 +1745,7 @@
     prefix: "setuplanguage"
     body: "\\setuplanguage" +
       "[${1:language}]" +
-      "[${2:see \\installlanguage}]" +
+      "[${2:see \\\\installlanguage}]" +
       "$3"
   "\\setuplayout":
     description: "Define page layout"
@@ -1769,7 +1769,7 @@
       "[${1:options}]" +
       "$2"
   "\\setuplines":
-    description: "Set options for \\startlines ... \\stoplines (code, poems etc.)"
+    description: "Set options for \\\\startlines ... \\\\stoplines (code, poems etc.)"
     descriptionMoreURL: "https://wiki.contextgarden.net/Command/setuplines"
     prefix: "setuplines"
     body: "\\setuplines" +
@@ -2335,7 +2335,7 @@
     body: "\\startalignment" +
       "[${1:option}]\n" +
       "\t$2\n" +
-      "\\stopalignment" +
+      "\\\\stopalignment" +
       "$3"
   "\\startbackground":
     description: ""
@@ -2343,7 +2343,7 @@
     prefix: "startbackground"
     body: "\\startbackground\n" +
       "\t$1\n" +
-      "\\stopbackground" +
+      "\\\\stopbackground" +
       "$2"
   "\\startcolor":
     description: ""
@@ -2352,7 +2352,7 @@
     body: "\\startcolor" +
       "[${1:name}]\n" +
       "\t$2\n" +
-      "\\stopcolor" +
+      "\\\\stopcolor" +
       "$3"
   "\\startcolumns":
     description: ""
@@ -2361,7 +2361,7 @@
     body: "\\startcolumns" +
       "[${1:see \\\\setupcolumns}]\n" +
       "\t$2\n" +
-      "\\stopcolumns" +
+      "\\\\stopcolumns" +
       "$3"
   "\\startcombination":
     description: ""
@@ -2370,7 +2370,7 @@
     body: "\\startcombination" +
       "[${1:columns} * ${2:rows}]\n" +
       "\t$2\n" +
-      "\\stopcombination" +
+      "\\\\stopcombination" +
       "$3"
   "\\startcomment":
     description: ""
@@ -2380,7 +2380,7 @@
       "[${1:name}]" +
       "[${2:see \\\\setupcomment}]\n" +
       "\t$3\n" +
-      "\\stopcomment" +
+      "\\\\stopcomment" +
       "$4"
   "\\startcomponent":
     description: "Component file structure"
@@ -2389,7 +2389,7 @@
     body: "\\startcomponent ${1:component name}\n" +
       "\\product ${2:product name}\n\n" +
       "\t$3\n" +
-      "\\stopcomponent"
+      "\\\\stopcomponent"
   "\\startdocument":
     description: ""
     descriptionMoreURL: "https://wiki.contextgarden.net/Command/startdocument"
@@ -2397,7 +2397,7 @@
     body: "\\startdocument" +
       "[${1:name}]\n" +
       "\t$2\n" +
-      "\\stopdocument"
+      "\\\\stopdocument"
   "\\startenvironment":
     description: "Environment ('stylesheet') structure"
     descriptionMoreURL: "https://wiki.contextgarden.net/Command/startenvironment"
@@ -2405,14 +2405,14 @@
     body: "\\startenvironment ${1:environment name}\n" +
       "\\project ${2:project name}\n\n" +
       "$3\n" +
-      "\\stopenvironment"
+      "\\\\stopenvironment"
   "\\startfact":
     description: ""
     descriptionMoreURL: "https://wiki.contextgarden.net/Command/startfact"
     prefix: "startfact"
     body: "\\startfact\n" +
       "\\fact $1 \\\n" +
-      "\\stopfact"
+      "\\\\stopfact"
   "\\startfigure":
     description: ""
     descriptionMoreURL: "https://wiki.contextgarden.net/Command/startfigure"
@@ -2422,28 +2422,28 @@
       "[${2:file}]" +
       "[${3:options}]\n" +
       "\t$4" +
-      "\\stopfigure"
+      "\\\\stopfigure"
   "\\starthiding":
     description: ""
     descriptionMoreURL: "https://wiki.contextgarden.net/Command/starthiding"
     prefix: "starthiding"
     body: "\\starthiding\n" +
       "\t$1" +
-      "\\stophiding"
+      "\\\\stophiding"
   "\\startitemize":
     description: "Itemization"
     descriptionMoreURL: "https://wiki.contextgarden.net/Command/startitemize"
     prefix: "itm"
     body: "\\startitemize\n" +
       "\\startitem $0\\stopitem\n" +
-      "\\stopitemize"
+      "\\\\stopitemize"
   "\\startitemize[packed,joinedup]":
     description: "Itemization"
     descriptionMoreURL: "https://wiki.contextgarden.net/Command/startitemize"
     prefix: "itmpj"
     body: "\\startitemize[packed,joinedup]\n" +
       "\\startitem $0\\stopitem\n" +
-      "\\stopitemize"
+      "\\\\stopitemize"
   "\\startline":
     description: ""
     descriptionMoreURL: "https://wiki.contextgarden.net/Command/startline"
@@ -2451,14 +2451,14 @@
     body: "\\startline" +
       "[${1:reference}]\n" +
       "\t$2\n" +
-      "\\stopline"
+      "\\\\stopline"
   "\\startlinecorrection":
     description: ""
     descriptionMoreURL: "https://wiki.contextgarden.net/Command/startlinecorrection"
     prefix: "startlinecorrection"
     body: "\\startlinecorrection\n" +
       "\t$1\n" +
-      "\\stoplinecorrection"
+      "\\\\stoplinecorrection"
   "\\startlinenumbering":
     description: ""
     descriptionMoreURL: "https://wiki.contextgarden.net/Command/startlinenumbering"
@@ -2466,35 +2466,35 @@
     body: "\\startlinenumbering" +
       "${1:\\[continue\\]}\n" +
       "\t$2\n" +
-      "\\stoplinenumbering"
+      "\\\\stoplinenumbering"
   "\\startlines":
     description: "Environment that keeps lines (e.g. for code or poems)"
     descriptionMoreURL: "https://wiki.contextgarden.net/Command/startlines"
     prefix: "startlines"
     body: "\\startlines\n" +
       "$1\n" +
-      "\\stoplines"
+      "\\\\stoplines"
   "\\startlocal":
     description: ""
     descriptionMoreURL: "https://wiki.contextgarden.net/Command/startlocal"
     prefix: "startlocal"
     body: "\\startlocal\n" +
       "\t$1\n" +
-      "\\stoplocal"
+      "\\\\stoplocal"
   "\\startlocalenvironment":
     description: ""
     descriptionMoreURL: "https://wiki.contextgarden.net/Command/startlocalenvironment"
     prefix: "startlocalenvironment"
     body: "\\startlocalenvironment\n" +
       "\t$1\n" +
-      "\\stoplocalenvironment"
+      "\\\\stoplocalenvironment"
   "\\startlocalfootnotes":
     description: "Environment for footnotes in tables"
     descriptionMoreURL: "https://wiki.contextgarden.net/Command/startlocalfootnotes"
     prefix: "startlocalfootnotes"
     body: "\\startlocalfootnotes\n" +
       "\t$1\n" +
-      "\\stoplocalfootnotes"
+      "\\\\stoplocalfootnotes"
   "\\startmakeup":
     description: "Special page layout"
     descriptionMoreURL: "https://wiki.contextgarden.net/Command/startmakeup"
@@ -2503,14 +2503,14 @@
       "[${1:name}]" +
       "${2:[${3:see \\\\setupmakeup}]}" +
       "$4" +
-      "\\stopmakeup"
+      "\\\\stopmakeup"
   "\\startmarginblock":
     description: ""
     descriptionMoreURL: "https://wiki.contextgarden.net/Command/startmarginblock"
     prefix: "startmarginblock"
     body: "\\startmarginblock\n" +
       "\t$1\n" +
-      "\\stopmarginblock"
+      "\\\\stopmarginblock"
   "\\startmarginrule":
     description: ""
     descriptionMoreURL: "https://wiki.contextgarden.net/Command/startmarginrule"
@@ -2518,7 +2518,7 @@
     body: "\\startmarginrule" +
       "[${1:number}]" +
       "$2" +
-      "\\stopmarginrule"
+      "\\\\stopmarginrule"
   "\\startnarrower":
     description: "Indented text block"
     descriptionMoreURL: "https://wiki.contextgarden.net/Command/startnarrower"
@@ -2526,14 +2526,14 @@
     body: "\\startnarrower" +
       "${1:[${2:margins to narrow}]}\n" +
       "\t$3\n" +
-      "\\stopnarrower"
+      "\\\\stopnarrower"
   "\\startopposite":
     description: ""
     descriptionMoreURL: "https://wiki.contextgarden.net/Command/startopposite"
     prefix: "startopposite"
     body: "\\startopposite\n" +
       "\t$1\n" +
-      "\\stopopposite"
+      "\\\\stopopposite"
   "\\startoverlay":
     description: ""
     descriptionMoreURL: "https://wiki.contextgarden.net/Command/startoverlay"
@@ -2542,7 +2542,7 @@
       "{${1:text}}" +
       "{${2:text}}\n" +
       "\t$3\n" +
-      "\\stopoverlay"
+      "\\\\stopoverlay"
   "\\startoverview":
     description: ""
     descriptionMoreURL: "https://wiki.contextgarden.net/Command/startoverview"
@@ -2550,7 +2550,7 @@
     body: "\\startoverview" +
       "[${1:name}]\n" +
       "\t$2\n" +
-      "\\stopoverview"
+      "\\\\stopoverview"
   "\\startpacked":
     description: ""
     descriptionMoreURL: "https://wiki.contextgarden.net/Command/startpacked"
@@ -2558,21 +2558,21 @@
     body: "\\startpacked" +
       "${1:[${2:blank}]}\n" +
       "\t$3\n" +
-      "\\stoppacked"
+      "\\\\stoppacked"
   "\\startpositioning":
     description: ""
     descriptionMoreURL: "https://wiki.contextgarden.net/Command/startpositioning"
     prefix: "startpositioning"
     body: "\\startpositioning" +
       "\t$1\n" +
-      "\\stoppositioning"
+      "\\\\stoppositioning"
   "\\startpostponing":
     description: "Environment to place e.g. images on defined pages; use with makeups"
     descriptionMoreURL: "https://wiki.contextgarden.net/Command/startpostponing"
     prefix: "startpostponing"
     body: "\\startpostponing[${1:page number or increment}]}\n" +
       "$2\n" +
-      "\\stoppostponing"
+      "\\\\stoppostponing"
   "\\startproduct":
     description: "Product structure"
     descriptionMoreURL: "https://wiki.contextgarden.net/Command/startproduct"
@@ -2581,7 +2581,7 @@
       "\\project ${2:project name}\n\n" +
       "\\component ${3:component name}\n" +
       "$4\n" +
-      "\\stopproduct"
+      "\\\\stopproduct"
   "\\startprofile":
     description: ""
     descriptionMoreURL: "https://wiki.contextgarden.net/Command/startprofile"
@@ -2589,7 +2589,7 @@
     body: "\\startprofile" +
       "[${1:name}]\n" +
       "\t$2\n" +
-      "\\stopprofile"
+      "\\\\stopprofile"
   "\\startproject":
     description: "Project file structure"
     descriptionMoreURL: "https://wiki.contextgarden.net/Command/startproject"
@@ -2597,7 +2597,7 @@
     body: "\\startproject ${1:project name}\n" +
       "\\environment ${2:environment name}\n\n" +
       "\\product ${3:product name}\n" +
-      "\\stopproject"
+      "\\\\stopproject"
   "\\startquotation":
     description: "Longer quote"
     descriptionMoreURL: "https://wiki.contextgarden.net/Command/startquotation"
@@ -2605,7 +2605,7 @@
     body: "\\startquotation" +
       "[${1:left middle right}]\n" +
       "$2\n" +
-      "\\stopquotation"
+      "\\\\stopquotation"
   "\\startsymbolset":
     description: ""
     descriptionMoreURL: "https://wiki.contextgarden.net/Command/startsymbolset"
@@ -2613,7 +2613,7 @@
     body: "\\startsymbolset" +
       "[${1:name}]" +
       "$2" +
-      "\\stopsymbolset"
+      "\\\\stopsymbolset"
   "\\starttable":
     description: "Table (tabulate syntax)"
     descriptionMoreURL: "https://wiki.contextgarden.net/Command/starttable"
@@ -2621,7 +2621,7 @@
     body: "\\starttable" +
       "[${1:columns struct}]\n" +
       "\t$2\n" +
-      "\\stoptable"
+      "\\\\stoptable"
   "\\starttextrule":
     description: ""
     descriptionMoreURL: "https://wiki.contextgarden.net/Command/starttextrule"
@@ -2629,14 +2629,14 @@
     body: "\\starttextrule" +
       "{${1:title}}\n" +
       "\t$2\n" +
-      "\\stoptextrule"
+      "\\\\stoptextrule"
   "\\startunpacked":
     description: ""
     descriptionMoreURL: "https://wiki.contextgarden.net/Command/startunpacked"
     prefix: "startunpacked"
     body: "\\startunpacked\n" +
       "\t$1\n" +
-      "\\stopunpacked"
+      "\\\\stopunpacked"
   "\\startversion":
     description: ""
     descriptionMoreURL: "https://wiki.contextgarden.net/Command/startversion"
@@ -2644,7 +2644,7 @@
     body: "\\startversion" +
       "[${1:numbers}]\n" +
       "\t$2\n" +
-      "\\stopversion"
+      "\\\\stopversion"
   "\\stretched":
     description: ""
     descriptionMoreURL: "https://wiki.contextgarden.net/Command/stretched"
@@ -2704,7 +2704,7 @@
     descriptionMoreURL: "https://wiki.contextgarden.net/Command/switchtobodyfont"
     prefix: "switchtobodyfont"
     body: "\\switchtobodyfont" +
-      "[${1:style}]" +
+      "[${1:style}]\n" +
       "$2"
   "\\sym":
     description: ""
@@ -2821,7 +2821,7 @@
     descriptionMoreURL: "https://wiki.contextgarden.net/Command/typefile"
     prefix: "typefile"
     body: "\\typefile" +
-      "${1:[${2:see \\definetyping}]}" +
+      "${1:[${2:see \\\\setuptyping}]}" +
       "{${3:file name}}" +
       "$4"
   "\\underbar":
@@ -3007,17 +3007,17 @@
     body: "\\start" +
       "${1:env}\n" +
       "\t$2\n" +
-      "\\stop${1:env}"
+      "\\\\stop${1:env}"
   "Equation Align":
     prefix: "eqal"
     body: "\\placeformula[${1:reference}]\n" +
       "\\startformula\\startalign\n" +
       "\t$2\n" +
-      "\\stopalign\\stopformula"
+      "\\\\stopalign\\stopformula"
   "Equation":
     prefix: "eq"
     body: "\\placeformula[${0:reference}]\n" +
       "\\startformula\n" +
       "\t$0\n" +
-      "\\stopformula\n" +
+      "\\\\stopformula\n" +
       "$1"
