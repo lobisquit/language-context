@@ -1,5 +1,6 @@
 fileTypes: [
-  "tex", "ctex", "mkiv", "mkvi", "mkxl", "mklx"
+  "tex", "ctx",
+  "mkii", "mkiv", "mkvi",
 ]
 name: "ConTeXt"
 patterns: [
