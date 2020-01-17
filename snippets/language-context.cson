@@ -2570,16 +2570,16 @@
     description: "Environment to place e.g. images on defined pages; use with makeups"
     descriptionMoreURL: "https://wiki.contextgarden.net/Command/startpostponing"
     prefix: "startpostponing"
-    body: "\\startpostponing[${1:page number or increment}]}\n" +
+    body: "\\startpostponing[${1:page number or increment}]\n" +
       "$2\n" +
-      "\\\\stoppostponing"
+      "\\\\stoppostponing\n"
   "\\startproduct":
     description: "Product structure"
     descriptionMoreURL: "https://wiki.contextgarden.net/Command/startproduct"
     prefix: "startproduct"
     body: "\\startproduct ${1: product name}\n" +
       "\\project ${2:project name}\n\n" +
-      "\\component ${3:component name}\n" +
+      "\\component ${3:component name}\n\n" +
       "$4\n" +
       "\\\\stopproduct"
   "\\startprofile":
@@ -2664,25 +2664,25 @@
     descriptionMoreURL: "https://wiki.contextgarden.net/Command/subject"
     prefix: "subject"
     body: "\\subject" +
-      "${1:[${2:ref, ...}]}" +
-      "{${3:title}}" +
-      "$4"
+      "[${1:reference}]" +
+      "{${2:title}}\n" +
+      "$3"
   "\\subsection":
     description: "Start a subsection"
     descriptionMoreURL: "https://wiki.contextgarden.net/Command/subsection"
     prefix: "subsection"
     body: "\\subsection" +
-      "${1:[${2:ref, ...}]}" +
-      "{${3:title}}" +
-      "$4"
+      "[${1:reference}]" +
+      "{${2:title}}\n" +
+      "$3"
   "\\subsubject":
     description: "Start an unnumbered subsection"
     descriptionMoreURL: "https://wiki.contextgarden.net/Command/subsubject"
     prefix: "subsubject"
     body: "\\subsubject" +
-      "${1:[${2:ref, ...}]}" +
-      "{${3:title}}" +
-      "$4"
+      "[${1:reference}]" +
+      "{${2:title}}\n" +
+      "$3"
   "\\subsubsection":
     description: "Start a subsubsection"
     descriptionMoreURL: "https://wiki.contextgarden.net/Command/subsubsection"
@@ -2696,8 +2696,8 @@
     descriptionMoreURL: "https://wiki.contextgarden.net/Command/subsubsubject"
     prefix: "subsubsubject"
     body: "\\subsubsubject" +
-      "${1:[${2:ref, ...}]}" +
-      "{${3:title}}" +
+      "$[${2:reference}]" +
+      "{${3:title}}\n" +
       "$4"
   "\\switchtobodyfont":
     description: "Change main font"
