@@ -2387,7 +2387,7 @@
     descriptionMoreURL: "https://wiki.contextgarden.net/Command/startcomponent"
     prefix: "startcomponent"
     body: "\\startcomponent ${1:component name}\n" +
-      "\\product ${2:product name}\n\n" +
+      "\\\\product ${2:product name}\n\n" +
       "\t$3\n" +
       "\\\\stopcomponent"
   "\\startdocument":
@@ -2403,7 +2403,7 @@
     descriptionMoreURL: "https://wiki.contextgarden.net/Command/startenvironment"
     prefix: "startenvironment"
     body: "\\startenvironment ${1:environment name}\n" +
-      "\\project ${2:project name}\n\n" +
+      "\\\\project ${2:project name}\n\n" +
       "$3\n" +
       "\\\\stopenvironment"
   "\\startfact":
@@ -2411,7 +2411,7 @@
     descriptionMoreURL: "https://wiki.contextgarden.net/Command/startfact"
     prefix: "startfact"
     body: "\\startfact\n" +
-      "\\fact $1 \\\n" +
+      "\\\\fact $1 \\\n" +
       "\\\\stopfact"
   "\\startfigure":
     description: ""
@@ -2435,14 +2435,14 @@
     descriptionMoreURL: "https://wiki.contextgarden.net/Command/startitemize"
     prefix: "itm"
     body: "\\startitemize\n" +
-      "\\startitem $0\\stopitem\n" +
+      "\\\\startitem $0\\\\stopitem\n" +
       "\\\\stopitemize"
   "\\startitemize[packed,joinedup]":
     description: "Itemization"
     descriptionMoreURL: "https://wiki.contextgarden.net/Command/startitemize"
     prefix: "itmpj"
     body: "\\startitemize[packed,joinedup]\n" +
-      "\\startitem $0\\stopitem\n" +
+      "\\\\startitem $0\\\\stopitem\n" +
       "\\\\stopitemize"
   "\\startline":
     description: ""
@@ -2578,8 +2578,8 @@
     descriptionMoreURL: "https://wiki.contextgarden.net/Command/startproduct"
     prefix: "startproduct"
     body: "\\startproduct ${1: product name}\n" +
-      "\\project ${2:project name}\n\n" +
-      "\\component ${3:component name}\n\n" +
+      "\\\\project ${2:project name}\n\n" +
+      "\\\\component ${3:component name}\n\n" +
       "$4\n" +
       "\\\\stopproduct"
   "\\startprofile":
@@ -2595,8 +2595,8 @@
     descriptionMoreURL: "https://wiki.contextgarden.net/Command/startproject"
     prefix: "startproject"
     body: "\\startproject ${1:project name}\n" +
-      "\\environment ${2:environment name}\n\n" +
-      "\\product ${3:product name}\n" +
+      "\\\\environment ${2:environment name}\n\n" +
+      "\\\\product ${3:product name}\n" +
       "\\\\stopproject"
   "\\startquotation":
     description: "Longer quote"
@@ -3011,13 +3011,13 @@
   "Equation Align":
     prefix: "eqal"
     body: "\\placeformula[${1:reference}]\n" +
-      "\\startformula\\startalign\n" +
+      "\\\\startformula\\\\startalign\n" +
       "\t$2\n" +
       "\\\\stopalign\\stopformula"
   "Equation":
     prefix: "eq"
     body: "\\placeformula[${0:reference}]\n" +
-      "\\startformula\n" +
+      "\\\\startformula\n" +
       "\t$0\n" +
       "\\\\stopformula\n" +
       "$1"
