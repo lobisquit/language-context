@@ -1,6 +1,6 @@
 {
   "name": "language-context",
-  "version": "0.2.2",
+  "version": "0.2.6",
   "description": "ConTeXt language support in Atom",
   "engines": {
     "atom": "*"
@@ -8,10 +8,10 @@
   "dependencies": {},
   "repository": {
     "type": "git",
-    "url": "https://github.com/lobisquit/language-context.git"
+    "url": "https://github.com/massifrg/language-context.git"
   },
   "bugs": {
-    "url": "https://github.com/lobisquit/language-context/issues"
+    "url": "https://github.com/massifrg/language-context/issues"
   },
-  "license": "GPLv3"
+  "license": "GPL-3.0-or-later"
 }
