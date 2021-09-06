@@ -117,7 +117,9 @@ for interface in contents:
                         body += '{${%d:%s}}' % (noofargs, rest)
                     elif resolvename.startswith('keyword-') or resolvename.startswith('string-'):
                         rest = resolvename.replace('keyword-','').replace('string-','')
-                        body += ' ${%d:%s}' % (noofargs, rest)
+                        #print('\t\tkeyword: \\%s[%s]' % (name, rest))
+                        # [] make not always sense
+                        body += '[${%d:%s}]' % (noofargs, rest)
                     elif 'floatdata-list' in resolvename:
                         body += '[${%s:title={},reference=,}]' % noofargs
                     elif resolvename.startswith('assignment'):
@@ -128,7 +130,7 @@ for interface in contents:
                 # TODO: sequence
         body += '$%d' % (noofargs + 1)
         if name.startswith('start'):
-            body += '\n\\%s\n' % name.replace('start', 'stop')
+            body += '\n\\\\%s\n' % name.replace('start', 'stop')
         desc = ''
         if 'category' in cmd.attrib:
             desc = 'category: %s' % (cmd.attrib['category'])
@@ -149,7 +151,6 @@ for interface in contents:
             'prefix': name,
             'body': '\\' + body
         }
+
 with open(outputname, 'w') as csonf:
-    csonf.write("'.text.tex.context': ",)
-    #csonf.write(json.dumps(commands, sort_keys=True, indent=4))
-    csonf.write(cson.dumps(commands, sort_keys=True, indent=2))
+    cson.dump({'.text.tex.context': commands}, csonf, sort_keys=True, indent=2)
