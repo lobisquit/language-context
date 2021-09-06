@@ -83,7 +83,7 @@ for interface in contents:
         and cmd.attrib['type']=='environment' \
         and not name.startswith('start'):
             name = 'start'+name
-        body = r'\\'+name
+        body = name
         args = cmd.find(xmlns_cd + 'arguments')
         noofargs = 0
         if args:
@@ -120,7 +120,7 @@ for interface in contents:
                 # TODO: sequence
         body += '$%d' % (noofargs + 1)
         if name.startswith('start'):
-            body += '\n\\\\%s\n' % name.replace('start', 'stop')
+            body += '\n\\%s\n' % name.replace('start', 'stop')
         desc = ''
         if 'category' in cmd.attrib:
             desc = 'category: %s' % (cmd.attrib['category'])
@@ -135,7 +135,7 @@ for interface in contents:
             'description': desc,
             'descriptionMoreURL': 'https://wiki.contextgarden.net/Command/' + name,
             'prefix': name,
-            'body': body
+            'body': '\\' + body
         }
 with open(outputname, 'w') as csonf:
     csonf.write("'.text.tex.context': ",)
