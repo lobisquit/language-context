@@ -2,9 +2,9 @@
 
 This package adds support for the ConTeXt markup language in Atom, with syntax highlighting.
 
-It was originally ported from an old [TextMate bundle](<https://github.com/pgundlach/context.tmbundle>), but the current version is converted from ConTeXt’s interface xmls with the help of the included Python script.
+It was originally ported from an old [TextMate bundle](<https://github.com/pgundlach/context.tmbundle>), but the current version is converted from ConTeXt LMTX interface XMLs with the help of the included Python script.
 
-See [here](https://wiki.contextgarden.net/Main_Page) for details about ConTeXt.
+See [here](https://wiki.contextgarden.net/) for details about ConTeXt.
 
 ---
 
