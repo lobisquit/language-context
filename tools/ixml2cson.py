@@ -6,13 +6,14 @@ Call: ixml2cson.py <TEXROOT> <output filename>
 """
 import os
 import sys
+import cson
 import subprocess
 from pathlib import Path
 import xml.etree.ElementTree as ET
-from cson import compile_cson
 
 xmlns_cd = '{http://www.pragma-ade.com/commands}'
-outputname = 'snippets/autosnippets-context.cson'
+outputname = Path('snippets/autosnippets-context.cson')
+moreinformation = Path('tools/context-infos.cson')
 
 def find_context():
     'find ConTeXt tree'
@@ -30,7 +31,7 @@ def find_context():
 if len(sys.argv) > 1:
     ipath = Path(sys.argv[1])
     if not ipath.is_dir():
-        print('Parameter "%s" is not a directory.' % ipath)
+        print(f'Parameter "{ipath}" is not a directory.')
         sys.exit(2)
     if len(sys.argv) > 2:
         outputname = sys.argv[2]
@@ -40,11 +41,18 @@ else:
         print('ConTeXt path not found.')
         sys.exit(1)
 
+
+
 ipath = ipath / 'texmf-context/tex/context/interface/mkiv'
 contents = list(ipath.glob('i-*.xml'))
 if not len(contents):
-    print('No ConTeXt interface files found in "%s"' % ipath)
+    print(f'No ConTeXt interface files found in "{ipath}"')
     sys.exit(3)
+
+INFO = {}
+if moreinformation.is_file():
+    with open(moreinformation, 'r') as infofile:
+        INFO = cson.load(infofile)
 
 # common definitions
 # COMMONS = {}
@@ -131,6 +139,10 @@ for interface in contents:
         if 'file' in cmd.attrib:
             desc += '; defined in: %s' % cmd.attrib['file']
         desc += '; interface: %s' % interface.name
+        if '\\'+name in INFO:
+            idesc = INFO['\\'+name]['description']
+            if idesc:
+                desc = '%s // %s' % (idesc, desc)
         commands['\\'+name] = {
             'description': desc,
             'descriptionMoreURL': 'https://wiki.contextgarden.net/Command/' + name,
@@ -140,4 +152,4 @@ for interface in contents:
 with open(outputname, 'w') as csonf:
     csonf.write("'.text.tex.context': ",)
     #csonf.write(json.dumps(commands, sort_keys=True, indent=4))
-    csonf.write(compile_cson(commands, indent=2))
+    csonf.write(cson.dumps(commands, sort_keys=True, indent=2))

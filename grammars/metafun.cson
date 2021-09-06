@@ -1,3 +1,6 @@
+fileTypes: [
+  "mp"
+]
 name: "MetaFun"
 patterns: [
   {

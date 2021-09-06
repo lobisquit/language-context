@@ -1,0 +1,1588 @@
+'\\about':
+  description: 'Provides the complete title of a reference The command \\about is used for textual references The command \\about provides the complete title of a referenced block of text (e.g. chapter\'s title). The title is in quotation marks by default, but these surrounding elements can be changed with the left and right options of \\setupreferencing .'
+  body: '\\about{${1:text}}[${2:reference}]$3'
+  url: 'https://wiki.contextgarden.net/Command/about'
+'\\adaptlayout':
+  description: 'Adapt the layout of one page to fit more or less lines in it'
+  body: '\\adaptlayout[${2:page number(s)}][${3:lines=-1,height=1em}]\n$4'
+  url: 'https://wiki.contextgarden.net/Command/adaptlayout'
+'\\arg':
+  description: 'Surround given text with braces The command \\arg prints text verbatim, surrounded by braces. Print text verbatim, surrounded by { braces } . Useful when writing a manual.'
+  body: '\\arg{${1:name}}$2'
+  url: 'https://wiki.contextgarden.net/Command/arg'
+'\\at':
+  description: 'Provides the page number of a reference The command \\at is used for referencing using a page number. Inserts the page number of a location in the document which has been marked with a label (e.g. an equation, figure, section, enumerated item).  The curly braces are optional and contain prefix and suffix, the square brackets contain the logical label to which you are referring.'
+  body: '\\at{${1:prefix}}{${2:suffix}}[${3:reference}]$4'
+  url: 'https://wiki.contextgarden.net/Command/at'
+'\\atpage':
+  description: 'Reference with page number or ‘see above’ if on same page The command \\atpage is used for labelled page references. If the reference resides on the same page the text \'as we show above\' or \'as we show below\' is typeset in the language which is set by the command \\mainlanguage . Otherwise the text \'on a following page\' is typeset. The used labeltext entries are hencefore and hereafter for a reference on the same page, or followingpage for a different page.'
+  body: '\\atpage[${1:reference}]$2'
+  url: 'https://wiki.contextgarden.net/Command/atpage'
+'\\blank':
+  description: 'Insert vertical blank space The command \\blank is used for inserting vertical blank space. Insert vertical blank space. A keyword can be added to specify that the whitespace should have a certain height, such as [small], [medium], or [big]. The keyword [disable] disables the next \\blank[...] , and the key [back] undoes a \\blank[...] directly preceding it. Keywords accept multipliers: to insert whitespace as large as four lines, for example, type \\blank[4*big] . In the #Settings table the documentation for the size options gives an overview of what skip is actually inserted for the amount specified.  To maintain grid consistency the amounts differ if gridsnapping is enabled. You may notice that all of these values are given in relative units.  This is due to the fact that vertical spacing is and should be dependent on the current font size.'
+  body: '\\blank[${1:big}]$2'
+  url: 'https://wiki.contextgarden.net/Command/blank'
+'\\cap':
+  description: 'Small caps text inside'
+  body: '\\cap{${1:name}}$2'
+  url: 'https://wiki.contextgarden.net/Command/cap'
+'\\chapter':
+  description: 'Start a chapter The instances of \\ section produce a sectioning title. Any of the three macro calls above can be used. The #Settings instance:assignment gives the most control. You can define heads yourself with \\definehead . You can change the appearance with \\setuphead . Note: these instances are superseded by environments with the same basic name, see startsection .'
+  body: '\\chapter[${1:reference}]{${2:title}}$3'
+  url: 'https://wiki.contextgarden.net/Command/chapter'
+'\\startchapter':
+  description: 'Start a chapter The instances of \\start section ... \\stop section are used for wrapping a section text in an environment and typesetting its title. This family of commands are only available in ConTeXt MkIV.  They supersede the sectioning commands \\part , \\chapter , \\section , \\subsection , \\subsubsection , \\title , \\subject , \\subsubject , and \\subsubsubject . The new commands, collectively documented here, are \\startpart , \\startchapter , \\startsection , \\startsubsection , \\startsubsubsection , \\starttitle , \\startsubject , \\startsubsubject , and \\startsubsubsubject .  These more verbose commands apply an environment (\\start- and \\stop-) approach to sectioning, which is more friendly to tagged-PDF, ePUB and XML output. Sectioning is hierarchical.  Numbered parts are divided into numbered chapters , themselves divided into numbered sections , subsections , and subsubsections etc.  Chapters and sections etc. have unnumbered counterparts called titles , subjects , subsubjects , and subsubsubjects etc., respectively.  (There are actually a couple more sub-levels than listed here.) Chapters start a new page (by default—this is easily configurable). Parts are unusual in two respects: firstly, there is no unnumbered counterpart to parts; and secondly, the title of a part is not typeset automatically, as it will generally require special attention and design. Additional section types can be defined (based on one of the existing sections) with the \\definehead command.  A user-defined section type will have its own \\start- and \\stop section commands, in addition to a traditional \\ section command.  These new commands will behave as documented here The typesetting of section types (both built-in and user-defined) can be controlled with the \\setupheads and \\setuphead commands.'
+  body: '\\startchapter[title={${1:title}},reference=${2:reference}]\n$3\n\\\\stopchapter\n'
+  url: 'https://wiki.contextgarden.net/Command/startchapter'
+'\\startsection':
+  description: 'Start a section The instances of \\start section ... \\stop section are used for wrapping a section text in an environment and typesetting its title. This family of commands are only available in ConTeXt MkIV.  They supersede the sectioning commands \\part , \\chapter , \\section , \\subsection , \\subsubsection , \\title , \\subject , \\subsubject , and \\subsubsubject . The new commands, collectively documented here, are \\startpart , \\startchapter , \\startsection , \\startsubsection , \\startsubsubsection , \\starttitle , \\startsubject , \\startsubsubject , and \\startsubsubsubject .  These more verbose commands apply an environment (\\start- and \\stop-) approach to sectioning, which is more friendly to tagged-PDF, ePUB and XML output. Sectioning is hierarchical.  Numbered parts are divided into numbered chapters , themselves divided into numbered sections , subsections , and subsubsections etc.  Chapters and sections etc. have unnumbered counterparts called titles , subjects , subsubjects , and subsubsubjects etc., respectively.  (There are actually a couple more sub-levels than listed here.) Chapters start a new page (by default—this is easily configurable). Parts are unusual in two respects: firstly, there is no unnumbered counterpart to parts; and secondly, the title of a part is not typeset automatically, as it will generally require special attention and design. Additional section types can be defined (based on one of the existing sections) with the \\definehead command.  A user-defined section type will have its own \\start- and \\stop section commands, in addition to a traditional \\ section command.  These new commands will behave as documented here The typesetting of section types (both built-in and user-defined) can be controlled with the \\setupheads and \\setuphead commands.'
+  body: '\\startsection[title={${1:title}},reference=${2:reference}]\n$3\n\\\\stopsection\n'
+  url: 'https://wiki.contextgarden.net/Command/startsection'
+'\\startsubsection':
+  description: 'Start a subsection The instances of \\start section ... \\stop section are used for wrapping a section text in an environment and typesetting its title. This family of commands are only available in ConTeXt MkIV.  They supersede the sectioning commands \\part , \\chapter , \\section , \\subsection , \\subsubsection , \\title , \\subject , \\subsubject , and \\subsubsubject . The new commands, collectively documented here, are \\startpart , \\startchapter , \\startsection , \\startsubsection , \\startsubsubsection , \\starttitle , \\startsubject , \\startsubsubject , and \\startsubsubsubject .  These more verbose commands apply an environment (\\start- and \\stop-) approach to sectioning, which is more friendly to tagged-PDF, ePUB and XML output. Sectioning is hierarchical.  Numbered parts are divided into numbered chapters , themselves divided into numbered sections , subsections , and subsubsections etc.  Chapters and sections etc. have unnumbered counterparts called titles , subjects , subsubjects , and subsubsubjects etc., respectively.  (There are actually a couple more sub-levels than listed here.) Chapters start a new page (by default—this is easily configurable). Parts are unusual in two respects: firstly, there is no unnumbered counterpart to parts; and secondly, the title of a part is not typeset automatically, as it will generally require special attention and design. Additional section types can be defined (based on one of the existing sections) with the \\definehead command.  A user-defined section type will have its own \\start- and \\stop section commands, in addition to a traditional \\ section command.  These new commands will behave as documented here The typesetting of section types (both built-in and user-defined) can be controlled with the \\setupheads and \\setuphead commands.'
+  body: '\\startsubsection[title={${1:title}},reference=${2:reference}]\n$3\n\\\\stopsubsection\n'
+  url: 'https://wiki.contextgarden.net/Command/startsubsection'
+'\\clip':
+  description: 'Crop image to width x height, starting at hoffset x voffset OR use piece at position (x, y) if number of pieces is specified by \\setupclipping.'
+  body: '\\clip[x=${1:number}, y=${2:number}, hoffset=${3:dim}, voffset=${4:dim}, width=${5:dim}, height=${6:dim}]{${7:figure or text}}$8'
+  url: 'https://wiki.contextgarden.net/Command/clip'
+'\\color':
+  description: 'Change text color'
+  body: '\\color[${1:color}]{${2:text to colorize}}$3'
+  url: 'https://wiki.contextgarden.net/Command/color'
+'\\column':
+  description: 'Insert column break The command \\column is an alias for \\columnbreak'
+  body: '\\column\n$0'
+  url: 'https://wiki.contextgarden.net/Command/column'
+'\\convertnumber':
+  description: 'Convert a number into a different form, e.g. to Roman numerals, bullets, etc.'
+  body: '\\convertnumber{${1:mode}}{${2:number}}$3'
+  url: 'https://wiki.contextgarden.net/Command/convertnumber'
+'\\crlf':
+  description: 'Carriage return (new line)'
+  body: '\\crlf\n$1'
+  url: 'https://wiki.contextgarden.net/Command/crlf'
+'\\currentdate':
+  description: 'Insert the current date'
+  body: '\\currentdate[${1:weekday,month,day,year}]$2'
+  url: 'https://wiki.contextgarden.net/Command/currentdate'
+'\\date':
+  description: 'Insert a date'
+  body: '\\date[d=${1:name},m=${2:name},y=${3:name}}][${4:weekday,month,day,year}]$5'
+  url: 'https://wiki.contextgarden.net/Command/date'
+'\\define':
+  description: 'Define a new macro (like \\def)'
+  body: '\\define${1:[${2:number of arguments}]}\\\\${3:command}{${4:contents}}\n$5'
+  url: 'https://wiki.contextgarden.net/Command/define'
+'\\defineblank':
+  description: 'Define a new vertical space The command \\definevspacing defines keywords for \\vspacing (aka \\blank ) This command allows you to define new keywords for \\vspacing (aka \\blank ) by using (or combining) existing options. Bug report: The \\defineblank alias is missing from the interface files (See: Bug List )'
+  body: '\\defineblank[${1:measure name}][${2:dimension}]\n$3'
+  url: 'https://wiki.contextgarden.net/Command/defineblank'
+'\\defineblock':
+  description: 'Define a reusable text format (e.g. questions)'
+  body: '\\defineblock[${1:name of the block}]\n$2'
+  url: 'https://wiki.contextgarden.net/Command/defineblock'
+'\\definebodyfont':
+  description: 'Define a new body font combination'
+  body: '\\definebodyfont[${1:5pt name 12pt default}][${2:rm ss tt mm hw cg}][${3:options}]\n$4'
+  url: 'https://wiki.contextgarden.net/Command/definebodyfont'
+'\\definebodyfontenvironment':
+  description: 'Set up font scaling for [tf]a-[tf]d'
+  body: '\\definebodyfontenvironment[${1:font size}][${a=2pt, d=4pt}]\n$3'
+  url: 'https://wiki.contextgarden.net/Command/definebodyfontenvironment'
+'\\definecolor':
+  description: 'Define a new named color'
+  body: '\\definecolor[${1:color name}][${2:c=0,m=0,y=0,k=0,r=0,g=0,b=0,h=FF0000}]\n$3'
+  url: 'https://wiki.contextgarden.net/Command/definecolor'
+'\\definecolorgroup':
+  description: 'Define a new set of colors'
+  body: '\\definecolorgroup[${1:color set name}]${2:[${3:rgb cmyk gray s}]}[${1.00:0.85:0.80, name}]$5'
+  url: 'https://wiki.contextgarden.net/Command/definecolorgroup'
+'\\definecombinedlist':
+  description: 'Merge lists created by \\definelist e.g. into a ToC'
+  body: '\\definecombinedlist[${1:name}][${2:chapter,section}][${3:criterium=all}]\n$4'
+  url: 'https://wiki.contextgarden.net/Command/definecombinedlist'
+'\\defineconversion':
+  description: 'Define a new number-to-symbol conversion'
+  body: '\\defineconversion[${1:conversion name}][${2:list of strings to convert numbers into}]\n$3'
+  url: 'https://wiki.contextgarden.net/Command/defineconversion'
+'\\definedescription':
+  description: 'Define a new description with an associated style'
+  body: '\\definedescription[${1:name}]${2:[${3: \\\\setupdescription parameters}]}$4'
+  url: 'https://wiki.contextgarden.net/Command/definedescription'
+'\\defineenumeration':
+  description: 'Define the commands for a numbered text element'
+  body: '\\defineenumeration[${1:name}]${4:[${5:\\\\setupenumeration parameters}]}$6'
+  url: 'https://wiki.contextgarden.net/Command/defineenumeration'
+'\\definefiguresymbol':
+  description: 'Define a symbol using a figure'
+  body: '\\definefiguresymbol[${1:name}][${2:text}]${3:[${4:\\\\externalfigure parameters}]}$5'
+  url: 'https://wiki.contextgarden.net/Command/definefiguresymbol'
+'\\definefloat':
+  description: 'Define a new kind of float The command \\definefloat defines floating object classes. Bug report: there are backslashes in front of the instance names below, which is misleading. Until I find a solution for the incorrect visual, just pretend the backslashes are not there. -- Taco ( talk ) 20:35, 7 September 2020 (CEST) (See: Bug List ) Define a new float type additional to predefined types \"chemical\", \"graphic\", \"figure\", \"table\" and \"intermezzo\". When invoked as \\definefloat [remark][remarks][intermezzo] , the following commands are defined, with defaults taken from the intermezzo environment, and the \"intermezzo\" counter will be used for \"remark\" floats: \\setupremark to set up the new environment \\placeremark to place a remark block \\startplaceremark...\\stopplaceremark is the same, as an environment \\placelistofremarks for a \'table of remarks\'. \\completelistofremarks for a table of remarks with a header \\startremarktext...\\stopremarktext It also defines: the counter \'remark\' (inherits from intermezzo) the label \'remark\' (inherits from intermezzo) If no parent is given, then the label is the \\Word value of the name (so: Remark) in this case. TODO: there are some more commands and internals automatically generated (See: To-Do List )'
+  body: '\\definefloat[${1:singular name}][${2:plural name}]${3:[${4:parent}]}$5'
+  url: 'https://wiki.contextgarden.net/Command/definefloat'
+'\\definefont':
+  description: 'Define a new named font setting'
+  body: '\\definefont[${1:name}][${2:Sans*default at 12pt}]$3'
+  url: 'https://wiki.contextgarden.net/Command/definefont'
+'\\definedfont':
+  description: 'Immediately switch to a font setting'
+  body: '\\definedfont[${1:name}]$2'
+  url: 'https://wiki.contextgarden.net/Command/definedfont'
+'\\defineframed':
+  description: 'Define a custom frame The command \\defineframed creates a special instance of \\framed .'
+  body: '\\defineframed[${1:name}]${2:[${3:see \\\\setupframed parameters}]}$4'
+  url: 'https://wiki.contextgarden.net/Command/defineframed'
+'\\defineframedtext':
+  description: ''
+  body: '\\defineframedtext[${1:name}]${2:[${3:see \\\\setupframedtext parameters}]}$4'
+  url: 'https://wiki.contextgarden.net/Command/defineframedtext'
+'\\definehead':
+  description: ''
+  body: '\\definehead[${1:name}][${2:parent head style}]${3:[${4:see \\\\setuphead parameters}]}$5'
+  url: 'https://wiki.contextgarden.net/Command/definehead'
+'\\defineindenting':
+  description: ''
+  body: '\\defineindenting[${1:name}][${2:see \\\\setupindentation parameters}]$3'
+  url: 'https://wiki.contextgarden.net/Command/defineindenting'
+'\\definelabel':
+  description: 'Define an autonumbered label type, including a command to place one'
+  body: '\\definelabel[${1:name}][${2:text=${3:name}, location=${4:name}$5}]$6'
+  url: 'https://wiki.contextgarden.net/Command/definelabel'
+'\\definelist':
+  description: 'The command \\definelist defines lists like to used in ToCs. After defining the list, use \\writetolist or \\writebetweenlist to add data to the list. Use \\placelist or \\completelist to place the list in the document.'
+  body: '\\definelist[${1:name}]${4:[see \\\\setuplist parameters]}$6'
+  url: 'https://wiki.contextgarden.net/Command/definelist'
+'\\definemakeup':
+  description: 'Define a new makeup (special page layout)'
+  body: '\\definemakeup[${1:name}][${2:see \\\\setuplayout parameters}]$3'
+  url: 'https://wiki.contextgarden.net/Command/definemakeup'
+'\\definemarking':
+  description: ''
+  body: '\\definemarking[${1:name}]${2:[${3:name}]}$4'
+  url: 'https://wiki.contextgarden.net/Command/definemarking'
+'\\defineoverlay':
+  description: ''
+  body: '\\defineoverlay[${1:name}][${2:text}]$3'
+  url: 'https://wiki.contextgarden.net/Command/defineoverlay'
+'\\definepalet':
+  description: 'Define a color palet'
+  body: '\\definepalet[${1:name}][${2:alert=green, calm=grey, name}]$3'
+  url: 'https://wiki.contextgarden.net/Command/definepalet'
+'\\definepapersize':
+  description: 'Define a new paper size'
+  body: '\\definepapersize[${1:name}][${2:.width=${3:dim}, height=${4:dim}}]\n$5'
+  url: 'https://wiki.contextgarden.net/Command/definepapersize'
+'\\defineparagraphs':
+  description: ''
+  body: '\\defineparagraphs[${1:name}][${2:before=${3:name}, after=${4:name}}]$5'
+  url: 'https://wiki.contextgarden.net/Command/defineparagraphs'
+'\\definereferenceformat':
+  description: 'The command \\definereferenceformat is used for predefining reference formats. Predefine reference text, so that for example you won\'t have to type \\in{Equation}[eq:somelabel] all the time.'
+  body: '\\definereferenceformat[${1:name}][${2:left=${3:name}, right=${4:name}, text=${5:name}}]$6'
+  url: 'https://wiki.contextgarden.net/Command/definereferenceformat'
+'\\defineregister':
+  description: 'Define a new index'
+  body: '\\defineregister[${1:name}][${2:name}]$3'
+  url: 'https://wiki.contextgarden.net/Command/defineregister'
+'\\definesection':
+  description: ''
+  body: '\\definesection[${1:name}]$2'
+  url: 'https://wiki.contextgarden.net/Command/definesection'
+'\\definesectionblock':
+  description: 'Define a new ‘matter’ section'
+  body: '\\definesectionblock[${1:name}]${2:[${3:see \\\\setupsectionblock parameters}]}$4'
+  url: 'https://wiki.contextgarden.net/Command/definesectionblock'
+'\\definesorting':
+  description: ''
+  body: '\\definesorting[${1:singular}][${2:plural}]${3:[${4:command}]}$5'
+  url: 'https://wiki.contextgarden.net/Command/definesorting'
+'\\definestartstop':
+  description: 'Define a new environment'
+  body: '\\definestartstop[${1:name}][${2:before=${3:name}, after=${4:name}, style=${5:name}$6}]$7'
+  url: 'https://wiki.contextgarden.net/Command/definestartstop'
+'\\definesymbol':
+  description: ''
+  body: '\\definesymbol[${1:name}][${2:text}]$3'
+  url: 'https://wiki.contextgarden.net/Command/definesymbol'
+'\\definesynonyms':
+  description: 'Sort of alias for commands, listed with \\\\placelistofname'
+  body: '\\definesynonyms[${1:singular}][${2:plural}][${3:command}]${4:[${5:description text}]}$6'
+  url: 'https://wiki.contextgarden.net/Command/definesynonyms'
+'\\definetabletemplate':
+  description: ''
+  body: '\\definetabletemplate[${1:name}][${2:style of table}]$3'
+  url: 'https://wiki.contextgarden.net/Command/definetabletemplate'
+'\\definetabulate':
+  description: 'Define a custom tabulate setup'
+  body: '\\definetabulate[${1:name}]${2:[${3:name of variant or sub-part}]}[${4:text}]$5'
+  url: 'https://wiki.contextgarden.net/Command/definetabulate'
+'\\definetext':
+  description: ''
+  body: '\\definetext[${1:name}][${2:header footer}][${3:name}]${4:[${5:name}]}${6:[${7:name}]}$8'
+  url: 'https://wiki.contextgarden.net/Command/definetext'
+'\\definetextposition':
+  description: ''
+  body: '\\definetextposition[${1:name}]${2:[${3:see \\\\setuppositioning parameters}]}$4'
+  url: ''
+'\\definetextvariable':
+  description: ''
+  body: '\\definetextvariable[${1:see \\\\setuptextvariable}]${2:[${3:name}]}${4:[${5:options}]}$6'
+  url: 'https://wiki.contextgarden.net/Command/definetextvariable'
+'\\definetype':
+  description: ''
+  body: '\\definetype[${1:name}][${2:see \\\\setuptype}]$3'
+  url: 'https://wiki.contextgarden.net/Command/definetype'
+'\\definetyping':
+  description: 'Define a custom typing (source code, verbose) setup'
+  body: '\\definetyping[${1:name}][${2:see \\\\setuptyping}]$3'
+  url: 'https://wiki.contextgarden.net/Command/definetyping'
+'\\defineversion':
+  description: ''
+  body: '\\defineversion[${1:name}][${2:number}]$3'
+  url: 'https://wiki.contextgarden.net/Command/defineversion'
+'\\determineheadnumber':
+  description: ''
+  body: '\\determineheadnumber[${1:section}]$2'
+  url: 'https://wiki.contextgarden.net/Command/determineheadnumber'
+'\\determinelistcharacteristics':
+  description: ''
+  body: '\\determinelistcharacteristics[${1:name}]${2:[${3:see \\\\setuplist}]}$4'
+  url: 'https://wiki.contextgarden.net/Command/determinelistcharacteristics'
+'\\disableinteractionmenu':
+  description: ''
+  body: '\\disableinteractionmenu[${1:left right top bottom name}][${2:ref, ...}]$3'
+  url: 'https://wiki.contextgarden.net/Command/disableinteractionmenu'
+'\\emptylines':
+  description: ''
+  body: '\\emptylines[${1:number of empty lines}]$2'
+  url: 'https://wiki.contextgarden.net/Command/emptylines'
+'\\externalfigure':
+  description: 'Include a picture'
+  body: '\\externalfigure[${1:filename}][${2:options}]$3'
+  url: 'https://wiki.contextgarden.net/Command/externalfigure'
+'\\field':
+  description: 'Form field'
+  body: '\\field[${1:name}]$2'
+  url: 'https://wiki.contextgarden.net/Command/field'
+'\\fieldstack':
+  description: ''
+  body: '\\fieldstack[${1:name}]${2:[${3:names}]}${4:[${5:see \\\\setupfields}]}$6'
+  url: 'https://wiki.contextgarden.net/Command/fieldstack'
+'\\fillinline':
+  description: 'A line on which the reader may fill in an answer'
+  body: '\\fillinline${1:[${2:see \\\\setupfillinlines}]}${3:text}$4'
+  url: 'https://wiki.contextgarden.net/Command/fillinline'
+'\\fillinrules':
+  description: ''
+  body: '\\fillinrules${1:[${2:see \\\\setupfillinrules}]}${{3:text before fill in}}${{4:text}}$5'
+  url: 'https://wiki.contextgarden.net/Command/fillinrules'
+'\\fillintext':
+  description: ''
+  body: '\\fillintext${1:[${2:see \\\\setupfillinrules}]}{${3:text}}{${4:text}}$5'
+  url: 'https://wiki.contextgarden.net/Command/fillintext'
+'\\fitfield':
+  description: ''
+  body: '\\fitfield[${1:name}]$2'
+  url: 'https://wiki.contextgarden.net/Command/fitfield'
+'\\fixedspaces':
+  description: 'Force ~ spacing to be equal to 0 glyph'
+  body: '\\fixedspaces$1'
+  url: 'https://wiki.contextgarden.net/Command/fixedspaces'
+'\\followprofile':
+  description: ''
+  body: '\\followprofile{${1:name}}[${2:name}]$3'
+  url: 'https://wiki.contextgarden.net/Command/followprofile'
+'\\followprofileversion':
+  description: ''
+  body: '\\followprofileversion{${1:name}}[${2:name}][${3:name}]$4'
+  url: 'https://wiki.contextgarden.net/Command/followprofileversion'
+'\\followversion':
+  description: ''
+  body: '\\followversion{${1:name}}[${2:name}]$3'
+  url: 'https://wiki.contextgarden.net/Command/followversion'
+'\\footnote':
+  description: 'Set a footnote The instances of \\ note are used for footnotes and endnotes.'
+  body: '\\footnote${1:[${2:label}]}{${3:text}}$4'
+  url: 'https://wiki.contextgarden.net/Command/footnote'
+'\\fraction':
+  description: 'Typeset a fraction'
+  body: '\\fraction{${1:numerator}}{${2:denominator}}$3'
+  url: 'https://wiki.contextgarden.net/Command/fraction'
+'\\framed':
+  description: 'Put something in a box The command \\framed is used for adding frames, backgrounds and styling to a segment of text. There are two variants of this command: \\framed \\inframed On top of that, you can define your own versions with: \\defineframed There are quite a lot of options, see \\setupframed'
+  body: '\\framed${1:[${2: see \\\\setupframed}]}{${3:contents}}$4'
+  url: 'https://wiki.contextgarden.net/Command/framed'
+'\\from':
+  description: 'Use an URL The command \\from is used for links to URLs With \\from you can use an external (URL) link just like a normal internal reference. This works in conjunction with \\useURL to set up the link reference. For setup use \\setupinteraction .'
+  body: '\\from[${1:reference}]$2'
+  url: 'https://wiki.contextgarden.net/Command/from'
+'\\getbuffer':
+  description: 'Place the contents of a previously defined buffer'
+  body: '\\getbuffer${1:text buffer name}$3'
+  url: 'https://wiki.contextgarden.net/Command/getbuffer'
+'\\getmarking':
+  description: 'Use a section title, page number or the like'
+  body: '\\getmarking[${1:name}][${2:name}]$3'
+  url: 'https://wiki.contextgarden.net/Command/getmarking'
+'\\godown':
+  description: 'Skipping more than one vertical space'
+  body: '\\godown[${1:vertical spaces}]$2'
+  url: 'https://wiki.contextgarden.net/Command/godown'
+'\\goto':
+  description: 'Insert a link The command \\goto is used for clickable links This command creates a clickable link (or just normal text when interaction is not enabled). It takes two arguments, the first in curly braces is the text, the second in square braces is the label to link to. You should not normally have to use this command for reference links inside your document. Internal links are better made using \\in , \\at or \\about , which are more conceptual (and lookup the section or page number as well). But if you want to implement some custom command for building links, this command is useful. You might also want to use the \\ref command for getting the raw page number, section number, section title, etc. Or if you want to create a clickable link to something outside of the current document. TODO: there are examples below of various possible arguments in #2, but not a proper list of options (See: To-Do List )'
+  body: '\\goto{${1:text}}{${2:label}}$3'
+  url: 'https://wiki.contextgarden.net/Command/goto'
+'\\gotobox':
+  description: ''
+  body: '\\gotobox{${1:text}}{${2:label}}$3'
+  url: 'https://wiki.contextgarden.net/Command/gotobox'
+'\\graycolor':
+  description: ''
+  body: '\\graycolor[${1:text}]$2'
+  url: 'https://wiki.contextgarden.net/Command/graycolor'
+'\\grid':
+  description: ''
+  body: '\\grid[${1:grid parameters}]$2'
+  url: 'https://wiki.contextgarden.net/Command/grid'
+'\\hairline':
+  description: 'Place a thin line'
+  body: '\\hairline$1'
+  url: 'https://wiki.contextgarden.net/Command/hairline'
+'\\head':
+  description: 'Head of itemize'
+  body: '\\head${1:[${2:ref, ...}]}$3'
+  url: 'https://wiki.contextgarden.net/Command/head'
+'\\headnumber':
+  description: ''
+  body: '\\headnumber${1:[${2:section}]}$3'
+  url: 'https://wiki.contextgarden.net/Command/headnumber'
+'\\headtext':
+  description: 'The instances of \\ label text allow access to a language-dependant label. Retrieve a label text setup earlier with \\setuplabeltext . Label text group instances are defined by \\definelabelclass .'
+  body: '\\headtext{${1:text}}$2'
+  url: 'https://wiki.contextgarden.net/Command/headtext'
+'\\hideblocks':
+  description: 'From here on, do not print blocks where they are defined'
+  body: '\\hideblocks[${1:block types to hide}]${2:[${3:tags to further specify what to hide}]}$4'
+  url: 'https://wiki.contextgarden.net/Command/hideblocks'
+'\\high':
+  description: 'superscript'
+  body: '\\high{${1:text}}$2'
+  url: 'https://wiki.contextgarden.net/Command/high'
+'\\hl':
+  description: 'Horizontal line within tabulate/table'
+  body: '\\hl[${1:width}]$2'
+  url: 'https://wiki.contextgarden.net/Command/hl'
+'\\in':
+  description: 'Reference to a numbered element (e.g. table, figure, formula) The command \\in is used for referencing using a number. Inserts a reference to a location in the document which has been marked with a label (e.g. an equation, figure, section, enumerated item). This works only with numbered items! The curly-brace arguments contain prefix and suffix, the square brackets contain the label of the point/object/section to which you are referring. After the prefix an automatic space is inserted in the output. If this is problematic, for instance because you want parentheses around a referenced number, see \\definereferenceformat . That command allows you to define your own in -like commands.'
+  body: '\\in{${1:text before}}{${2:text after}}[${3:reference}]$4'
+  url: 'https://wiki.contextgarden.net/Command/in'
+'\\inframed':
+  description: 'Like \\\\framed, but ensure that the baseline of the framed text aligns with the baseline of the surrounding text. The command \\inframed is a baseline-aligned version of \\framed . \\inframed is a synonym for: \\framed [location=low] It ensures that the baseline of the framed text aligns with the baseline of the surrounding text. In all other respects, it is identical to \\framed .'
+  body: '\\inframed${1:[${2:see \\\\setupframed}]}{${3:text}}$4'
+  url: 'https://wiki.contextgarden.net/Command/inframed'
+'\\ininner':
+  description: 'Place note in inner margin The instances of \\ margindata are used for placing fragments outside of the regular running text. Place a paragraph in the margin or edge region.'
+  body: '\\ininner${1:[${2:+ - low}]}${3:[${4:reference}]}{${5:text}}$6'
+  url: 'https://wiki.contextgarden.net/Command/ininner'
+'\\inleft':
+  description: 'Place note in left margin The instances of \\ margindata are used for placing fragments outside of the regular running text. Place a paragraph in the margin or edge region.'
+  body: '\\inleft${1:[${2:+ - low}]}${3:[${4:reference}]}{${5:text}}$6'
+  url: 'https://wiki.contextgarden.net/Command/inleft'
+'\\inline':
+  description: 'The command \\inline is used to refer to numbered lines The command \\inline inserts a reference to one or multiple lines inside a typing that has been marked with a label. The curly braces are optional and may contain a text prefix. The default prefix is \"line\" or \"lines\" (with \\mainlanguage[en] ) depending on the number of referenced lines.'
+  body: '\\inline${1:[${2:text prefix}]}[${3:reference}]$4'
+  url: 'https://wiki.contextgarden.net/Command/inline'
+'\\inmargin':
+  description: 'Place note in margin The instances of \\ margindata are used for placing fragments outside of the regular running text. Place a paragraph in the margin or edge region.'
+  body: '\\inmargin${1:[${2:+ - low}]}${3:[${4:reference}]}{${5:text}}$6'
+  url: 'https://wiki.contextgarden.net/Command/inmargin'
+'\\inouter':
+  description: 'Place note in outer margin The instances of \\ margindata are used for placing fragments outside of the regular running text. Place a paragraph in the margin or edge region.'
+  body: '\\inouter${1:[${2:+ - low}]}${3:[${4:reference}]}{${5:text}}$6'
+  url: 'https://wiki.contextgarden.net/Command/inouter'
+'\\inright':
+  description: 'Place note in right margin The instances of \\ margindata are used for placing fragments outside of the regular running text. Place a paragraph in the margin or edge region.'
+  body: '\\inright${1:[${2:+ - low}]}${3:[${4:reference}]}{${5:text}}$6'
+  url: 'https://wiki.contextgarden.net/Command/inright'
+'\\installlanguage':
+  description: 'Define a new language The command \\installlanguage configures a new language. See \\setuplanguage for an example of settings. Define the quotation rules etc. for a new language, which can then be activated with \\language [mylanguage] .'
+  body: '\\installlanguage[${1:name}][${2:language parameters}]$3'
+  url: 'https://wiki.contextgarden.net/Command/installlanguage'
+'\\item':
+  description: 'enumeration item'
+  body: '\\item${1:[${2:ref, ...}]}$3'
+  url: 'https://wiki.contextgarden.net/Command/item'
+'\\items':
+  description: ''
+  body: '\\items${1:[${2:see \\\\setupitems}]}{${3:item, item}}$4'
+  url: 'https://wiki.contextgarden.net/Command/items'
+'\\keepblocks':
+  description: 'From here on typeset blocks where they are defined, as well as when they are recalled'
+  body: '\\keepblocks[${1:name of blocks}]$4'
+  url: 'https://wiki.contextgarden.net/Command/keepblocks'
+'\\labeltext':
+  description: 'Retrieve a label text defined earlier with \\setuplabeltext The instances of \\ label text allow access to a language-dependant label. Retrieve a label text setup earlier with \\setuplabeltext . Label text group instances are defined by \\definelabelclass .'
+  body: '\\labeltext{${1:label name}}$2'
+  url: 'https://wiki.contextgarden.net/Command/labeltext'
+'\\language':
+  description: 'Switch language'
+  body: '\\language[${1:language label}]$2'
+  url: 'https://wiki.contextgarden.net/Command/language'
+'\\leftaligned':
+  description: ''
+  body: '\\leftaligned{${1:text}}$2'
+  url: 'https://wiki.contextgarden.net/Command/leftaligned'
+'\\listsymbol':
+  description: ''
+  body: '\\listsymbol[${1:name}]{${2:text}}$3'
+  url: 'https://wiki.contextgarden.net/Command/listsymbol'
+'\\low':
+  description: 'Subscript'
+  body: '\\low{${1:text}}$2'
+  url: 'https://wiki.contextgarden.net/Command/low'
+'\\mainlanguage':
+  description: 'Set main language'
+  body: '\\mainlanguage[${1:language label}]$2'
+  url: 'https://wiki.contextgarden.net/Command/mainlanguage'
+'\\mar':
+  description: 'Used in itemizations. Prints an item with a remark in the margin'
+  body: '\\mar{${3:text}}$4'
+  url: 'https://wiki.contextgarden.net/Command/mar'
+'\\margintext':
+  description: 'The instances of \\ margindata are used for placing fragments outside of the regular running text. Place a paragraph in the margin or edge region.'
+  body: '\\margintext${1:[${2:+ - low}]}${3:[${4:reference}]}{${5:text}}$6'
+  url: 'https://wiki.contextgarden.net/Command/margintext'
+'\\marking':
+  description: ''
+  body: '\\marking[${1:name}]{${2:name}}$3'
+  url: 'https://wiki.contextgarden.net/Command/marking'
+'\\mathematics':
+  description: ''
+  body: '\\mathematics{${1:formula}}$2'
+  url: 'https://wiki.contextgarden.net/Command/mathematics'
+'\\mediaeval':
+  description: 'Old style numbers'
+  body: '\\mediaeval{${1:text to old style}}$2'
+  url: 'https://wiki.contextgarden.net/Command/mediaeval'
+'\\midaligned':
+  description: 'Center something'
+  body: '\\midaligned{${1:text}}$2'
+  url: 'https://wiki.contextgarden.net/Command/midaligned'
+'\\mirror':
+  description: 'Mirror something horizontally'
+  body: '\\mirror{${1:text to mirror}}$2'
+  url: 'https://wiki.contextgarden.net/Command/mirror'
+'\\month':
+  description: ''
+  body: '\\month{${1:month number}}$2'
+  url: 'https://wiki.contextgarden.net/Command/month'
+'\\noheaderandfooterlines':
+  description: 'Disables header and footer on the current page'
+  body: '\\noheaderandfooterlines$1'
+  url: 'https://wiki.contextgarden.net/Command/noheaderandfooterlines'
+'\\nolist':
+  description: ''
+  body: '\\nolist{${1:text}}$2'
+  url: 'https://wiki.contextgarden.net/Command/nolist'
+'\\nomarking':
+  description: ''
+  body: '\\nomarking{${1:text}}$2'
+  url: 'https://wiki.contextgarden.net/Command/nomarking'
+'\\nomoreblocks':
+  description: ''
+  body: '\\nomoreblocks$1'
+  url: 'https://wiki.contextgarden.net/Command/nomoreblocks'
+'\\nop':
+  description: 'Used in itemizations. Prints an item without a mark, and without incrementing the item counter'
+  body: '\\nop$1'
+  url: 'https://wiki.contextgarden.net/Command/nop'
+'\\note':
+  description: 'Set a footnote marker that refers to an already defined note.'
+  body: '\\note[${1:reference}]$2'
+  url: 'https://wiki.contextgarden.net/Command/note'
+'\\nowhitespace':
+  description: ''
+  body: '\\nowhitespace$1'
+  url: 'https://wiki.contextgarden.net/Command/nowhitespace'
+'\\numbers':
+  description: ''
+  body: '\\numbers{${1:name}}$2'
+  url: 'https://wiki.contextgarden.net/Command/numbers'
+'\\overbar':
+  description: 'Line over text, without gaps The instances of \\ mathovertextextensible are used for ...'
+  body: '\\overbar{${1:text to put bar over}}$2'
+  url: 'https://wiki.contextgarden.net/Command/overbar'
+'\\overbars':
+  description: 'Line over text, with gaps at spaces The instances of \\ bar are used for ...'
+  body: '\\overbars{${1:text to put bars over}}$2'
+  url: 'https://wiki.contextgarden.net/Command/overbars'
+'\\overstrike':
+  description: 'Strike through text (continuously) The instances of \\ bar are used for ...'
+  body: '\\overstrike{${1:text}}$2'
+  url: 'https://wiki.contextgarden.net/Command/overstrike'
+'\\overstrikes':
+  description: 'Strike through text (with gaps at spaces) The instances of \\ bar are used for ...'
+  body: '\\overstrikes{${1:text}}$2'
+  url: 'https://wiki.contextgarden.net/Command/overstrikes'
+'\\page':
+  description: 'Insert a page break The command \\page is used for adding a page break. This command is actually an alias for \\pagebreak . See that command for options.'
+  body: '\\page[${1:page options}]$2'
+  url: 'https://wiki.contextgarden.net/Command/page'
+'\\pagereference':
+  description: 'The command \\pagereference creates a page reference.'
+  body: '\\pagereference[${1:reference}]$2'
+  url: 'https://wiki.contextgarden.net/Command/pagereference'
+'\\pagetype':
+  description: ''
+  body: '\\pagetype[${1:page name}]$2'
+  url: 'https://wiki.contextgarden.net/Command/pagetype'
+'\\part':
+  description: 'Start a new (book) part The instances of \\ section produce a sectioning title. Any of the three macro calls above can be used. The #Settings instance:assignment gives the most control. You can define heads yourself with \\definehead . You can change the appearance with \\setuphead . Note: these instances are superseded by environments with the same basic name, see startsection .'
+  body: '\\part${1:[${2:ref, ...}]}{${3:title}}$4'
+  url: 'https://wiki.contextgarden.net/Command/part'
+'\\periods':
+  description: ''
+  body: '\\periods[${1:number}]$2'
+  url: 'https://wiki.contextgarden.net/Command/periods'
+'\\placebookmarks':
+  description: 'Create PDF bookmarks for listed sections'
+  body: '\\placebookmarks${1:[${2:headers}]}${3:[${4:headers to enable}]}$5'
+  url: 'https://wiki.contextgarden.net/Command/placebookmarks'
+'\\placecombinedlist':
+  description: 'Place a combined list, e.g. ToC'
+  body: '\\placecombinedlist[${1:name}]${2:[${3:see \\\\setupcombinedlist}]}$4'
+  url: 'https://wiki.contextgarden.net/Command/placecombinedlist'
+'\\placefigure':
+  description: 'Place a figure as a (numbered) float The instances of \\place float are used for placing floating objects. With \\placefloat [location][ref]{caption}{contents } you can declare that you want to take certain contents, and place them on the page as a (numbered) figure, table, graphic, or intermezzo, or as some other float type that you defined using \\definefloat .'
+  body: '\\placefigure${1:[${2:ref, ...}]}${4:figure}$5'
+  url: 'https://wiki.contextgarden.net/Command/placefigure'
+'\\placefootnotes':
+  description: 'Place footnotes here (if automatical placing is disabled)'
+  body: '\\placefootnotes${1:[${2:see \\\\setupfootnotes}]}$3'
+  url: 'https://wiki.contextgarden.net/Command/placefootnotes'
+'\\placeformula':
+  description: 'Place a formula as a (numbered) float'
+  body: '\\placeformula${1:[${2:ref, ...}]}$$${4:formula}$$$5'
+  url: 'https://wiki.contextgarden.net/Command/placeformula'
+'\\placelist':
+  description: 'Place a list here The command \\placelist is used to typeset a named list. Outputs the named list at the current location. The format of the list can be customised by \\setuplist'
+  body: '\\placelist[${1:name}]${2:[${3:see \\\\setuplist}]}$4'
+  url: 'https://wiki.contextgarden.net/Command/placelist'
+'\\placelocalfootnotes':
+  description: 'Place local footnotes (e.g. from tables) here'
+  body: '\\placelocalfootnotes${1:[${2:see \\\\setupfootnotes}]}$3'
+  url: 'https://wiki.contextgarden.net/Command/placelocalfootnotes'
+'\\placeongrid':
+  description: ''
+  body: '\\placeongrid${1:[${2:name}]}{${3:name}}$4'
+  url: 'https://wiki.contextgarden.net/Command/placeongrid'
+'\\placeontopofeachother':
+  description: ''
+  body: '\\placeontopofeachother{${1:see \\\\moveongrid}}{${2:text}}$3'
+  url: 'https://wiki.contextgarden.net/Command/placeontopofeachother'
+'\\placereferencelist':
+  description: ''
+  body: '\\placereferencelist[${1:name}]$2'
+  url: 'https://wiki.contextgarden.net/Command/placereferencelist'
+'\\placeregister':
+  description: 'Place register (index) here'
+  body: '\\placeregister[${1:name}]${2:[${3:see \\\\setupregister}]}$4'
+  url: 'https://wiki.contextgarden.net/Command/placeregister'
+'\\placerule':
+  description: ''
+  body: '\\placerule[${1:name}]$2'
+  url: 'https://wiki.contextgarden.net/Command/placerule'
+'\\placesidebyside':
+  description: ''
+  body: '\\placesidebyside{${1:one side}}{${2:other}}$3'
+  url: 'https://wiki.contextgarden.net/Command/placesidebyside'
+'\\placesubformula':
+  description: ''
+  body: '\\placesubformula${1:[${2:ref, ...}]}${4:formula}$$$5'
+  url: 'https://wiki.contextgarden.net/Command/placesubformula'
+'\\placetextvariable':
+  description: ''
+  body: '\\placetextvariable[${1:name}]$2'
+  url: 'https://wiki.contextgarden.net/Command/placetextvariable'
+'\\position':
+  description: ''
+  body: '\\position(${1:numbers}){${2:text}}$3'
+  url: 'https://wiki.contextgarden.net/Command/position'
+'\\positiontext':
+  description: ''
+  body: '\\positiontext[${1:name}]{${2:text}}$3'
+  url: 'https://wiki.contextgarden.net/Command/positiontext'
+'\\processblocks':
+  description: ''
+  body: '\\processblocks[${1:block}]${2:[${3:tag}]}$4'
+  url: 'https://wiki.contextgarden.net/Command/processblocks'
+'\\processpage':
+  description: ''
+  body: '\\processpage[${1:name}][${2:yes no}]$3'
+  url: 'https://wiki.contextgarden.net/Command/processpage'
+'\\program':
+  description: ''
+  body: '\\program[${1:name}]$2'
+  url: 'https://wiki.contextgarden.net/Command/program'
+'\\publication':
+  description: ''
+  body: '\\publication[${1:reference}]$2'
+  url: 'https://wiki.contextgarden.net/Command/publication'
+'\\quotation':
+  description: 'Surround text with language dependend double quotation marks The instances of \\ delimitedtext add markup around a (usually short) block of text. These instances are defined by \\definedelimitedtext and set up with \\setupdelimitedtext .  But there are also two predefined shortcut commands, so you can set up the \\quote command with \\setupquote and \\quotation with \\setupquotation .'
+  body: '\\quotation{${1:reference}}$2'
+  url: 'https://wiki.contextgarden.net/Command/quotation'
+'\\quote':
+  description: 'Surround text with language dependend single quotation marks The instances of \\ delimitedtext add markup around a (usually short) block of text. These instances are defined by \\definedelimitedtext and set up with \\setupdelimitedtext .  But there are also two predefined shortcut commands, so you can set up the \\quote command with \\setupquote and \\quotation with \\setupquotation .'
+  body: '\\quote{${1:text}}$2'
+  url: 'https://wiki.contextgarden.net/Command/quote'
+'\\ref':
+  description: 'The command \\ref is used for referencing. This command looks up some property of some reference (e.g., a section, example, figure or custom reference made with \\reference ). You should not normally have to use this command. Links are better made using \\in or \\at , which are more conceptual (and create a clickable link as well). If you want to implement some custom command for building references, this command is useful. You might also want to use the \\goto command for making the reference clickable.'
+  body: '\\ref[${1:t p r s e}][${2:reference}]$3'
+  url: 'https://wiki.contextgarden.net/Command/ref'
+'\\reference':
+  description: 'The command \\reference is used for creating reference labels Creates a reference label.'
+  body: '\\reference[${1:reference}]{${2:text}}$3'
+  url: 'https://wiki.contextgarden.net/Command/reference'
+'\\referral':
+  description: 'Construct a business letter’s ‘information block’'
+  body: '\\referral[${1:items}]$2'
+  url: 'https://wiki.contextgarden.net/Command/referral'
+'\\reset':
+  description: ''
+  body: '\\reset[${1:name}]$2'
+  url: 'https://wiki.contextgarden.net/Command/reset'
+'\\resetmarking':
+  description: ''
+  body: '\\resetmarking[${1:name}]$2'
+  url: 'https://wiki.contextgarden.net/Command/resetmarking'
+'\\rightaligned':
+  description: ''
+  body: '\\rightaligned{${1:text}}$2'
+  url: 'https://wiki.contextgarden.net/Command/rightaligned'
+'\\romannumerals':
+  description: ''
+  body: '\\romannumerals{${1:number to print roman}}$2'
+  url: 'https://wiki.contextgarden.net/Command/romannumerals'
+'\\rotate':
+  description: 'Rotate something'
+  body: '\\rotate${1:[${2:options}]}{${3:content}}$4'
+  url: 'https://wiki.contextgarden.net/Command/rotate'
+'\\scale':
+  description: 'Scale something'
+  body: '\\scale${1:[${2:see \\\\setuprotate}]}{${3:content}}$4'
+  url: 'https://wiki.contextgarden.net/Command/scale'
+'\\screen':
+  description: 'The command \\screen is used for inserting page breaks. This command is actually an alias for \\pagebreak . See that command for options.'
+  body: '\\screen[${1:see \\\\page}]$2'
+  url: 'https://wiki.contextgarden.net/Command/screen'
+'\\section':
+  description: 'Start a section The instances of \\ section produce a sectioning title. Any of the three macro calls above can be used. The #Settings instance:assignment gives the most control. You can define heads yourself with \\definehead . You can change the appearance with \\setuphead . Note: these instances are superseded by environments with the same basic name, see startsection .'
+  body: '\\section${1:[${2:ref, ...}]}{${3:text}}$4'
+  url: 'https://wiki.contextgarden.net/Command/section'
+'\\selectblocks':
+  description: ''
+  body: '\\selectblocks[${1:blocks}]${2:[${3:tags}]}${4:[${5:criterium}}$6'
+  url: 'https://wiki.contextgarden.net/Command/selectblocks'
+'\\settextvariable':
+  description: ''
+  body: '\\settextvariable[${1:name}][${2:text}]$3'
+  url: 'https://wiki.contextgarden.net/Command/settextvariable'
+'\\setupalign':
+  description: ''
+  body: '\\setupalign[${1:alignment}]$2'
+  url: 'https://wiki.contextgarden.net/Command/setupalign'
+'\\setuparranging':
+  description: 'Setup imposition schema (the way you wish to arrange multiple pages per sheet)'
+  body: '\\setuparranging[${1:options}]$2'
+  url: 'https://wiki.contextgarden.net/Command/setuparranging'
+'\\setupbackground':
+  description: ''
+  body: '\\setupbackground[${1:offset=name}]$2'
+  url: 'https://wiki.contextgarden.net/Command/setupbackground'
+'\\setupbackgrounds':
+  description: 'Setup page (area) background, usually with layers'
+  body: '\\setupbackgrounds${1:[${2:area}]}${3:[${4:subareas}]}[${5:see \\\\setupframed}]$6'
+  url: 'https://wiki.contextgarden.net/Command/setupbackgrounds'
+'\\setupblackrules':
+  description: 'The command \\setupblackrules is used for configuring \\blackrule and \\blackrules This command is used for configuring \\blackrule and \\blackrules'
+  body: '\\setupblackrules[${1:dimension=name}]$2'
+  url: 'https://wiki.contextgarden.net/Command/setupblackrules'
+'\\setupblank':
+  description: 'Define default dimension of \\blank The command \\setupblank is used for setting default options for \\blank (aka \\vspacing )'
+  body: '\\setupblank${1:[${2:normal, standard, name}]}$3'
+  url: 'https://wiki.contextgarden.net/Command/setupblank'
+'\\setupblock':
+  description: ''
+  body: '\\setupblock[${1:name}][${2:options}]$3'
+  url: 'https://wiki.contextgarden.net/Command/setupblock'
+'\\setupbodyfont':
+  description: 'Setup the body font'
+  body: '\\setupbodyfont[${1:serif, sans, name}]$2'
+  url: 'https://wiki.contextgarden.net/Command/setupbodyfont'
+'\\setupbodyfontenvironment':
+  description: 'Setup relative font sizes'
+  body: '\\setupbodyfontenvironment[${1:name}][${2:see \\\\setupbodyfont}]$3'
+  url: 'https://wiki.contextgarden.net/Command/setupbodyfontenvironment'
+'\\setupbottom':
+  description: ''
+  body: '\\setupbottom${1:[${2:name?}]}[${3:see \\\\setupheader}]$4'
+  url: 'https://wiki.contextgarden.net/Command/setupbottom'
+'\\setupbuffer':
+  description: 'The command \\setupbuffer configures buffers. Configure a named buffer, or the default \\startbuffer .'
+  body: '\\setupbuffer${1:[${2:name}]}[${3:paragraph=number, before=command, after=command}]$4'
+  url: 'https://wiki.contextgarden.net/Command/setupbuffer'
+'\\setupbuttons':
+  description: ''
+  body: '\\setupbuttons[${1:see \\\\setupframed}]$2'
+  url: 'https://wiki.contextgarden.net/Command/setupbuttons'
+'\\setupcapitals':
+  description: ''
+  body: '\\setupcapitals[${1:title=name, sc=name}]$2'
+  url: 'https://wiki.contextgarden.net/Command/setupcapitals'
+'\\setupcaption':
+  description: ''
+  body: '\\setupcaption[${1:name}][${2:see \\\\setupcaptions}]$3'
+  url: 'https://wiki.contextgarden.net/Command/setupcaption'
+'\\setupcaptions':
+  description: ''
+  body: '\\setupcaptions[${1:options}]$2'
+  url: 'https://wiki.contextgarden.net/Command/setupcaptions'
+'\\setupclipping':
+  description: 'Specify the default clipping settings'
+  body: '\\setupclipping[${1:options}]$2'
+  url: 'https://wiki.contextgarden.net/Command/setupclipping'
+'\\setupcolor':
+  description: ''
+  body: '\\setupcolor[${1:color mode}]$2'
+  url: 'https://wiki.contextgarden.net/Command/setupcolor'
+'\\setupcolors':
+  description: ''
+  body: '\\setupcolors[${1:options}]$2'
+  url: 'https://wiki.contextgarden.net/Command/setupcolors'
+'\\setupcolumns':
+  description: ''
+  body: '\\setupcolumns[${1:options}]$2'
+  url: 'https://wiki.contextgarden.net/Command/setupcolumns'
+'\\setupcombinations':
+  description: ''
+  body: '\\setupcombinations[${1:options}]$2'
+  url: 'https://wiki.contextgarden.net/Command/setupcombinations'
+'\\setupcombinedlist':
+  description: ''
+  body: '\\setupcombinedlist[${1:name}][${2:level=name, see \\\\setuplist}]$3'
+  url: 'https://wiki.contextgarden.net/Command/setupcombinedlist'
+'\\setupcomment':
+  description: ''
+  body: '\\setupcomment[${1:options}]$2'
+  url: 'https://wiki.contextgarden.net/Command/setupcomment'
+'\\setupdescriptions':
+  description: ''
+  body: '\\setupdescriptions[${2:name}][${3:options}]$4'
+  url: 'https://wiki.contextgarden.net/Command/setupdescriptions'
+'\\setupenumerations':
+  description: ''
+  body: '\\setupenumerations[${2:name}][${3:see \\\\setupdescriptions}]$4'
+  url: 'https://wiki.contextgarden.net/Command/setupenumerations'
+'\\setupexternalfigures':
+  description: 'Set options for images The command \\setupexternalfigures is an alias of \\setupexternalfigure'
+  body: '\\setupexternalfigures[${1:options}]$2'
+  url: 'https://wiki.contextgarden.net/Command/setupexternalfigures'
+'\\setupfield':
+  description: ''
+  body: '\\setupfield[${1:name}][${2:options}][${3:see \\\\setupfields}]$4'
+  url: 'https://wiki.contextgarden.net/Command/setupfield'
+'\\setupfields':
+  description: ''
+  body: '\\setupfields[${1:names][${2:options}][${3:other options}]$4'
+  url: 'https://wiki.contextgarden.net/Command/setupfields'
+'\\setupfillinlines':
+  description: ''
+  body: '\\setupfillinlines[${1:options}]$2'
+  url: 'https://wiki.contextgarden.net/Command/setupfillinlines'
+'\\setupfillinrules':
+  description: ''
+  body: '\\setupfillinrules[${1:options}]$2'
+  url: 'https://wiki.contextgarden.net/Command/setupfillinrules'
+'\\setupfloat':
+  description: 'Set options for some kind of float (figures, tables etc.) The command \\setupfloat configures floating objects Configures various float settings. For a previously defined specific float type (with \\definefloat ), use the first argument to enter its name.'
+  body: '\\setupfloat[${1:name}][${2:options}]$3'
+  url: 'https://wiki.contextgarden.net/Command/setupfloat'
+'\\setupfloats':
+  description: 'Set options for all floats The command \\setupfloats is an alias of \\setupfloat This command is just an alternative name for \\setupfloat .'
+  body: '\\setupfloats[${1:options}]$2'
+  url: 'https://wiki.contextgarden.net/Command/setupfloats'
+'\\setupfloatsplitting':
+  description: ''
+  body: '\\setupfloatsplitting[${1:conversion=${2:name}, level=${3:name}}]$4'
+  url: 'https://wiki.contextgarden.net/Command/setupfloatsplitting'
+'\\setupfooter':
+  description: ''
+  body: '\\setupfooter[${3:see \\\\setupheader}]$4'
+  url: 'https://wiki.contextgarden.net/Command/setupfooter'
+'\\setupfootertexts':
+  description: 'Define text for footer'
+  body: '\\setupfootertexts[${2:margin / edge}][${3:options}]$4'
+  url: 'https://wiki.contextgarden.net/Command/setupfootertexts'
+'\\setupfootnotedefinition':
+  description: ''
+  body: '\\setupfootnotedefinition[${1:see \\\\setupdescription}]$2'
+  url: 'https://wiki.contextgarden.net/Command/setupfootnotedefinition'
+'\\setupfootnotes':
+  description: ''
+  body: '\\setupfootnotes[${1:options}]$2'
+  url: 'https://wiki.contextgarden.net/Command/setupfootnotes'
+'\\setupforms':
+  description: ''
+  body: '\\setupforms[${1:method=${2:HTML/FDF}}]$3'
+  url: 'https://wiki.contextgarden.net/Command/setupforms'
+'\\setupformulae':
+  description: ''
+  body: '\\setupformulae[${1:options}]$2'
+  url: 'https://wiki.contextgarden.net/Command/setupformulae'
+'\\setupframed':
+  description: 'Set default options for \\framed The command \\setupframed is used for configuring \\framed and instances of framed Set the default parameters for \\framed . The \\framed command produces a box with (optionally) a frame, certain dimensions, a background, etc.'
+  body: '\\setupframed[${1:options}]$2'
+  url: 'https://wiki.contextgarden.net/Command/setupframed'
+'\\setupframedtexts':
+  description: ''
+  body: '\\setupframedtexts[${1:options}]$2'
+  url: 'https://wiki.contextgarden.net/Command/setupframedtexts'
+'\\setuphead':
+  description: 'Setup section heads \\setuphead is used to configure headings and titles. Being structuring elements of any document, the possibilities are quite extensive. To headings is associated the text, i.e. the content of the heading, but can also be associated numbers. These data can be processed for typesetting : add a dot between the text and the number, add a generic text before the \"pure text\" appearance can be different for the text if we use it in the headers / footers, or in the Table of Content. add vertical spaces before or after the text add rules before or after the whole section under the heading select if the title should appear on a right or a left page.'
+  body: '\\setuphead[${1:name}][${2:options}]$3'
+  url: 'https://wiki.contextgarden.net/Command/setuphead'
+'\\setupheader':
+  description: ''
+  body: '\\setupheader[${1:margin / edge}][${2:options}]$3'
+  url: 'https://wiki.contextgarden.net/Command/setupheader'
+'\\setupheadertexts':
+  description: 'Define texts for header'
+  body: '\\setupheadertexts[${1:left handed side of odd pages}][${2:right handed side of odd pages}][${3:right handed side of even pages}][${4:left handed side of even pages}]$5'
+  url: 'https://wiki.contextgarden.net/Command/setupheadertexts'
+'\\setupheadnumber':
+  description: ''
+  body: '\\setupheadnumber[${1:section}][${2:number / increment}]$3'
+  url: 'https://wiki.contextgarden.net/Command/setupheadnumber'
+'\\setupheads':
+  description: 'Set options for all section heads'
+  body: '\\setupheads[${1:options}]$2'
+  url: 'https://wiki.contextgarden.net/Command/setupheads'
+'\\setupheadtext':
+  description: 'The instances of \\setup label text are used to fill in a class of labels In some cases ConTeXt generates text labels automatically; for example, the word Figure is generated automatically when a caption is placed\nunder a figure. These kind of words are called label texts. Labels are\nset with the command \\setuplabeltext , and retrieved with the\ncommand \\labeltext . They follow the language set with \\mainlanguage , not the local bits of different language that are\nset with \\language . Note Nearly all the labels in the ConTeXt core are actually loaded from a lua table\nin lang-txt.lua , instead of via this interface. NB The option parser for the command setuplabeltext is known to\nbehave somewhat differently from most setups, posing minor constraints\non code formatting.\nFor instance the trailing comma after an assignment, otherwise employed\nto delimit the value, will lead to an error here.\nThe final option in the list needs thus to be terminated by the closing\nbracket. \\setuplabeltext [ Nomen = nomen,\n  Est = est,\n  Omen = est, %% <= fails! ] \\setuplabeltext [ Nomen = nomen, Est = est, Omen = est ] %% <= works \\starttext \\labeltext { Nomen } \\labeltext { Est } \\labeltext { Omen } \\stoptext For \\setupheadtext , here is the list of known section heads: name text content Contents tables Tables figures Figures graphics Graphics intermezzi Intermezzos index Index abbreviations Abbreviations logos Logos units Units pubs References'
+  body: '\\setupheadtext[${2:language}][${3:section=Section, name}$4'
+  url: 'https://wiki.contextgarden.net/Command/setupheadtext'
+'\\setuphyphenmark':
+  description: 'Set symbol for hyphenation'
+  body: '\\setuphyphenmark[sign=${1:normal / wide}]$3'
+  url: 'https://wiki.contextgarden.net/Command/setuphyphenmark'
+'\\setupindentations':
+  description: ''
+  body: '\\setupindentations[${1:name}][${3:options}]$4'
+  url: 'https://wiki.contextgarden.net/Command/setupindentations'
+'\\setupindenting':
+  description: ''
+  body: '\\setupindenting[${1:options}]$2'
+  url: 'https://wiki.contextgarden.net/Command/setupindenting'
+'\\setupinterlinespace':
+  description: 'Define line height'
+  body: '\\setupinterlinespace${1:[${2:dimension}]}$3'
+  url: 'https://wiki.contextgarden.net/Command/setupinterlinespace'
+'\\setupitemgroup':
+  description: 'Set options for some kind of itemization The command \\setupitemgroup is used for configuring item groups. This command controls all of the formatting for the specified item group, for example the name itemize configures the item group that is the environment \\startitemize ). \\setupitemgroup [itemize] and \\setupitemize are equivalent. TODO: There are a great many options here, and not nearly all of them are documented. (See: To-Do List )'
+  body: '\\setupitemgroup[${1:level of itemize}][${2:position}][${3:options}]$8'
+  url: 'https://wiki.contextgarden.net/Command/setupitemgroup'
+'\\setupitems':
+  description: ''
+  body: '\\setupitems[${1:options}]$2'
+  url: 'https://wiki.contextgarden.net/Command/setupitems'
+'\\setuplabeltext':
+  description: 'The instances of \\setup label text are used to fill in a class of labels In some cases ConTeXt generates text labels automatically; for example, the word Figure is generated automatically when a caption is placed\nunder a figure. These kind of words are called label texts. Labels are\nset with the command \\setuplabeltext , and retrieved with the\ncommand \\labeltext . They follow the language set with \\mainlanguage , not the local bits of different language that are\nset with \\language . Note Nearly all the labels in the ConTeXt core are actually loaded from a lua table\nin lang-txt.lua , instead of via this interface. NB The option parser for the command setuplabeltext is known to\nbehave somewhat differently from most setups, posing minor constraints\non code formatting.\nFor instance the trailing comma after an assignment, otherwise employed\nto delimit the value, will lead to an error here.\nThe final option in the list needs thus to be terminated by the closing\nbracket. \\setuplabeltext [ Nomen = nomen,\n  Est = est,\n  Omen = est, %% <= fails! ] \\setuplabeltext [ Nomen = nomen, Est = est, Omen = est ] %% <= works \\starttext \\labeltext { Nomen } \\labeltext { Est } \\labeltext { Omen } \\stoptext For \\setupheadtext , here is the list of known section heads: name text content Contents tables Tables figures Figures graphics Graphics intermezzi Intermezzos index Index abbreviations Abbreviations logos Logos units Units pubs References'
+  body: '\\setuplabeltext[${1:lang}][${2:text}$3'
+  url: 'https://wiki.contextgarden.net/Command/setuplabeltext'
+'\\setuplanguage':
+  description: 'The command \\setuplanguage is adjusts a language\'s settings'
+  body: '\\setuplanguage[${1:language}][${2:see \\\\installlanguage}]$3'
+  url: 'https://wiki.contextgarden.net/Command/setuplanguage'
+'\\setuplayout':
+  description: 'Define page layout'
+  body: '\\setuplayout[${1:options}]$2'
+  url: 'https://wiki.contextgarden.net/Command/setuplayout'
+'\\setuplegend':
+  description: 'The instances of \\setup pairedbox are created by \\definepairedbox . See \\setuppairedbox for settings.'
+  body: '\\setuplegend[${1:options}]$2'
+  url: 'https://wiki.contextgarden.net/Command/setuplegend'
+'\\setuplinenumbering':
+  description: 'Set options for line numbering'
+  body: '\\setuplinenumbering[${1:options}]$2'
+  url: 'https://wiki.contextgarden.net/Command/setuplinenumbering'
+'\\setuplines':
+  description: 'Set options for \\\\startlines ... \\\\stoplines (code, poems etc.) The command \\setuplines sets up the options for line-based material. Define the settings for the \\startlines environment. If \\definelines [mylines] was used to define an environment \\startmylines , you can set that up with either \\setuplines [mylines][...=...] or \\setupmylines [...=...] .'
+  body: '\\setuplines[${1:options}]$2'
+  url: 'https://wiki.contextgarden.net/Command/setuplines'
+'\\setuplinewidth':
+  description: ''
+  body: '\\setuplinewidth[${1:dimension}]$2'
+  url: 'https://wiki.contextgarden.net/Command/setuplinewidth'
+'\\setuplist':
+  description: 'The command \\setuplist configures collected lists like for the TOC'
+  body: '\\setuplist[${1:name}][${2:options}]$3'
+  url: 'https://wiki.contextgarden.net/Command/setuplist'
+'\\setupmakeup':
+  description: ''
+  body: '\\setupmakeup[${1:name}][${2:options}]$3'
+  url: 'https://wiki.contextgarden.net/Command/setupmakeup'
+'\\setupmarginblocks':
+  description: ''
+  body: '\\setupmarginblocks[${1:options}]$2'
+  url: 'https://wiki.contextgarden.net/Command/setupmarginblocks'
+'\\setupmarginrules':
+  description: ''
+  body: '\\setupmarginrules[level=${1:number}, rulethickness=${2:dimension}}$2'
+  url: 'https://wiki.contextgarden.net/Command/setupmarginrules'
+'\\setupmarking':
+  description: ''
+  body: '\\setupmarking[${1:name}][${2:options}$3'
+  url: 'https://wiki.contextgarden.net/Command/setupmarking'
+'\\setupnarrower':
+  description: ''
+  body: '\\setupnarrower[${1:options}]$2'
+  url: 'https://wiki.contextgarden.net/Command/setupnarrower'
+'\\setupnumbering':
+  description: ''
+  body: '\\setupnumbering[${1:options}]$2'
+  url: 'https://wiki.contextgarden.net/Command/setupnumbering'
+'\\setupoppositeplacing':
+  description: ''
+  body: '\\setupoppositeplacing[${1:options}$2'
+  url: 'https://wiki.contextgarden.net/Command/setupoppositeplacing'
+'\\setupoutput':
+  description: ''
+  body: '\\setupoutput[${1:name}]$2'
+  url: 'https://wiki.contextgarden.net/Command/setupoutput'
+'\\setuppagenumber':
+  description: ''
+  body: '\\setuppagenumber[${1:options}]$2'
+  url: 'https://wiki.contextgarden.net/Command/setuppagenumber'
+'\\setuppagenumbering':
+  description: ''
+  body: '\\setuppagenumbering[${1:options}]$2'
+  url: 'https://wiki.contextgarden.net/Command/setuppagenumbering'
+'\\setuppagetransitions':
+  description: ''
+  body: '\\setuppagetransitions${1:[${2:name}]}$3'
+  url: 'https://wiki.contextgarden.net/Command/setuppagetransitions'
+'\\setuppalet':
+  description: ''
+  body: '\\setuppalet[${1:name}]$2'
+  url: 'https://wiki.contextgarden.net/Command/setuppalet'
+'\\setuppaper':
+  description: ''
+  body: '\\setuppaper[${1:options}]$2'
+  url: 'https://wiki.contextgarden.net/Command/setuppaper'
+'\\setuppapersize':
+  description: ''
+  body: '\\setuppapersize[${1:page dimension}][${2:printed page dimension}]$3'
+  url: 'https://wiki.contextgarden.net/Command/setuppapersize'
+'\\setupparagraphnumbering':
+  description: ''
+  body: '\\setupparagraphnumbering[${1:options}]$2'
+  url: 'https://wiki.contextgarden.net/Command/setupparagraphnumbering'
+'\\setupparagraphs':
+  description: ''
+  body: '\\setupparagraphs[${1:name}][${2:paragraph num}][${3:options}]$4'
+  url: 'https://wiki.contextgarden.net/Command/setupparagraphs'
+'\\setuppositioning':
+  description: ''
+  body: '\\setuppositioning[${1:options}]$2'
+  url: 'https://wiki.contextgarden.net/Command/setuppositioning'
+'\\setupprofiles':
+  description: ''
+  body: '\\setupprofiles[${1:options}]$2'
+  url: 'https://wiki.contextgarden.net/Command/setupprofiles'
+'\\setupprograms':
+  description: ''
+  body: '\\setupprograms[${1:options}]$2'
+  url: 'https://wiki.contextgarden.net/Command/setupprograms'
+'\\setuppublications':
+  description: ''
+  body: '\\setuppublications[${1:options}]$2'
+  url: 'https://wiki.contextgarden.net/Command/setuppublications'
+'\\setupquote':
+  description: ''
+  body: '\\setupquote[${1:options}]$2'
+  url: 'https://wiki.contextgarden.net/Command/setupquote'
+'\\setupreferencelist':
+  description: ''
+  body: '\\setupreferencelist[${1:name}][${2:options}]$3'
+  url: 'https://wiki.contextgarden.net/Command/setupreferencelist'
+'\\setupreferencing':
+  description: 'The command \\setupreferencing changes the output of the \\about command. left= and right= apply to the left and right of \\about . TODO: perhaps this applies to other commands as well, like \\from or \\goto ? (See: To-Do List )'
+  body: '\\setupreferencing[${1:options}]$2'
+  url: 'https://wiki.contextgarden.net/Command/setupreferencing'
+'\\setupregister':
+  description: ''
+  body: '\\setupregister[${1:name}][${2:options}]$3'
+  url: 'https://wiki.contextgarden.net/Command/setupregister'
+'\\setuprotate':
+  description: ''
+  body: '\\setuprotate[${1:options}]$2'
+  url: 'https://wiki.contextgarden.net/Command/setuprotate'
+'\\setuprule':
+  description: ''
+  body: '\\setuprule[${1:name}][${2:options}]$3'
+  url: 'https://wiki.contextgarden.net/Command/setuprule'
+'\\setupscreens':
+  description: ''
+  body: '\\setupscreens[${1:options}]$2'
+  url: 'https://wiki.contextgarden.net/Command/setupscreens'
+'\\setupsection':
+  description: ''
+  body: '\\setupsection[${1:name}][${2:options}]$3'
+  url: 'https://wiki.contextgarden.net/Command/setupsection'
+'\\setupsectionblock':
+  description: ''
+  body: '\\setupsectionblock[${1:name}][${2:options}]$3'
+  url: 'https://wiki.contextgarden.net/Command/setupsectionblock'
+'\\setupsorting':
+  description: ''
+  body: '\\setupsorting[${1:name}][${2:options}]$3'
+  url: 'https://wiki.contextgarden.net/Command/setupsorting'
+'\\setupspacing':
+  description: ''
+  body: '\\setupspacing[${1:fixed / packed / broad}]$2'
+  url: 'https://wiki.contextgarden.net/Command/setupspacing'
+'\\setupstrut':
+  description: ''
+  body: '\\setupstrut[${1:yes no cap}]$2'
+  url: 'https://wiki.contextgarden.net/Command/setupstrut'
+'\\setupsubpagenumber':
+  description: ''
+  body: '\\setupsubpagenumber[way = ${1:bytext bysection}, state = ${2:start stop none}]$3'
+  url: 'https://wiki.contextgarden.net/Command/setupsubpagenumber'
+'\\setupsymbolset':
+  description: ''
+  body: '\\setupsymbolset[${1:name}]$2'
+  url: 'https://wiki.contextgarden.net/Command/setupsymbolset'
+'\\setupsynchronization':
+  description: ''
+  body: '\\setupsynchronization[${1:options}]$2'
+  url: 'https://wiki.contextgarden.net/Command/setupsynchronization'
+'\\setupsynchronizationbar':
+  description: ''
+  body: '\\setupsynchronizationbar[state=${1:start / stop}]$2'
+  url: 'https://wiki.contextgarden.net/Command/setupsynchronizationbar'
+'\\setupsynonyms':
+  description: ''
+  body: '\\setupsynonyms[${1:name}][${2:options}]$3'
+  url: 'https://wiki.contextgarden.net/Command/setupsynonyms'
+'\\setupsystem':
+  description: ''
+  body: '\\setupsystem[${1:options}]$2'
+  url: 'https://wiki.contextgarden.net/Command/setupsystem'
+'\\setuptab':
+  description: ''
+  body: '\\setuptab[${1:options}]$2'
+  url: 'https://wiki.contextgarden.net/Command/setuptab'
+'\\setuptables':
+  description: ''
+  body: '\\setuptables[${1:options}]$2'
+  url: 'https://wiki.contextgarden.net/Command/setuptables'
+'\\setuptabulate':
+  description: ''
+  body: '\\setuptabulate[${1:name}][${2:options}]$3'
+  url: 'https://wiki.contextgarden.net/Command/setuptabulate'
+'\\setuptext':
+  description: ''
+  body: '\\setuptext[${1:see \\\\setupheader}]$2'
+  url: 'https://wiki.contextgarden.net/Command/setuptext'
+'\\setuptextrules':
+  description: ''
+  body: '\\setuptextrules[${1:options}]$2'
+  url: 'https://wiki.contextgarden.net/Command/setuptextrules'
+'\\setuptexttexts':
+  description: ''
+  body: '\\setuptexttexts[${1:...}][${2:...}][${3:...}]$4'
+  url: 'https://wiki.contextgarden.net/Command/setuptexttexts'
+'\\setuptextvariable':
+  description: ''
+  body: '\\setuptextvariable[${1:name}][${2:options}]$3'
+  url: 'https://wiki.contextgarden.net/Command/setuptextvariable'
+'\\setupthinrules':
+  description: ''
+  body: '\\setupthinrules[${1:options}$2'
+  url: 'https://wiki.contextgarden.net/Command/setupthinrules'
+'\\setuptolerance':
+  description: 'Set up how tolerant TeX should be of ‘ugly’ stretching of spaces'
+  body: '\\setuptolerance[${1:stretching}]$2'
+  url: 'https://wiki.contextgarden.net/Command/setuptolerance'
+'\\setuptop':
+  description: ''
+  body: '\\setuptop[${1:see \\\\setupheader}]$2'
+  url: 'https://wiki.contextgarden.net/Command/setuptop'
+'\\setuptoptexts':
+  description: ''
+  body: '\\setuptoptexts[${1:...}][${2:...}][${3:...}]$4'
+  url: 'https://wiki.contextgarden.net/Command/setuptoptexts'
+'\\setuptype':
+  description: ''
+  body: '\\setuptype[${1:options}]$2'
+  url: 'https://wiki.contextgarden.net/Command/setuptype'
+'\\setuptyping':
+  description: ''
+  body: '\\setuptyping[${1:name}][${2:options}]$3'
+  url: 'https://wiki.contextgarden.net/Command/setuptyping'
+'\\setupunderbar':
+  description: ''
+  body: '\\setupunderbar[${1:options}]$2'
+  url: 'https://wiki.contextgarden.net/Command/setupunderbar'
+'\\setupurl':
+  description: 'The command \\setupurl is used for configuring \\url'
+  body: '\\setupurl[${1:options}]$2'
+  url: 'https://wiki.contextgarden.net/Command/setupurl'
+'\\setupversions':
+  description: ''
+  body: '\\setupversions[number=${1:...}, style=${2:...}]$3'
+  url: 'https://wiki.contextgarden.net/Command/setupversions'
+'\\setupwhitespace':
+  description: ''
+  body: '\\setupwhitespace$[${1:dimension}]$2'
+  url: 'https://wiki.contextgarden.net/Command/setupwhitespace'
+'\\showbodyfont':
+  description: ''
+  body: '\\showbodyfont[${1:see \\\\setupbodyfont}]$2'
+  url: 'https://wiki.contextgarden.net/Command/showbodyfont'
+'\\showbodyfontenvironment':
+  description: ''
+  body: '\\showbodyfontenvironment[${1:see \\\\setupbodyfont}]$2'
+  url: 'https://wiki.contextgarden.net/Command/showbodyfontenvironment'
+'\\showcolor':
+  description: 'Displays all user-defined colors.'
+  body: '\\showcolor$1'
+  url: 'https://wiki.contextgarden.net/Command/showcolor'
+'\\showcolorgroup':
+  description: ''
+  body: '\\showcolorgroup[${1:name}][${2:options}]$3'
+  url: 'https://wiki.contextgarden.net/Command/showcolorgroup'
+'\\showexternalfigures':
+  description: ''
+  body: '\\showexternalfigures[alternative=${1:...}]$2'
+  url: 'https://wiki.contextgarden.net/Command/showexternalfigures'
+'\\showfields':
+  description: ''
+  body: '\\showfields[${1:name}]$2'
+  url: 'https://wiki.contextgarden.net/Command/showfields'
+'\\showframe':
+  description: ''
+  body: '\\showframe${1:[${2:header text footer}]}[${3:leftmargin text rightmargin}]$4'
+  url: 'https://wiki.contextgarden.net/Command/showframe'
+'\\showgrid':
+  description: 'Show line grid'
+  body: '\\showgrid$1'
+  url: 'https://wiki.contextgarden.net/Command/showgrid'
+'\\showlayout':
+  description: 'Insert pages with layout measures'
+  body: '\\showlayout$1'
+  url: 'https://wiki.contextgarden.net/Command/showlayout'
+'\\showmakeup':
+  description: ''
+  body: '\\showmakeup$1'
+  url: 'https://wiki.contextgarden.net/Command/showmakeup'
+'\\showpalet':
+  description: ''
+  body: '\\showpalet[${1:name}][${2:option}]$3'
+  url: 'https://wiki.contextgarden.net/Command/showpalet'
+'\\showprint':
+  description: ''
+  body: '\\showprint[${1:see \\\\setuppapersize}][${3:see \\\\setuplayout}]$4'
+  url: 'https://wiki.contextgarden.net/Command/showprint'
+'\\showsetups':
+  description: ''
+  body: '\\showsetups$1'
+  url: 'https://wiki.contextgarden.net/Command/showsetups'
+'\\showstruts':
+  description: ''
+  body: '\\showstruts$1'
+  url: 'https://wiki.contextgarden.net/Command/showstruts'
+'\\showsymbolset':
+  description: 'List all the glyphs of a symbol set'
+  body: '\\showsymbolset[${1:name}]$2'
+  url: 'https://wiki.contextgarden.net/Command/showsymbolset'
+'\\someline':
+  description: 'The command \\someline is used to create a line reference The command \\someline[someref] adds a label to a line inside a typing. This label can then be accessed with \\inline or \\inlinerange , or directly with e.g. \\in [lr:b:someref] .'
+  body: '\\someline[${1:reference}]$2'
+  url: 'https://wiki.contextgarden.net/Command/someline'
+'\\somewhere':
+  description: ''
+  body: '\\somewhere{${1:text}}{${2:text}}[${3:reference}]$4'
+  url: 'https://wiki.contextgarden.net/Command/somewhere'
+'\\space':
+  description: ''
+  body: '\\space$1'
+  url: 'https://wiki.contextgarden.net/Command/space'
+'\\splitfloat':
+  description: ''
+  body: '\\splitfloat[${1:see \\\\setupfloatsplitting}]{${2:text}}{${3:text}}$4'
+  url: 'https://wiki.contextgarden.net/Command/splitfloat'
+'\\startalignment':
+  description: 'Use different alignment for a block of text'
+  body: '\\startalignment[${1:option}]\n\t$2\n\\\\stopalignment$3'
+  url: 'https://wiki.contextgarden.net/Command/startalignment'
+'\\startbackground':
+  description: ''
+  body: '\\startbackground\n\t$1\n\\\\stopbackground$2'
+  url: 'https://wiki.contextgarden.net/Command/startbackground'
+'\\startcolor':
+  description: ''
+  body: '\\startcolor[${1:name}]\n\t$2\n\\\\stopcolor$3'
+  url: 'https://wiki.contextgarden.net/Command/startcolor'
+'\\startcolumns':
+  description: 'The instances of \\start mixedcolumns ... \\stop mixedcolumns are used for typesetting material in multiple columns. Start a columnation environment. You must specify how many columns you want using [n=2] , unless you have already done so using \\setupcolumns . A new column can be forced with \\column . A columnation environment that does not fill up the remainder of the page will be balanced by default, rather than produce full columns next to empty ones.'
+  body: '\\startcolumns[${1:see \\\\setupcolumns}]\n\t$2\n\\\\stopcolumns$3'
+  url: 'https://wiki.contextgarden.net/Command/startcolumns'
+'\\startcombination':
+  description: ''
+  body: '\\startcombination[${1:columns} * ${2:rows}]\n\t$2\n\\\\stopcombination$3'
+  url: 'https://wiki.contextgarden.net/Command/startcombination'
+'\\startcomment':
+  description: 'The instances of \\start comment ... \\stop comment create PDF comments: little balloon or text icons that one can click to reveal the comment. Create PDF comments: little balloon or text icons that one can click to reveal the comment.\nIf there is no text around the place the command is invoked, one needs to add \\dontleavehmode before \\startcomment (or before \\comment ). There is also a command form of this environment: comment .'
+  body: '\\startcomment[${1:name}][${2:see \\\\setupcomment}]\n\t$3\n\\\\stopcomment$4'
+  url: 'https://wiki.contextgarden.net/Command/startcomment'
+'\\startcomponent':
+  description: 'Component file structure The environment \\startcomponent ... \\stopcomponent indicates a component in a product. \\startcomponent ...\\stopcomponent is the lowest level component in a project structure .\nIt can contain all kind of commands and text. You can invoke project files (and the environment files the project file links to) with \\project ; you can invoke component-specific environment files with \\environment ; and other components with \\component . Calls to \\product do nothing. You can type \\startcomponent * to indicate that the component\'s reporting name is the same as the filename (without the extension).'
+  body: '\\startcomponent ${1:component name}\n\\\\product ${2:product name}\n\n\t$3\n\\\\stopcomponent'
+  url: 'https://wiki.contextgarden.net/Command/startcomponent'
+'\\startdocument':
+  description: 'The environment \\startdocument ... \\stopdocument adds option processing to \\starttext . Sometimes it makes sense to have options available at the time of \\starttext , for example to typeset a title page. \\startdocument allows you to do this either directly by passing arbitrary keys and values to the command itself, or via \\setupdocument . \\startdocument by default makes use of two setups: document:start and document:stop . You can use document:start to construct a title page. You can fetch the passed values by using the \\documentvariable command.'
+  body: '\\startdocument[${1:name}]\n\t$2\n\\\\stopdocument'
+  url: 'https://wiki.contextgarden.net/Command/startdocument'
+'\\startenvironment':
+  description: 'Environment (‘stylesheet’) structure The environment \\startenvironment ... \\stopenvironment is used for ... A \\startenvironment block contains setups that should be loaded when the file is invoked with \\environment . The first argument (given without square brackets!) is the name, and can be anything as long as it\'s not empty  (the filename is a common choice). This name is used by ConTeXt internally when keeping track of how often the environment has been loaded, and it is used when printing output to stderr/the log file, as follows: used structure  > text: mytexfile\nused structure  >   environment: myenvironment Within a \\startenvironment block, the commands \\project , \\product , and \\component are ignored; other environments can be loaded using \\environment .'
+  body: '\\startenvironment ${1:environment name}\n\\\\project ${2:project name}\n\n$3\n\\\\stopenvironment'
+  url: 'https://wiki.contextgarden.net/Command/startenvironment'
+'\\startfact':
+  description: 'The instances of \\start tabulate ... \\stop tabulate are used for special tabulated material.'
+  body: '\\startfact\n\\\\fact $1 \\\n\\\\stopfact'
+  url: 'https://wiki.contextgarden.net/Command/startfact'
+'\\startfigure':
+  description: ''
+  body: '\\startfigure[${1:name}][${2:file}][${3:options}]\n\t$4\\\\stopfigure'
+  url: 'https://wiki.contextgarden.net/Command/startfigure'
+'\\starthiding':
+  description: 'The instances of \\start buffer ... \\stop buffer are used for buffering text. Note that \\startbuffer is not an instance of startbuffer . It has its own, more elaborate definition.'
+  body: '\\starthiding\n\t$1\\\\stophiding'
+  url: 'https://wiki.contextgarden.net/Command/starthiding'
+'\\startitemize':
+  description: 'Itemization The instances of \\start itemgroup ... \\stop itemgroup typeset a list of items. The instance environments can be set up globally with e.g. \\setupitemize . For the arguments available to \\startitemize and \\setupitemize , see \\setupitemgroup .'
+  body: '\\startitemize\n\\\\startitem $0\\\\stopitem\n\\\\stopitemize'
+  url: 'https://wiki.contextgarden.net/Command/startitemize'
+'\\startitemize[packed,joinedup]':
+  description: 'Itemization The instances of \\start itemgroup ... \\stop itemgroup typeset a list of items. The instance environments can be set up globally with e.g. \\setupitemize . For the arguments available to \\startitemize and \\setupitemize , see \\setupitemgroup .'
+  body: '\\startitemize[packed,joinedup]\n\\\\startitem $0\\\\stopitem\n\\\\stopitemize'
+  url: 'https://wiki.contextgarden.net/Command/startitemize'
+'\\startline':
+  description: 'The command \\startline is used for creating a line number range reference The commands \\startline and \\stopline add a label to a range of lines inside a typing. This range can then be referred to using \\inline , or \\inlinerange , or directly with \\in [lr:b:someref] and \\in [lr:e:someref] .'
+  body: '\\startline[${1:reference}]\n\t$2\n\\\\stopline'
+  url: 'https://wiki.contextgarden.net/Command/startline'
+'\\startlinecorrection':
+  description: ''
+  body: '\\startlinecorrection\n\t$1\n\\\\stoplinecorrection'
+  url: 'https://wiki.contextgarden.net/Command/startlinecorrection'
+'\\startlinenumbering':
+  description: ''
+  body: '\\startlinenumbering${1:\\[continue\\]}\n\t$2\n\\\\stoplinenumbering'
+  url: 'https://wiki.contextgarden.net/Command/startlinenumbering'
+'\\startlines':
+  description: 'Environment that keeps lines (e.g. for code or poems) The instances of \\start lines ... \\stop lines are used for typsetting text with preformatted line breaks. This allows the printing of text according to existing linebreaks within the text. The command itself takes no setups, but you can use \\setuplines to indicate that you wish to preserve whitespace, or make it visible, as well as some other tricks; and if you find yourself using the same few setups throughout the document, you can make special-purpose environments using \\definelines .'
+  body: '\\startlines\n$1\n\\\\stoplines'
+  url: 'https://wiki.contextgarden.net/Command/startlines'
+'\\startlocal':
+  description: ''
+  body: '\\startlocal\n\t$1\n\\\\stoplocal'
+  url: 'https://wiki.contextgarden.net/Command/startlocal'
+'\\startlocalenvironment':
+  description: ''
+  body: '\\startlocalenvironment\n\t$1\n\\\\stoplocalenvironment'
+  url: 'https://wiki.contextgarden.net/Command/startlocalenvironment'
+'\\startlocalfootnotes':
+  description: 'Environment for footnotes in tables'
+  body: '\\startlocalfootnotes\n\t$1\n\\\\stoplocalfootnotes'
+  url: 'https://wiki.contextgarden.net/Command/startlocalfootnotes'
+'\\startmakeup':
+  description: 'Special page layout'
+  body: '\\startmakeup[${1:name}]${2:[${3:see \\\\setupmakeup}]}$4\\\\stopmakeup'
+  url: 'https://wiki.contextgarden.net/Command/startmakeup'
+'\\startmarginblock':
+  description: ''
+  body: '\\startmarginblock\n\t$1\n\\\\stopmarginblock'
+  url: 'https://wiki.contextgarden.net/Command/startmarginblock'
+'\\startmarginrule':
+  description: ''
+  body: '\\startmarginrule[${1:number}]$2\\\\stopmarginrule'
+  url: 'https://wiki.contextgarden.net/Command/startmarginrule'
+'\\startnarrower':
+  description: 'Indented text block'
+  body: '\\startnarrower${1:[${2:margins to narrow}]}\n\t$3\n\\\\stopnarrower'
+  url: 'https://wiki.contextgarden.net/Command/startnarrower'
+'\\startopposite':
+  description: ''
+  body: '\\startopposite\n\t$1\n\\\\stopopposite'
+  url: 'https://wiki.contextgarden.net/Command/startopposite'
+'\\startoverlay':
+  description: 'The environment \\startoverlay ... \\stopoverlay creates an anonymous overlay.'
+  body: '\\startoverlay{${1:text}}{${2:text}}\n\t$3\n\\\\stopoverlay'
+  url: 'https://wiki.contextgarden.net/Command/startoverlay'
+'\\startoverview':
+  description: ''
+  body: '\\startoverview[${1:name}]\n\t$2\n\\\\stopoverview'
+  url: 'https://wiki.contextgarden.net/Command/startoverview'
+'\\startpacked':
+  description: ''
+  body: '\\startpacked${1:[${2:blank}]}\n\t$3\n\\\\stoppacked'
+  url: 'https://wiki.contextgarden.net/Command/startpacked'
+'\\startpositioning':
+  description: ''
+  body: '\\startpositioning\t$1\n\\\\stoppositioning'
+  url: 'https://wiki.contextgarden.net/Command/startpositioning'
+'\\startpostponing':
+  description: 'Environment to place e.g. images on defined pages; use with makeups'
+  body: '\\startpostponing[${1:page number or increment}]\n$2\n\\\\stoppostponing\n'
+  url: 'https://wiki.contextgarden.net/Command/startpostponing'
+'\\startproduct':
+  description: 'Product structure The environment \\startproduct ... \\stopproduct is used for standalone products in a project \\startproduct ...\\stopproduct is a standalone part of the project structure. A product can contain any commands and text. A product can contain component files with \\component yourfile .  The product is linked to the project with \\project yourprojectname .'
+  body: '\\startproduct ${1: product name}\n\\\\project ${2:project name}\n\n\\\\component ${3:component name}\n\n$4\n\\\\stopproduct'
+  url: 'https://wiki.contextgarden.net/Command/startproduct'
+'\\startprofile':
+  description: ''
+  body: '\\startprofile[${1:name}]\n\t$2\n\\\\stopprofile'
+  url: 'https://wiki.contextgarden.net/Command/startprofile'
+'\\startproject':
+  description: 'Project file structure The environment \\startproject ... \\stopproject is used for grouping environments and products \\startproject ... \\stopproject starts a project. A project is a structure to produce multiple PDF files that use the same \\environment s. Each PDF file is defined by a \\product ; each product may (re)use several \\component s internally. Project files are not meant to be processed themselves. Their function is to connect a common set of \\environment s to a list of otherwise independent products.'
+  body: '\\startproject ${1:project name}\n\\\\environment ${2:environment name}\n\n\\\\product ${3:product name}\n\\\\stopproject'
+  url: 'https://wiki.contextgarden.net/Command/startproject'
+'\\startquotation':
+  description: 'Longer quote The instances of \\start delimitedtext ... \\stop delimitedtext wrap some markup around a (usually short) block of text. These instances are defined by \\definedelimitedtext and set up with \\setupdelimitedtext . But there are also two predefined shortcut commands, so you can set up the \\startquote environment with \\setupquote and \\startquotation with \\setupquotation .'
+  body: '\\startquotation[${1:left middle right}]\n$2\n\\\\stopquotation'
+  url: 'https://wiki.contextgarden.net/Command/startquotation'
+'\\startsymbolset':
+  description: ''
+  body: '\\startsymbolset[${1:name}]$2\\\\stopsymbolset'
+  url: 'https://wiki.contextgarden.net/Command/startsymbolset'
+'\\starttable':
+  description: 'Table (tabulate syntax)'
+  body: '\\starttable[${1:columns struct}]\n\t$2\n\\\\stoptable'
+  url: 'https://wiki.contextgarden.net/Command/starttable'
+'\\starttextrule':
+  description: ''
+  body: '\\starttextrule{${1:title}}\n\t$2\n\\\\stoptextrule'
+  url: 'https://wiki.contextgarden.net/Command/starttextrule'
+'\\startunpacked':
+  description: ''
+  body: '\\startunpacked\n\t$1\n\\\\stopunpacked'
+  url: 'https://wiki.contextgarden.net/Command/startunpacked'
+'\\startversion':
+  description: ''
+  body: '\\startversion[${1:numbers}]\n\t$2\n\\\\stopversion'
+  url: 'https://wiki.contextgarden.net/Command/startversion'
+'\\stretched':
+  description: ''
+  body: '\\stretched{${1:text to stretch}}$2'
+  url: 'https://wiki.contextgarden.net/Command/stretched'
+'\\sub':
+  description: ''
+  body: '\\sub${1:[${2:ref, ...}]}$3'
+  url: 'https://wiki.contextgarden.net/Command/sub'
+'\\subject':
+  description: 'Start an unnumbered section The instances of \\ section produce a sectioning title. Any of the three macro calls above can be used. The #Settings instance:assignment gives the most control. You can define heads yourself with \\definehead . You can change the appearance with \\setuphead . Note: these instances are superseded by environments with the same basic name, see startsection .'
+  body: '\\subject[${1:reference}]{${2:title}}\n$3'
+  url: 'https://wiki.contextgarden.net/Command/subject'
+'\\subsection':
+  description: 'Start a subsection The instances of \\ section produce a sectioning title. Any of the three macro calls above can be used. The #Settings instance:assignment gives the most control. You can define heads yourself with \\definehead . You can change the appearance with \\setuphead . Note: these instances are superseded by environments with the same basic name, see startsection .'
+  body: '\\subsection[${1:reference}]{${2:title}}\n$3'
+  url: 'https://wiki.contextgarden.net/Command/subsection'
+'\\subsubject':
+  description: 'Start an unnumbered subsection The instances of \\ section produce a sectioning title. Any of the three macro calls above can be used. The #Settings instance:assignment gives the most control. You can define heads yourself with \\definehead . You can change the appearance with \\setuphead . Note: these instances are superseded by environments with the same basic name, see startsection .'
+  body: '\\subsubject[${1:reference}]{${2:title}}\n$3'
+  url: 'https://wiki.contextgarden.net/Command/subsubject'
+'\\subsubsection':
+  description: 'Start a subsubsection The instances of \\ section produce a sectioning title. Any of the three macro calls above can be used. The #Settings instance:assignment gives the most control. You can define heads yourself with \\definehead . You can change the appearance with \\setuphead . Note: these instances are superseded by environments with the same basic name, see startsection .'
+  body: '\\subsubsection${1:[${2:ref, ...}]}{${3:title}}$4'
+  url: 'https://wiki.contextgarden.net/Command/subsubsection'
+'\\subsubsubject':
+  description: 'Start an unnumbered subsubsection The instances of \\ section produce a sectioning title. Any of the three macro calls above can be used. The #Settings instance:assignment gives the most control. You can define heads yourself with \\definehead . You can change the appearance with \\setuphead . Note: these instances are superseded by environments with the same basic name, see startsection .'
+  body: '\\subsubsubject$[${2:reference}]{${3:title}}\n$4'
+  url: 'https://wiki.contextgarden.net/Command/subsubsubject'
+'\\switchtobodyfont':
+  description: 'Change main font'
+  body: '\\switchtobodyfont[${1:style}]\n$2'
+  url: 'https://wiki.contextgarden.net/Command/switchtobodyfont'
+'\\sym':
+  description: ''
+  body: '\\sym{${1:custom item mark}}$2'
+  url: 'https://wiki.contextgarden.net/Command/sym'
+'\\symbol':
+  description: 'Place a defined symbol'
+  body: '\\symbol${1:[${2:name}]}[${3:name}]$4'
+  url: 'https://wiki.contextgarden.net/Command/symbol'
+'\\tab':
+  description: ''
+  body: '\\tab${2:paragraph suffix}$3'
+  url: 'https://wiki.contextgarden.net/Command/tab'
+'\\tex':
+  description: 'Typeset a TeX macro name The command \\tex prints text verbatim, preceded by a backslash Print text verbatim, preceded by a backslash. Useful for TeX commands in running text.'
+  body: '\\tex{${1:command name}}$2'
+  url: 'https://wiki.contextgarden.net/Command/tex'
+'\\textreference':
+  description: 'The command \\textreference is used for creating reference anchors Creates a reference label.'
+  body: '\\textreference[${1:reference}]{${2:text}}$3'
+  url: 'https://wiki.contextgarden.net/Command/textreference'
+'\\textrule':
+  description: ''
+  body: '\\textrule[${1:top middle bottom}]}{${2:text}}$4'
+  url: 'https://wiki.contextgarden.net/Command/textrule'
+'\\textvariable':
+  description: ''
+  body: '\\textvariable[${1:name}]$2'
+  url: 'https://wiki.contextgarden.net/Command/textvariable'
+'\\thinrule':
+  description: ''
+  body: '\\thinrule$1'
+  url: 'https://wiki.contextgarden.net/Command/thinrule'
+'\\thinrules':
+  description: ''
+  body: '\\thinrules${1:[${2:see \\\\setupthinrules}}$3'
+  url: 'https://wiki.contextgarden.net/Command/thinrules'
+'\\title':
+  description: 'Start an unnumbered chapter The instances of \\ section produce a sectioning title. Any of the three macro calls above can be used. The #Settings instance:assignment gives the most control. You can define heads yourself with \\definehead . You can change the appearance with \\setuphead . Note: these instances are superseded by environments with the same basic name, see startsection .'
+  body: '\\title${1:[${2:ref, ...}]}{${3:title}}$4'
+  url: 'https://wiki.contextgarden.net/Command/title'
+'\\tooltip':
+  description: 'The instances of \\ tooltip are used for creating tooltips in the output PDF.'
+  body: '\\tooltip${1:[${2:left right middle}]}{${3:text}}{${4:text}}$5'
+  url: 'https://wiki.contextgarden.net/Command/tooltip'
+'\\translate':
+  description: ''
+  body: '\\translate[${1:lang=..., other=...}]$2'
+  url: 'https://wiki.contextgarden.net/Command/translate'
+'\\typ':
+  description: ''
+  body: '\\typ{${1:text}}$2'
+  url: 'https://wiki.contextgarden.net/Command/typ'
+'\\type':
+  description: 'Typeset code'
+  body: '\\type{${1:text}}$2'
+  url: 'https://wiki.contextgarden.net/Command/type'
+'\\typebuffer':
+  description: 'Typeset a buffer of code'
+  body: '\\typebuffer[${1:buffer name}]$2'
+  url: 'https://wiki.contextgarden.net/Command/typebuffer'
+'\\typefile':
+  description: 'Typeset a source file'
+  body: '\\typefile${1:[${2:see \\\\setuptyping}]}{${3:file name}}$4'
+  url: 'https://wiki.contextgarden.net/Command/typefile'
+'\\underbar':
+  description: 'Underline text continuously The instances of \\ mathundertextextensible are used for ...'
+  body: '\\underbar{${1:text}}$2'
+  url: 'https://wiki.contextgarden.net/Command/underbar'
+'\\underbars':
+  description: 'Underline text with gaps at spaces The instances of \\ bar are used for ...'
+  body: '\\underbars{${1:words}}$2'
+  url: 'https://wiki.contextgarden.net/Command/underbars'
+'\\underbrace':
+  description: 'The instances of \\ mathundertextextensible are used for ...'
+  body: '\\underbrace{${1:formula}}_{${2:under text}}$3'
+  url: 'https://wiki.contextgarden.net/Command/underbrace'
+'\\useURL':
+  description: 'Setup URL for later use'
+  body: '\\useURL[${1:label}][${2:URL}][${3:attached file URL}][${4:text}]$5'
+  url: 'https://wiki.contextgarden.net/Command/useURL'
+'\\useblocks':
+  description: ''
+  body: '\\useblocks[${1:block classes}]${2:[${3:options}]}$4'
+  url: 'https://wiki.contextgarden.net/Command/useblocks'
+'\\usecommands':
+  description: ''
+  body: '\\usecommands{${1:text}}$2'
+  url: 'https://wiki.contextgarden.net/Command/usecommands'
+'\\usedirectory':
+  description: ''
+  body: '\\usedirectory[${1:name}]$2'
+  url: 'https://wiki.contextgarden.net/Command/usedirectory'
+'\\useexternaldocument':
+  description: ''
+  body: '\\useexternaldocument[${1:filename}]$2'
+  url: 'https://wiki.contextgarden.net/Command/useexternaldocument'
+'\\useexternalfigure':
+  description: 'Setup picture for later use The command \\useexternalfigure creates a preset to use with \\externalfigure'
+  body: '\\useexternalfigure${1:[${2:name}]}[${3:file}]${4:[${5:options}]}$6'
+  url: 'https://wiki.contextgarden.net/Command/useexternalfigure'
+'\\useexternalfile':
+  description: 'Setup file for later use'
+  body: '\\useexternalfile[${1:name}][${2:name}][${3:file}][${4:bodyfont}]$5'
+  url: 'https://wiki.contextgarden.net/Command/useexternalfile'
+'\\useexternalfiles':
+  description: ''
+  body: '\\useexternalfiles[${1:name}][${2:options}]$3'
+  url: 'https://wiki.contextgarden.net/Command/useexternalfiles'
+'\\usemodule':
+  description: 'Load a module'
+  body: '\\usemodule[${1:name}]$2'
+  url: 'https://wiki.contextgarden.net/Command/usemodule'
+'\\usereferences':
+  description: ''
+  body: '\\usereferences[${1:filename}]$2'
+  url: 'https://wiki.contextgarden.net/Command/usereferences'
+'\\usespecials':
+  description: ''
+  body: '\\usespecials[${1:name}]$2'
+  url: 'https://wiki.contextgarden.net/Command/usespecials'
+'\\usesymbols':
+  description: ''
+  body: '\\usesymbols[${1:name}]$2'
+  url: 'https://wiki.contextgarden.net/Command/usesymbols'
+'\\version':
+  description: ''
+  body: '\\version[${1:final concept temporary}]$2'
+  url: 'https://wiki.contextgarden.net/Command/version'
+'\\vl':
+  description: 'Vertical line in tables (tabulate syntax)'
+  body: '\\vl[${1:number}]$2'
+  url: 'https://wiki.contextgarden.net/Command/vl'
+'\\whitespace':
+  description: ''
+  body: '\\whitespace$1'
+  url: 'https://wiki.contextgarden.net/Command/whitespace'
+'\\wordright':
+  description: 'Push something to the right of the line, e.g. an author name On an otherwise left-aligned line, place some text at the very right, and end the paragraph. First, the paragraph is line-broken normally. The last line consists of two parts: call the \'normal\' bit the left part, and the \\wordright bit the wordright text. The left part is placed flush left, even if the paragraph is middle-aligned or right-aligned. The wordright text is placed on the same line, but flush against the right. If there isn\'t enough space left on the line, the left part will still be aligned flush left, but the wordright text will be placed on the next line. \\wordright ends the paragraph; any text that follows it will start a new paragraph.'
+  body: '\\wordright{${1:text}}$2'
+  url: 'https://wiki.contextgarden.net/Command/wordright'
+'\\writebetweenlist':
+  description: 'Force something in a list (e.g. ToC) The command \\writebetweenlist is used for putting some non-item in a list. Insert something in that is not a list element in the middle of a list. Most often a command such as \\hrule , or a header. The default table of contents is combined list. To write to it one has to choose the level to which it should be inserted: \\writebetweenlist[chapter][location=here]{\\hrule} , \\writebetweenlist[section][location=here]{\\hrule} , etc.'
+  body: '\\writebetweenlist[${1:name}]{${2:text}}$3'
+  url: 'https://wiki.contextgarden.net/Command/writebetweenlist'
+'\\writetolist':
+  description: 'Insert a list (e.g. ToC) entry The command \\writetolist is used to write entries to a defined list. If you use this command after an unnumbered section commands beware that it will become a candidate for a page break. A workaround is: \\subject { \\bf My title! } \\dontleavehmode \\writetolist [ myrandompart ] { } { It\'s a test } However, according to mailing list messages (from 2010), keep in mind that it introduces \'something\' in the text stream, so when whitespace is setup, in some cases you can get some extra. Also, this box can end up on the current page or the next one, depending on the circumstances. In practice it\'s no real problem as one will do explicit writes inside boxes or so. I.e., just bind the write to some text. In addition you might get spurious spaces after this command. So it is best to add a % sign after it. The default table of contents is combined list. To write to it one has to choose the level to which it should be inserted: \\writetolist[chapter]{1.}{Chapter list entry A} , \\writetolist[section]{1.1}{Section list entry A} , etc.'
+  body: '\\writetolist[${1:name}]{${2:text}}{${3:text}}$4'
+  url: 'https://wiki.contextgarden.net/Command/writetolist'
+'\\writetoreferencelist':
+  description: ''
+  body: '\\writetoreferencelist[${1:name}]{${2:text}}{${3:text}}$4'
+  url: 'https://wiki.contextgarden.net/Command/writetoreferencelist'
+'\\writetoregister':
+  description: ''
+  body: '\\writetoregister[${1:silgular}]${2:[${3:text}]}{${4:... + ... + ...}}$5'
+  url: 'https://wiki.contextgarden.net/Command/writetoregister'
+Environment:
+  description: ''
+  body: '\\start${1:env}\n\t$2\n\\\\stop${1:env}'
+  url: ''
+'Equation Align':
+  description: ''
+  body: '\\placeformula[${1:reference}]\n\\\\startformula\\\\startalign\n\t$2\n\\\\stopalign\\stopformula'
+  url: ''
+Equation:
+  description: ''
+  body: '\\placeformula[${0:reference}]\n\\\\startformula\n\t$0\n\\\\stopformula\n$1'
+  url: ''
