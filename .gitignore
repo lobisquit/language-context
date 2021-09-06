@@ -1,2 +1,4 @@
-# test purposes
+.DS_Store
 *.tex
+*.pyc
+*.pyo
